@@ -12,55 +12,1677 @@
   },
   "majors": [
     {
-      "name": "Liberal Studies",
-      "description": "Prepares students for transfer into elementary school teaching programs or public service careers.",
-      "department": "Liberal Arts & Sciences",
+      "name": "Agriculture Business",
+      "description": "Describe the strength, diversity, economic dynamics and opportunities of the California, U.S.",
+      "department": "Agriculture",
       "requirements": [
-        "Intro to Life Science",
+        "Microeconomics in Agriculture",
+        "Principles of Macroeconomics",
+        "Soils",
+        "Soils Laboratory",
+        "Introductory General Chemistry",
+        "Elementary Statistics",
+        "Introduction to Statistics",
+        "Introduction to Agriculture Business",
+        "Financial Accounting in Agriculture",
+        "Computer Applications in Agriculture"
+      ]
+    },
+    {
+      "name": "Agriculture Plant Science",
+      "description": "Comprehension and identification of the structures and functions of plant cells, organelles, tissues, organs, and integrate important plant processes such as...",
+      "department": "Agriculture",
+      "requirements": [
+        "Introduction to Animal Science",
         "General Chemistry",
+        "Introductory General Chemistry",
+        "Microeconomics in Agriculture",
+        "Principles of Microeconomics",
+        "Introduction to Statistics",
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "name": "Art History",
+      "description": "Upon completion of the Reedley College Associate in Arts Degree in Art History for Transfer Degree a student will be able to: Apply knowledge of art historical...",
+      "department": "Art",
+      "requirements": [
+        "Art History 1",
+        "Art History",
+        "Honors Art History 2",
+        "Beginning Drawing",
+        "Survey of Non-Western Art"
+      ]
+    },
+    {
+      "name": "Studio Arts",
+      "description": "Upon completion of the Reedley College Associate in Arts Degree in Studio Arts for Transfer (AA-T in Studio Arts), a student will be able to: Apply knowledge...",
+      "department": "Art",
+      "requirements": [
+        "Two-Dimensional Design",
+        "Three-Dimensional Design",
+        "Beginning Drawing",
+        "Art History",
+        "Honors Art History 2"
+      ]
+    },
+    {
+      "name": "Environmental Science",
+      "description": "Demonstrate basic knowledge of comparative anatomy and comparative physiology.",
+      "department": "Biology",
+      "requirements": []
+    },
+    {
+      "name": "Biology",
+      "description": "Demonstrate basic knowledge of comparative anatomy and comparative physiology.",
+      "department": "Biology",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration 2.0",
+      "description": "Create and interpret business documents by utilizing research and analytical skills learned in accounting, business, economics, and statistics.",
+      "department": "Business - Communication",
+      "requirements": []
+    },
+    {
+      "name": "Chemistry",
+      "description": "Upon the completion of the Reedley College Animal Science program, a student will be able to: Construct and deliver presentations with communicative competence...",
+      "department": "Chemistry",
+      "requirements": []
+    },
+    {
+      "name": "Communication Studies 2.0",
+      "description": "Upon the completion of the Reedley College Animal Science program, a student will be able to: Construct and deliver presentations with communicative competence...",
+      "department": "Communication",
+      "requirements": []
+    },
+    {
+      "name": "Administration Of Justice",
+      "description": "Recognize the functions of the Criminal Justice System Be able to calculate how to work within a constitutional framework",
+      "department": "Criminology",
+      "requirements": [
+        "Introduction to Criminology",
+        "Criminal Law"
+      ]
+    },
+    {
+      "name": "Early Childhood Education",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Economics",
+      "requirements": []
+    },
+    {
+      "name": "Economics",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Economics",
+      "requirements": [
+        "Principles of Macroeconomics",
+        "Principles of Microeconomics",
+        "Calculus I",
+        "Introduction to Statistics",
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "name": "English",
+      "description": "Upon successful completion of this program, students will be able to: employ close reading, discourse, and writing that focus on form and specific topics to...",
+      "department": "English",
+      "requirements": [
+        "Introduction to the Study of Literature",
+        "Honors Introduction to the Study of Literature"
+      ]
+    },
+    {
+      "name": "History",
+      "description": "Upon completion of this program, the student will be able to: Identify various interpretations used by historians to explain historical events.",
+      "department": "History",
+      "requirements": [
+        "History of the United States to 1877",
+        "History of the United States since 1865",
+        "Honors History of the United States since 1865"
+      ]
+    },
+    {
+      "name": "Kinesiology",
+      "description": "Understand the basic concepts of music theory equivalent to the first two years of musical study at the college level Perform with their voice or instrument of...",
+      "department": "Kinesiology",
+      "requirements": [
         "Human Anatomy",
-        "Environmental Science"
+        "Human Physiology",
+        "Introduction to Kinesiology",
+        "Aerobics (Dance, Step or Water)",
+        "Badminton",
+        "Basketball",
+        "Racquetball",
+        "Beginning Swim for Fitness",
+        "Tennis",
+        "Volleyball",
+        "Weight Training",
+        "Fitness Walking",
+        "Floor Exercises",
+        "Weight Training and Aerobics",
+        "Yoga"
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "description": "Understand the basic concepts of music theory equivalent to the first two years of musical study at the college level Perform with their voice or instrument of...",
+      "department": "Mathematics",
+      "requirements": []
+    },
+    {
+      "name": "Music",
+      "description": "Understand the basic concepts of music theory equivalent to the first two years of musical study at the college level Perform with their voice or instrument of...",
+      "department": "Music",
+      "requirements": [
+        "Music Theory I",
+        "Music Theory II",
+        "Music Theory III",
+        "Music Theory IV",
+        "Ear Training: Level I",
+        "Ear Training: Level II",
+        "Ear Training Level III",
+        "Ear Training Level IV Applied Music 4 semesters required",
+        "Instrumental Ensembles  1-2",
+        "Intermediate/Advanced Voice  1-2 Large Ensemble - 4 semesters required",
+        "College Orchestra  1-3",
+        "Concert Choir  1-3",
+        "Concert Band  1-3"
+      ]
+    },
+    {
+      "name": "Philosophy",
+      "description": "Upon completion of the program, students will be able to: Analyze deductive arguments for validity and soundness.",
+      "department": "Philosophy",
+      "requirements": [
+        "Introduction to Logic",
+        "Symbolic Logic",
+        "Introduction to Philosophy",
+        "Ethics",
+        "Honors Ethics"
+      ]
+    },
+    {
+      "name": "Physics",
+      "description": "Apply algebra, trigonometry, and/or first-year calculus to solve physical problems within the topics covered in class.",
+      "department": "Physics",
+      "requirements": [
+        "Physics for Scientists and Engineers",
+        "Calculus I",
+        "Calculus II",
+        "Calculus III"
+      ]
+    },
+    {
+      "name": "Political Science",
+      "description": "Analyze & discuss major psychological theories and research.",
+      "department": "Political Science",
+      "requirements": [
+        "American Government",
+        "Honors American Government"
+      ]
+    },
+    {
+      "name": "Psychology",
+      "description": "Analyze & discuss major psychological theories and research.",
+      "department": "Psychology",
+      "requirements": [
+        "Introduction to Research Methods in Psychology",
+        "Introduction to Statistics",
+        "Elementary Statistics",
+        "General Psychology",
+        "Honors General Psychology"
+      ]
+    },
+    {
+      "name": "Sociology",
+      "description": "Prepare students with the knowledge and skills required to succeed in the study of sociology.",
+      "department": "Sociology",
+      "requirements": [
+        "Introduction to Sociology",
+        "Critical Thinking about Social Problems",
+        "Introduction to Statistics",
+        "Introduction to Elementary Statistics with Support",
+        "Statistics for the Behavioral Sciences",
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "name": "Spanish",
+      "description": "Upon completion of the Reedley College Associate in Arts in Spanish for Transfer Degree, students will be able to: engage in conversation using Spanish in...",
+      "department": "Spanish",
+      "requirements": [
+        "Beginning Spanish",
+        "High-Beginning Spanish",
+        "Intermediate Spanish",
+        "Spanish for Spanish Speakers",
+        "High-Intermediate Spanish",
+        "Spanish for Spanish Speakers If a student places out of any core course(s) and is not awarded",
+        "Cultural Anthropology",
+        "Intercultural Communication",
+        "Introduction to Sociology",
+        "American Minority Groups"
       ]
     },
     {
       "name": "Accounting",
-      "description": "Focuses on financial reporting, auditing, and tax fundamentals for careers in business and finance.",
-      "department": "Business",
+      "description": "Use appropriate accounting vocabulary to effectively communicate in the business environment at a better than % level of accuracy.",
+      "department": "Accounting",
+      "requirements": []
+    },
+    {
+      "name": "Quickbooks",
+      "description": "Describe the strength, diversity, economic dynamics and opportunities of the California, U.S.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Ag Technology",
+      "description": "Describe the strength, diversity, economic dynamics and opportunities of the California, U.S.",
+      "department": "Agriculture",
+      "requirements": []
+    },
+    {
+      "name": "Agriculture Education",
+      "description": "Identify the major components of Agricultural Education in California.",
+      "department": "Agriculture",
+      "requirements": []
+    },
+    {
+      "name": "Agriculture Foundations",
+      "description": "Upon successful completion of this program, students will be able to: exhibit employability skills, quantitative reasoning, and effective communication within...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "General Agriculture",
+      "description": "Describe the strength, diversity, economic dynamics and opportunities of the California, U.S.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "American Sign Language",
+      "description": "Upon completion of this program, students will be able to: Formulate and understand grammatically correct and culturally appropriate American Sign Language...",
+      "department": "American Sign Language",
+      "requirements": []
+    },
+    {
+      "name": "Proficiency",
+      "description": "Upon completion of this program, students will be able to: Formulate and understand grammatically correct and culturally appropriate American Sign Language...",
+      "department": "American Sign Language Conversational",
+      "requirements": []
+    },
+    {
+      "name": "Animal Science",
+      "description": "Upon completion of this program, students will be able to: Identify the skills, education, and work experiences needed to pursue his/her chosen career path.",
+      "department": "Animal Science",
       "requirements": [
-        "Principles of Accounting I & II",
-        "Business Law",
-        "Computer Applications"
+        "Introduction to Animal Science.",
+        "Animal Nutrition",
+        "Livestock Exhibition and Marketing",
+        "Beef Production",
+        "Small Ruminant Production",
+        "Swine Production",
+        "Equine Science",
+        "Computer Applications in Agriculture",
+        "Evaluation",
+        "Meat Evaluation and Processing",
+        "Animals and Society"
       ]
+    },
+    {
+      "name": "Equine",
+      "description": "Upon successful completion of the program, students will be able to: Identify the skills, education, and work experiences needed to pursue his/her chosen...",
+      "department": "Animal Science",
+      "requirements": [
+        "Computer Applications in Agriculture",
+        "Introduction to Animal Science",
+        "Animal Nutrition",
+        "Introduction to Plant Science",
+        "Introduction to Plant Science Laboratory",
+        "Soils",
+        "Soils Laboratory",
+        "Work Experience Education, Agriculture",
+        "Introduction to Agriculture Mechanics",
+        "Machinery Technology",
+        "Introduction to Agriculture Business",
+        "Microeconomics in Agriculture",
+        "Financial Accounting in Agriculture",
+        "Ag Sales and Communications",
+        "Beef Production",
+        "Small Ruminant Production",
+        "Swine Production",
+        "Equine Science",
+        "Evaluation",
+        "Meat Evaluation and Processing",
+        "Equitation",
+        "Livestock Exhibition and Marketing"
+      ]
+    },
+    {
+      "name": "Art: Two-Dimensional",
+      "description": "Upon completion of this program, students will be able to: Apply knowledge of the elements and principles of design to the description and/or production of...",
+      "department": "Art",
+      "requirements": []
+    },
+    {
+      "name": "Art: Three-Dimensional",
+      "description": "Upon completion of this program, students will be able to: Diagnose and repair manual transmissions Diagnose and repair clutch systems Diagnose and repair...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Automotive Technician",
+      "description": "Upon completion of this program, students will be able to: Diagnose and repair manual transmissions Diagnose and repair clutch systems Diagnose and repair...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Aircraft General Maintenance",
+      "description": "Upon completion of the program student will be able to: Demonstrate an in depth technical knowledge of aircraft general maintenance concepts and practices.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Biological Science",
+      "description": "Upon completion of the program students will be able to: Demonstrate an understanding and application of human relations and professional workplace behaviors.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration",
+      "description": "Upon completion of the program student will be able to: Create and interpret business documents, communications, and reports that are common in an entry-level...",
+      "department": "Total Units",
+      "requirements": [
+        "Business Communications",
+        "Introduction to Business",
+        "Collegiate Entrepreneurs Organization  1-3",
+        "Human Relations in Business",
+        "Computer Concepts",
+        "Work Experience Education, Business  1-3",
+        "Careers-Business",
+        "Field Studies in Business",
+        "Financial Accounting",
+        "Finite Mathematics for Business",
+        "Principles of Macroeconomics",
+        "Honors Macroeconomics",
+        "Principles of Microeconomics",
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "name": "Business Foundations",
+      "description": "Upon successful completion of this program, the student will be able to create and interpret business documents by utilizing research and analytical skills...",
+      "department": "Total Units",
+      "requirements": [
+        "Financial Accounting",
+        "Business Law and the Legal Environment",
+        "Computer Concepts",
+        "Principles of Macroeconomics",
+        "Finite Mathematics for Business",
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "name": "Business Intern",
+      "description": "Upon completion of the program students will be able to: Supervise and motivate coworkers to achieve company goals by utilizing planning techniques,...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Small Business",
+      "description": "Upon successful completion of this program students will be able to: Examine ethical considerations of computing projects.",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Communication",
+      "description": "Upon successful completion of this program students will be able to: Examine ethical considerations of computing projects.",
+      "department": "Communication",
+      "requirements": [
+        "Public Speaking",
+        "Honors Public Speaking",
+        "Interpersonal Communication",
+        "Persuasion",
+        "Group Communication",
+        "Argumentation",
+        "Honors Argumentation and Debate",
+        "Intercultural Communication",
+        "Fundamentals of Interpretation",
+        "Computer-Mediated Communication",
+        "Introduction to Communication Theory",
+        "Introduction to Mass Communications",
+        "Critical Reasoning and Analytic Writing"
+      ]
+    },
+    {
+      "name": "Financial Literacy",
+      "description": "Upon successful completion of this program students will be able to: Examine ethical considerations of computing projects.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Communication Studies",
+      "description": "Upon successful completion of this program students will be able to: Examine ethical considerations of computing projects.",
+      "department": "Communication - Computer Science",
+      "requirements": []
+    },
+    {
+      "name": "Computer Science",
+      "description": "Upon successful completion of this program students will be able to: Examine ethical considerations of computing projects.",
+      "department": "Computer Science",
+      "requirements": []
+    },
+    {
+      "name": "Csu Ge Breadth",
+      "description": "Upon completion of this program, students will be able to: Evaluate and apply a global understanding of the liberal arts and sciences.",
+      "department": "Counseling",
+      "requirements": [
+        "Public Speaking",
+        "Honors Public Speaking",
+        "Interpersonal Communication",
+        "Persuasion",
+        "Group Communication",
+        "Argumentation A2. Written Communication (1 course minimum):",
+        "Reading and Composition",
+        "H** Honors Reading and Composition A3. Critical Thinking (1 course minimum):",
+        "Argumentation",
+        "Critical Reading and Writing Through Literature",
+        "Honors Critical Reading and Writing Through Literature",
+        "Critical Reading & Writing",
+        "Honors Critical Reading & Writing",
+        "Critical Reasoning and Analytic Writing",
+        "Introduction to Logic",
+        "Symbolic Logic AREA B- Scientific Inquiry: B.1 and AREA B.2. One course from AREA B.1 or B.2 must contain a laboratory component. B1. Physical Science (1 course minimum):",
+        "Introduction to Astronomy",
+        "General Chemistry",
+        "General Chemistry and Qualitative Analysis",
+        "Introductory General Chemistry",
+        "Introductory Organic & Biological Chemistry",
+        "Elementary Organic Chemistry",
+        "Elementary Chemistry",
+        "Organic Chemistry I",
+        "Organic Chemistry II",
+        "Physical Geography",
+        "Physical Geography: Land Formation",
+        "Physical Geology",
+        "Historical Geology",
+        "Introduction to Earth Science",
+        "Rocks, Fossils, and Minerals",
+        "General Physics I",
+        "General Physics II",
+        "Physics for Scientists and Engineers",
+        "Introduction to Animal Science",
+        "Environmental Science",
+        "Human Biology",
+        "Introduction to Life Science",
+        "Biology for Science Majors I",
+        "Biology for Science Majors II",
+        "Human Anatomy",
+        "Human Physiology",
+        "Microbiology",
+        "Conservation of Natural Resources",
+        "Introduction to Plant Science B3: Laboratory Activity Any course from B1 or B2 with a laboratory component",
+        "Introduction to Life Science Lab",
+        "Elementary Organic Chemistry Laboratory",
+        "Organic Chemistry Laboratory I",
+        "Organic Chemistry Laboratory II",
+        "Introduction to Plant Science Laboratory",
+        "Soils Laboratory AREA B \u2013 Quantitative Inquiry: A minimum of one course from AREA B.4",
+        "Beginning American Sign Language",
+        "High-Beginning American Sign Language",
+        "Intermediate American Sign Language",
+        "High-Intermediate American Sign Language",
+        "Deaf Culture",
+        "Introduction to the Study of Literature",
+        "Honors Introduction to the Study of Literature",
+        "Women\u2019s Literature",
+        "American Literature: Origins Through Reconstruction (1877)",
+        "American Literature: 1877 to Present",
+        "World Literature to the Renaissance",
+        "World Literature Since the Renaissance",
+        "English Literature to 1800",
+        "English Literature from 1800 to the Present",
+        "Shakespeare",
+        "Latino & Chicano Culture",
+        "Advanced Academic Reading and Writing",
+        "History of Cinema 1895-1960",
+        "History of Cinema 1960-Present",
+        "Beginning French",
+        "High-Beginning French",
+        "Intermediate French",
+        "High-Intermediate French",
+        "Western Civilization to 1648",
+        "Western Civilization from 1648",
+        "H**"
+      ]
+    },
+    {
+      "name": "Curriculum (Igetc)",
+      "description": "Upon completion of this program, students will be able to: Evaluate and apply a global understanding of the liberal arts and sciences.",
+      "department": "Requirements For Certification.",
+      "requirements": [
+        "Reading and Composition",
+        "Honors Reading and Composition",
+        "Critical Reading and Writing through Literature",
+        "Critical Reading and Writing",
+        "Honors Critical Reading and Writing",
+        "Critical Reasoning and Analytic Writing CSU requirement only",
+        "Public Speaking",
+        "Honors Public Speaking",
+        "Persuasion",
+        "Group Communication",
+        "Argumentation Area 2: Mathematical Concepts and Quantitative Reasoning",
+        "Finite Mathematics for Business",
+        "Discrete Mathematics for Computer Science",
+        "College Algebra for STEM",
+        "Calculus I",
+        "At least one from the Arts and one from Humanities 3A Arts",
+        "Introduction to Visual Culture",
+        "Art History 1",
+        "Art History 2",
+        "Honors Art History 2",
+        "Introduction to Film Studies",
+        "History of Cinema: 1895-1960",
+        "History of Cinema: 1960 to present",
+        "Music Appreciation",
+        "Jazz History and Appreciation 3B Humanities",
+        "High-Beginning American Sign Language",
+        "Intermediate American Sign Language",
+        "High-Intermediate American Sign Language",
+        "Deaf Culture",
+        "Introduction to the Study of Literature",
+        "Honors Introduction to the Study of Literature",
+        "American Literature: Origins through Reconstruction (1877)",
+        "American Literature: to Present",
+        "World Literature to the Renaissance",
+        "World Literature since the Renaissance",
+        "English Literature to 1800",
+        "English Literature from to the Present",
+        "Shakespeare",
+        "Latino & Chicano Literature",
+        "High-Beginning French",
+        "Intermediate French",
+        "High-Intermediate French",
+        "Biological Anthropology",
+        "Cultural Anthropology",
+        "Introduction to Archaeology and Prehistory",
+        "Intercultural Communication",
+        "The Constitution and Your Individual Rights",
+        "Multicultural Issues within Public Safety",
+        "Child Growth and Development",
+        "Child, Family and Community",
+        "Lifespan Development",
+        "Principles of Macroeconomics",
+        "Honors Macroeconomics",
+        "Principles of Microeconomics",
+        "African People in the New World",
+        "History of the Mexican American People",
+        "World Regional Geography",
+        "History of the United States to 1877",
+        "History of the United States since",
+        "Honors History of the United States since 1865",
+        "History of American Women",
+        "Introduction to Astronomy",
+        "General Chemistry",
+        "General Chemistry and Qualitative Analysis",
+        "Introductory General Chemistry",
+        "Introductory Organic and Biological Chemistry",
+        "Elementary Organic Chemistry",
+        "Elementary Organic Chemistry Laboratory",
+        "Elementary Chemistry",
+        "Organic Chemistry I",
+        "Organic Chemistry II",
+        "Physical Geography: Environmental Conditions",
+        "Physical Geography: Land Formation",
+        "Physical Geology",
+        "Historical Geology",
+        "Introduction to Earth Science",
+        "Rocks, Fossils, and Minerals",
+        "Introduction to Animal Science",
+        "Environmental Science",
+        "Human Biology",
+        "Introduction to Life Science Lecture",
+        "Biology for Science Majors I"
+      ]
+    },
+    {
+      "name": "Criminology-Corrections",
+      "description": "",
+      "department": "Criminology",
+      "requirements": []
+    },
+    {
+      "name": "Criminology-Law Enforcement",
+      "description": "Upon successful completion of this program students will be able to: Demonstrate skills needed to assist the dentist at chairside utilizing four-handed...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Dental Assisting",
+      "description": "Upon successful completion of this program students will be able to: Demonstrate skills needed to assist the dentist at chairside utilizing four-handed...",
+      "department": "Dental Assisting",
+      "requirements": []
+    },
+    {
+      "name": "Emphasis",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Developmental Services",
+      "requirements": []
+    },
+    {
+      "name": "Associate Teacher",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Early Childhood Education",
+      "requirements": []
+    },
+    {
+      "name": "Child Care For School-Age Childrenteacher",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Total Units",
+      "requirements": [
+        "School-Age Child Care",
+        "Principles and Practices of Teaching Young Children",
+        "Introduction to Curriculum",
+        "Health, Safety and Nutrition in Early Childhood Education",
+        "Diversity and Culture in Early Care and Education Programs",
+        "Guidance for Young Children",
+        "Child Abuse",
+        "Emergent Literacy",
+        "The Young Child with Special Needs"
+      ]
+    },
+    {
+      "name": "Child Development",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Sciences, Math/Science English/Language Arts",
+      "requirements": [
+        "Principles and Practices of Teaching Young Children",
+        "Child Growth and Development",
+        "Introduction to Curriculum",
+        "Child, Family, and Community",
+        "Health, Safety and Nutrition in Early Childhood Education",
+        "Observation and Assessment",
+        "Diversity and Culture in Early Care and Education Programs",
+        "Early Childhood Practicum",
+        "Advanced Practicum in Early Childhood Education",
+        "Infant and Toddler Practicum",
+        "Early Intervention",
+        "Introduction to School-Age Child Care specialization or career goals. It is recommended that you get guidance from one of the Child Development instructors.",
+        "Guidance for Young Children",
+        "Child Abuse",
+        "Emergent Literacy",
+        "Parent Education",
+        "Advanced Infant and Toddler Development",
+        "The Young Child with Special Needs",
+        "Administration I: Programs in Early Childhood Education",
+        "Administration II: Personnel and Leadership in Early Childhood Education",
+        "Adult Supervision and Mentoring in Early Care and Education",
+        "Family Child Care Programs",
+        "School-Age Child Care"
+      ]
+    },
+    {
+      "name": "Early Intervention Assistant",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Family Child Care",
+      "description": "Upon successful completion of this program, students will be able to: Integrate understanding of the needs, the characteristics and multiple influences on...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Engineering: Civil",
+      "description": "Upon successful completion of this program, students will be able to: Apply knowledge of mathematics, science, and engineering fundamentals.",
+      "department": "Engineering",
+      "requirements": []
+    },
+    {
+      "name": "Engineering: Computer",
+      "description": "Upon successful completion of this program, students will be able to: Apply knowledge of mathematics, science, and engineering fundamentals.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Engineering: Electrical",
+      "description": "Upon successful completion of this program, students will be able to: Apply knowledge of mathematics, science, and engineering fundamentals.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Manufacturing",
+      "description": "",
+      "department": "Engineering: Mechanical, Aerospace, And",
+      "requirements": []
+    },
+    {
+      "name": "Engineering: Land Surveying",
+      "description": "Upon successful completion of this program students will be able to: Identify the thematic implications of an image or recurring motif in their own work and...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Land Surveying",
+      "description": "Upon successful completion of this program students will be able to: Identify the thematic implications of an image or recurring motif in their own work and...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Creative Writing",
+      "description": "Upon successful completion of this program students will be able to: Identify the thematic implications of an image or recurring motif in their own work and...",
+      "department": "English",
+      "requirements": []
+    },
+    {
+      "name": "Literature",
+      "description": "Upon successful completion of this program students will be able to: Demonstrate an understanding of a broad range of literary works by analyzing major themes...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Language",
+      "description": "Upon successful completion of this program, students will be able to Interpret, analyze and critique works in the Humanities.",
+      "department": "American Literature: Origins Through",
+      "requirements": []
+    },
+    {
+      "name": "Vocational English As A Second Language Intermediate",
+      "description": "Upon completion of this certificate, students will be able to: demonstrate basic written communication skills for the workplace at the intermediate level...",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Environmental Horticulture",
+      "description": "Demonstrate a proficiency in performing basic tasks of landscape installation/construction [with minimal technical supervision].",
+      "department": "Environmental Horticulture",
+      "requirements": []
+    },
+    {
+      "name": "Fine Arts",
+      "description": "Demonstrate progressive technical comprehension and practice of one or more artistic media.",
+      "department": "Fine Arts",
+      "requirements": []
+    },
+    {
+      "name": "Flight Science",
+      "description": "Apply situational awareness and decision making skills.",
+      "department": "Flight Science",
+      "requirements": [
+        "Private Pilot Flight Lab",
+        "Private Pilot Simulation Lab   .5",
+        "Private Pilot Ground School",
+        "Instrument Rating Ground School",
+        "Advanced Meteorology",
+        "Instrument Rating Flight Lab",
+        "Instrument Rating Simulation Lab   .5",
+        "Commercial Pilot Ground School",
+        "Commercial Pilot Flight Lab",
+        "Flight Instructor Ground School",
+        "Flight Instructor Flight Lab General Education and Graduation Requirements"
+      ]
+    },
+    {
+      "name": "Forest Surveying Technology",
+      "description": "Upon completion of this program, students will be able to: Communicate effectively, including use of proper presentation and interpretative techniques to, the...",
+      "department": "Total Units",
+      "requirements": [
+        "Natural Resources Career Preparation",
+        "Introduction to Forest Surveying",
+        "Remote Sensing & Geographic Information Systems",
+        "Work Experience Education, Forestry",
+        "Forest Measurements",
+        "Introduction to Forestry Field Studies  .5",
+        "Forestry Field Studies I  .5",
+        "Forestry Field Studies II  .5",
+        "Advanced Field Studies I  .5",
+        "Advanced Field Studies II  .5",
+        "Finite Mathematics for Business",
+        "Discrete Mathematics for Computer Science",
+        "College Algebra for STEM",
+        "Trigonometry",
+        "Calculus I",
+        "Introduction to Statistics",
+        "Introduction to Statistics with Support",
+        "Contemporary Mathematics",
+        "Intermediate Algebra for STEM",
+        "Biometrics",
+        "Statistics for the Behavioral Sciences",
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "name": "Forestry",
+      "description": "Understand which silvicultural systems can be used to achieve different forest management objectives.",
+      "department": "Forestry And Wildland Fire",
+      "requirements": [
+        "Forest Measurements",
+        "Forest Products",
+        "Forest Protection",
+        "Forest and Resource Management",
+        "Interpretation of Natural Resources",
+        "Introduction to Forestry Field Studies  .5",
+        "Forestry Field Studies I  .5",
+        "Forestry Field Studies II  .5",
+        "Advanced Field Studies I  .5",
+        "Advanced Field Studies II  .5",
+        "Wildland Fire Technology",
+        "Watershed Ecology",
+        "Principles of Wildlife Management",
+        "Principles of Fisheries Management",
+        "Forest Recreation",
+        "Animal PackingFundamentals",
+        "Museum Techniques-Beginning Taxidermy",
+        "Museum TechniquesIntermediate Taxidermy",
+        "Museum Techniques-Advanced Taxidermy",
+        "Conservation Laboratory",
+        "Fuels Management",
+        "Backpacking",
+        "Wilderness Navigation",
+        "Wilderness Survival",
+        "Introduction to Chainsaw Operations Total Credits"
+      ]
+    },
+    {
+      "name": "Integrated Fuels Management",
+      "description": "Communicate effectively, including use of proper presentation and interpretative techniques to, the public and co-workers, using diverse media.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Natural Resources",
+      "description": "Communicate effectively, including use of proper presentation and interpretative techniques to, the public and co-workers, using diverse media.",
+      "department": "Forestry And Wildland Fire",
+      "requirements": [
+        "Introduction to Forestry",
+        "Computers in Natural Resources",
+        "Forest Ecosystems",
+        "Dendrology",
+        "Natural Resources Career Preparation",
+        "Watershed Ecology",
+        "Principles of Wildlife Management",
+        "Remote Sensing & Geographic Information Systems",
+        "Work Experience Education, Forestry",
+        "Introduction to Forestry Field Studies   .5",
+        "Forestry Field Studies I   .5",
+        "Forestry Field Studies II   .5",
+        "Advanced Field Studies I   .5",
+        "Advanced Field Studies II   .5",
+        "Wildland Fire Technology",
+        "Silviculture",
+        "Principles of Fisheries Management",
+        "Introduction to Forest Surveying",
+        "Forest Products",
+        "Forest Protection",
+        "Forest and Resource Management",
+        "Forest Recreation",
+        "Animal PackingFundamentals",
+        "Museum TechniquesBeginning Taxidermy",
+        "Museum TechniquesIntermediate Taxidermy",
+        "Museum TechniquesAdvanced Taxidermy",
+        "Conservation Laboratory",
+        "Natural Resources Law Enforcement",
+        "Fire Ecology",
+        "Fuels Management",
+        "Backpacking",
+        "Wilderness Navigation",
+        "Wilderness Survival",
+        "Introduction to Chainsaw Operations"
+      ]
+    },
+    {
+      "name": "Health Care Interpreter",
+      "description": "",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Support",
+      "description": "",
+      "department": "Information Systems, Information Technology",
+      "requirements": []
+    },
+    {
+      "name": "Support Technician",
+      "description": "Upon successful completion of this program the student will be able to: Demonstrate the ability to function effectively in a work environment, including...",
+      "department": "Information Systems, Information Technology",
+      "requirements": []
+    },
+    {
+      "name": "Design",
+      "description": "Upon successful completion of this program the student will be able to: Apply structured logic in analyzing and solving problems.",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Design Option",
+      "description": "Upon successful completion of this program the student will be able to: Operate commonly used computer hardware and software in Business and specifically in...",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Technology Foundations",
+      "description": "Upon successful completion of this program the student will be able to: Operate commonly used computer hardware and office productivity software.",
+      "department": "Total Units",
+      "requirements": [
+        "Programming Essentials in Python",
+        "Introduction to Programming",
+        "Web Development with HTML and CSS",
+        "Web Graphics and UI Design Total Hours"
+      ]
+    },
+    {
+      "name": "Liberal Studies",
+      "description": "Demonstrate effective written and oral communication skills across the broad categories of intellectual heritage, artistic expression, the natural and physical...",
+      "department": "Liberal Studies",
+      "requirements": []
+    },
+    {
+      "name": "Advanced Welding",
+      "description": "Organize and arrange workflows/machine tool selection, hand tools and machine operations in a shop environment.",
+      "department": "Manufacturing Technology",
+      "requirements": []
+    },
+    {
+      "name": "Intermediate Welding",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Machine Tool Technology",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Total Hours",
+      "requirements": [
+        "Work Experience Education, Manufacturing Technology",
+        "Intermediate Machine Shop",
+        "Advanced Machine Shop Option 1",
+        "Introduction to Manufacturing Option 2",
+        "Manufacturing Essentials",
+        "Introduction to Welding",
+        "Introduction to Machine Shop Option 3",
+        "Blueprint Reading",
+        "Introduction to Machine Shop",
+        "Industrial Materials",
+        "Electricity"
+      ]
+    },
+    {
+      "name": "Machinist",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Total Units",
+      "requirements": [
+        "Work Experience Education, Manufacturing Technology",
+        "Intermediate Machine Shop",
+        "Advanced Machine Shop Option 1",
+        "Introduction to Manufacturing Option 2",
+        "Manufacturing Essentials",
+        "Introduction to Welding",
+        "Introduction to Machine Shop Option 3",
+        "Blueprint Reading",
+        "Introduction to Machine Shop",
+        "Industrial Materials",
+        "Electricity"
+      ]
+    },
+    {
+      "name": "Manufacturing 1",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Manufacturing Technology",
+      "requirements": []
+    },
+    {
+      "name": "Welding Essentials",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Welding Technology",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Welder",
+      "description": "Upon completion of the program, students will be able to: Demonstrate shop safety.",
+      "department": "Total Hours",
+      "requirements": [
+        "Work Experience Education, Manufacturing Technology",
+        "Manufacturing Fabrication",
+        "Intermediate Welding",
+        "Advanced Welding",
+        "Introduction to Manufacturing Option 2",
+        "Manufacturing Essentials",
+        "Introduction to Welding",
+        "Introduction to Machine Shop Option 3",
+        "Blueprint Reading",
+        "Introduction to Machine Shop",
+        "Industrial Materials",
+        "Electricity"
+      ]
+    },
+    {
+      "name": "Agricultural Mechanics",
+      "description": "At the completion of this program students will be able to: Perform basic maintenance and repairs to agricultural electrical, mechanical, and hydraulic...",
+      "department": "Mechanized Agriculture",
+      "requirements": []
+    },
+    {
+      "name": "Equipment Technician Level I",
+      "description": "Upon successful completion of this program, students will be able to: Explain the theory of operation of common machine systems found on agricultural and...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Equipment Technician Level Ii",
+      "description": "Upon successful completion of this program, students will be able to: Explain the theory of operation of common machine systems found on agricultural and...",
+      "department": "Mechanized Agriculture",
+      "requirements": []
+    },
+    {
+      "name": "Mechanized Agriculture",
+      "description": "Upon successful completion of this program, students will be able to: Explain the theory of operation of common machine systems found on agricultural and...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Engines And Powertrains",
+      "description": "At the completion of this course of study students will have the knowledge and ability to: Explain the theory of operation of common machine systems found on...",
+      "department": "Medium/Heavy Duty Truck Advanced",
+      "requirements": []
+    },
+    {
+      "name": "And Hydraulics",
+      "description": "At the completion of this course of study students will have the knowledge and ability to: Explain the theory of operation of common machine systems found on...",
+      "department": "Medium/Heavy Duty Truck Electrical",
+      "requirements": []
+    },
+    {
+      "name": "And Mvac",
+      "description": "At the completion of this course of study students will have the knowledge and ability to: Explain the theory of operation of common machine systems found on...",
+      "department": "Medium/Heavy Duty Truck Powertrain",
+      "requirements": []
+    },
+    {
+      "name": "General Music",
+      "description": "At the completion of this course of study students will have the knowledge and ability to: Understand basic music theory and ear training skills through...",
+      "department": "Music",
+      "requirements": []
+    },
+    {
+      "name": "And Repair",
+      "description": "At the completion of this course of study students will have the knowledge and ability to:",
+      "department": "Medium/Heavy Duty Truck Service",
+      "requirements": []
+    },
+    {
+      "name": "Instrumental Performance",
+      "description": "At the completion of this course of study students will have the knowledge and ability to:",
+      "department": "Music",
+      "requirements": []
+    },
+    {
+      "name": "Music Theory",
+      "description": "At the completion of this course of study students will have the knowledge and ability to: Understand music theory through reading, writing, and analyzing...",
+      "department": "Total Credits",
+      "requirements": []
+    },
+    {
+      "name": "Music -- Instrumental",
+      "description": "The greatest measure of success comes from seeing the success of our music majors as they continue on to a fouryear school.",
+      "department": "Total Credits",
+      "requirements": []
+    },
+    {
+      "name": "Music -- Vocal",
+      "description": "The greatest measure of success comes from seeing the success of our music majors as they continue on to a fouryear school.",
+      "department": "By Examination.",
+      "requirements": []
+    },
+    {
+      "name": "Piano Performance",
+      "description": "The greatest measure of success comes from seeing the success of our music majors as they continue on to a fouryear school.",
+      "department": "By Examination.",
+      "requirements": []
+    },
+    {
+      "name": "Vocal Performance",
+      "description": "At the completion of this course of study students will have the knowledge and ability to: Understand basic music theory and analysis.",
+      "department": "Music - Nursing",
+      "requirements": []
+    },
+    {
+      "name": "Nursing Assistant Training",
+      "description": "Fulfill the prescribed learning objectives and to take the state test for CNA certification.",
+      "department": "Nursing",
+      "requirements": [
+        "Nursing Assistant Theory",
+        "Nursing Assistant Clinical",
+        "Nursing Medical Terminology or",
+        "Medical Terminology"
+      ]
+    },
+    {
+      "name": "Administrative Assistant",
+      "description": "Use application software to create and edit word processing documents.",
+      "department": "Office Technology",
+      "requirements": []
+    },
+    {
+      "name": "Bookkeeping",
+      "description": "Upon successful completion of this program the student will be able to: Apply the basic principles of accounting in A/R, A/P, banking and payroll.",
+      "department": "Total Hours",
+      "requirements": [
+        "Data Entry Using Quickbooks",
+        "Microsoft Excel Essentials",
+        "introduction to Bookkeeping",
+        "Spreadsheet Projects",
+        "Preparing for a Job Interview .",
+        "Job Retention and Responsibilities Total Hours"
+      ]
+    },
+    {
+      "name": "Ms Office",
+      "description": "Upon successful completion of this program the student will be able to: Use application software to create and edit word processing documents.",
+      "department": "Office Technology",
+      "requirements": []
+    },
+    {
+      "name": "Office Assistant",
+      "description": "Upon successful completion of this program the student will be able to: Use application software to create and edit word processing documents.",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Receptionist",
+      "description": "Upon successful completion of this program the student will be able to: Use application software to create and edit word processing documents.",
+      "department": "Total Hours",
+      "requirements": []
+    },
+    {
+      "name": "Certificate In Coaching",
+      "description": "Plan, implement, and practice appropriate fitness activities that promote improved levels of muscular strength & endurance, cardio-respiratory endurance,...",
+      "department": "Physical Education",
+      "requirements": [
+        "Contemporary Health Issues",
+        "First Aid and Safety",
+        "Athletic Training",
+        "Introduction to Kinesiology",
+        "Aerobics (Dance, Step or Water)",
+        "Badminton",
+        "Basketball",
+        "Intermediate Basketball",
+        "Fitness and Health",
+        "Golf",
+        "Martial Arts/Self Defense",
+        "Racquetball",
+        "Beginning Swim for Fitness",
+        "Intermediate Swim for Fitness",
+        "Advanced Swim for Fitness",
+        "Tennis",
+        "Volleyball",
+        "Weight Training",
+        "Fitness Walking",
+        "Advanced Weight Training"
+      ]
+    },
+    {
+      "name": "Physical Education",
+      "description": "Recognize and utilize correctly the terminology of math, statistics and/or science.",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Physical Science",
+      "description": "Recognize and utilize correctly the terminology of math, statistics and/or science.",
+      "department": "Physical Science",
+      "requirements": []
+    },
+    {
+      "name": "Agriculture & Technology",
+      "description": "Comprehension and identification of the structures and functions of plant cells, organelles, tissues, organs, and integrate important plant processes such as...",
+      "department": "Plant Science",
+      "requirements": [
+        "Microeconomics in Agriculture",
+        "Computer Applications in Agriculture",
+        "Introduction to Animal Science Plant & Soil Science Physical and Biological Science Core",
+        "Machinery Technology Group",
+        "Introduction to Plant Science",
+        "Introduction to Plant Science Laboratory Group",
+        "Soils",
+        "Soils Laboratory",
+        "Introduction to Agriculture Business",
+        "Financial Accounting in Agriculture",
+        "Ag Sales and Communications.",
+        "Beef Production",
+        "Sheep Production"
+      ]
+    },
+    {
+      "name": "Enology",
+      "description": "Students will: know the fundamentals of the wine industry know the scientific principles associated with winemaking know the desirable characteristics of wine...",
+      "department": "Total Units",
+      "requirements": [
+        "Introductory General Chemistry",
+        "Introductory Organic and Biological Chemistry",
+        "Microbiology Plant & Soil Science Core",
+        "General Viticulture",
+        "Tree and Vine"
+      ]
+    },
+    {
+      "name": "Technician",
+      "description": "Upon successful completion of this program, students will be able to: Comprehension and identification of the structures and functions of plant cells,...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Pest Control Advisor",
+      "description": "Upon successful completion of this program, students will be able to: Comprehension and identification of the structures and functions of plant cells,...",
+      "department": "Introductory Chemical And",
+      "requirements": []
+    },
+    {
+      "name": "Plant And Soil Science",
+      "description": "Upon successful completion of this program, students will be able to: Comprehension and identification of the structures and functions of plant cells,...",
+      "department": "Total Units",
+      "requirements": [
+        "Microeconomics in Agriculture",
+        "Introductory General Chemistry",
+        "Principles of Irrigation Management",
+        "Integrated Pest Management",
+        "Introductory Organic and Biological Chemistry",
+        "Elementary Organic Chemistry",
+        "Elementary Statistics",
+        "Introduction to Statistics",
+        "Biometrics"
+      ]
+    },
+    {
+      "name": "Plant Protection Intern",
+      "description": "Upon successful completion of this program, students will be able to: Comprehension and identification of the structures and functions of plant cells,...",
+      "department": "Total Units",
+      "requirements": []
+    },
+    {
+      "name": "Social Science",
+      "description": "Identify the main characteristics, concepts, ideas, and theories of at least four social science disciplines including: Anthropology, Geography, History,...",
+      "department": "Social Science",
+      "requirements": []
+    },
+    {
+      "name": "World Languages",
+      "description": "Upon successful completion of this program, students will be able to: Engage in conversation using the target language in daily life situations.",
+      "department": "World Languages",
+      "requirements": []
     }
   ],
   "organizations": [
     {
-      "name": "Associated Student Government (ASG)",
-      "description": "Student government representing the voice of students and managing student activities.",
-      "category": "Leadership",
-      "website": ""
+      "name": "A\u00b2MEND",
+      "description": "Reedley\u2019s chapter of the African\u202fAmerican Male Education Network\u202f&\u202fDevelopment mentors and empowers Black men on campus through academic support, leadership training, and community\u2011building activities.",
+      "category": "Leadership & Cultural",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
     },
     {
-      "name": "Music Ensembles",
-      "description": "Open to all students; includes Choir, Concert Band, and Orchestra.",
+      "name": "Active Minds",
+      "description": "A mental\u2011health advocacy group that hosts awareness events and peer\u2011to\u2011peer programs to help students prioritize wellness and end stigma.",
+      "category": "Health & Wellness",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Aeronautics Club",
+      "description": "Brings together aviation enthusiasts for hands\u2011on projects, field trips, and networking with industry professionals.",
+      "category": "STEM & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Aggie Club",
+      "description": "Unites agriculture majors and supporters for career exploration, community service, and social events tied to farming and agribusiness.",
+      "category": "Agriculture & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Alpha Gamma Sigma Honors",
+      "description": "The Alpha\u202fOmega chapter of California\u2019s community\u2011college honor society; members perform service projects and earn graduation honors cords.",
+      "category": "Honors & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "American Sign Language Club",
+      "description": "Provides a friendly space to practice ASL, learn about Deaf culture, and promote campus accessibility.",
+      "category": "Cultural & Service",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Associated Student Government",
+      "description": "The official student voice in campus governance, ASG advocates for peers, sits on college committees, and sponsors events that enhance campus life.",
+      "category": "Leadership & Governance",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Choir Club",
+      "description": "Supports vocalists through extra rehearsals, performances, and outreach concerts connected to the Reedley College Concert Choir.",
+      "category": "Performing Arts",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Art Club",
+      "description": "Fosters creative exploration with studio workshops, gallery visits, and collaborative art projects open to all skill levels.",
+      "category": "Visual Arts",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Collegiate Entrepreneurs Organization",
+      "description": "Gives aspiring entrepreneurs a forum to network, hear guest speakers, and develop real\u2011world business ideas.",
+      "category": "Professional Development & Business",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Dance Club",
+      "description": "Celebrates movement by teaching diverse dance styles, staging performances, and promoting physical wellness through the arts.",
+      "category": "Performing Arts",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Dream Team",
+      "description": "A disability\u2011advocacy group whose motto \u201cTaking the \u2018DIS\u2019 out of disability\u201d raises awareness and removes stigma while building community among students with disabilities.",
+      "category": "Advocacy & Support",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Early Childhood Education Club",
+      "description": "Connects future teachers with professional\u2011development workshops, service projects, and networking in early\u2011learning settings.",
+      "category": "Career & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Reedley College CRU",
+      "description": "A Christian campus ministry that offers Bible studies, mentorship, and conferences to help students grow spiritually.",
+      "category": "Faith & Spirituality",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Forestry Club",
+      "description": "Engages students interested in natural\u2011resource management through field trips, stewardship projects, and skills workshops.",
+      "category": "Environmental & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Mule Club",
+      "description": "Promotes hands\u2011on livestock and animal\u2011science experience\u2014particularly with draft mules\u2014via clinics, shows, and community outreach.",
+      "category": "Agriculture & Animal Science",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Pickleball Club",
+      "description": "Organizes friendly games and tournaments of the fast\u2011growing paddle sport to encourage fitness and camaraderie.",
+      "category": "Sports & Recreation",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Safe Space Club",
+      "description": "Provides an inclusive lounge and advocates for LGBTQIA+ and other marginalized students through education, celebration, and peer support.",
+      "category": "Advocacy & Diversity",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Science/Technology/Engineering/Math Club",
+      "description": "Hosts hands\u2011on experiments, guest speakers, and field trips that spark curiosity across all STEM disciplines.",
+      "category": "STEM & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "The Reedley College Theatre Society",
+      "description": "Increases campus and community arts awareness by mounting student\u2011run theatrical productions each year.",
+      "category": "Performing Arts",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Tech ++",
+      "description": "A coding and technology\u2011innovation club that lets students collaborate on software or hardware projects and stay current with industry trends.",
+      "category": "STEM & Technology",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Ultimate Frisbee Club",
+      "description": "Encourages active recreation and team spirit through regular pick\u2011up matches and intramural Ultimate tournaments.",
+      "category": "Sports & Recreation",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Veterans Club",
+      "description": "Builds a support network for military veterans and their families, offering camaraderie, resources, and advocacy on campus.",
+      "category": "Advocacy & Support",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Anime Club",
+      "description": "Brings fans of Japanese animation and manga together for screenings, discussions, and creative cosplay events.",
       "category": "Arts & Culture",
-      "website": ""
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Astrophotography Club",
+      "description": "Trains members to capture and process images of celestial objects using telescopes and imaging software, while fostering a stargazing community.",
+      "category": "STEM & Hobby",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Chess Club",
+      "description": "Provides casual play, strategy workshops, and ladder competitions for players of all abilities.",
+      "category": "Recreation & Strategy Games",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Criminology Club",
+      "description": "Explores criminal\u2011justice careers and current issues through guest speakers, facility tours, and community\u2011service projects.",
+      "category": "Career & Academic",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Hiking Club",
+      "description": "Plans local and regional hikes that promote outdoor fitness, environmental stewardship, and social connection.",
+      "category": "Recreation & Outdoors",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Latino Student Association",
+      "description": "Celebrates Latinx heritage, supports cultural events, and advocates for resources that help Latinx students succeed.",
+      "category": "Cultural & Advocacy",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Lemon Club",
+      "description": "Focuses on acts of kindness and positivity\u2014\u201cmaking lemonade out of lemons\u201d\u2014through volunteer service and campus morale\u2011boosting activities.",
+      "category": "Service & Positivity",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
+    },
+    {
+      "name": "Technology Development Club",
+      "description": "Gives future engineers and makers a space to prototype devices, learn new tools, and compete in design challenges.",
+      "category": "STEM & Engineering",
+      "website": "https://www.reedleycollege.edu/campus-life/student-activities/clubs/index.html"
     }
   ],
   "events": [
     {
-      "name": "Student Senate Meetings",
-      "description": "Open meetings for all students to attend and participate in student government.",
-      "date": "",
-      "location": "Student Center",
-      "category": "Leadership"
+      "name": "College Hour",
+      "description": "",
+      "date": "2025-05-01",
+      "location": "SOC 35",
+      "category": "Campus Life"
     },
     {
-      "name": "Annual Music Performances",
-      "description": "Concerts and performances by student ensembles on and off campus.",
-      "date": "",
-      "location": "Various campus venues",
-      "category": "Arts"
+      "name": "Farmer's Market",
+      "description": "",
+      "date": "2025-05-01",
+      "location": "South Parking Lot B",
+      "category": "Campus Life"
+    },
+    {
+      "name": "Board of Trustees Retreat and Board Self Evaluation Results",
+      "description": "The Board of Trustees of the State Center Community College District are elected by the voting public and represent seven geographic areas. The Board traditionally holds its monthly meetings on the first Tuesday of each month beginning at 3:30 p.m., unless otherwise noted. Meeting takes place at the District Board Room at 1171 Fulton Street in Fresno California, unless otherwise noted.",
+      "date": "2025-05-03",
+      "location": "Table Mountain Casino Resort, Friant, CA",
+      "category": "Administration, Board of Trustees"
+    },
+    {
+      "name": "AgTEC Certificate Graduation",
+      "description": "",
+      "date": "2025-05-02",
+      "location": "MCFPA",
+      "category": "Academic"
+    },
+    {
+      "name": "Asian American and Pacific Islander Heritage Month Celebration",
+      "description": "",
+      "date": "2025-05-06",
+      "location": "South Lawn of Library",
+      "category": "Campus Life"
+    },
+    {
+      "name": "Board of Trustees Regular Board Meeting",
+      "description": "The Board of Trustees of the State Center Community College District are elected by the voting public and represent seven geographic areas. The Board traditionally holds its monthly meetings on the first Tuesday of each month beginning at 3:30 p.m., unless otherwise noted. Meeting takes place at the district board room at 1171 Fulton Street in Fresno California, unless otherwise noted.",
+      "date": "2025-05-06",
+      "location": "SCCCD, Zoom, and YouTube Livestream",
+      "category": "Administration, Board of Trustees"
+    },
+    {
+      "name": "RC Concert Choir and Vocal Recital",
+      "description": "",
+      "date": "2025-05-06",
+      "location": "McClarty Center",
+      "category": "Campus Life, Performing Arts"
+    },
+    {
+      "name": "DSP&S Job and Life Skills Workshop",
+      "description": "",
+      "date": "2025-05-07",
+      "location": "BUS 42",
+      "category": "Career Services"
+    },
+    {
+      "name": "Tiger Awards Ceremony",
+      "description": "Ceremony celebrating Tiger Awards.",
+      "date": "2025-05-07",
+      "location": "McClarty Center for Fine & Performing Arts",
+      "category": "Campus Life"
+    },
+    {
+      "name": "College Hour",
+      "description": "",
+      "date": "2025-05-08",
+      "location": "SOC 35",
+      "category": "Campus Life"
+    },
+    {
+      "name": "Farmer's Market",
+      "description": "",
+      "date": "2025-05-08",
+      "location": "South Parking Lot B",
+      "category": "Campus Life"
+    },
+    {
+      "name": "Farmers Market",
+      "description": "",
+      "date": "2025-05-08",
+      "location": "South Parking Lot B",
+      "category": "Community"
+    },
+    {
+      "name": "RC Community Orchestra",
+      "description": "",
+      "date": "2025-05-10",
+      "location": "McClarty Center",
+      "category": "Campus Life, Performing Arts"
+    },
+    {
+      "name": "DSP&S Job and Life Skills Workshop",
+      "description": "",
+      "date": "2025-05-14",
+      "location": "BUS 42",
+      "category": "Career Services"
+    },
+    {
+      "name": "TRIO Student Support Services Banquet",
+      "description": "",
+      "date": "2025-05-14",
+      "location": "Cafeteria",
+      "category": "Campus Life"
+    },
+    {
+      "name": "Ag Department Awards",
+      "description": "",
+      "date": "2025-05-14",
+      "location": "Animal Science Pavilion",
+      "category": "Campus Life"
+    },
+    {
+      "name": "RC Community Band and Jazz Concert",
+      "description": "",
+      "date": "2025-05-14",
+      "location": "MCFPA - McClarty Center for Fine and Performing Arts",
+      "category": "Academic, Campus Life, Performing Arts"
+    },
+    {
+      "name": "Farmer's Market",
+      "description": "",
+      "date": "2025-05-15",
+      "location": "South Parking Lot B",
+      "category": "Campus Life"
+    },
+    {
+      "name": "Mech Ag 2025 Certificate & Grad",
+      "description": "",
+      "date": "2025-05-21",
+      "location": "Mechanized Ag Building",
+      "category": "Academic, Campus Life"
+    },
+    {
+      "name": "Board of Trustees Regular Meeting: Tentative Budget",
+      "description": "",
+      "date": "2025-06-03",
+      "location": "SCCCD, Zoom, and YouTube Livestream",
+      "category": ""
+    },
+    {
+      "name": "Board of Trustees Regular Board Meeting",
+      "description": "The Board of Trustees of the State Center Community College District are elected by the voting public and represent seven geographic areas. The Board traditionally holds its monthly meetings on the first Tuesday of each month beginning at 3:30 p.m., unless otherwise noted. Meeting takes place at the district board room at 1171 Fulton Street in Fresno California, unless otherwise noted.",
+      "date": "2025-07-01",
+      "location": "SCCCD, Zoom, and YouTube Livestream",
+      "category": "Administration, Board of Trustees"
+    },
+    {
+      "name": "Board of Trustees Regular Board Meeting",
+      "description": "",
+      "date": "2025-08-12",
+      "location": "Clovis Community College, Zoom, and YouTube Livestream",
+      "category": ""
+    },
+    {
+      "name": "Board of Trustees Regular Meeting: Public Hearing and Budget Adoption",
+      "description": "The Board of Trustees of the State Center Community College District are elected by the voting public and represent seven geographic areas. The Board traditionally holds its monthly meetings on the first Tuesday of each month beginning at 3:30 p.m., unless otherwise noted. Meeting takes place at the district board room at 1171 Fulton Street in Fresno California, unless otherwise noted.",
+      "date": "2025-09-02",
+      "location": "SCCCD, Zoom, and YouTube Livestream",
+      "category": ""
+    },
+    {
+      "name": "Board of Trustees Regular Board Meeting",
+      "description": "",
+      "date": "2025-10-07",
+      "location": "Madera Community College, Zoom, and YouTube Livestream",
+      "category": ""
+    },
+    {
+      "name": "Board of Trustees Regular Meeting: Organizational Meeting",
+      "description": "The Board of Trustees of the State Center Community College District are elected by the voting public and represent seven geographic areas. The Board traditionally holds its monthly meetings on the first Tuesday of each month beginning at 3:30 p.m., unless otherwise noted. Meeting takes place at the district board room at 1171 Fulton Street in Fresno California, unless otherwise noted.",
+      "date": "2025-12-16",
+      "location": "SCCCD, Zoom, and YouTube Livestream",
+      "category": ""
     }
   ]
 }
