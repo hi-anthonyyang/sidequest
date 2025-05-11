@@ -69,4 +69,4 @@ export interface UniversityData {
   events: Event[];
 }
 
-export type UniversityId = 'fresno_state' | 'uc_berkeley' | 'reedley_college'; // Add more as needed 
+export type UniversityId = 'fresno_state' | 'reedley_college'; 

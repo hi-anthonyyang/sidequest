@@ -3,7 +3,6 @@ import { UniversityData, UniversityId } from './types';
 // Cache for university data
 const universityDataCache: Record<UniversityId, UniversityData | null> = {
   fresno_state: null,
-  uc_berkeley: null,
   reedley_college: null,
 };
 
@@ -81,7 +80,7 @@ When analyzing student responses, identify:
 
 4. Events:
    - Must be from ${universityData.university.name}'s official events calendar
-   - Include date, time, and location
+   - Always include the date and location fields for each event if they exist in the official data. If a field does not exist or is empty, leave it blank or omit it from the response.
    - Match student's interests
 
 ### Strict Rules
