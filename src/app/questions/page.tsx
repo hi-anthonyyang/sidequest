@@ -11,38 +11,38 @@ import confetti from 'canvas-confetti';
 const questions: Question[] = [
   {
     id: 1,
-    text: "What subjects or topics do you find most interesting?",
-    placeholder: "e.g., I enjoy learning about how businesses work and love reading stories from different cultures. I'm also curious about how we can protect our environment."
+    text: "What subjects or topics do you enjoy learning about — even outside of class?",
+    placeholder: "e.g., I love learning about astronomy, reading about world history, and exploring how computers work—even if it's not for school."
   },
   {
     id: 2,
-    text: "What are your favorite activities outside of school?",
-    placeholder: "e.g., I play in a band, help out at the local food bank, and enjoy swimming. I also like taking photos and trying new recipes."
+    text: "What kinds of things do you love spending time on — especially when no one's telling you to?",
+    placeholder: "e.g., I spend hours drawing, building things with LEGO, playing guitar, or volunteering at the animal shelter just because I enjoy it."
   },
   {
     id: 3,
-    text: "What kind of problems do you enjoy solving?",
-    placeholder: "e.g., I like helping organize community events and fixing things around the house. I also enjoy working on tricky math problems that make me think."
+    text: "What types of problems or challenges do you like figuring out?",
+    placeholder: "e.g., I like solving tricky puzzles, figuring out how to fix broken gadgets, or helping friends work through disagreements."
   },
   {
     id: 4,
-    text: "What are your career goals or aspirations?",
-    placeholder: "e.g., I want to help build better communities as an engineer. I'm also interested in starting a program to help kids learn new skills."
+    text: "When you picture your future, what kind of work or life feels exciting or meaningful to you?",
+    placeholder: "e.g., I imagine myself designing new technology, helping people as a nurse, or traveling the world to learn about different cultures."
   },
   {
     id: 5,
-    text: "What skills do you want to develop in college?",
-    placeholder: "e.g., I want to get better at speaking in front of groups and learn how to work with data. I'd also like to improve my Spanish and learn more about design."
+    text: "What kind of impact do you want to have on people, your community, or the world?",
+    placeholder: "e.g., I want to help people feel heard, make my neighborhood safer, or work on solutions to climate change."
   },
   {
     id: 6,
-    text: "What kind of work environment do you thrive in?",
-    placeholder: "e.g., I like places where I can work with others but also have time to focus on my own tasks. I enjoy being creative and learning new things."
+    text: "Do you like working more with people, tools, nature, technology, or ideas? Why?",
+    placeholder: "e.g., I love brainstorming with others, but I also enjoy working with computers and coming up with new ideas on my own."
   },
   {
     id: 7,
-    text: "What impact do you want to make in your future career?",
-    placeholder: "e.g., I want to help make healthcare more accessible in small towns. I also hope to create opportunities for people who might not have them otherwise."
+    text: "What kind of setting do you feel most energized in — quiet and focused, fast-paced and social, hands-on, creative...?",
+    placeholder: "e.g., I feel most alive in busy, creative spaces where I can collaborate, but sometimes I like quiet time to focus on my own projects."
   }
 ];
 
