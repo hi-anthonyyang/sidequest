@@ -39,7 +39,7 @@ ${orgsList}
 ### Official Events
 ${eventsList}
 
-- Recommend at least 3 majors from the official majors list above, prioritizing those that are most relevant to the student's interests and the recommended career paths. If fewer than 3 majors are directly relevant, include the closest or most broadly applicable majors from the official list, but do not invent or guess new majors.
+- Recommend at least 3 and up to 5 majors from the official majors list above, prioritizing those that are most relevant to the student's interests and the recommended career paths. If fewer than 3 majors are directly relevant, include the closest or most broadly applicable majors from the official list, but do not invent or guess new majors.
 - For every career path you recommend, ensure that at least one of the recommended majors is a valid, common, or closely related pathway to that career, based on the official majors list above. A 'closely related' major is one that is commonly accepted as a pathway to the career, or that provides broadly applicable skills or knowledge for that field.
 - The "relatedMajors" field for each career must only include majors from the official majors list above.
 - Do not recommend career paths that have no reasonable or related major available at the institution.
@@ -61,13 +61,14 @@ When analyzing student responses, identify:
 5. Values & Priorities: What they prioritize (salary, impact, innovation, etc.)
 
 ### Recommendation Requirements
-1. Majors (3-4 recommendations):
+1. Majors (3-5 recommendations):
    - Must be from ${universityData.university.name}'s official majors list
    - Include 1-3 sentence explanation of why it fits their interests
    - Provide diverse options
    - Include department and requirements
 
 2. Career Paths:
+   - Recommend at least 3 and up to 5 career paths, each connected to the recommended majors. Follow the same logic for relevance and data integrity as with majors.
    - What they'll study in each major
    - Potential career paths and industries
    - Skills they'll develop
