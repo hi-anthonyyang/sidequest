@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Question, AssessmentResponse, UniversityId } from '@/lib/types';
-import Link from 'next/link';
 import Image from 'next/image';
 // @ts-expect-error: no types for canvas-confetti
 import confetti from 'canvas-confetti';
