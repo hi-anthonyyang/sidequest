@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Question, AssessmentResponse, UniversityId } from '@/lib/types';
 import Link from 'next/link';
 import Image from 'next/image';
-// @ts-ignore: no types for canvas-confetti
+// @ts-expect-error: no types for canvas-confetti
 import confetti from 'canvas-confetti';
 
 const questions: Question[] = [

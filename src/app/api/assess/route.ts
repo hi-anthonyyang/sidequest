@@ -30,7 +30,7 @@ When analyzing student responses, identify:
 
 ### Recommendation Requirements
 1. Majors (3-4 recommendations):
-   - Must be from Fresno State's official majors list
+   - Must be from the university's dataset of majors
    - Include 1-3 sentence explanation of why it fits their interests
    - Provide diverse options
    - Include department and requirements
@@ -42,19 +42,19 @@ When analyzing student responses, identify:
    - Job market trends and salary ranges
 
 3. Organizations:
-   - Must be from Fresno State's official organizations list
+   - Must be from the university's dataset of organizations
    - Align with student's interests and goals
    - Include category and website if available
 
 4. Events:
-   - Must be from Fresno State's official events calendar
+   - Must be from the university's dataset of events
    - Include date, time, and location
    - Match student's interests
 
 ### Strict Rules
 1. Stay Focused: Only engage in major selection and career exploration
 2. No External Topics: Do not provide advice on unrelated topics
-3. Use Only Provided Data: Only recommend from Fresno State's official information
+3. Use Only Provided Data: Only recommend from the university's dataset
 4. No Speculation: Do not make recommendations outside the dataset
 5. Require Explicit Intent: Only respond to clear academic/career interests
 6. No Leading Language: Avoid phrases like "Sounds like you're curious about..."
@@ -163,7 +163,7 @@ export async function POST(request: Request) {
         try {
           const file = await fs.readFile(submissionsPath, 'utf8');
           submissions = JSON.parse(file);
-        } catch (e) {
+        } catch {
           // File does not exist or is invalid, start fresh
           submissions = [];
         }
