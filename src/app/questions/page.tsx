@@ -48,7 +48,6 @@ const questions: Question[] = [
 
 const universities: { id: UniversityId; name: string }[] = [
   { id: 'fresno_state', name: 'Fresno State' },
-  { id: 'uc_berkeley', name: 'UC Berkeley' },
   { id: 'reedley_college', name: 'Reedley College' }
 ];
 

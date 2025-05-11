@@ -12,296 +12,3242 @@
   },
   "majors": [
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Agricultural Business",
-      "degree": "B.S.",
-      "options": []
+      "name": "Africana Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Agricultural Education",
-      "degree": "B.S.",
-      "options": [
-        "Agricultural Communications",
-        "Teacher Preparation"
-      ]
+      "name": "Agricultural Business, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Animal Science",
-      "degree": "B.S.",
-      "options": [
-        "Production Management",
-        "Dairy Science",
-        "Equine Science",
-        "Livestock and Poultry Management",
-        "Meat Technology",
-        "Science",
-        "Veterinary Preparation",
-        "Preprofessional"
-      ]
+      "name": "Agricultural Education - Agricultural Communications Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Enology",
-      "degree": "B.S.",
-      "options": []
+      "name": "Agricultural Education - Teacher Preparation Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Food Sciences",
-      "degree": "B.S.",
-      "options": [
-        "Culinology",
-        "Food Technology"
-      ]
+      "name": "Agricultural Systems Management, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Human Nutritional Sciences",
-      "degree": "B.S.",
-      "options": []
+      "name": "Animal Science - Production Management Option - Dairy Science Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Industrial Technology",
-      "degree": "B.S.",
-      "options": [
-        "Agricultural Systems Management"
-      ]
+      "name": "Animal Science - Production Management Option - Equine Science Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Plant Science",
-      "degree": "B.S.",
-      "options": []
+      "name": "Animal Science - Production Management Option - Livestock and Poultry Management Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "Jordan College of Agricultural Sciences and Technology",
-      "major": "Viticulture",
-      "degree": "B.S.",
-      "options": []
+      "name": "Animal Science - Production Management Option - Meat Technology Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "Art",
-      "degree": "B.A.",
-      "options": [
-        "Animation Intermedia"
-      ]
+      "name": "Animal Science - Science Option - Pre Veterinary Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "Art History",
-      "degree": "B.A.",
-      "options": []
+      "name": "Animal Science - Science Option - Preprofessional Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "Cognitive Science",
-      "degree": "B.S.",
-      "options": []
+      "name": "Anthropology, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "Communication",
-      "degree": "B.A.",
-      "options": []
+      "name": "Architectural Studies, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "Dance",
-      "degree": "B.A.",
-      "options": []
+      "name": "Art - Animation Intermedia Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "English",
-      "degree": "B.A.",
-      "options": [
-        "Creative Writing",
-        "Literature"
-      ]
+      "name": "Art History, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
     },
     {
-      "college": "College of Arts & Humanities",
-      "major": "English Studies",
-      "degree": "B.A.",
-      "options": []
+      "name": "Art, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Biochemistry, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Biology, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Biomedical Physics, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Accelerated Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Accountancy Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Computer Information Systems Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Data Analytics Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Entrepreneurship Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Finance Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Human Resource Management Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - International Business Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Logistics & Supply Chain Strategies Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Management Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Marketing Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Real Estate & Urban Land Economics Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Special Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Business Administration - Sports Marketing Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Chemistry, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Chemistry, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Chicano Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Child and Family Science - Child Development Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Child and Family Science - Family Science Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "City and Regional Planning, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Civil Engineering, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Cognitive Science, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Communication, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Communicative Sciences - Audiology Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Communicative Sciences - Speech-Language Pathology Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Computer Engineering, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Computer Science, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Construction Management, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Criminology - Corrections Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Criminology - Law Enforcement Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Criminology - Law Enforcement Option, B.S. (Continuing & Global Education)",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Criminology - Victimology Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Dance, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Deaf Studies - Deaf Education Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Deaf Studies - Deaf Studies Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Deaf Studies - Interpreting Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Economics, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Electrical Engineering, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "English - Creative Writing Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "English - Literature Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "English Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Enology, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Environmental Sciences, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Exercise Science, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Fashion Merchandising, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Food Sciences - Culinology Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Food Sciences - Food Technology Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Forensic Behavioral Sciences, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "French, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Geography, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Geology, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Geomatics Engineering, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Graphic Design, B.F.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Health Science - Environmental/Occupational Health & Safety Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Health Science - Health Administration Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "History, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Human Nutritional Sciences, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Industrial Technology, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Integrated Design, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Interdisciplinary Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Interdisciplinary Studies, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Interior Design, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Kinesiology - Physical Education Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Kinesiology - Sport Administration Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Latin American Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Liberal Arts Degree Completion Program, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Liberal Studies - ITEP Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Liberal Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Linguistics - Computational Linguistics Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Linguistics - General Linguistics Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Linguistics - Interdisciplinary Language Studies Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Linguistics - TESOL/SLAT (Second Language Acquisition & Teaching) Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mass Communication and Journalism - Advertising and Public Relations Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mass Communication and Journalism - Broadcast/Multiplatform Journalism Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mass Communication and Journalism - Digital Journalism Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mass Communication and Journalism - Film and Media Arts Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mathematics - Applied Math Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mathematics - General Math Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mathematics - Integrated Credential Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mathematics - Pure Math Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mathematics - Statistics Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mathematics - Teaching Option, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Mechanical Engineering, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Music - Composition Option, B.M.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Music - Instrumental Performance Option, B.M.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Music - Jazz Studies Option, B.M.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Music - Music as a Liberal Art Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Music - Music Education Option, B.M.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Music - Vocal Performance Option, B.M.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Natural Sciences - Biology Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Natural Sciences - Chemistry Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Natural Sciences - Earth Science Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Natural Sciences - Physics Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Nursing - R.N.-B.S.N.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Nursing, B.S.N.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Nursing, R.N.-B.S.N.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Philosophy - Pre-Law Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Philosophy - Religious Studies Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Philosophy, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Physics, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Plant Science, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Political Science, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Psychology, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Public Health, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Recreation Administration - Community Recreation, Youth Development, and Senior Services Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Recreation Administration - Outdoor Recreation and Natural Resource Management Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Recreation Administration - Recreation Therapy Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Recreation Administration - Special Events & Tourism Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Recreation Administration - Sports & Entertainment Facility Management Emphasis, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Social Science, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Social Work, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Sociology, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Spanish, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Theatre Arts - Acting Emphasis, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Theatre Arts - Design/Technology Emphasis, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Theatre Arts - General Emphasis, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Theatre Arts - Theatre Education Option, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Viticulture, B.S.",
+      "description": "",
+      "department": "",
+      "requirements": []
+    },
+    {
+      "name": "Women\u2019s, Gender, and Sexuality Studies, B.A.",
+      "description": "",
+      "department": "",
+      "requirements": []
     }
   ],
   "organizations": [
     {
       "name": "Active Minds Club",
-      "description": "Connects students to mental health resources they may not know they needed or did not know were available.",
-      "category": "Mental Health"
+      "description": "Active Minds is an organization found across many college campuses all throughout the United States. It was founded to...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "African American Student Social Work Association",
-      "description": "Provides collaboration with community reps and professionals, mentorship, leadership development, and peer connection.",
-      "category": "Social Work / Cultural"
+      "description": "AASSWA provides opportunities for students to collaborate with community representatives and professionals, seek...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "Africana Studies Student Association Club",
-      "description": "Encourages conversation around the African Diaspora and provides a safe space to learn about Africana Studies.",
-      "category": "Cultural / Academic"
+      "description": "The purpose of this organization is to create conversations around the African Diaspora. To encourage a safe space to...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Ag Business Club / National Agri-Marketing Association Chapter",
-      "description": "Connects students with both academic and industry opportunities through activities, networking, and support systems.",
-      "category": "Agriculture / Business"
+      "name": "Ag Business Club/National Agri-Marketing Association Chapter",
+      "description": "The primary function of ABC/NAMA Chapter is to provide students with a dynamic resource for both academic and industry...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Agriculture Systems and Technology Club",
+      "description": "The Agriculture Systems and Technology Club will promote the agriculture technology career path to both current and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Allies for Aspiring M.D/Ph.D Scholars",
+      "description": "The Allies for Aspiring M.D./Ph.D. Scholars (AAMPS) provides guidance and support to students pursuing M.D. or Ph.D....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Delta Sigma (Advertising)",
+      "description": "The Fresno State Chapter of the American Advertising Federation. Alpha Delta Sigma (ADS) club focuses on increasing...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Gamma Rho",
+      "description": "Alpha Gamma Rho has been a national Agricultural Fraternity since 1904. The Alpha Sigma chapter has been at Fresno...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Omega Christian Ministry",
+      "description": "Christian faith based Club, devoted to applying the Bible to our lives while glorifying God through academics, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Phi Sigma",
+      "description": "Alpha Phi Sigma is the nationally recognized honor society for students in the field of Criminal Justice and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Pi Sigma Sorority, Incorporated.",
+      "description": "Alpha Pi Sigma Sorority, Incorporated. - Zeta Chapter Latina Based Sorority A sisterhood dedicated to helping sisters...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Sigma Phi",
+      "description": "Our motto is \"to Better the Man,\" with the purpose of bettering the man \"through the creation and perpetuation of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Alpha Zeta Cal Epsilon",
+      "description": "Alpha Zeta is a professional organization of men and women whose educational and career objectives fall within the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Amerasia Organization",
+      "description": "Amerasia Organization aims to unify Asian Americans with all people and to educate the public by becoming better...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "American Heart Association Student Chapter",
-      "description": "Raises awareness of heart health and cardiovascular diseases through events and volunteer opportunities.",
-      "category": "Health"
+      "description": "A student-led group that raises awareness of heart health and cardiovascular diseases. We aim to promote wellness...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "American Institute of Aeronautics and Astronautics",
-      "description": "Provides education and projects in aerospace engineering; students compete in aircraft/rocket design competitions.",
-      "category": "Engineering / Aerospace"
+      "description": "Fresno State AIAA is an organization to provide education and project opportunities to advance students' knowledge of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Institute of Architecture Students - Fresno State Chapter",
+      "description": "The American Institute of Architecture Students (AIAS) is an independent, nonprofit, student-run organization dedicated...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Medical Student Association",
+      "description": "AMSA CSU Fresno is a coalition of premedical students gathered under the banner of the American Medical Students...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Public Works Association",
+      "description": "The American Public Works Association exists to develop and support the people, agencies, and organizations that plan,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Railway Engineering and Maintenance-of-way Association, Fresno Chapter",
+      "description": "The Fresno State Student Chapter of AREMA is part of the professional association for railway engineering that offers...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "American Sign Language Club",
-      "description": "Focuses on learning and communicating in ASL, open to all majors, not just Deaf Education or Interpreting students.",
-      "category": "Language / Accessibility"
+      "description": "American Sign Language Club at Fresno State. Our club consists of members who are motivated in communicating in...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Society of Civil Engineers",
+      "description": "The American Society of Civil Engineers is a national organization that promotes ethics, networking, and career...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Society of Heating-Refrigeration and Air-Conditioning Engineers",
+      "description": "ASHRAE is a national, professional organization that focuses on the study and application of thermal comfort and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Society of Interior Designers",
+      "description": "The American Society of Interior Designers (ASID) advances the interior design profession and communicates the impact...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Society of Mechanical Engineers",
+      "description": "Founded in 1880 as the American Society of Mechanical Engineers, today's ASME promotes the art, science & practice of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "American Society of Photogrammetry and Remote Sensing CSU, Fresno Student Chapter",
+      "description": "ASPRS is a national organization dedicated to promoting and advocating imaging and geospatial science for informed,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Animation Club of Fresno State",
+      "description": "Welcome! The Animation Club of Fresno State is an all inclusive community that strives to serve as a safe space to...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "Anime Association Club",
-      "description": "Promotes appreciation of Japanese animation and culture through events and activities.",
-      "category": "Cultural / Entertainment"
+      "description": "Anime Association Club promotes the knowledge and appreciation of Japanese popular culture with an emphasis on Japanese...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Asian Social Work Organization",
-      "description": "A group for undergraduate and graduate social work students to promote networking and involvement.",
-      "category": "Social Work / Cultural"
+      "name": "Anthropology Club",
+      "description": "We are students with a passion for Anthropology, our goal is to spread the word about different events and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Applied Behavior Analysis Club",
+      "description": "The Applied Behavior Analysis Club aims to facilitate educational and professional growth for both undergraduate and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Armenian Students Organization",
+      "description": "The Armenian Students Organization (ASO) promotes awareness of the Armenian culture.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Army ROTC",
+      "description": "The purpose of this organization is to prepare students for leadership opportunities and other adverse events. The...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Arnold Air Society",
+      "description": "Arnold Air Society (AAS) is a professional, honorary service organization which is composed of Air Force cadets from...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Art History Club",
+      "description": "This is the first student club at Fresno State dedicated to promote and celebrate the rich and diverse history of human...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "Art of Life Cancer Foundation Club",
-      "description": "Provides support and programs for cancer survivors and those impacted by cancer.",
-      "category": "Health / Support"
+      "description": "Guided by the principles of Art of Life Cancer Foundation, the Art of Life Cancer Foundation Club will serve to provide...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Association for Computing Machinery (ACM)",
-      "description": "Connects computer science and tech students through events, competitions, and projects.",
-      "category": "Technology / Computer Science"
+      "name": "Asian Social Work Organization",
+      "description": "The Asian Social Work Organization is a group comprised of undergraduate and graduate students enrolled in the social...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Association of Pre-Pharmacy Students",
-      "description": "Supports students interested in pursuing pharmacy through resources, panels, and school prep.",
-      "category": "Health / Pre-Professional"
+      "name": "Associated Students Incorporated",
+      "description": "Associated Students, Inc. (ASI) is the recognized student body government organization at California State University,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Association for Women in Mathematics Chapter",
+      "description": "The purpose of the Fresno State AWM Chapter is to create a community in which women and girls can thrive in their...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Association of Finance Scholars / Financial Management Association",
+      "description": "The Association of Finance Scholars (AFS) is a student organization that provides members with an opportunity to learn...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Aztec Dance Club",
+      "description": "Cultural Aztec dance refers to the traditional dance forms and rituals associated with the Aztec civilization, an...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Beta Alpha Psi (Accounting)",
+      "description": "Beta Alpha Psi was founded as a national honorary financial information organization in 1919. Our Gamma Omicron chapter...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Beta Gamma Nu Multicultural Fraternity",
+      "description": "Beta Gamma Nu is a Greek fraternity that participates in all aspects of college life. Whether it is a social,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Bhagat Puran Singh Health Initiative (BPSHI)",
+      "description": "BPSHI is an organization that facilitates clinics for underserved populations on a regular basis, including height,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Biomechanical Analysis of Sports",
+      "description": "This club will discuss the etiology of recent/common injuries throughout the field of collegiate and professional...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Birding Club at Fresno State",
+      "description": "The goal of this club is to encourage the hobby of bird watching and general conservation of birds in the Central...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Black Excellence in Science and Technology club",
+      "description": "The purpose of this club is to encourage black students to be involved in science, technology, engineering, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Black Society of Engineers",
+      "description": "BSE members and supporters are dedicated to increasing the number of culturally responsible Black Engineers who excel...",
+      "category": "",
+      "website": ""
     },
     {
       "name": "Black Student Union",
-      "description": "Creates a space for Black students to connect, support each other, and foster cultural awareness.",
-      "category": "Cultural / Support"
+      "description": "Black Students Union is a student-led club that involves social-political organizing and movements that enhance Black...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Bulldog Racing Club",
-      "description": "Designs and builds formula-style race cars for intercollegiate competitions, focused on engineering and teamwork.",
-      "category": "Engineering / Automotive"
+      "name": "Block and Bridle",
+      "description": "The purpose of the Fresno State Block and Bridle Club is:First, to promote a higher scholastic standard and a more...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Chicano Latino Youth Leadership Project (CLYLP) Fresno State Chapter",
-      "description": "Focuses on civic engagement, leadership, and college retention among Latino students.",
-      "category": "Cultural / Leadership"
+      "name": "Buddhism for Peace",
+      "description": "Buddhist philosophy for Peace and its community of students is dedicated to contributing to the creation of a culture...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Club Sports Council",
-      "description": "Serves as the student governing body for all recognized club sports at Fresno State.",
-      "category": "Sports / Governance"
+      "name": "Bulldog Badminton",
+      "description": "Bulldog Badminton's mission is to promote and create awareness of badminton to those in the Fresno community from open...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Cru",
-      "description": "A Christian student organization focused on faith, community, and leadership development.",
-      "category": "Religious / Leadership"
+      "name": "Bulldog Board Games",
+      "description": "We love boardgames and tabletop RPGs such as Dungeons & Dragons. If you love these as well, or are interested in trying...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Delta Alpha Pi International Honor Society",
-      "description": "Recognizes academic achievement of students with disabilities and promotes inclusive excellence.",
-      "category": "Academic / Accessibility"
+      "name": "Bulldog Bowling Club",
+      "description": "The Bowling Bulldog Club is comprised of students at Fresno State that have an interest and a love for the game of...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Dog Days Orientation Leaders",
-      "description": "Supports incoming students through peer mentorship and orientation programs.",
-      "category": "Leadership / Peer Support"
+      "name": "Bulldog Breakers",
+      "description": "Bulldog Breakers is a Fresno State-based breaking(/breakdancing) organization whose purpose is to build and maintain a...",
+      "category": "",
+      "website": ""
     },
     {
-      "name": "Feminist Majority Leadership Alliance",
-      "description": "Aims to promote gender equality, activism, and dialogue around feminist issues.",
-      "category": "Social Justice / Advocacy"
+      "name": "Bulldog Pickleball",
+      "description": "The Bulldog Pickleball is a Club Sport dedicated to preparing for and competing on the DUPR Collegiate Pickleball...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Bulldog Tennis Club",
+      "description": "This club will give access to those who are new to tennis or beginners. This club will allow those who are new to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Bulldog Women's Water Polo Club",
+      "description": "We are the Fresno State Women's Water Polo Club team.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Bulldogger Rodeo Club",
+      "description": "The CSU Fresno Buldogger Rodeo Team is a group of student athletes that participate and enjoy the sport of rodeo. With...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Bulldogs Men's Water Polo Club",
+      "description": "The Fresno State Men's Water Polo Club team is an organization that competes in intercollegiate water polo competition....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Bulldogs4Kids",
+      "description": "Bulldogs4Kids is a club with the goal of helping aid in the development of students '92 educational success in the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "California Land Surveyors Association Student Chapter",
+      "description": "CLSA advances the interests of the profession of Land Surveying, to maintain the highest possible standards of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "California Nursing Students' Association, Fresno State Chapter",
+      "description": "Fresno State Nursing Students' Association fosters the transition of the student to the role of the professional nurse...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Camp Kesem Fresno State",
+      "description": "Providing free Kesem summer camps and year-round peer support for children impacted by a parent '92s cancer in the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Campus Involvement Ambassadors",
+      "description": "Campus Involvement Ambassadors are your peer advisors to help find the right clubs, organizations, and other...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Catholic Student Association",
+      "description": "The Catholic Student Association (CSA) is a community of students accompanying one another throughout their academic...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Ceramics Guild",
+      "description": "Fresno State Ceramics Guild is an club organizing art related activities and promoting ceramic arts on CSUF campus as...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Chemistry Club",
+      "description": "We are the Fresno State Chemistry Club, locally and nationally affiliated with the American Chemical Society. Our...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Chess Club",
+      "description": "Fresno State Chess Club is a friendly environment for people to come together and enjoy the beautiful game of chess...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Chi Delta Beta Multicultural Fraternity Inc.",
+      "description": "Quot Homines Tot Sententiae",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Chicanx Writers & Artists Association",
+      "description": "Founded in 1991 by writers Andr 'e9s Montoya and Daniel Chac 'f3n, the Chicanx Writers and Artists Association is a...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Chinese Student Association",
+      "description": "Share, Teach and Learn about Chinese culture, help Chinese students get to know American culture well. An association...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Christian Challenge",
+      "description": "Christian Bible study club meeting on campus with a focus \"For every student at Fresno State to hear the gospel of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Cineculture Club",
+      "description": "CineCulture is a film series provided as a service to the Fresno State campus students, faculty, and staff, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Circle K International",
+      "description": "Circle K International (CKI) is the largest collegiate community service, leadership development and friendship...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Clarinet Club",
+      "description": "The Clarinet Club unites clarinetists of all skills to play together, host guest artists, and attend fun...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Club FSR Underground",
+      "description": "Club FSR Underground is a student club that provides opportunities for Fresno State students while supporting the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Club Sport - Kendo",
+      "description": "Fresno States' very own Kendo Club, focused on the competitive and personal aspects of the martial art practice, Kendo....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Co-Curricular Leadership Certificate",
+      "description": "The CCLC offers a framework to connect and provide meaning to student '92s collegiate leadership experiences. A...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Coalition for Christian Outreach (Fresno)",
+      "description": "CCO Fresno, an interdenominational campus ministry organization, calls college students to serve Jesus Christ with...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "College of Engineering Officer's Council",
+      "description": "Council composed of leaders from all the student organizations in the Lyles College of Engineering.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "College Panhellenic Association",
+      "description": "College Panhellenic Associations are based on democratic principles and organized to enable cooperation among the women...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Collegiate Horsemen\n'92s Association",
+      "description": "The purpose of the collegiate Horsemen Association at Fresno State is to promote the scholastics for Animal Science...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Communication Graduate Students Association",
+      "description": "The purpose of this organization is to provide academic, social, and professional growth for communication graduate...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Composer's Guild",
+      "description": "The Composer's Guild serves as a community forum for composers and performers to discuss, partake, and collaborate in...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Computer Information Systems Student Association",
+      "description": "The Computer Information Systems Student Association exists to provide a platform for Business Administration CIS...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Computer Science Club",
+      "description": "The Computer Science Club is an organized, student-led group, fostering and generating interest and discussion about...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Construction Management Association of America",
+      "description": "CMAA's purpose is to network within the CM program and in the industry. Also, there are opportunities for training and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "COSS Linked Crew",
+      "description": "The COSS Linked Crew organization is affiliated with the College of Social Sciences program \"COSS Linked\" designed to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Council of President's Scholars",
+      "description": "We are the student government body serving the Smittcamp Family Honors College.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Criminology Mock Trial Club",
+      "description": "Mock Trial is an undergraduate intercollegiate competition where students compete as attorneys and witnesses. Students...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "CRU",
+      "description": "CRU is a caring community passionate about connecting students to Jesus Christ and fostering an environment that allows...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "CSU Fresno Dairy Science",
+      "description": "Dairy",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Data Analytics Student Association",
+      "description": "The Data Analytics Student Association (DASA) serves to connect students at Fresno State interested in data analytics...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Delta Epsilon Omicron",
+      "description": "Our aim is to provide students opportunities to gain information and exposure to the dental field as well as provide...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Delta Gamma",
+      "description": "Delta Gamma offers to women of all ages a rich heritage; a continuity based on sound and tested principles of personal...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Delta Sigma Phi",
+      "description": "The brotherhood of Delta Sigma phi has been on campus since 1947, were a social fraternity that lives by the motto...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Delta Sigma Pi (Business)",
+      "description": "A co-educational business fraternity with the purpose to organize and foster the study of business while networking as...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Delta Zeta",
+      "description": "Delta Zeta was founded October 24,1902 in Oxford, Ohio at Miami University. Nationally, our philanthropy supports...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Diabetes Coalition at Fresno State",
+      "description": "Mission: To promote understanding and prevention, we provide education and raise awareness about diabetes among...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Innovation & Research Club",
+      "description": "Are you interested in 3-D Printing or virtual reality? Then this is the club for you! DIR utilizes 3-D printing and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Dreams For Afghan Children",
+      "description": "We are a nonprofit who aim to raise funds for kids in Afghanistan to provide basic living necessities.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Ducks Unlimited",
+      "description": "People coming together to support wetlands conservation",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Economics Student Association",
+      "description": "The Economic Student Association (ESA) is an academic club consisting of full and part-time Fresno State students. All...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Elohist Club",
+      "description": "- Bible-based club- Affiliated with the World Mission Society Church of God.- Christian non-denominational, only follow...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Enology Society",
+      "description": "The purpose of this organization is to promote the education of wine and the wine industry. Education of wine through...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Entrepreneurship Club",
+      "description": "All majors welcome! We are always accepting membership throughout each semester for which we provide skill development...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Epsilon Sigma Rho",
+      "description": "Multicultural Fraternity",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Eta Kappa Nu (Engineering)",
+      "description": "Eta Kappa Nu is a unique membership organization dedicated to encouraging and recognizing excellence in the electrical...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Experimental Theatre Company",
+      "description": "An entirely student-run theatrical company that produces a full-scale 90-min productions each semester.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Family Business Student Association",
+      "description": "The purpose of this organization is to inspire students to become the next generation of family business leaders by...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Farmworker Advocacy Club",
+      "description": "Farmworker Advocacy Club is to provide a space for Fresno State students that come from migrant or farmworker...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fashion Inc.",
+      "description": "Fashion INC. aims to assist its members with opportunities that will help them gain the necessary skills to be...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fine Arts",
+      "description": "Fine Arts",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Food Science Club",
+      "description": "Food Science Club is where food science majors and other related majors can interact with other fellow students to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno Film Collective",
+      "description": "This club will serve as a hub for those interested in filmmaking and film appreciation. This club will promote student...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State",
+      "description": "A group of percussionists that desire to advocate the advancement in percussion and to promote percussion performances.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Archery Team",
+      "description": "Founded in August 2015, we are the 23rd team to join the Fresno State Club Sports program. We are a competitive archery...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Club Tennis",
+      "description": "Club Tennis at Fresno State University. *Affiliated under USTA Tennis on Campus League NorCal. Follow our Instagram!...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Fishing Club",
+      "description": "Fellowship with other fisherman through bass tournaments as well as kayak tournaments. We '92re open to teaching others...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Homecoming",
+      "description": "Homecoming events and specials will be going on all week. Immerse yourself in the various traditions of Fresno State!...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Ice Hockey",
+      "description": "Fresno State Ice Hockey Club provides students of all skill levels the opportunity to play ice hockey while pursuing...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Judo Team",
+      "description": "Judo is a grappling martial art comprised of: throws, pins, chokes, and armlocks. Our team is primarily composed of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Men's Rugby Club",
+      "description": "We are a rapidly growing rugby club that is competing in the D1-AA Pacific Western Conference. We are always accepting...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Mule Packing",
+      "description": "Do you enjoy camping, the mountains, mules or horses, teamwork, organization, and tying knots? Mule packing is for you....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Powerlifting Club",
+      "description": "An organization for all lifters, but especially powerlifters to gather together. An organization where lifters can get...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Racing",
+      "description": "Fresno State Racing is a nonprofit organization dedicated to designing and fabricating cars to compete in the Society...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Rock Climbing Club",
+      "description": "Our club provides a space for students to come together and participate in the rock climbing community. We host social...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Spirit Club",
+      "description": "2018-2019 Fresno State Cheer Team2018-2019 Fresno State Dance Team",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Women's Rugby Club",
+      "description": "Fresno State Women '92s Rugby has rapidly grown into the largest club sport team on campus within the last couple of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Women's Volleyball Club",
+      "description": "Women's Volleyball Club at Fresno State!",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Women's Wrestling Club",
+      "description": "With the growing popularity of women's wrestling in California, there is now an opportunity here for those who wish to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Fresno State Wrestling Club",
+      "description": "Providing students with the opportunity to either compete in wrestling at the college level or explore the basics of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Friends of AAPIC",
+      "description": "The purpose of this organization is to foster a sense of belonging and cultural competency for Asian American and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Friends of MSF at Fresno State",
+      "description": "instagram.com/fresnostatemsf tinyurl.com/fresnostatemsf As the first student chapter in the Central Valley, our role is...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Friends of Project Rebound",
+      "description": "Our group encourages inclusivity & a sense of belonging on campus. We are focused on social justice reform from an...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Friends of the Criminology Honors Program",
+      "description": "To foster a sense of belonging as well as develop friendships within the Criminology Department Honors students under...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Furries of Fresno State",
+      "description": "Furries of Fresno State is a place for furries that are attending Fresno State to connect, create art relevant to the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Future Farmers of America Field Day Committee",
+      "description": "FFA Field Day Committee is an organization that provides Fresno State students interested in FFA with the opportunity...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Gamma Alpha Omega",
+      "description": "A Latina-founded, multicultural organization that exists to increase the number of women with a college education and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Gamma Sigma Alpha",
+      "description": "GSA",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Genetic Counseling Club",
+      "description": "This organization seeks to expose students to the profession of genetic counseling and hopes to help enrich their...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Geography Club",
+      "description": "The Geography club at Fresno State is a student organization that is dedicated to promoting interest in geography,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Geology Club",
+      "description": "Our purpose is to create an inclusive atmosphere for students interested in the geosciences, providing them with...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Google Developer Student Club, California State University, Fresno",
+      "description": "Google Developer Student Club, California State University Fresno, is the official Fresno State GDSC chapter! We are a...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Graduate Student Association",
+      "description": "The GSA is established to provide a voice to graduate students which will advocate for the interests of our diverse...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Graphic Design Club",
+      "description": "We Dream RGB! We Bleed CMYK! We talk all things Graphic Design. Join us to network and learn more about Graphic Design...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Growing Up In Science",
+      "description": "We aim to create a valuable platform of programs and events that will engage and support the personal and professional...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "HEAL Graduate Student Association",
+      "description": "Supporting the development of our diverse Higher Education Administration & Leadership students through professional...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Healing Minds",
+      "description": "Healing Mind's purpose is to create an environment that is supportive and inclusive and promotes mental health and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Helping Hand",
+      "description": "Providing tutoring to schools in underserved areas",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Hispanic Business Student Association",
+      "description": "HBSA was established in 1972 as a student organization at California State University, Fresno committed to be the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "History Graduate Student Association",
+      "description": "This association was established to create and maintain a sense of community and professional involvement of history...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Hmong American Ink & Stories",
+      "description": "To cultivate, empower, and uplift historically marginalized voices in writings by providing workshops, resources, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Hmong Student Association",
+      "description": "Promote educational, moral/ethical standards, leadership, self-determination/esteem, friendship and the Hmong culture....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Humanics@FresnoState AFP Collegiate Chapter",
+      "description": "The purpose of the HFSAFP is to provide students with opportunities for association and interaction with others...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Hype at California State University, Fresno",
+      "description": "Helping students connect via pop culture, gaming and professional development.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "IEEE Fresno State",
+      "description": "IEEE Fresno is the Fresno State chapter of The Institute of Electrical and Electronics Engineers, the world's largest...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Innovation Hotspot",
+      "description": "Innovation Hotspot provides student collaboration and learn-by-doing opportunities to breed future technology...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Institute of Management Accountants",
+      "description": "Institute of Management Accountants",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Interfraternity Council",
+      "description": "To oversee and promote communication and cooperation between fraternity chapters on campus as well as to plan and host...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "International Business Association",
+      "description": "Our mission is \"To Provide an ethnically diverse forum in which international business can be discussed, understood,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "International Student Association",
+      "description": "ISA stands for \"International Student Association\". A diverse student community founded by International students for...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Intervarsity Christian Fellowship",
+      "description": "The vision of Intervarsity Christian Fellowship at Fresno State is to be a multi-ethnic community of students that is...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Irrigation Club at Fresno State",
+      "description": "The purpose of this organization is to serve as a social and academic organization to unite plant science and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Jakara Movement Chapter",
+      "description": "The mission of the Jakara Movement Chapter is to build a Sikh political campus voice by strengthening the power of Sikh...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Japanese Student Association",
+      "description": "To facilitate interaction and cultural exchange between Japanese and American cultures",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Jumpstart Fresno",
+      "description": "Jumpstart is a national early education organization that recruits and trains college students and community Corps...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kappa Alpha Psi",
+      "description": "KA Psi",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kappa Alpha Theta",
+      "description": "The Gamma Chi (Fresno State) chapter was founded on May 23, 1953.Our mission:Yesterday, today, and tomorrow, Kappa...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kappa Kappa Gamma",
+      "description": "Mission and Purpose of Kappa Kappa Gamma:Kappa Kappa Gamma is an organization of women, which seeks for every member...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kappa Kappa Psi (Band)",
+      "description": "Kappa Kappa Psi National Honorary Band Fraternity is a fraternal organization that promotes the advancement of college...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kappa Sigma",
+      "description": "Modern day Kappa Sigma was founded one chilly evening on December 10th, 1869. Five students attending the University of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kinesiology Exercise Science Club",
+      "description": "KESC is an academic based organization that intends to enhance students' education with extracurricular activities,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Kinesiology Pedagogy Club",
+      "description": "The Kinesiology Pedagogy Club is organized by Kinesiology Physical Education majors at California State University,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Korean Student Association",
+      "description": "The Korean Student Association is a newly established club at Fresno State which focuses on Korean culture. In the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lambda Alpha Epsilon - Phi Omega Alpha Chapter",
+      "description": "Professional Co-Ed Criminology Organization",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lambda Chi Alpha- Iota Gamma Colony",
+      "description": "Through our Core Values and ritualistic teachings , Lambda Chi Alpha aims to systematically develop our men by...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lambda Sigma Gamma",
+      "description": "Lambda Sigma Gamma Sorority, Inc. was the first Multicultural sorority to be established on the West Coast in 1986 at...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lambda Theta Nu Sorority, Inc.",
+      "description": "The purpose of Lambda Theta Nu Sorority, Inc. shall be to open doors of opportunity to the Latinas in our community....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lambda Theta Phi",
+      "description": "The mission of Lambda Theta Phi is to cultivate a spirit of brotherhood, to promote unity among all Latinos, to be...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lao Student Association",
+      "description": "Lao Students Association was found in 1988 at California State University, Fresno. Our goal is to create a foundation...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Latin Dance Club",
+      "description": "This club will offer salsa, bachata, and cumbia dance classes. The Latin Dance Club will also organize social dances....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Latinos Unidos",
+      "description": "N.A.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Le Cercle Francais",
+      "description": "The purpose of this organization is to promote the speaking and learning of the French Language on the Fresno State...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Leadership Program",
+      "description": "The Leadership Program engages Fresno State students in opportunities designed to build and expand upon individual...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Leadership, Empowerment, Advocacy, Development",
+      "description": "L.E.A.D. is dedicated to empowering the undocumented community at Fresno State. We offer essential resources, advocate...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "League of Legends Club",
+      "description": "League of Legends Club is an organization of students who enjoy League of Legends, a multiplayer online battle arena...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "League of Women Voters",
+      "description": "A non-partisan, civic organization, open to all interested in promoting political education and action on a wide...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Linguistics Club",
+      "description": "Linguistics club is an academic organization for students, faculty, and all people interested in the scientific study...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Los Danzantes De Aztlan",
+      "description": "Advanced Mexican Folklorico performance program linked to the Los Danzantes de Aztlan dance program in Chicano and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Low Brass Club",
+      "description": "Musically enrich the studies of low brass musicians within the Fresno State Music Department and beyond. The club seeks...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lutheran Campus Ministry",
+      "description": "The mission of Lutheran Campus Ministry is to engage, equip, and ignite students, faculty, and Fresno community members...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Lyles College of Engineering Unmanned System Research Team",
+      "description": "The Unmanned Systems Research Team (USRT) club is dedicated to providing Lyles College of Engineering (LCOE) students...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Magkaisa Filipino Club",
+      "description": "To unite and educate one another through culture, heritage, and friendship.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Marketing Club at Fresno State",
+      "description": "The Marketing Club",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Marriage Family Therapist Student Association",
+      "description": "MFTSA seeks to create a community for and support the needs of students of Fresno State's marriage, family, and child...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Materials Research Society of Fresno State",
+      "description": "Fresno State Materials Research Society is a professional student organization which works with state of art research...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Mathematics Club",
+      "description": "Creating a fellowship based on a common love of mathematics.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Meat Science Club",
+      "description": "Students wanting to get involved and learn more about the meat industry.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Medical Spanish Club",
+      "description": "The Medical Spanish Club is meant to develop Spanish for students pursuing Physical Therapy or any Medical profession....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Moot Court",
+      "description": "An extracurricular activity in which participants take part in simulated court proceedings writing briefs and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Movimiento Estudiantil Chicanx de Aztl\n'e1n de CSU Fresno (MEChA)",
+      "description": "M.E.Ch.A celebrates cultura, challenges structural barriers, supports marginalized communities, and centers Latinx...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Mu Chi Omega",
+      "description": "Mu Chi Omega-Alpha chapter was establish in 2006 in the State University of Fresno.The purpose of MX is to unite and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Muslim Student Association",
+      "description": "A religious organization that aspires to build Islamic awareness both within the Muslim student body and Fresno State...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "National Society of Collegiate Scholars",
+      "description": "NSCS was established in 1994 at The George Washington University on the principle that with scholarship comes a...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "National Student Speech/Language and Hearing Association",
+      "description": "Fresno State NSSLHA is a student-led organization at California State University, Fresno that is affiliated with the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Network of Enlightened Women at Fresno State",
+      "description": "The Network of Enlightened Women educates, equips, and empowers women to be principled leaders for a free society. NeW...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "NEUM Native American Student Association",
+      "description": "NEUM Native American Student Association is a cultural club open to all students. We host and attend cultural and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Nu Alpha Kappa",
+      "description": "Nu Alpha Kappa is a Latin-based social fraternity committed to academic excellence, cultural awareness, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Off-Campus Student Life",
+      "description": "Finding your place, making friends, and connecting academically and socially to campus are keys to your success at...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Omega Delta Phi",
+      "description": "Omega Delta Phi is a multicultural service/social fraternity that aims at graduating its members while giving back to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Opera Club at Fresno State",
+      "description": "Students who are interested in performing and raising awareness about the wonderful world of opera in Fresno and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "OPTS Club Class 2022",
+      "description": "OPTS 2022",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "OPTS Club Class 2023",
+      "description": "Doctor of Physical Therapy Class of 2023 Student Club",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "OPTS Club Class 2024",
+      "description": "The purpose is to fund the DPT Class of 2024",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "OPTS Club Class 2025",
+      "description": "Current DPT students: OPTS Club Class 2025",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "OPTS Club Class 2026",
+      "description": "The purpose of this organization is to help fund the Fresno State DPT Class of 2026",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "OPTS Club Class 2027",
+      "description": "Purpose of this organization is to fund the Fresno State DPT Class of 2027",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Organization for Physical Therapy Students Class of 2020",
+      "description": "Doctor of Physical Therapy class of 2020",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Overwatch Club",
+      "description": "Creating a community for those who are interested in the game Overwatch, allowing them to get together, socialize, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Peer Ambassadors of Wellness (PAWs)",
+      "description": "The Peer Ambassadors of Wellness (PAWs) program is responsible for promoting the health and wellness of our Fresno...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "People Organized for Women's Empowerment and Representation",
+      "description": "To garner visibility for the Women's Studies Program and to provide a forum for gender and social justice. This club is...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Alpha Delta",
+      "description": "Pre-Law Fraternity inclusive of all majors designed to facilitate an advanced transition into law-school. Membership...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Alpha National Honor Society for Social Work, Chi Nu Chapter",
+      "description": "Phi Alpha is a national honor society for social work students that fosters high standards of education and achievement...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Alpha Theta (History)",
+      "description": "We are a professional society whose mission is to promote the study of history through the encouragement of research,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Delta Theta",
+      "description": "Phi Delta Theta is a social fraternity with the three cardinal principles of friendship, sound learning, and moral...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Lambda Rho",
+      "description": "We are Phi Lambda Rho Sorority, Inc. We are a multicultural sorority with nine chapters throughout California. Our four...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Mu",
+      "description": "Phi Mu is an organization of women which provides personal and academic development, service to others, commitment to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Phi Mu Alpha (Music)",
+      "description": "Phi Mu Alpha Sinfonia, Fraternity of Music, is a men's fraternity that seeks to advance music in America, promote music...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Philosophy Club",
+      "description": "Looking for inquisitive minds to engage in meaningful conversations. Club activities will alternate between meetings...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pi Kappa Alpha",
+      "description": "We, the men of Pi Kappa Alpha, come from different and diverse backgrounds, yet we are all bound by very similar...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pi Sigma Alpha",
+      "description": "Pi Sigma Alpha, the National Political Science Honor Society, is the only honor society for college and university...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pickleball Club at Fresno State",
+      "description": "Teaching university students about pickleball in a fun, engaging, and competitive way through participation, workshops,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Plant Science Club",
+      "description": "The goal of the California State University, Fresno Plant Science Club is to promote communication and involvement...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Podcasts Club",
+      "description": "A Fresno State Club. A place to both discuss and learn information through podcasts about virtually any topic.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Poultry Science Society",
+      "description": "We are a club that focuses on the poultry industry and how is works. We also aim to help students further their...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pre-Optometry Club",
+      "description": "To promote the field of optometry and prepare students seeking a career as an optometrist through informational...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pre-Pharmacy Club",
+      "description": "Students interested in obtaining a Doctor of Pharmacy Degree (Pharm.D.) are encouraged to join the Pre-Pharmacy Club....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pre-Physical Therapy Club",
+      "description": "The purpose of this organization is to provide an organization for the interaction of students of all undergraduate...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pre-Physician Assistant Club",
+      "description": "The purpose of this club is to provide information and resources regarding the Physician Assistant profession. We aim...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Pre-Veterinary Club",
+      "description": "We are a group of students dedicated to the field of veterinary medicine. We wish to better educate ourselves and the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Premedical Club at Fresno State",
+      "description": "Fresno State Premedical Club was established to provide students with resources, information, and social support in...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Print and Glory",
+      "description": "Print & Glory will support, enrich, and expand the experience of printmaking for students at CSU Fresno. Through...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Program in Medical Education (PRIME) Time",
+      "description": "PRIME Time for Premeds serves as a vital resource for premedical offering mentorship and valuable information to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Psi Chi / Psychology Club",
+      "description": "Psi Chi is the National Honor Society in Psychology, promoting scholarship and advancing the field for qualified...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Psychedelic Education and Advancement of Community Engagement",
+      "description": "P.E.A.C.E., inspired by the psychedelic scientific-driven renaissance, bridges science, mental health, and advocacy....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Public Relations Student Society of America",
+      "description": "Fresno State PRSSA is a group of students providing opportunities to network, enhance professional skills and learn...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Punjabis at Fresno State",
+      "description": "The purpose of this organization is to broaden the understanding and awareness of the Punjabi culture and heritage in...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Radio and Television Digital News Association",
+      "description": "The purpose of this club is to foster networking with professionals andimproved communications among students of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Ranch Horse Team",
+      "description": "The Ranch Horse team at Fresno State is apart of The National Intercollegiate Ranch &amp; Stock Horse association....",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Red Wavettes",
+      "description": "The Fresno State Majorette squad is mix with multiple styles of dancing, including, jazz, hip-hop, ballet, etc. Our...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Redwave Volleyball Club",
+      "description": "Men's Club Volleyball participates in the Northern California Collegiate Volleyball Conference, which it has won 6...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Rehabilitation Counseling Student Association",
+      "description": "The Rehabilitation Counseling Student Association (RCSA) focuses on students of CRMHC, and the counseling of those with...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Residence Hall Association",
+      "description": "RHA is the representative government for Student Housing. It is made up of Residents, Building Representatives, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Richter Center Student Leaders",
+      "description": "The RCSL Club provides students who embody a passion for service with leadership opportunities and the opportunity to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Robotics Club at Fresno State",
+      "description": "The purpose of the club is to learn, design, strategize, build, and compete using robotics and programming.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "San Joaquin Literary Association",
+      "description": "Founded in 2004, the San Joaquin Literary Association is a student organization at Fresno State that promotes literary...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Saxophone Quartet Club",
+      "description": "The goal of Saxophone Quartet Club is to provide students enthusiastic about saxophone chamber music a venue to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "School Counseling Ambassadors Graduate Student Association",
+      "description": "The purpose of this organization is to inform students of the school counseling profession. Recipients of the Benjamin...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "School Psychology Club at California State University, Fresno",
+      "description": "The School Psychology Club aims to raise awareness of school psychology and related issues. The club facilitates...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Science Fiction Club",
+      "description": "The purpose of this organization is to create a welcoming environment for students to analyze science fiction media of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sculpture Syndicate",
+      "description": "Sculpture Syndicate is a group of sculptors engaged in growing further interests in all mediums of sculpture. One goal...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Alpha",
+      "description": "Sigma Alpha is a professional agricultural sorority that promotes scholarship, leadership, service and fellowship among...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Alpha Epsilon",
+      "description": "The mission of Sigma Alpha Epsilon is to promote the highest standards of friendship, scholarship, and service for our...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Alpha Iota International Music Fraternity",
+      "description": "Sigma Alpha Iota is an organization which promotes interaction among those who share a commitment to music. Members of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Alpha Zeta",
+      "description": "Multicultural Sorority. Sigma Alpha Zeta stands for the empowerment of women through education, sisterhood, diversity...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Chi",
+      "description": "Sigma Chi is a brotherhood with roots in the collegiate experience that engenders a lifelong commitment to strive to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Nu",
+      "description": "The Zeta Kappa chapter of Sigma Nu strives to develop ethical leaders inspired by the principles of Love, Honor and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sigma Phi Epsilon",
+      "description": "Our mission statement is \"Building Balanced Leaders for the World '92s Communities.\" Sigma Phi Epsilon was founded at...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sikh Student Association",
+      "description": "The Sikh Student Association is a club at California State University, Fresno, whose mission is to enrich, educate, &...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Ski and Snowboard Club",
+      "description": "Have a desire to to hit up a snowy mountain resort with like minded people? Joining our club gives you access to social...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Social Work Student Association",
+      "description": "The Social Work Student Association is a student based organization geared to bring together students from different...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society for Advancement of Chicanos & Native Americans in Science",
+      "description": "Fresno State SACNAS is a society of scientists dedicated to fostering the success of college students to attain...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society for Industrial and Applied Mathematics (SIAM) Chapter at Fresno State",
+      "description": "Applied mathematics, in partnership with computational science, is essential in solving many real-world problems. Our...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society of American Military Engineers, Fresno State Student Chapter",
+      "description": "SAME aims to build future engineering leaders to solve national security infrastructure challenges.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society of Asian Scientists and Engineers",
+      "description": "The Society of Asian Scientists and Engineers is dedicated to the advancement of Asian heritage scientists and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society of Hispanic Professional Engineers",
+      "description": "SHPE promotes the development of Hispanics in Engineering, Science and other technical professions to achieve...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society of Physics Students",
+      "description": "The SPS is a professional organization for physics and related fields. SPS offers research, networking, outreach, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Society of Women Engineers",
+      "description": "The Society of Women Engineers section at Fresno State empowers engineering students by promoting and advancing the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sociology Club",
+      "description": "In the Sociology Club, members promote the concepts and values of the field of sociology. Members are given the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Somos First Gen",
+      "description": "The purpose of this club is to respond to the intersectional experiences of first-generation students of color in the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sport Psychology Club",
+      "description": "The Sport Psychology Club is an official student organization recognized by the Associated Students, Inc. at California...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sports Medicine Club",
+      "description": "To provide students with opportunities for association and interaction with the Sports Medicine Faculty and Athletic...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Spotlight Events",
+      "description": "Spotlight Events is a student-run group providing a variety of educational activities, entertainment, social...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Steve's Scholars Club",
+      "description": "The purpose of this organization is to bring Steve '92s Scholars recipients and First - Generation students together to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Affairs and College Counseling Graduate Student Association",
+      "description": "The purpose of this organization is to provide social, professional, and educational opportunities to aspiring student...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Association of Geomatics Engineers",
+      "description": "The Students Association for Geomatics Engineering (SAGE) is a group of like-minded individuals in a club centered...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Involvement - Forms Group",
+      "description": "SIFG '96 For administrative purposes only.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Nutrition Dietetic Association",
+      "description": "The Student Nutrition Dietetic Association is a club on campus that promotes health, nutrition, and wellness on the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "STUDENT ORGANIZATION REGISTRATION FORMS GROUP",
+      "description": "Student Public Health Association",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "To be an active force within the community as well as a strong advocate/promoter of public health.",
+      "description": "Student Risk Management",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Union Board of Directors",
+      "description": "The USU Board of Directors is the voice of the students when it comes to making decisions for the Student Union...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Vegetarian Association",
+      "description": "The Student Vegetarian Association (SVA) aims to promote awareness of the benefits of vegan and vegetarian diets on the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student Veterans Organization",
+      "description": "(Established May, 2009) The purpose of the Student Veterans Organization (SVO) shall be, first and foremost, to ensure...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Student-Managed Investment Fund Club",
+      "description": "The SMIF Club aims to promote financial literacy, to understand the basics behind the stock market, and encourage...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Students for Life at Fresno State",
+      "description": "The purpose of this organization is to educate our campus and membership on bio-ethical issues, and to help women and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Students for Palestinian Liberation",
+      "description": "Students for Palestinian Liberation is an organization dedicated to promoting freedom, solidarity, equality, safety,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Students in Construction",
+      "description": "SIC helps create networking among students and industry. We strive to offer opportunities for students outside of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Students of English Studies Association",
+      "description": "Students of English Studies Association (SESA) is a restarted Graduate level English organization with the hope to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Students Organizing for Success",
+      "description": "The purpose of Students Organizing for Success (SOS) is to promote the academic advancement amongst students in higher...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Study Abroad Club",
+      "description": "The Study Abroad Club's purpose is to bring together students who have either studied abroad or who are interested in...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sundogs",
+      "description": "Our club is dedicated to outreach and communicating effective ideas for collaborating innovative sustainable energ...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Sustainability Club",
+      "description": "We are an organization of students who strive to create a conscious culture of sustainability on campus and in the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Tau Beta Pi (Engineering)",
+      "description": "Tau Beta Pi is an engineering honors society that admits all types of engineering students if they meet certain...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Tau Beta Sigma",
+      "description": "Tau Beta Sigma National Honorary Band Sorority provides exceptional service to collegiate bands and promotes equality...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "The Classics Club",
+      "description": "Our purpose is to bring together students who have an interest in the Classics, in order to inspire, help and enjoy our...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "The Debate Club",
+      "description": "The Debate Club is a student organization that is dedicated to the advancement of open and free exchange of ideas. In...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "The Dungeons and Dragons Social Conglomerate",
+      "description": "The D&D Club, as it is most commonly going to be referred to as, is a club where everyone can come together to play...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "The Mustang Club of Fresno State",
+      "description": "We are Mustang enthusiasts who want to spread appreciation for these sports cars. We want to inspire those around us to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "The Pre-Law Club at California State University, Fresno",
+      "description": "The purpose of The Pre-Law Club at California State University is to serve as a free, casual group for Fresno State...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Thrive Campus Ministry",
+      "description": "Thrive Campus Ministry is a community for students to connect, grow, and have fun. We begin with an engaging Bible...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Time Out Fan Club",
+      "description": "N/A",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Trabajadores de la Raza",
+      "description": "Social work student organization committed to community outreach and volunteer events while unifying and empowering...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Tri-Beta Biological Society",
+      "description": "The Purpose of Tri-Beta Biological Honor Society, Epsilon Lambda Chapter shall be to function as an honor and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Turning Point USA at Fresno State",
+      "description": "501(c)3 Non-profit. We believe in Freedom, Liberty, and Limited Government.",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Tzu Chi Collegiate Association of CSU Fresno (TCCA)",
+      "description": "The purpose of this organization is to foster the 6 missions of the Tzu Chi Foundation: charity, medicine, education,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Ultimate Frisbee Club",
+      "description": "Welcome to the Ultimate Frisbee Club at Fresno State. We are a competitive team, looking to grow our membership base,...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Unheard Cries",
+      "description": "Unheard Cries Charity is a tax exempt, non-profit organization with the ultimate purpose of localizing the approach to...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "United Sorority & Fraternity Council",
+      "description": "The purpose of the United Sorority and Fraternity Council is based off of three principals including uniting the...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "United Student Pride",
+      "description": "United Student Pride is an on-campus student organization at Fresno State which offers activities as well as various...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "University Student Union Board",
+      "description": "Board",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "VALORANT Club",
+      "description": "Creating a community for those who are interested in the game VALORANT, allowing them to get together, socialize, and...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Vintage Days",
+      "description": "Vintage Days is Fresno State's largest annual event which happens during the month of April. The Vintage Days Committee...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Viticulture Club",
+      "description": "An organization dedicated to getting students involved in Viticulture and Enology. We provide opportunities to connect...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Women's Alliance",
+      "description": "Women's Alliance provides students with opportunities to further equality by doing activist work. We provide a safe...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Women's Transportation Seminar Student Chapter",
+      "description": "The purpose of this organization is to promote lifelong careers in transportation: attracting, retaining, and advancing...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Young American's for Freedom",
+      "description": "Young America '92s Foundation is committed to ensuring that increasing numbers of young Americans understand and are...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Young Cattlemen's Association",
+      "description": "Fresno State Young Cattlemen's Association",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Young Life",
+      "description": "Adventure, Community and Significance! We are a group all about connecting students with each other, having a ton of...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "Zeta Phi Beta",
+      "description": "Zeta Phi Beta Sorority Incorporated is a non-profit organization striving to better the lives of young women all over...",
+      "category": "",
+      "website": ""
+    },
+    {
+      "name": "'a1Hablemos espa\n'f1ol!",
+      "description": "'a1Hablemos espa 'f1ol! Our mission is to bring a community of students together who want to celebrate Spanish language...",
+      "category": "",
+      "website": ""
     }
   ],
   "events": [
     {
-      "title": "Recreational Badminton (Spring 2025)",
-      "date": "February 28 \u2013 May 18, 2025",
-      "location": "South Gym",
-      "price": "$70.00",
-      "category": "ALUMNI"
+      "name": "Good Morning Commuters",
+      "description": "",
+      "date": "Wednesday, May 7 at 7:30AM PDT",
+      "location": "RSU North Entrance",
+      "category": ""
     },
     {
-      "title": "African Americans and Labor art exhibition",
-      "date": "Friday, February 28, 2025. 8:00 AM - 5:00 PM",
-      "location": "Dean's Gallery Room 186",
-      "price": "Free",
-      "category": "College of Arts and Humanities"
+      "name": "2025 FOCUS Conference",
+      "description": "",
+      "date": "Tuesday, April 29 at 12:00PM PDT",
+      "location": "Alice Peters Auditorium (PB 191)",
+      "category": ""
     },
     {
-      "title": "Cineculture | Ma France \u00e0 moi (My Motherland) (2023)",
-      "date": "Friday, February 28, 2025. 5:30 PM - 7:30 PM",
-      "location": "Student Recreation Center Peters Education Center Auditorium",
-      "price": "Free",
-      "category": "College of Arts and Humanities"
+      "name": "2025 FOCUS Conference",
+      "description": "",
+      "date": "Monday, April 28 at 12:00PM PDT",
+      "location": "Alice Peters Auditorium (PB 191)",
+      "category": ""
     },
     {
-      "title": "8th Fresno State Art Song Festival - Voice, piano duo, poetry and composition finals",
-      "date": "Friday, February 28, 2025. 6:30 PM - 9:00 PM",
-      "location": "Fresno State Concert Hall",
-      "price": "$15.00 - $25.00",
-      "category": "College of Arts and Humanities"
+      "name": "BOBCAT DAY",
+      "description": "",
+      "date": "Saturday, April 19 at 8:00AM PDT",
+      "location": "Univeristy of Califronia Merced",
+      "category": ""
     },
     {
-      "title": "Argentine Tango Class",
-      "date": "March 1 \u2013 May 11, 2025",
-      "location": "South Gym Fresno State South Gym 133",
-      "price": "$50.00",
-      "category": "ALUMNI"
+      "name": "General Club Meeting",
+      "description": "",
+      "date": "Thursday, April 10 at 4:00PM PDT",
+      "location": "McKee Fisk Building, Room. 208",
+      "category": ""
     },
     {
-      "title": "Recreational Pickleball (Spring 2025)",
-      "date": "March 1 \u2013 May 18, 2025",
-      "location": "South Gym",
-      "price": "$70.00",
-      "category": "ALUMNI"
+      "name": "Tri-Beta's 6th Spring Meeting",
+      "description": "",
+      "date": "Monday, April 7 at 4:00PM PDT",
+      "location": "RSU 206",
+      "category": ""
     },
     {
-      "title": "Argentine Tango Practica (Spring 2025)",
-      "date": "March 1 \u2013 May 18, 2025",
-      "location": "South Gym Fresno State South Gym 133",
-      "price": "$30.00",
-      "category": "ALUMNI"
+      "name": "Good Morning Commuters",
+      "description": "",
+      "date": "Wednesday, April 2 at 7:30AM PDT",
+      "location": "Speaker's Platform",
+      "category": ""
     },
     {
-      "title": "Basic Horsemanship (Spring 2025)",
-      "date": "March 2 \u2013 May 12, 2025",
-      "location": "Fresno State Quarter Horse Unit",
-      "price": "$275.00",
-      "category": "ALUMNI"
+      "name": "General Club Meeting",
+      "description": "",
+      "date": "Thursday, March 27 at 4:00PM PDT",
+      "location": "Resnick Student Union, Rm, 216",
+      "category": ""
     },
     {
-      "title": "Cineculture | Radical (2023)",
-      "date": "Friday, March 1, 2025. 5:30 PM - 7:30 PM",
-      "location": "Student Recreation Center Peters Education Center Auditorium",
-      "price": "Free",
-      "category": "College of Arts and Humanities"
+      "name": "Linguistics Club Hang-Out",
+      "description": "",
+      "date": "Wednesday, March 26 at 2:00PM PDT",
+      "location": "Fresno State Library, Room 2136",
+      "category": ""
     },
     {
-      "title": "Cineculture | The Night of the 12th (2022)",
-      "date": "Friday, March 8, 2025. 5:30 PM - 7:30 PM",
-      "location": "Student Recreation Center Peters Education Center Auditorium",
-      "price": "Free",
-      "category": "College of Arts and Humanities"
+      "name": "Unity Walk/Rally",
+      "description": "",
+      "date": "Tuesday, March 25 at 11:00AM PDT",
+      "location": "Speaker's Platform CSU Fresno (next to peace garden)",
+      "category": ""
+    },
+    {
+      "name": "All Students Invited - Guest Speaker \"Dan Faill\" presented by Fraternity Sorority Life program",
+      "description": "",
+      "date": "Monday, March 24 at 7:00PM PDT",
+      "location": "Resnick",
+      "category": ""
+    },
+    {
+      "name": "All Students Invited - Guest Speaker \"Dan Faill\" presented by Fraternity Sorority Life program",
+      "description": "",
+      "date": "Monday, March 24 at 7:00PM PDT",
+      "location": "Resnick Student Union - Ruiz Ballroom",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta's 5th Spring Meeting",
+      "description": "",
+      "date": "Monday, March 24 at 4:00PM PDT",
+      "location": "RSU 206",
+      "category": ""
+    },
+    {
+      "name": "Good Evening Commuters",
+      "description": "",
+      "date": "Wednesday, March 12 at 6:00PM PDT",
+      "location": "Memorial Gardens",
+      "category": ""
+    },
+    {
+      "name": "Good Morning Commuters",
+      "description": "",
+      "date": "Tuesday, March 11 at 7:30AM PDT",
+      "location": "Speaker's Platform",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta's 4th Spring Meeting",
+      "description": "",
+      "date": "Monday, March 10 at 4:00PM PDT",
+      "location": "RSU 206",
+      "category": ""
+    },
+    {
+      "name": "Ash Wednesday On Campus Mass",
+      "description": "",
+      "date": "Wednesday, March 5 at 12:00PM PST",
+      "location": "Resnick Student Union - Event Plaza",
+      "category": ""
+    },
+    {
+      "name": "HOME vs Stanford",
+      "description": "",
+      "date": "Saturday, March 1 at 12:00PM PST",
+      "location": "Kinesiology Field",
+      "category": ""
+    },
+    {
+      "name": "Good Evening Commuters",
+      "description": "",
+      "date": "Wednesday, February 26 at 6:00PM PST",
+      "location": "RSU South Lawn",
+      "category": ""
+    },
+    {
+      "name": "SNDA Spring Meeting \u2013 Join Us on Feb. 26!",
+      "description": "",
+      "date": "Wednesday, February 26 at 1:00PM PST",
+      "location": "RSU",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta's 3rd Spring Meeting",
+      "description": "",
+      "date": "Monday, February 24 at 4:00PM PST",
+      "location": "RSU 206",
+      "category": ""
+    },
+    {
+      "name": "Palo Alto Tournament",
+      "description": "",
+      "date": "Sunday, February 23 at 12:00PM PST",
+      "location": "Menlo Atherton High School",
+      "category": ""
+    },
+    {
+      "name": "AWAY @ Sac",
+      "description": "",
+      "date": "Saturday, February 22 at 12:00PM PST",
+      "location": "Sac State",
+      "category": ""
+    },
+    {
+      "name": "Panda Express Fundraiser for Fresno State Men's Rugby",
+      "description": "",
+      "date": "Tuesday, February 11 at 12:00PM PST",
+      "location": "Panda Express",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta's 2nd Spring Meeting",
+      "description": "",
+      "date": "Monday, February 10 at 4:00PM PST",
+      "location": "RSU 206",
+      "category": ""
+    },
+    {
+      "name": "HOME vs Davis",
+      "description": "",
+      "date": "Saturday, February 8 at 12:00PM PST",
+      "location": "Kinesiology Field",
+      "category": ""
+    },
+    {
+      "name": "Good Morning Commuters",
+      "description": "",
+      "date": "Wednesday, February 5 at 7:30AM PST",
+      "location": "RSU North Entrance",
+      "category": ""
+    },
+    {
+      "name": "AWAY @ Chico",
+      "description": "",
+      "date": "Saturday, February 1 at 12:00PM PST",
+      "location": "Chico",
+      "category": ""
+    },
+    {
+      "name": "General Body Meeting",
+      "description": "",
+      "date": "Friday, January 31 at 5:00PM PST",
+      "location": "Resnick Student Union",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta's 1st Spring Meeting",
+      "description": "",
+      "date": "Monday, January 27 at 4:00PM PST",
+      "location": "RSU 206",
+      "category": ""
+    },
+    {
+      "name": "HOME vs Cal Berkeley",
+      "description": "",
+      "date": "Saturday, January 25 at 11:00AM PST",
+      "location": "Fresno State",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, December 11 at 6:00PM PST",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "Professional Mixer 2024",
+      "description": "",
+      "date": "Saturday, December 7 at 11:00AM PST",
+      "location": "Lynda and Stewart Resnick Student Union",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, December 4 at 6:00PM PST",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, November 20 at 6:00PM PST",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "The Economics of War and Peace",
+      "description": "",
+      "date": "Wednesday, November 20 at 4:00PM PST",
+      "location": "Professional Human Service Building Room 213",
+      "category": ""
+    },
+    {
+      "name": "Friendsgiving",
+      "description": "",
+      "date": "Tuesday, November 19 at 4:00PM PST",
+      "location": "Raising Cane's Clovis",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta General Meeting",
+      "description": "",
+      "date": "Thursday, November 14 at 4:00PM PST",
+      "location": "RSU 215",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, November 13 at 6:00PM PST",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "Majorette Workshop",
+      "description": "",
+      "date": "Friday, November 8 at 6:30PM PST",
+      "location": "Fresno State South Gym",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, November 6 at 6:00PM PST",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "Election Day - Result Viewing",
+      "description": "",
+      "date": "Tuesday, November 5 at 5:00PM PST",
+      "location": "Resnick Student Union",
+      "category": ""
+    },
+    {
+      "name": "HypeTown",
+      "description": "",
+      "date": "Tuesday, November 5 at 4:00PM PST",
+      "location": "Lynda and Stewart Resnick Student Union (RSU)",
+      "category": ""
+    },
+    {
+      "name": "SNDA 5k Health and Wellness Run",
+      "description": "",
+      "date": "Saturday, November 2 at 8:00AM PDT",
+      "location": "Fresno State",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, October 30 at 6:00PM PDT",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "School Psychology Graduate Program Information Night",
+      "description": "",
+      "date": "Wednesday, October 30 at 5:00PM PDT",
+      "location": "Science II Building: Room 307",
+      "category": ""
+    },
+    {
+      "name": "Tri-Beta General Meeting",
+      "description": "",
+      "date": "Tuesday, October 29 at 4:00PM PDT",
+      "location": "RSU 215",
+      "category": ""
+    },
+    {
+      "name": "Student Homecoming Talegate",
+      "description": "",
+      "date": "Saturday, October 26 at 2:30PM PDT",
+      "location": "Student housing near the corner of Scott and Rowell Avenue",
+      "category": ""
+    },
+    {
+      "name": "Party in the Plaza",
+      "description": "",
+      "date": "Friday, October 25 at 7:00PM PDT",
+      "location": "Resnick Student Union (RSU) Event Plaza",
+      "category": ""
+    },
+    {
+      "name": "Paws and Plush",
+      "description": "",
+      "date": "Thursday, October 24 at 11:00AM PDT",
+      "location": "Memorial Gardens (Lawn in front of the Kennel Bookstore)",
+      "category": ""
+    },
+    {
+      "name": "Live Band Karaoke",
+      "description": "",
+      "date": "Wednesday, October 23 at 7:00PM PDT",
+      "location": "Resnick Student Union (RSU) Event Plaza",
+      "category": ""
+    },
+    {
+      "name": "Wednesday Student NIghts",
+      "description": "",
+      "date": "Wednesday, October 23 at 6:00PM PDT",
+      "location": "Saint Paul Catholic Newman Center",
+      "category": ""
+    },
+    {
+      "name": "Wellness Wednesday",
+      "description": "",
+      "date": "Wednesday, October 23 at 11:00AM PDT",
+      "location": "Memorial Gardens (Lawn in front of the Kennel Bookstore)",
+      "category": ""
+    },
+    {
+      "name": "Bulldog Bowl Homecoming Special",
+      "description": "",
+      "date": "Tuesday, October 22 at 7:00PM PDT",
+      "location": "Bulldog Bowl (in the lower level of the University Student Union)",
+      "category": ""
+    },
+    {
+      "name": "Tie Dye & Good Vibes",
+      "description": "",
+      "date": "Tuesday, October 22 at 3:00PM PDT",
+      "location": "Fresno State Student Housing (Outside of Graves Hall)",
+      "category": ""
+    },
+    {
+      "name": "Red Wave Craft Corner",
+      "description": "",
+      "date": "Tuesday, October 22 at 11:00AM PDT",
+      "location": "Memorial Gardens",
+      "category": ""
+    },
+    {
+      "name": "Sunset Yoga with Gloria",
+      "description": "",
+      "date": "Monday, October 21 at 7:00PM PDT",
+      "location": "Resnick Student Union (RSU) Event Plaza",
+      "category": ""
+    },
+    {
+      "name": "Ignite the Hype",
+      "description": "",
+      "date": "Monday, October 21 at 11:00AM PDT",
+      "location": "Memorial Gardens",
+      "category": ""
+    },
+    {
+      "name": "Fresno Judo Club Invitational",
+      "description": "",
+      "date": "Sunday, October 20 at 12:00PM PDT",
+      "location": "Fresno High School",
+      "category": ""
+    },
+    {
+      "name": "Home Game- Fresno State",
+      "description": "",
+      "date": "Saturday, October 19 at 9:00PM PDT",
+      "location": "Gateway Ice Center",
+      "category": ""
     }
   ]
 }

@@ -1419,5 +1419,723 @@
         }
       ]
     }
+  },
+  {
+    "timestamp": "2025-05-11T07:41:17.677Z",
+    "sessionId": "8d879aa5-2a5e-4368-b330-ceb9a8ee98ad",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "psychology, philosophy, technology, business, startups, bitcoin, stocks, investment, biology, physics"
+      },
+      {
+        "questionId": 2,
+        "answer": "investment and product design"
+      },
+      {
+        "questionId": 3,
+        "answer": "advance education and learning, and increasing longevity"
+      },
+      {
+        "questionId": 4,
+        "answer": "one where i can use my skills"
+      },
+      {
+        "questionId": 5,
+        "answer": "help people live longer and meet their highest potential"
+      },
+      {
+        "questionId": 6,
+        "answer": "tools, tech, ideas, and small groups"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Accounting",
+          "description": "This major provides a strong foundation in business concepts, which can be beneficial for a career in investment or startups. It also introduces key financial principles that are necessary for understanding and analyzing stocks and investment strategies.",
+          "department": "Business",
+          "requirements": [
+            "Introduction to Accounting",
+            "Principles of Financial Accounting",
+            "Principles of Managerial Accounting"
+          ]
+        },
+        {
+          "name": "Liberal Studies",
+          "description": "Liberal Studies is a multidisciplinary major that allows you to learn about a variety of subjects including psychology, philosophy, and even some basics of biology and physics. This breadth of knowledge can provide a well-rounded foundation that is valuable in many different fields.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "Introduction to Liberal Studies",
+            "Critical Thinking in Liberal Studies",
+            "Capstone in Liberal Studies"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Investment Analyst",
+          "description": "Investment Analysts provide guidance to businesses and individuals making investment decisions. They assess the performance of stocks, bonds, and other types of investments.",
+          "relatedMajors": [
+            "Accounting"
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 100000
+          }
+        },
+        {
+          "title": "Product Designer",
+          "description": "Product Designers work with various departments to develop and design products. They often have to understand the business, technical, and user aspects of a product.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 90000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "ASG provides leadership opportunities and involvement in campus life. This could be beneficial for a student interested in startups and making an impact.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "These meetings allow students to be involved in decision-making processes on campus. It's a good opportunity to learn about leadership and governance, which could be beneficial in a future career in startups or investment.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T19:43:31.161Z",
+    "sessionId": "ebe8a65b-b431-475b-bed4-0efd476ce21c",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "psych, tech, business, startups, product design, bitcoin, entrepreneurship"
+      },
+      {
+        "questionId": 2,
+        "answer": "philosophy, physics"
+      },
+      {
+        "questionId": 3,
+        "answer": "solving educational problems and longevity"
+      },
+      {
+        "questionId": 4,
+        "answer": "help people reach their fullest potential and live longer"
+      },
+      {
+        "questionId": 5,
+        "answer": "be a good person in the world"
+      },
+      {
+        "questionId": 6,
+        "answer": "tools, tech, and ideas, and small groups who move fast"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Psychology",
+          "description": "Study of human mind and behavior. This major could help you understand people's motivations, which is crucial in designing products and services that meet consumers' needs.",
+          "department": "Psychology",
+          "requirements": [
+            "Complete required psychology courses"
+          ]
+        },
+        {
+          "name": "Business Administration 2.0",
+          "description": "Study of business principles and practices. A major in business administration could provide you with the business knowledge and entrepreneurial skills you need to run a successful startup.",
+          "department": "Business - Communication",
+          "requirements": [
+            "Complete required business courses"
+          ]
+        },
+        {
+          "name": "Computer Science",
+          "description": "Study of computer systems and software. This major could equip you with the technical skills you need to develop innovative technologies and solutions.",
+          "department": "Computer Science",
+          "requirements": [
+            "Complete required computer science courses"
+          ]
+        },
+        {
+          "name": "Philosophy",
+          "description": "Study of fundamental questions about existence, reality, knowledge, values, etc. This major could help you in understanding and solving complex educational problems.",
+          "department": "Philosophy",
+          "requirements": [
+            "Complete required philosophy courses"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Product Designer",
+          "description": "Design and improve the user experience of products. Use psychology to understand user behavior, business principles to ensure the viability of products, and computer science to implement designs.",
+          "relatedMajors": [
+            "Psychology",
+            "Business Administration 2.0",
+            "Computer Science"
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 130000
+          }
+        },
+        {
+          "title": "Entrepreneur",
+          "description": "Start and run your own business. Use business and computer science knowledge to establish and manage your startup, and apply philosophy and psychology to understand and address market needs.",
+          "relatedMajors": [
+            "Business Administration 2.0",
+            "Computer Science",
+            "Philosophy"
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 200000
+          }
+        },
+        {
+          "title": "Educational Consultant",
+          "description": "Help schools and educational institutions improve their educational practices and systems. Use your knowledge in philosophy to understand and solve complex educational problems.",
+          "relatedMajors": [
+            "Philosophy"
+          ],
+          "salary": {
+            "min": 40000,
+            "max": 90000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Collegiate Entrepreneurs Organization",
+          "description": "A student organization that fosters entrepreneurship.",
+          "category": "Professional Development & Business",
+          "website": "N/A"
+        },
+        {
+          "name": "Tech ++",
+          "description": "A student organization focused on technology and computer science.",
+          "category": "STEM & Technology",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "DSP&S Job and Life Skills Workshop",
+          "description": "A workshop to develop job and life skills.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Career Services"
+        },
+        {
+          "name": "Board of Trustees Regular Board Meeting",
+          "description": "A regular meeting of the Board of Trustees.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Administration, Board of Trustees"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T19:47:46.133Z",
+    "sessionId": "553a1a4a-0807-4eff-a2a0-2a1d347deef6",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "I get curious about how systems work — like why traffic moves the way it does, or how water gets filtered."
+      },
+      {
+        "questionId": 2,
+        "answer": "I like organizing stuff and solving puzzles. I also track my own habits in a spreadsheet for fun."
+      },
+      {
+        "questionId": 3,
+        "answer": "Anything where I can spot patterns or make something more efficient."
+      },
+      {
+        "questionId": 4,
+        "answer": "Being part of something that helps cities or communities run better."
+      },
+      {
+        "questionId": 5,
+        "answer": "I want to help solve problems that affect people’s daily lives — even if they never realize it."
+      },
+      {
+        "questionId": 6,
+        "answer": "Mostly ideas, and tools that make ideas real. I like making things work better."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Engineering: Civil",
+          "description": "This major provides a solid foundation in civil engineering principles and applications, including the design and optimization of systems, infrastructure, and processes. It's ideal for students who enjoy problem-solving and are interested in understanding how things work.",
+          "department": "Engineering",
+          "requirements": [
+            "Physics",
+            "Mathematics"
+          ]
+        },
+        {
+          "name": "Environmental Science",
+          "description": "Environmental science is a multidisciplinary field that integrates physical, biological and information sciences to study the environment and solve environmental problems. It involves a lot of systems thinking and efficiency optimization, which aligns with your interests.",
+          "department": "Biology",
+          "requirements": [
+            "Biology",
+            "Chemistry"
+          ]
+        },
+        {
+          "name": "Computer Science",
+          "description": "Computer science is a versatile major that can provide you with the technical skills necessary to solve complex problems, create software, and understand data patterns. It can help you in understanding and creating systems that can improve people's lives.",
+          "department": "Computer Science",
+          "requirements": [
+            "Mathematics",
+            "Computer Programming"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Civil Engineer",
+          "description": "Civil engineers design, build, supervise, operate, and maintain construction projects and systems in the public and private sector. These might include roads, buildings, airports, tunnels, dams, bridges, and systems for water supply and sewage treatment. This career path will allow you to directly improve cities and communities.",
+          "relatedMajors": [
+            "Engineering: Civil"
+          ],
+          "salary": {
+            "min": 56000,
+            "max": 144560
+          }
+        },
+        {
+          "title": "Urban Planner",
+          "description": "Urban planners develop plans and programs for land use in their jurisdictions. They use planning to create communities, accommodate population growth, and revitalize physical facilities in towns, cities, counties, and metropolitan areas. This career path will allow you to help communities run better.",
+          "relatedMajors": [
+            "Engineering: Civil"
+          ],
+          "salary": {
+            "min": 44000,
+            "max": 105000
+          }
+        },
+        {
+          "title": "Data Analyst",
+          "description": "Data analysts translate numbers, trends, and trajectories into digestible and accessible information. They often work with a variety of departments, providing them with the data needed to make informed decisions about business practices, efficiency optimization, and strategic planning.",
+          "relatedMajors": [
+            "Computer Science"
+          ],
+          "salary": {
+            "min": 48000,
+            "max": 115000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Tech ++",
+          "description": "A student organization focused on advancing technical skills and knowledge. It's a great platform for networking with like-minded peers and industry professionals.",
+          "category": "STEM & Technology",
+          "website": "N/A"
+        },
+        {
+          "name": "Aeronautics Club",
+          "description": "This club is focused on the science of flight and aircraft systems, aligning with your interest in how systems work.",
+          "category": "STEM & Academic",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Farmer's Market",
+          "description": "This event offers a unique opportunity to observe and interact with a complex community system in action.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Campus Life"
+        },
+        {
+          "name": "DSP&S Job and Life Skills Workshop",
+          "description": "This workshop provides students with practical skills needed to succeed in the job market and life in general.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Career Services"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T19:49:48.225Z",
+    "sessionId": "181a51f4-646a-470c-b47c-1070cea7e76a",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "I’m interested in how people think and how their backgrounds shape who they are."
+      },
+      {
+        "questionId": 2,
+        "answer": "I talk with friends a lot and help them think through stuff. I also like volunteering at local events."
+      },
+      {
+        "questionId": 3,
+        "answer": "I like helping people feel understood or helping a group get through conflict."
+      },
+      {
+        "questionId": 4,
+        "answer": "Anything where I get to support people or guide them through something tough."
+      },
+      {
+        "questionId": 5,
+        "answer": "I want to make people feel safer or more confident — especially those who usually get ignored."
+      },
+      {
+        "questionId": 6,
+        "answer": "People, 100%. I care about connection."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Psychology",
+          "description": "This major lays a foundation in understanding human behavior and mental processes, which aligns with your interest in how people think and the impact of their backgrounds.",
+          "department": "Psychology",
+          "requirements": [
+            "Complete required psychology courses"
+          ]
+        },
+        {
+          "name": "Sociology",
+          "description": "Sociology is the study of human societies and how they shape people's behaviors, beliefs, and identity. This could provide a broader perspective on your interest in individual thought and background.",
+          "department": "Sociology",
+          "requirements": [
+            "Complete required sociology courses"
+          ]
+        },
+        {
+          "name": "Communication Studies 2.0",
+          "description": "A major in Communication Studies can equip you with important interpersonal and conflict resolution skills, helping you guide groups through conflict as you mentioned.",
+          "department": "Communication",
+          "requirements": [
+            "Complete required communication courses"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Clinical Psychologist",
+          "description": "Clinical psychologists assess, diagnose, and treat individuals suffering from psychological distress and mental illness. They also perform psychotherapy and develop treatment plans.",
+          "relatedMajors": [
+            "Psychology"
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 80000
+          }
+        },
+        {
+          "title": "Community Service Manager",
+          "description": "Community service managers coordinate and supervise social service programs and community organizations. They manage staff who provide social services to the public.",
+          "relatedMajors": [
+            "Sociology",
+            "Communication Studies 2.0"
+          ],
+          "salary": {
+            "min": 40000,
+            "max": 70000
+          }
+        },
+        {
+          "title": "Social Worker",
+          "description": "Social workers help people solve and cope with problems in their everyday lives. This profession ties well with your desire to support people and guide them through tough situations.",
+          "relatedMajors": [
+            "Psychology",
+            "Sociology"
+          ],
+          "salary": {
+            "min": 30000,
+            "max": 60000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Active Minds",
+          "description": "Active Minds is a mental health advocacy group on campus. Joining could help you learn more about mental health and support your peers.",
+          "category": "Health & Wellness",
+          "website": "N/A"
+        },
+        {
+          "name": "Safe Space Club",
+          "description": "This club works to create safe and inclusive spaces on campus. It could provide opportunities for you to support individuals who often feel ignored.",
+          "category": "Advocacy & Diversity",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "DSP&S Job and Life Skills Workshop",
+          "description": "This workshop provides job and life skills training, which aligns with your interest in helping people feel safer and more confident.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Career Services"
+        },
+        {
+          "name": "TRIO Student Support Services Banquet",
+          "description": "This event celebrates students in the TRIO program. It could provide an opportunity for you to support and connect with your peers.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Campus Life"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T20:03:31.487Z",
+    "sessionId": "deadfe80-7d71-43ff-a2f4-dc3f3615d754",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "I don’t mind science or math, but I really like learning how things work in the real world — like how stuff is built or how small businesses get started."
+      },
+      {
+        "questionId": 2,
+        "answer": "I help out with my uncle’s farm sometimes. I also like fixing stuff — bikes, motors, random tools — and coming up with ways to make side money."
+      },
+      {
+        "questionId": 3,
+        "answer": "I like when something’s broken and I have to figure out how to fix it or make it more efficient. I also like finding ways to make or save money with whatever I’ve got."
+      },
+      {
+        "questionId": 4,
+        "answer": "Running my own thing. Or working outside, doing something hands-on where I can see the results of what I did."
+      },
+      {
+        "questionId": 5,
+        "answer": "I want to build something useful or support my family. Maybe even hire people someday."
+      },
+      {
+        "questionId": 6,
+        "answer": "Tools and nature for sure. I like getting my hands dirty and figuring it out as I go."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Business Administration 2.0",
+          "description": "This program prepares students for careers in management and leadership in both the public and private sectors. Students learn about various forms of management and leadership styles as well as organizational change and innovation.",
+          "department": "Business - Communication",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "Engineering: Computer",
+          "description": "In this program, students will learn about computer hardware and software, as well as network systems. They will also gain skills in problem solving, project management, and communication.",
+          "department": "Engineering",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "Agriculture Business",
+          "description": "This program provides students with the knowledge and skills necessary to understand and manage or start an agricultural business. The program focuses on agricultural economics, marketing, and the principles of management.",
+          "department": "Agriculture",
+          "requirements": [
+            "N/A"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Entrepreneur",
+          "description": "Entrepreneurs create and manage their own businesses, using their skills and knowledge to develop new products or services, or to solve unique problems. This path requires creativity, leadership, and a strong understanding of business management.",
+          "relatedMajors": [
+            "Business Administration 2.0"
+          ],
+          "salary": {
+            "min": 30000,
+            "max": 1000000
+          }
+        },
+        {
+          "title": "Software Engineer",
+          "description": "Software engineers design and create software systems. They may work on applications or systems software, and they often specialize in areas such as networking, databases, or cybersecurity. This career requires problem-solving skills, a strong understanding of computer systems, and the ability to work with complex information.",
+          "relatedMajors": [
+            "Engineering: Computer"
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 120000
+          }
+        },
+        {
+          "title": "Farm Manager",
+          "description": "Farm Managers oversee the operation and maintenance of farms. They make decisions about planting and harvesting crops, raising and feeding livestock, and managing farm finances.",
+          "relatedMajors": [
+            "Agriculture Business"
+          ],
+          "salary": {
+            "min": 35000,
+            "max": 75000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Aggie Club",
+          "description": "The Aggie Club provides opportunities for networking, education, and leadership in the field of agriculture.",
+          "category": "Agriculture & Academic",
+          "website": "N/A"
+        },
+        {
+          "name": "Collegiate Entrepreneurs Organization",
+          "description": "The Collegiate Entrepreneurs' Organization is a supportive environment for students who are interested in entrepreneurship to network and learn from each other.",
+          "category": "Professional Development & Business",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Farmer's Market",
+          "description": "This event showcases the products of our local farmers and provides an opportunity to learn about the agricultural industry.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Community"
+        },
+        {
+          "name": "AgTEC Certificate Graduation",
+          "description": "This is a graduation event for students who completed the AgTEC Certificate program, a program that combines agriculture, technology, and business.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Academic"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T20:11:59.749Z",
+    "sessionId": "148a80be-fb3d-45f1-8937-671668ea63d3",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "History, kinda. I like stuff with good stories."
+      },
+      {
+        "questionId": 2,
+        "answer": "Talking with friends, watching documentaries, random YouTube deep dives."
+      },
+      {
+        "questionId": 3,
+        "answer": "Arguing a point. Trying to prove people wrong (but nicely)."
+      },
+      {
+        "questionId": 4,
+        "answer": "Something where I can say what I think and actually get heard."
+      },
+      {
+        "questionId": 5,
+        "answer": "Change minds. Help people see stuff differently."
+      },
+      {
+        "questionId": 6,
+        "answer": "Ideas. But like, ideas that matter."
+      },
+      {
+        "questionId": 7,
+        "answer": "Debates. Or chill convos where people actually listen."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "History",
+          "description": "A study of past events, particularly in human affairs. This major can satisfy your interest in stories and narratives.",
+          "department": "History",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "Political Science",
+          "description": "A major in Political Science gives you the opportunity to study government and politics, which often involves a lot of debates and discussions. This could suit your interest in arguing points and having your voice heard.",
+          "department": "Political Science",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "English",
+          "description": "The English major emphasizes the study of literature and culture. It can provide you with the skills to analyze and argue about ideas that matter.",
+          "department": "English",
+          "requirements": [
+            "N/A"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Historian",
+          "description": "Historians research, analyze, interpret, and present the past by studying a variety of historical documents and sources.",
+          "relatedMajors": [
+            "History"
+          ],
+          "salary": {
+            "min": 38000,
+            "max": 107000
+          }
+        },
+        {
+          "title": "Political Analyst",
+          "description": "Political analysts study the development of political systems, research various political subjects and collect and analyze data.",
+          "relatedMajors": [
+            "Political Science"
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 115000
+          }
+        },
+        {
+          "title": "Content Writer",
+          "description": "Content Writers produce engaging content for online platforms. They are comfortable with building narratives around ideas that matter.",
+          "relatedMajors": [
+            "English"
+          ],
+          "salary": {
+            "min": 30000,
+            "max": 70000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government",
+          "description": "The Associated Student Government offers opportunities for students to voice their opinions and lead change on campus.",
+          "category": "Leadership & Governance",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Board of Trustees Regular Board Meeting",
+          "description": "The Board of Trustees Regular Board Meeting is a place where you can observe and participate in discussions about the governance of the college.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Administration, Board of Trustees"
+        }
+      ]
+    }
   }
 ]
