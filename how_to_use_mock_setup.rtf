@@ -1,0 +1,100 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red115\green207\blue184;\red10\green10\blue10;\red187\green187\blue187;
+\red255\green255\blue255;\red115\green207\blue184;\red208\green215\blue228;\red114\green202\blue195;\red233\green160\blue108;
+\red206\green205\blue213;\red155\green134\blue244;\red219\green125\blue212;\red207\green214\blue228;\red114\green201\blue195;
+\red153\green132\blue242;\red205\green204\blue213;\red90\green90\blue90;\red149\green149\blue149;\red255\green255\blue255;
+\red208\green215\blue228;\red115\green207\blue184;\red205\green205\blue213;\red233\green160\blue108;\red132\green179\blue250;
+\red219\green124\blue212;\red229\green189\blue122;\red131\green178\blue248;\red233\green160\blue109;\red218\green124\blue212;
+\red229\green189\blue123;\red149\green149\blue149;\red255\green255\blue255;\red209\green215\blue228;\red90\green90\blue90;
+\red114\green202\blue195;\red156\green135\blue244;\red206\green206\blue213;\red115\green207\blue184;\red233\green159\blue107;
+\red133\green181\blue251;}
+{\*\expandedcolortbl;;\cssrgb\c51373\c83922\c77255;\cssrgb\c3922\c3922\c3922;\cssrgb\c78156\c78156\c78156;
+\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c51401\c84012\c77127;\cssrgb\c85069\c87437\c91433;\cssrgb\c51090\c82534\c80768;\cssrgb\c93594\c68783\c49608;
+\cssrgb\c84244\c84250\c86680;\cssrgb\c67355\c61543\c96608;\cssrgb\c89304\c58316\c86323;\cssrgb\c84706\c87059\c91373;\cssrgb\c50980\c82353\c80784;
+\cssrgb\c66667\c60784\c96078;\cssrgb\c83922\c83922\c86667;\cssrgb\c42745\c42745\c42745;\cssrgb\c65130\c65130\c65049;\cssrgb\c100000\c100000\c100000\c0;
+\cssrgb\c84948\c87312\c91414;\cssrgb\c51392\c83982\c77170;\cssrgb\c84137\c84141\c86676;\cssrgb\c93639\c68863\c49805;\cssrgb\c58475\c76186\c98394;
+\cssrgb\c89209\c58225\c86308;\cssrgb\c92056\c78271\c54904;\cssrgb\c58039\c75686\c98039;\cssrgb\c93725\c69020\c50196;\cssrgb\c89020\c58039\c86275;
+\cssrgb\c92157\c78431\c55294;\cssrgb\c65058\c65058\c65058;\cssrgb\c100000\c100000\c99956\c0;\cssrgb\c85189\c87562\c91452;\cssrgb\c42932\c42932\c42718;
+\cssrgb\c51126\c82594\c80762;\cssrgb\c67584\c61796\c96784;\cssrgb\c84350\c84358\c86683;\cssrgb\c51410\c84041\c77084;\cssrgb\c93549\c68703\c49411;
+\cssrgb\c58911\c76686\c98747;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 DO THIS TO USE MOCK: INSERT LINES BETWEEN GREY IN CODE\
+\
+\cf4 \cb5 \strokec6 export\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec8 async\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec8 function\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec9 POST\cf4 \cb5 \strokec7 (
+\f1\i \cf4 \cb5 \strokec10 request
+\f0\i0 \cf4 \cb5 \strokec10 :\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec9 Request\cf4 \cb5 \strokec7 ) \{\
+  \cf4 \cb5 \strokec6 try\cf4 \cb5 \strokec7  \{\
+    \cf4 \cb5 \strokec8 const\cf4 \cb5 \strokec7  \{ \cf4 \cb5 \strokec11 answers\cf4 \cb5 \strokec7 , \cf4 \cb5 \strokec11 universityId\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec10 =\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec12 'fresno_state'\cf4 \cb5 \strokec7  \} \cf4 \cb5 \strokec10 =\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec6 await\cf4 \cb5 \strokec7  \cf4 \cb5 \strokec10 request\cf4 \cb5 \strokec7 .\cf4 \cb5 \strokec9 json\cf4 \cb5 \strokec7 ();\cf13 \cb1 \strokec13 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3     \cf14 \strokec14 const\cf13 \strokec13  \cf15 \strokec15 useMock\cf13 \strokec13  \cf16 \strokec16 =\cf13 \strokec13  false; 
+\f1\i \cf17 \strokec17 // \uc0\u55357 \u56392  flip this to false to re-enable GPT
+\f0\i0 \cf13 \cb1 \strokec13 \
+\pard\pardeftab720\partightenfactor0
+\cf18 \cb19 \strokec20 \
+    \cf18 \strokec21 if\cf18 \strokec20  (\cf18 \strokec22 !Array\cf18 \strokec20 .\cf18 \strokec23 isArray\cf18 \strokec20 (\cf18 \strokec24 answers\cf18 \strokec20 )) \{\
+      \cf18 \strokec21 return\cf18 \strokec20  \cf18 \strokec22 NextResponse\cf18 \strokec20 .\cf18 \strokec23 json\cf18 \strokec20 (\
+        \{ \cf18 \strokec22 error:\cf18 \strokec20  \cf18 \strokec25 'Invalid request format'\cf18 \strokec20  \},\
+        \{ \cf18 \strokec22 status:\cf18 \strokec20  \cf18 \strokec26 400\cf18 \strokec20  \}\
+      );\
+    \}\
+   \cf13 \cb1 \strokec13 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3     \cf2 \strokec2 if\cf13 \strokec13  (\cf27 \strokec27 useMock\cf13 \strokec13 ) \{ 
+\f1\i \cf17 \strokec17 // \uc0\u55357 \u56392  for mocking, can delete from here to \u55357 \u56785 \u65039 
+\f0\i0 \cf13 \cb1 \strokec13 \
+\cb3       \cf2 \strokec2 return\cf13 \strokec13  \cf16 \strokec16 NextResponse\cf13 \strokec13 .\cf28 \strokec28 json\cf13 \strokec13 (\{\cb1 \
+\cb3         \cf16 \strokec16 majors:\cf13 \strokec13  \cf16 \strokec16 [\cf13 \cb1 \strokec13 \
+\cb3           \{\cb1 \
+\cb3             \cf16 \strokec16 name:\cf13 \strokec13  \cf29 \strokec29 "Psychology"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 description:\cf13 \strokec13  \cf29 \strokec29 "You're curious about how people think and behave."\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 department:\cf13 \strokec13  \cf29 \strokec29 "Department of Psychology"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 requirements:\cf13 \strokec13  \cf16 \strokec16 [\cf29 \strokec29 "Intro to Psych"\cf13 \strokec13 , \cf29 \strokec29 "Statistics"\cf13 \strokec13 , \cf29 \strokec29 "Research Methods"\cf16 \strokec16 ]\cf13 \cb1 \strokec13 \
+\cb3           \},\cb1 \
+\cb3           \{\cb1 \
+\cb3             \cf16 \strokec16 name:\cf13 \strokec13  \cf29 \strokec29 "Computer Science"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 description:\cf13 \strokec13  \cf29 \strokec29 "You like solving problems and building tech."\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 department:\cf13 \strokec13  \cf29 \strokec29 "Computer Science Department"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 requirements:\cf13 \strokec13  \cf16 \strokec16 [\cf29 \strokec29 "Intro to Programming"\cf13 \strokec13 , \cf29 \strokec29 "Data Structures"\cf13 \strokec13 , \cf29 \strokec29 "Algorithms"\cf16 \strokec16 ]\cf13 \cb1 \strokec13 \
+\cb3           \}\cb1 \
+\cb3         \cf16 \strokec16 ]\cf13 \strokec13 ,\cb1 \
+\cb3         \cf16 \strokec16 careers:\cf13 \strokec13  \cf16 \strokec16 [\cf13 \cb1 \strokec13 \
+\cb3           \{\cb1 \
+\cb3             \cf16 \strokec16 title:\cf13 \strokec13  \cf29 \strokec29 "UX Designer"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 description:\cf13 \strokec13  \cf29 \strokec29 "You create intuitive and meaningful digital experiences."\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 relatedMajors:\cf13 \strokec13  \cf16 \strokec16 [\cf29 \strokec29 "Psychology"\cf13 \strokec13 , \cf29 \strokec29 "Graphic Design"\cf16 \strokec16 ]\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 salary:\cf13 \strokec13  \{ \cf16 \strokec16 min:\cf13 \strokec13  \cf30 \strokec30 70000\cf13 \strokec13 , \cf16 \strokec16 max:\cf13 \strokec13  \cf30 \strokec30 115000\cf13 \strokec13  \}\cb1 \
+\cb3           \}\cb1 \
+\cb3         \cf16 \strokec16 ]\cf13 \strokec13 ,\cb1 \
+\cb3         \cf16 \strokec16 organizations:\cf13 \strokec13  \cf16 \strokec16 [\cf13 \cb1 \strokec13 \
+\cb3           \{\cb1 \
+\cb3             \cf16 \strokec16 name:\cf13 \strokec13  \cf29 \strokec29 "Active Minds Club"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 description:\cf13 \strokec13  \cf29 \strokec29 "Supports student mental health and well-being."\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 category:\cf13 \strokec13  \cf29 \strokec29 "Health & Wellness"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 website:\cf13 \strokec13  \cf29 \strokec29 "https://example.com/activeminds"\cf13 \cb1 \strokec13 \
+\cb3           \}\cb1 \
+\cb3         \cf16 \strokec16 ]\cf13 \strokec13 ,\cb1 \
+\cb3         \cf16 \strokec16 events:\cf13 \strokec13  \cf16 \strokec16 [\cf13 \cb1 \strokec13 \
+\cb3           \{\cb1 \
+\cb3             \cf16 \strokec16 name:\cf13 \strokec13  \cf29 \strokec29 "Career Fair"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 description:\cf13 \strokec13  \cf29 \strokec29 "Meet recruiters and explore job opportunities."\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 date:\cf13 \strokec13  \cf29 \strokec29 "April 10, 2025"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 location:\cf13 \strokec13  \cf29 \strokec29 "Student Union Hall"\cf13 \strokec13 ,\cb1 \
+\cb3             \cf16 \strokec16 category:\cf13 \strokec13  \cf29 \strokec29 "Professional Development"\cf13 \cb1 \strokec13 \
+\cb3           \}\cb1 \
+\cb3         \cf16 \strokec16 ]\cf13 \cb1 \strokec13 \
+\cb3       \});\cb1 \
+\cb3     \} 
+\f1\i \cf17 \strokec17 // \uc0\u55357 \u56392  for mocking, can delete to here \u55357 \u56785 \u65039 
+\f0\i0 \cf31 \cb32 \strokec33 \
+\
+    
+\f1\i \cf31 \cb32 \strokec34 // Load university data
+\f0\i0 \cf31 \cb32 \strokec33 \
+    \cf31 \cb32 \strokec35 const\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec36 universityData\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec37 =\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec38 await\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec39 getUniversityData\cf31 \cb32 \strokec33 (\cf31 \cb32 \strokec40 universityId\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec38 as\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec39 UniversityId\cf31 \cb32 \strokec33 );\
+    \cf31 \cb32 \strokec35 const\cf31 \cb32 \strokec33  \cf31 \cb32 \strokec36 systemPrompt\cf31 \cb32 \strokec33  \
+}

@@ -1,0 +1,307 @@
+{
+  "university": {
+    "id": "fresno_state",
+    "name": "California State University, Fresno",
+    "shortName": "Fresno State",
+    "description": "California State University, Fresno is a public university in Fresno, California. It is one of 23 campuses in the California State University system.",
+    "website": "https://www.fresnostate.edu",
+    "colors": {
+      "primary": "#003876",
+      "secondary": "#DB0032"
+    }
+  },
+  "majors": [
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Agricultural Business",
+      "degree": "B.S.",
+      "options": []
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Agricultural Education",
+      "degree": "B.S.",
+      "options": [
+        "Agricultural Communications",
+        "Teacher Preparation"
+      ]
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Animal Science",
+      "degree": "B.S.",
+      "options": [
+        "Production Management",
+        "Dairy Science",
+        "Equine Science",
+        "Livestock and Poultry Management",
+        "Meat Technology",
+        "Science",
+        "Veterinary Preparation",
+        "Preprofessional"
+      ]
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Enology",
+      "degree": "B.S.",
+      "options": []
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Food Sciences",
+      "degree": "B.S.",
+      "options": [
+        "Culinology",
+        "Food Technology"
+      ]
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Human Nutritional Sciences",
+      "degree": "B.S.",
+      "options": []
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Industrial Technology",
+      "degree": "B.S.",
+      "options": [
+        "Agricultural Systems Management"
+      ]
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Plant Science",
+      "degree": "B.S.",
+      "options": []
+    },
+    {
+      "college": "Jordan College of Agricultural Sciences and Technology",
+      "major": "Viticulture",
+      "degree": "B.S.",
+      "options": []
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "Art",
+      "degree": "B.A.",
+      "options": [
+        "Animation Intermedia"
+      ]
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "Art History",
+      "degree": "B.A.",
+      "options": []
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "Cognitive Science",
+      "degree": "B.S.",
+      "options": []
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "Communication",
+      "degree": "B.A.",
+      "options": []
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "Dance",
+      "degree": "B.A.",
+      "options": []
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "English",
+      "degree": "B.A.",
+      "options": [
+        "Creative Writing",
+        "Literature"
+      ]
+    },
+    {
+      "college": "College of Arts & Humanities",
+      "major": "English Studies",
+      "degree": "B.A.",
+      "options": []
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Active Minds Club",
+      "description": "Connects students to mental health resources they may not know they needed or did not know were available.",
+      "category": "Mental Health"
+    },
+    {
+      "name": "African American Student Social Work Association",
+      "description": "Provides collaboration with community reps and professionals, mentorship, leadership development, and peer connection.",
+      "category": "Social Work / Cultural"
+    },
+    {
+      "name": "Africana Studies Student Association Club",
+      "description": "Encourages conversation around the African Diaspora and provides a safe space to learn about Africana Studies.",
+      "category": "Cultural / Academic"
+    },
+    {
+      "name": "Ag Business Club / National Agri-Marketing Association Chapter",
+      "description": "Connects students with both academic and industry opportunities through activities, networking, and support systems.",
+      "category": "Agriculture / Business"
+    },
+    {
+      "name": "American Heart Association Student Chapter",
+      "description": "Raises awareness of heart health and cardiovascular diseases through events and volunteer opportunities.",
+      "category": "Health"
+    },
+    {
+      "name": "American Institute of Aeronautics and Astronautics",
+      "description": "Provides education and projects in aerospace engineering; students compete in aircraft/rocket design competitions.",
+      "category": "Engineering / Aerospace"
+    },
+    {
+      "name": "American Sign Language Club",
+      "description": "Focuses on learning and communicating in ASL, open to all majors, not just Deaf Education or Interpreting students.",
+      "category": "Language / Accessibility"
+    },
+    {
+      "name": "Anime Association Club",
+      "description": "Promotes appreciation of Japanese animation and culture through events and activities.",
+      "category": "Cultural / Entertainment"
+    },
+    {
+      "name": "Asian Social Work Organization",
+      "description": "A group for undergraduate and graduate social work students to promote networking and involvement.",
+      "category": "Social Work / Cultural"
+    },
+    {
+      "name": "Art of Life Cancer Foundation Club",
+      "description": "Provides support and programs for cancer survivors and those impacted by cancer.",
+      "category": "Health / Support"
+    },
+    {
+      "name": "Association for Computing Machinery (ACM)",
+      "description": "Connects computer science and tech students through events, competitions, and projects.",
+      "category": "Technology / Computer Science"
+    },
+    {
+      "name": "Association of Pre-Pharmacy Students",
+      "description": "Supports students interested in pursuing pharmacy through resources, panels, and school prep.",
+      "category": "Health / Pre-Professional"
+    },
+    {
+      "name": "Black Student Union",
+      "description": "Creates a space for Black students to connect, support each other, and foster cultural awareness.",
+      "category": "Cultural / Support"
+    },
+    {
+      "name": "Bulldog Racing Club",
+      "description": "Designs and builds formula-style race cars for intercollegiate competitions, focused on engineering and teamwork.",
+      "category": "Engineering / Automotive"
+    },
+    {
+      "name": "Chicano Latino Youth Leadership Project (CLYLP) Fresno State Chapter",
+      "description": "Focuses on civic engagement, leadership, and college retention among Latino students.",
+      "category": "Cultural / Leadership"
+    },
+    {
+      "name": "Club Sports Council",
+      "description": "Serves as the student governing body for all recognized club sports at Fresno State.",
+      "category": "Sports / Governance"
+    },
+    {
+      "name": "Cru",
+      "description": "A Christian student organization focused on faith, community, and leadership development.",
+      "category": "Religious / Leadership"
+    },
+    {
+      "name": "Delta Alpha Pi International Honor Society",
+      "description": "Recognizes academic achievement of students with disabilities and promotes inclusive excellence.",
+      "category": "Academic / Accessibility"
+    },
+    {
+      "name": "Dog Days Orientation Leaders",
+      "description": "Supports incoming students through peer mentorship and orientation programs.",
+      "category": "Leadership / Peer Support"
+    },
+    {
+      "name": "Feminist Majority Leadership Alliance",
+      "description": "Aims to promote gender equality, activism, and dialogue around feminist issues.",
+      "category": "Social Justice / Advocacy"
+    }
+  ],
+  "events": [
+    {
+      "title": "Recreational Badminton (Spring 2025)",
+      "date": "February 28 \u2013 May 18, 2025",
+      "location": "South Gym",
+      "price": "$70.00",
+      "category": "ALUMNI"
+    },
+    {
+      "title": "African Americans and Labor art exhibition",
+      "date": "Friday, February 28, 2025. 8:00 AM - 5:00 PM",
+      "location": "Dean's Gallery Room 186",
+      "price": "Free",
+      "category": "College of Arts and Humanities"
+    },
+    {
+      "title": "Cineculture | Ma France \u00e0 moi (My Motherland) (2023)",
+      "date": "Friday, February 28, 2025. 5:30 PM - 7:30 PM",
+      "location": "Student Recreation Center Peters Education Center Auditorium",
+      "price": "Free",
+      "category": "College of Arts and Humanities"
+    },
+    {
+      "title": "8th Fresno State Art Song Festival - Voice, piano duo, poetry and composition finals",
+      "date": "Friday, February 28, 2025. 6:30 PM - 9:00 PM",
+      "location": "Fresno State Concert Hall",
+      "price": "$15.00 - $25.00",
+      "category": "College of Arts and Humanities"
+    },
+    {
+      "title": "Argentine Tango Class",
+      "date": "March 1 \u2013 May 11, 2025",
+      "location": "South Gym Fresno State South Gym 133",
+      "price": "$50.00",
+      "category": "ALUMNI"
+    },
+    {
+      "title": "Recreational Pickleball (Spring 2025)",
+      "date": "March 1 \u2013 May 18, 2025",
+      "location": "South Gym",
+      "price": "$70.00",
+      "category": "ALUMNI"
+    },
+    {
+      "title": "Argentine Tango Practica (Spring 2025)",
+      "date": "March 1 \u2013 May 18, 2025",
+      "location": "South Gym Fresno State South Gym 133",
+      "price": "$30.00",
+      "category": "ALUMNI"
+    },
+    {
+      "title": "Basic Horsemanship (Spring 2025)",
+      "date": "March 2 \u2013 May 12, 2025",
+      "location": "Fresno State Quarter Horse Unit",
+      "price": "$275.00",
+      "category": "ALUMNI"
+    },
+    {
+      "title": "Cineculture | Radical (2023)",
+      "date": "Friday, March 1, 2025. 5:30 PM - 7:30 PM",
+      "location": "Student Recreation Center Peters Education Center Auditorium",
+      "price": "Free",
+      "category": "College of Arts and Humanities"
+    },
+    {
+      "title": "Cineculture | The Night of the 12th (2022)",
+      "date": "Friday, March 8, 2025. 5:30 PM - 7:30 PM",
+      "location": "Student Recreation Center Peters Education Center Auditorium",
+      "price": "Free",
+      "category": "College of Arts and Humanities"
+    }
+  ]
+}

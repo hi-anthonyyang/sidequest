@@ -1,0 +1,1423 @@
+[
+  {
+    "timestamp": "2025-05-10T23:52:16.085Z",
+    "sessionId": "ee5b9668-d5f0-443e-9ec6-6f83d96ede86",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "agriculture bio chem"
+      },
+      {
+        "questionId": 2,
+        "answer": "farming"
+      },
+      {
+        "questionId": 3,
+        "answer": "food shortage"
+      },
+      {
+        "questionId": 4,
+        "answer": "n/a"
+      },
+      {
+        "questionId": 5,
+        "answer": "not usre"
+      },
+      {
+        "questionId": 6,
+        "answer": "solo"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Agricultural Science",
+          "description": "This major provides a foundation in agricultural principles with a focus on practical skills and scientific knowledge. It aligns well with your interest in farming and food shortage issues.",
+          "department": "Jordan College of Agricultural Sciences and Technology",
+          "requirements": [
+            "General Chemistry",
+            "Biology",
+            "Agricultural Economics",
+            "Soil Science"
+          ]
+        },
+        {
+          "name": "Food Science and Nutrition",
+          "description": "This major studies the physical, microbiological, and chemical makeup of food. It's a fit for your concern about food shortages, as it equips students with knowledge to improve food quality, safety, and distribution.",
+          "department": "Jordan College of Agricultural Sciences and Technology",
+          "requirements": [
+            "General Chemistry",
+            "Organic Chemistry",
+            "Human Nutrition",
+            "Food Processing"
+          ]
+        },
+        {
+          "name": "Plant Science",
+          "description": "This major focuses on the scientific principles that underlie the breeding and cultivation of agricultural plants, and the production, processing, and distribution of agricultural plant products. It fits your interest in biochemistry and farming.",
+          "department": "Jordan College of Agricultural Sciences and Technology",
+          "requirements": [
+            "General Chemistry",
+            "Biology",
+            "Plant Physiology",
+            "Soil Science"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Agricultural Scientist",
+          "description": "Agricultural scientists study farm crops and animals, and develop ways of improving their quantity and quality. They look for ways to improve crop yield with less labor, control pests and weeds more safely and effectively, and conserve soil and water.",
+          "relatedMajors": [
+            "Agricultural Science",
+            "Plant Science"
+          ],
+          "salary": {
+            "min": 58000,
+            "max": 115000
+          }
+        },
+        {
+          "title": "Food Scientist or Technologist",
+          "description": "Food scientists and technologists use chemistry, biology, and other sciences to study the basic elements of food. They analyze nutritional content, discover new food sources, and research ways to make processed foods safe and healthy.",
+          "relatedMajors": [
+            "Food Science and Nutrition"
+          ],
+          "salary": {
+            "min": 45000,
+            "max": 92000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "The Society for Advancement of Chicanos/Hispanics and Native Americans in Science (SACNAS)",
+          "description": "SACNAS is an inclusive organization dedicated to fostering the success of Chicanos/Hispanics and Native Americans, from college students to professionals, in attaining advanced degrees, careers, and positions of leadership in STEM.",
+          "category": "Academic",
+          "website": "https://studentaffairs.fresnostate.edu/studentinvolvement/organizations/index.html"
+        },
+        {
+          "name": "The Plant Science Club",
+          "description": "The Plant Science Club provides a forum for Plant Science majors to meet and organize activities of mutual interest. It also provides an opportunity for students to gain leadership experience.",
+          "category": "Academic",
+          "website": "https://studentaffairs.fresnostate.edu/studentinvolvement/organizations/index.html"
+        }
+      ],
+      "events": [
+        {
+          "name": "Fresno State's Annual Farm Festival",
+          "description": "This event provides an opportunity to celebrate the university's agricultural roots and to learn more about the diverse fields of study in the Jordan College of Agricultural Sciences and Technology.",
+          "date": "To be updated",
+          "location": "Fresno State Farm",
+          "category": "Academic"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-10T23:54:13.646Z",
+    "sessionId": "e51cd232-e677-442f-90c9-9e16f95f67e7",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "art"
+      },
+      {
+        "questionId": 2,
+        "answer": "photography"
+      },
+      {
+        "questionId": 3,
+        "answer": "not sure"
+      },
+      {
+        "questionId": 4,
+        "answer": "be creative"
+      },
+      {
+        "questionId": 5,
+        "answer": "media"
+      },
+      {
+        "questionId": 6,
+        "answer": "meet new people"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Art",
+          "description": "The Art major allows you to express your creativity and develop your artistic skills. You'll have the opportunity to explore various art forms, including painting, sculpture, and photography.",
+          "department": "College of Arts and Humanities",
+          "requirements": [
+            "Complete an introductory course in art"
+          ]
+        },
+        {
+          "name": "Media, Communications and Journalism",
+          "description": "This major provides a broad understanding of the role of media in society. You'll learn about different forms of media, including print, broadcast, and digital, and how they can be used to express creativity.",
+          "department": "College of Arts and Humanities",
+          "requirements": [
+            "Complete introductory courses in media and journalism"
+          ]
+        },
+        {
+          "name": "Graphic Design",
+          "description": "Graphic Design combines art and technology to communicate ideas. You'll learn how to create designs that effectively convey information and engage audiences.",
+          "department": "College of Arts and Humanities",
+          "requirements": [
+            "Complete an introductory course in graphic design"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Artist",
+          "description": "Artists create original works of art using various mediums. They often exhibit their work in galleries and museums, and may also sell their work to collectors.",
+          "relatedMajors": [
+            "Art"
+          ],
+          "salary": {
+            "min": 30000,
+            "max": 75000
+          }
+        },
+        {
+          "title": "Media Specialist",
+          "description": "Media specialists work in various industries, managing and coordinating the use of media to communicate messages. This can involve creating content, managing social media accounts, and working on marketing campaigns.",
+          "relatedMajors": [
+            "Media, Communications and Journalism"
+          ],
+          "salary": {
+            "min": 40000,
+            "max": 85000
+          }
+        },
+        {
+          "title": "Graphic Designer",
+          "description": "Graphic designers create visual concepts to communicate ideas. They design layouts for print and digital media, create logos, and develop graphics for websites and social media.",
+          "relatedMajors": [
+            "Graphic Design"
+          ],
+          "salary": {
+            "min": 40000,
+            "max": 80000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Art Club",
+          "description": "The Art Club is a student organization that provides opportunities for students to explore their creativity, learn new techniques, and showcase their work.",
+          "category": "Arts and Humanities",
+          "website": "http://www.fresnostate.edu/artclub"
+        },
+        {
+          "name": "Media, Communications and Journalism Club",
+          "description": "This club provides opportunities for students to network with professionals in the media industry, learn about career opportunities, and develop their skills.",
+          "category": "Arts and Humanities",
+          "website": "http://www.fresnostate.edu/mcjclub"
+        }
+      ],
+      "events": [
+        {
+          "name": "Art Showcase",
+          "description": "This annual event showcases the work of Fresno State's art students. It's a great opportunity to meet other artists and get feedback on your work.",
+          "date": "TBD",
+          "location": "Fresno State Art Gallery",
+          "category": "Arts and Humanities"
+        },
+        {
+          "name": "Media, Communications and Journalism Career Fair",
+          "description": "This career fair allows students to network with professionals in the media industry, learn about job opportunities, and get advice on their career paths.",
+          "date": "TBD",
+          "location": "Fresno State University Center",
+          "category": "Arts and Humanities"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T00:09:24.000Z",
+    "sessionId": "3aa9492d-6f92-404f-bcc2-de474af5f199",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "art"
+      },
+      {
+        "questionId": 2,
+        "answer": "photography and gardening"
+      },
+      {
+        "questionId": 3,
+        "answer": "photoshop"
+      },
+      {
+        "questionId": 4,
+        "answer": "idk get more work"
+      },
+      {
+        "questionId": 5,
+        "answer": "critical thining"
+      },
+      {
+        "questionId": 6,
+        "answer": "fast pace and slow pace"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Art",
+          "description": "This major will help you cultivate your artistic skills and critical thinking in various artistic mediums, potentially including photography.",
+          "department": "Department of Art and Design",
+          "requirements": [
+            "Portfolio Review",
+            "General Education courses"
+          ]
+        },
+        {
+          "name": "Graphic Design",
+          "description": "This major will allow you to leverage your photography and Photoshop skills in a digital environment, and it's typically fast-paced.",
+          "department": "Department of Art and Design",
+          "requirements": [
+            "Introduction to Digital Design",
+            "General Education courses"
+          ]
+        },
+        {
+          "name": "Plant Science",
+          "description": "If you're interested in taking your passion for gardening to the next level, this major could be a great fit. It will require a slower pace and critical thinking skills.",
+          "department": "Jordan College of Agricultural Sciences and Technology",
+          "requirements": [
+            "General Biology",
+            "General Education courses"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Artist",
+          "description": "As an artist, you can create and sell your own work, including photography. This career requires creativity and critical thinking.",
+          "relatedMajors": [
+            "Art"
+          ],
+          "salary": {
+            "min": 27000,
+            "max": 76000
+          }
+        },
+        {
+          "title": "Graphic Designer",
+          "description": "Graphic designers use software like Photoshop to create visual concepts for clients. This career can be both fast-paced and slow-paced, depending on the project.",
+          "relatedMajors": [
+            "Graphic Design"
+          ],
+          "salary": {
+            "min": 30000,
+            "max": 85000
+          }
+        },
+        {
+          "title": "Horticulturist",
+          "description": "Horticulturists plan, coordinate, and perform activities in gardening services. This career requires a slower pace and critical thinking.",
+          "relatedMajors": [
+            "Plant Science"
+          ],
+          "salary": {
+            "min": 27000,
+            "max": 60000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Photography Club",
+          "description": "The Photography Club explores photography techniques and holds photography events.",
+          "category": "Art",
+          "website": "https://photographyclub.fresnostate.edu"
+        },
+        {
+          "name": "Graphic Design Guild",
+          "description": "The Graphic Design Guild offers workshops and networking opportunities for graphic design students.",
+          "category": "Design",
+          "website": "https://graphicdesignguild.fresnostate.edu"
+        },
+        {
+          "name": "Plant Science Club",
+          "description": "The Plant Science Club organizes activities related to plant science and gardening.",
+          "category": "Science",
+          "website": "https://plantscienceclub.fresnostate.edu"
+        }
+      ],
+      "events": [
+        {
+          "name": "Art Showcase",
+          "description": "Annual event showcasing student art works.",
+          "date": "Spring semester",
+          "location": "University Art Gallery",
+          "category": "Art"
+        },
+        {
+          "name": "Graphic Design Workshop",
+          "description": "Bi-weekly workshop to enhance graphic design skills using various tools including Photoshop.",
+          "date": "Every other week",
+          "location": "Design Lab",
+          "category": "Design"
+        },
+        {
+          "name": "Gardening Workshop",
+          "description": "Monthly workshop teaching students about different aspects of gardening.",
+          "date": "First of each month",
+          "location": "University Greenhouse",
+          "category": "Science"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T00:11:42.080Z",
+    "sessionId": "4357f43f-14e4-4214-8f08-1323c8b68d31",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "space and physics"
+      },
+      {
+        "questionId": 2,
+        "answer": "read"
+      },
+      {
+        "questionId": 3,
+        "answer": "nots ure"
+      },
+      {
+        "questionId": 4,
+        "answer": "adventure"
+      },
+      {
+        "questionId": 5,
+        "answer": "film"
+      },
+      {
+        "questionId": 6,
+        "answer": "anything"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Physics",
+          "description": "Physics is a fundamental science that studies the natural phenomena and the properties of matter and energy. The subject matter of physics includes mechanics, heat, light and other radiation, sound, electricity, magnetism, and the structure of atoms.",
+          "department": "Department of Physics",
+          "requirements": [
+            "Calculus I and II",
+            "General Physics I and II",
+            "Modern Physics"
+          ]
+        },
+        {
+          "name": "English",
+          "description": "The English major is designed to develop skills in critical thinking, reading, writing, and research. It provides a broad background in literature from different periods and cultures.",
+          "department": "Department of English",
+          "requirements": [
+            "Introduction to Literature",
+            "American Literature",
+            "English Literature"
+          ]
+        },
+        {
+          "name": "Media, Communications, and Journalism",
+          "description": "This major allows students to study the many ways media impact our world. It offers a variety of concentrations, including one in Broadcast and Digital Journalism which may align with your interest in film.",
+          "department": "Department of Media, Communications, and Journalism",
+          "requirements": [
+            "Introduction to Mass Communication and Society",
+            "Media Writing",
+            "Media Law"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Physicist",
+          "description": "Physicists study the ways in which various forms of matter and energy interact. Theoretical physicists may study the nature of time or the origin of the universe while experimental physicists may develop medical or military technology.",
+          "relatedMajors": [
+            "Physics"
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 120000
+          }
+        },
+        {
+          "title": "Journalist",
+          "description": "Journalists research, write, edit, and present news or news articles in print or broadcast media. They may cover areas such as news, entertainment, sports, science, and politics.",
+          "relatedMajors": [
+            "Media, Communications, and Journalism"
+          ],
+          "salary": {
+            "min": 30000,
+            "max": 80000
+          }
+        },
+        {
+          "title": "Film Director",
+          "description": "Film directors oversee the artistic and production aspects of film creation. They interpret scripts, direct the performances of actors, select film locations, and manage technical details.",
+          "relatedMajors": [
+            "Media, Communications, and Journalism"
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 200000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Fresno State Physics Club",
+          "description": "The Physics Club provides opportunities for students interested in physics to participate in activities and discussions related to the field.",
+          "category": "Academic",
+          "website": "http://www.fresnostate.edu/csm/physics/"
+        },
+        {
+          "name": "Fresno State Film Club",
+          "description": "The Film Club offers opportunities for students to explore and discuss various aspects of film and filmmaking.",
+          "category": "Arts & Entertainment",
+          "website": "http://www.fresnostate.edu/artshum/mcj/"
+        }
+      ],
+      "events": [
+        {
+          "name": "Physics Seminar Series",
+          "description": "The Physics Seminar Series features talks by leading researchers in the field of physics.",
+          "date": "Every Wednesday during the semester",
+          "location": "Room 162 in the Science II building",
+          "category": "Academic"
+        },
+        {
+          "name": "Film Screening",
+          "description": "The Film Club hosts regular film screenings and discussions.",
+          "date": "Monthly",
+          "location": "Peters Business building, Room 191",
+          "category": "Arts & Entertainment"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T01:08:09.335Z",
+    "sessionId": "9b2ef296-ba65-44de-9a48-1b5006a909ed",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "english, cooking, life science"
+      },
+      {
+        "questionId": 2,
+        "answer": "sports, psych"
+      },
+      {
+        "questionId": 3,
+        "answer": "help people"
+      },
+      {
+        "questionId": 4,
+        "answer": "be well off and help my family"
+      },
+      {
+        "questionId": 5,
+        "answer": "critical thinking and talking to people"
+      },
+      {
+        "questionId": 6,
+        "answer": "i like small groups or by myself"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "English",
+          "description": "English majors develop strong communication and critical thinking skills, perfect for your abilities. The major also offers opportunities to explore numerous topics in literature and language, aligning with your interest in English.",
+          "department": "Liberal Arts",
+          "requirements": [
+            "Advanced English Composition",
+            "Survey of American Literature"
+          ]
+        },
+        {
+          "name": "Culinary Arts",
+          "description": "Culinary Arts will hone your cooking skills and knowledge. This major is excellent for those who love cooking and want to pursue a career in the culinary field.",
+          "department": "Culinary Arts",
+          "requirements": [
+            "Introduction to Culinary Arts",
+            "Culinary Arts Practicum"
+          ]
+        },
+        {
+          "name": "Psychology",
+          "description": "Psychology allows you to explore human behavior and mental processes. Given your interest in psychology and helping people, this major could be a good fit.",
+          "department": "Social Sciences",
+          "requirements": [
+            "Introduction to Psychology",
+            "Psychology Research Methods"
+          ]
+        },
+        {
+          "name": "Life Sciences",
+          "description": "Life Sciences will allow you to study living organisms and their life processes. This aligns with your interest in life sciences, and could potentially lead to a career where you can help people in health-related fields.",
+          "department": "Sciences",
+          "requirements": [
+            "General Biology",
+            "Human Anatomy and Physiology"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Clinical Psychologist",
+          "description": "Clinical Psychologists work to understand, prevent, and relieve psychologically-based distress or dysfunction. They promote physical, intellectual, emotional, social, and spiritual health. This career would make use of your psychology knowledge and desire to help people.",
+          "relatedMajors": [
+            "Psychology"
+          ],
+          "salary": {
+            "min": 51000,
+            "max": 113000
+          }
+        },
+        {
+          "title": "Culinary Arts Instructor",
+          "description": "Culinary Arts Instructors teach students about food preparation and serving. This career would allow you to combine your love for cooking and communication skills.",
+          "relatedMajors": [
+            "Culinary Arts"
+          ],
+          "salary": {
+            "min": 37000,
+            "max": 68000
+          }
+        },
+        {
+          "title": "Biomedical Scientist",
+          "description": "Biomedical Scientists conduct research to understand human diseases with the aim of improving human health. This career aligns with your interest in life sciences and your desire to help people.",
+          "relatedMajors": [
+            "Life Sciences"
+          ],
+          "salary": {
+            "min": 49000,
+            "max": 104000
+          }
+        },
+        {
+          "title": "English Teacher",
+          "description": "English Teachers educate students about English language and literature. This career combines your interest in English and your ability to communicate.",
+          "relatedMajors": [
+            "English"
+          ],
+          "salary": {
+            "min": 39000,
+            "max": 75000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Psychology Club",
+          "description": "A club for students interested in Psychology, offering opportunities for discussion, guest speakers, and social activities.",
+          "category": "Academic",
+          "website": "www.reedleycollege.edu/psychologyclub"
+        },
+        {
+          "name": "Culinary Arts Society",
+          "description": "A club for students interested in cooking and culinary arts, offering cooking workshops and competitions.",
+          "category": "Culinary",
+          "website": "www.reedleycollege.edu/culinaryartssociety"
+        }
+      ],
+      "events": [
+        {
+          "name": "Culinary Arts Showcase",
+          "description": "An event where students showcase their culinary skills and learn from professionals in the field.",
+          "date": "Fall and Spring Semesters",
+          "location": "Reedley College Culinary Arts Department",
+          "category": "Culinary Arts"
+        },
+        {
+          "name": "Psychology Speaker Series",
+          "description": "A series of talks by professionals in the field of Psychology, aimed at inspiring and informing students.",
+          "date": "Monthly",
+          "location": "Reedley College Social Sciences Department",
+          "category": "Psychology"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T01:36:12.517Z",
+    "sessionId": "921beeb2-1154-4805-b83c-98e6396dce37",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "I love chemistry and anything that involves environmental science. I'm fascinated by how natural systems work and how we can engineer solutions for pollution and climate issues."
+      },
+      {
+        "questionId": 2,
+        "answer": "I build mini solar panels from scrap parts, volunteer at local creek cleanups, and tinker with Arduino boards."
+      },
+      {
+        "questionId": 3,
+        "answer": "I like figuring out how to make sustainable systems work — like reducing waste, designing better irrigation, or turning waste into energy."
+      },
+      {
+        "questionId": 4,
+        "answer": "I want to work in sustainable infrastructure or clean tech. Maybe something like water systems for developing communities or eco-friendly city planning."
+      },
+      {
+        "questionId": 5,
+        "answer": "I'd like to get better at CAD modeling, environmental law, and public communication — I want to be someone who can build and explain."
+      },
+      {
+        "questionId": 6,
+        "answer": "Hands-on labs, fieldwork, and being around people who care about the world."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies",
+          "description": "This major could provide you a broad understanding of natural sciences, including chemistry and environmental science. It could also offer you opportunities to explore other areas such as social sciences, humanities, and arts, which could help in understanding and communicating the societal impact of environmental issues.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "Completion of general education requirements",
+            "Completion of major specific courses"
+          ]
+        },
+        {
+          "name": "Accounting",
+          "description": "Although this may seem unconventional, an understanding of business concepts and financial systems is crucial for sustainable development. This major could equip you with skills to manage finances and evaluate the economic feasibility of environmental projects.",
+          "department": "Business",
+          "requirements": [
+            "Completion of general education requirements",
+            "Completion of major specific courses"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Environmental Consultant",
+          "description": "In this role, you could work on a project basis with various organizations to develop and implement sustainable solutions for environmental challenges.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 45000,
+            "max": 85000
+          }
+        },
+        {
+          "title": "Sustainable Infrastructure Planner",
+          "description": "This role involves designing and implementing eco-friendly infrastructure solutions for communities. This could involve working with water systems, city planning, and more.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 55000,
+            "max": 95000
+          }
+        },
+        {
+          "title": "Clean Tech Financial Analyst",
+          "description": "In this role, you could evaluate the economic feasibility and potential returns of investments in clean technology and sustainable infrastructure projects.",
+          "relatedMajors": [
+            "Accounting"
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 100000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "This organization provides leadership experiences and opportunities to make a difference in the college community. You could use this platform to advocate for sustainable practices within the college.",
+          "category": "Leadership",
+          "website": "www.reedleycollege.edu/asg"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "These meetings are a chance to voice your opinions and contribute to the college's decision-making process. You could use this platform to propose eco-friendly initiatives.",
+          "date": "Every first and third Wednesday of the month",
+          "location": "Reedley College Campus",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T01:46:27.896Z",
+    "sessionId": "4ad92ac8-6b9e-4140-9672-0628b18ea190",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "cooking and bio and sports"
+      },
+      {
+        "questionId": 2,
+        "answer": "sports"
+      },
+      {
+        "questionId": 3,
+        "answer": "helping people with homework"
+      },
+      {
+        "questionId": 4,
+        "answer": "i want to help kids"
+      },
+      {
+        "questionId": 5,
+        "answer": "critical thinkign"
+      },
+      {
+        "questionId": 6,
+        "answer": "anything"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies (Liberal Arts & Sciences)",
+          "description": "Given your interests in cooking, biology, sports, and helping others, particularly children, this major allows for a broad exploration of these areas while enhancing your critical thinking skills. You'll study multiple disciplines, allowing you to combine your passions in a unique way.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "Accounting (Business)",
+          "description": "While not directly related to your stated interests, the Accounting major can nurture your critical thinking skills. It also offers a broad range of career opportunities, which could include roles in sports management or non-profit organizations that support children.",
+          "department": "Business",
+          "requirements": [
+            "N/A"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Teacher",
+          "description": "With a degree in Liberal Studies, you could become a teacher, making direct impact on children's lives by helping them with their academic and personal development.",
+          "relatedMajors": [
+            "Liberal Studies (Liberal Arts & Sciences)"
+          ],
+          "salary": {
+            "min": 38000,
+            "max": 57000
+          }
+        },
+        {
+          "title": "Nonprofit Director",
+          "description": "While an Accounting degree might seem unrelated to your passion for helping children, it could lead to a career as a director of a nonprofit organization that supports children. Your critical thinking skills would be a great asset in managing the business aspects of the organization.",
+          "relatedMajors": [
+            "Accounting (Business)"
+          ],
+          "salary": {
+            "min": 45000,
+            "max": 85000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "The ASG provides leadership opportunities and could allow you to support fellow students, aligning with your interest in helping others. It can also help you develop your critical thinking and problem-solving skills.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "These meetings are great opportunities to engage with student leaders, learn about college governance, and contribute to discussions that affect the student body. It aligns with your interest in leadership and helping others.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T01:58:51.547Z",
+    "sessionId": "010b70bb-973b-43a0-955d-db2e26100ab8",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "science, math, business, english"
+      },
+      {
+        "questionId": 2,
+        "answer": "soccer, community service"
+      },
+      {
+        "questionId": 3,
+        "answer": "helping people"
+      },
+      {
+        "questionId": 4,
+        "answer": "helping others"
+      },
+      {
+        "questionId": 5,
+        "answer": "public speaking"
+      },
+      {
+        "questionId": 6,
+        "answer": "working alone"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies (Liberal Arts & Sciences)",
+          "description": "This major offers a well-rounded education, including courses in science, math, and English, which aligns well with your academic strengths.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "Coursework in various subjects including science, math, and English"
+          ]
+        },
+        {
+          "name": "Accounting (Business)",
+          "description": "Given your interest in business, the Accounting major could be a great fit. It will allow you to combine your love for math with practical business knowledge.",
+          "department": "Business",
+          "requirements": [
+            "Coursework in accounting principles, business law, and finance"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Accountant",
+          "description": "As an Accountant, you'll apply your math and business knowledge to help individuals and businesses with financial records and tax filings.",
+          "relatedMajors": [
+            "Accounting (Business)"
+          ],
+          "salary": {
+            "min": 45000,
+            "max": 70000
+          }
+        },
+        {
+          "title": "Social Worker",
+          "description": "If your passion is helping people, a career as a Social Worker could be very rewarding. It's not directly related to your majors, but your broad knowledge from Liberal Studies can be beneficial in understanding various aspects of this job.",
+          "relatedMajors": [
+            "Liberal Studies (Liberal Arts & Sciences)"
+          ],
+          "salary": {
+            "min": 33000,
+            "max": 60000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "ASG is a great place to practice public speaking and develop leadership skills. It also offers opportunities to serve the community, aligning with your interest in community service.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "Attending Student Senate Meetings can provide insights into student leadership and public speaking. These meetings are a great opportunity to learn more about how to make a positive impact in your community.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T02:08:01.568Z",
+    "sessionId": "14294f17-667f-4368-b082-7e94dd2e37f4",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "History and english. I like when we talk about real life stuff or how ppl think."
+      },
+      {
+        "questionId": 2,
+        "answer": "Talkin to my grandma. I post vids sometimes of ppl telling stories. Just for fun."
+      },
+      {
+        "questionId": 3,
+        "answer": "When ppl argue or feel left out, I try to make it better."
+      },
+      {
+        "questionId": 4,
+        "answer": "idk exactly, but I wanna help ppl feel seen. like actually listened to."
+      },
+      {
+        "questionId": 5,
+        "answer": "Writing better and knowing how to talk to ppl when they're going thru it."
+      },
+      {
+        "questionId": 6,
+        "answer": "Not too loud. somewhere chill but real."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies",
+          "description": "This major would allow you to delve into subjects like English and History, which you've expressed interest in. It can also provide you with a broad understanding of societal issues, improving your ability to understand and connect with people on a deeper level.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "N/A"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Social Worker",
+          "description": "As a social worker, you would have the opportunity to help people navigate challenging situations and feel seen and heard. This career path requires strong communication skills and an empathetic approach, which aligns with your interests in improving your writing and understanding people's experiences.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 33000,
+            "max": 80000
+          }
+        },
+        {
+          "title": "Content Creator",
+          "description": "Given your interest in creating videos and telling stories, you might consider a career as a content creator. This can range from creating online content (like the videos you're already making) to working in more traditional media.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 35000,
+            "max": 70000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "Joining the ASG could offer you opportunities to improve your leadership and conflict resolution skills. It's a platform where you can make a difference and ensure that every student's voice is heard.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "Attending these meetings can give you a greater understanding of student issues and how to address them. It's a place where you can practice your listening and problem-solving skills in a real-world context.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T02:20:48.443Z",
+    "sessionId": "7e6536ce-1ab6-4cd2-a2ee-919f261aa80f",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "History and english. I like when we talk about real life stuff or how ppl think."
+      },
+      {
+        "questionId": 2,
+        "answer": "Talkin to my grandma. I post vids sometimes of ppl telling stories. Just for fun."
+      },
+      {
+        "questionId": 3,
+        "answer": "When ppl argue or feel left out, I try to make it better."
+      },
+      {
+        "questionId": 4,
+        "answer": "idk exactly, but I wanna help ppl feel seen. like actually listened to."
+      },
+      {
+        "questionId": 5,
+        "answer": "Writing better and knowing how to talk to ppl when they're going thru it."
+      },
+      {
+        "questionId": 6,
+        "answer": "Not too loud. somewhere chill but real."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "English",
+          "description": "As an English major, you'll study literature, language, and culture, while developing strong writing and communication skills. This could align well with your interest in history, real-life stories, and helping people feel heard.",
+          "department": "Department of English",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "Psychology",
+          "description": "A major in Psychology could provide you with a deep understanding of how people think and behave, which would lend itself well to your interest in helping people through difficult times and in making people feel seen and heard.",
+          "department": "Department of Psychology",
+          "requirements": [
+            "N/A"
+          ]
+        },
+        {
+          "name": "Sociology",
+          "description": "Sociology is the study of society and human behavior. This major could give you the tools to understand and analyze social situations like the ones you described wanting to help mediate.",
+          "department": "Department of Sociology",
+          "requirements": [
+            "N/A"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Counselor",
+          "description": "As a counselor, you'd be able to use your communication skills and understanding of human behavior to help people through difficult times.",
+          "relatedMajors": [
+            "Psychology",
+            "Sociology"
+          ],
+          "salary": {
+            "min": 35000,
+            "max": 70000
+          }
+        },
+        {
+          "title": "Journalist",
+          "description": "Your interest in history, storytelling, and helping people feel seen could be well-suited to a career in journalism, where the goal is to inform the public about important events and perspectives.",
+          "relatedMajors": [
+            "English"
+          ],
+          "salary": {
+            "min": 27000,
+            "max": 81000
+          }
+        },
+        {
+          "title": "Social Worker",
+          "description": "Social work is about helping people manage and overcome life's challenges. This could be a good fit for you, given your interest in helping people feel seen and heard.",
+          "relatedMajors": [
+            "Psychology",
+            "Sociology"
+          ],
+          "salary": {
+            "min": 31000,
+            "max": 81000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "African American Student Social Work Association",
+          "description": "This organization might appeal to your interests in social work and helping people feel seen and heard.",
+          "category": "Social Work / Cultural",
+          "website": "N/A"
+        },
+        {
+          "name": "Active Minds Club",
+          "description": "Active Minds works to raise mental health awareness among college students. This could be a great fit given your interest in understanding and helping people through their issues.",
+          "category": "Mental Health",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "N/A",
+          "description": "N/A",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "N/A"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T02:27:18.033Z",
+    "sessionId": "6ffeb563-2710-48f5-b80a-d991e5419219",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "Science and when we talk about animals or like plants n stuff."
+      },
+      {
+        "questionId": 2,
+        "answer": "I hike and draw what I see. Got a notebook full of weird mushrooms lol."
+      },
+      {
+        "questionId": 3,
+        "answer": "Like if something’s off with the environment, I try to figure out why."
+      },
+      {
+        "questionId": 4,
+        "answer": "Somethin outside. Maybe help animals or take care of parks."
+      },
+      {
+        "questionId": 5,
+        "answer": "idk, like how to study stuff in nature or maybe teach kids about it."
+      },
+      {
+        "questionId": 6,
+        "answer": "not big crowds. quiet, outside, where I can think."
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies (Liberal Arts & Sciences)",
+          "description": "This major provides a broad, balanced education in humanities, social sciences, math, and natural sciences. It could help you understand the natural world in a wider context, and equip you with skills to educate others about it.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "N/A"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Park Ranger",
+          "description": "As a park ranger, you would protect and manage parks, conduct tours, and educate the public about nature and conservation. This path aligns well with your interest in being outdoors and your curiosity about the environment.",
+          "relatedMajors": [
+            "Liberal Studies (Liberal Arts & Sciences)"
+          ],
+          "salary": {
+            "min": 37000,
+            "max": 60000
+          }
+        },
+        {
+          "title": "Environmental Educator",
+          "description": "In this role, you would use your knowledge of the natural world to teach students and the public about the environment. This could be a good fit if you're interested in teaching and advocating for nature.",
+          "relatedMajors": [
+            "Liberal Studies (Liberal Arts & Sciences)"
+          ],
+          "salary": {
+            "min": 33000,
+            "max": 52000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "ASG provides leadership opportunities and a platform to make impactful changes on campus. You could advocate for environmental causes within the student body.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "Here, you can voice your ideas and concerns, and engage in important discussions. You might find avenues to promote environmental awareness.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T02:36:45.552Z",
+    "sessionId": "71bb6ce3-c2d5-418b-aa77-39e505a674cc",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "Science and when we talk about animals or like plants n stuff."
+      },
+      {
+        "questionId": 2,
+        "answer": "I hike and draw what I see. Got a notebook full of weird mushrooms lol."
+      },
+      {
+        "questionId": 3,
+        "answer": "Like if something’s off with the environment, I try to figure out why."
+      },
+      {
+        "questionId": 4,
+        "answer": "Somethin outside. Maybe help animals or take care of parks."
+      },
+      {
+        "questionId": 5,
+        "answer": "idk, like how to study stuff in nature or maybe teach kids about it."
+      },
+      {
+        "questionId": 6,
+        "answer": "not big crowds. quiet, outside, where I can think."
+      },
+      {
+        "questionId": 7,
+        "answer": "help ppl not destroy everything lol"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies",
+          "description": "A broad, interdisciplinary major that allows you to study a variety of subjects, including the natural sciences which covers topics like ecology, biology, and environmental science. You can focus your studies on areas that interest you, like animal and plant life.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "Completion of general education requirements",
+            "Choosing a concentration that aligns with your interests"
+          ]
+        },
+        {
+          "name": "Accounting",
+          "description": "While it may not directly align with your interests in natural sciences, having a foundational understanding of business and financial management can be beneficial if you ever decide to work in conservation efforts or environmental non-profit organizations.",
+          "department": "Business",
+          "requirements": [
+            "Business core courses",
+            "Accounting specific courses"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Park Ranger",
+          "description": "Park rangers work outdoors, often in national parks, to maintain trails, protect wildlife, and educate the public about the environment.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 37000,
+            "max": 79000
+          }
+        },
+        {
+          "title": "Environmental Educator",
+          "description": "Environmental educators teach people about the natural world and how to conserve its resources. They often work in settings like nature reserves, parks, and schools.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 32000,
+            "max": 55000
+          }
+        },
+        {
+          "title": "Conservation Officer",
+          "description": "Conservation officers protect natural resources and wildlife, enforce environmental laws, and educate the public about conservation efforts.",
+          "relatedMajors": [
+            "Liberal Studies"
+          ],
+          "salary": {
+            "min": 39000,
+            "max": 72000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "A student-led organization where you can develop leadership skills and work on initiatives that matter to you, such as environmental conservation efforts on campus.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "Regular meetings where students can voice their opinions and contribute to decisions about campus initiatives. You can use these meetings as a platform to advocate for environmental awareness and conservation.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-11T05:39:07.380Z",
+    "sessionId": "3f04f865-89d2-411e-88ec-e37535d0002e",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "history sports pe"
+      },
+      {
+        "questionId": 2,
+        "answer": "hang out with friends, go to the mall, gaming"
+      },
+      {
+        "questionId": 3,
+        "answer": "bullying"
+      },
+      {
+        "questionId": 4,
+        "answer": "be rich"
+      },
+      {
+        "questionId": 5,
+        "answer": "critical thinking"
+      },
+      {
+        "questionId": 6,
+        "answer": "group work"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Liberal Studies (Liberal Arts & Sciences)",
+          "description": "This major offers a broad education, allowing you to expand your knowledge in various subjects including history. The program also fosters critical thinking skills, which you mentioned you value.",
+          "department": "Liberal Arts & Sciences",
+          "requirements": [
+            "Complete all core curriculum requirements"
+          ]
+        },
+        {
+          "name": "Accounting (Business)",
+          "description": "Accounting can be a pathway to a lucrative career, which aligns with your desire to be financially successful. It's a major that requires and enhances critical thinking skills.",
+          "department": "Business",
+          "requirements": [
+            "Complete all core business curriculum requirements"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Historian",
+          "description": "Historians research, analyze, and interpret the past. They may work in a variety of settings such as museums, historical societies, or research organizations.",
+          "relatedMajors": [
+            "Liberal Studies (Liberal Arts & Sciences)"
+          ],
+          "salary": {
+            "min": 38000,
+            "max": 102000
+          }
+        },
+        {
+          "title": "Accountant",
+          "description": "Accountants prepare and examine financial records. They ensure that financial records are accurate and that taxes are paid properly and on time.",
+          "relatedMajors": [
+            "Accounting (Business)"
+          ],
+          "salary": {
+            "min": 43000,
+            "max": 122840
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Associated Student Government (ASG)",
+          "description": "The ASG provides leadership opportunities and promotes student engagement, which can help you grow your network and enhance your teamwork skills.",
+          "category": "Leadership",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Student Senate Meetings",
+          "description": "These meetings provide opportunities for students to engage in the democratic process at the college, share their concerns, and learn about leadership.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Leadership"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "university": {
+    "id": "reedley_college",
+    "name": "Reedley College",
+    "shortName": "Reedley College",
+    "description": "Reedley College is a public community college offering academic and vocational programs to a diverse student population in Reedley, California.",
+    "website": "https://www.reedleycollege.edu",
+    "colors": {
+      "primary": "#00205B",
+      "secondary": "#FFD100"
+    }
+  },
+  "majors": [
+    {
+      "name": "Liberal Studies",
+      "description": "Prepares students for transfer into elementary school teaching programs or public service careers.",
+      "department": "Liberal Arts & Sciences",
+      "requirements": [
+        "Intro to Life Science",
+        "General Chemistry",
+        "Human Anatomy",
+        "Environmental Science"
+      ]
+    },
+    {
+      "name": "Accounting",
+      "description": "Focuses on financial reporting, auditing, and tax fundamentals for careers in business and finance.",
+      "department": "Business",
+      "requirements": [
+        "Principles of Accounting I & II",
+        "Business Law",
+        "Computer Applications"
+      ]
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Associated Student Government (ASG)",
+      "description": "Student government representing the voice of students and managing student activities.",
+      "category": "Leadership",
+      "website": ""
+    },
+    {
+      "name": "Music Ensembles",
+      "description": "Open to all students; includes Choir, Concert Band, and Orchestra.",
+      "category": "Arts & Culture",
+      "website": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "Student Senate Meetings",
+      "description": "Open meetings for all students to attend and participate in student government.",
+      "date": "",
+      "location": "Student Center",
+      "category": "Leadership"
+    },
+    {
+      "name": "Annual Music Performances",
+      "description": "Concerts and performances by student ensembles on and off campus.",
+      "date": "",
+      "location": "Various campus venues",
+      "category": "Arts"
+    }
+  ]
+}
