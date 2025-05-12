@@ -45,11 +45,10 @@ export default function ResultsPage() {
   const handleDownloadPDF = () => {
     if (!results) return;
     const doc = new jsPDF();
-    const margin = 54; // 0.75 inch in points
-    const topMargin = margin;
-    const bottomMargin = margin;
-    const leftMargin = margin;
-    const rightMargin = margin;
+    const topMargin = 20;
+    const bottomMargin = 20;
+    const leftMargin = 0;
+    const rightMargin = 0;
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     let y = topMargin;
@@ -71,7 +70,7 @@ export default function ResultsPage() {
     doc.text('Your Personalized Recommendations', pageWidth / 2, y, { align: 'center' });
     y += 15;
 
-    const maxWidth = pageWidth - leftMargin - rightMargin;
+    const maxWidth = 170;
     const lineHeight = 6;
 
     // Majors
