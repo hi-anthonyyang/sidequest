@@ -60,11 +60,15 @@ export default function ResultsPage() {
       }
     }
 
-    // Add small logo and discreet Sidequest text in top-left
-    doc.addImage('/icons/sidequest_logo.png', 'PNG', leftMargin, y, 8, 8); // 8x8px, top-left
+    // Add small logo and discreet Sidequest text in top-right
+    const logoWidth = 8;
+    const logoHeight = 8;
+    const logoX = pageWidth - logoWidth - 20; // 20pt from right edge
+    const logoY = 10; // 10pt from top
+    doc.addImage('/icons/sidequest_logo.png', 'PNG', logoX, logoY, logoWidth, logoHeight);
     doc.setFontSize(10);
-    doc.text('Sidequest', leftMargin + 12, y + 6, { align: 'left' });
-    y += 14;
+    doc.text('Sidequest', logoX - 2, logoY + 6, { align: 'right' });
+    y = topMargin + 14;
     doc.setFontSize(16);
     doc.text('Your Personalized Recommendations', pageWidth / 2, y, { align: 'center' });
     y += 15;
