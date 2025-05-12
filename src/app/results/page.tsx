@@ -47,7 +47,6 @@ export default function ResultsPage() {
     const doc = new jsPDF();
     const topMargin = 20;
     const bottomMargin = 20;
-    const leftMargin = 0;
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     let y = topMargin;
