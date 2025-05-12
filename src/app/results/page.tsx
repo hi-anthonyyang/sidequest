@@ -48,7 +48,6 @@ export default function ResultsPage() {
     const topMargin = 20;
     const bottomMargin = 20;
     const leftMargin = 0;
-    const rightMargin = 0;
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     let y = topMargin;
