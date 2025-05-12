@@ -51,127 +51,196 @@ export default function ResultsPage() {
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
     let y = topMargin;
+    const maxWidth = 170;
+    const lineHeight = 6;
+    const sectionSpacing = 8;
+    const blue = [30, 64, 175]; // Blue for headers/titles
+    const secondaryGray = [110, 115, 125]; // Slightly more pronounced gray for secondary text
+    const black = [0, 0, 0];
 
-    // Helper to check for page break
     function ensurePageSpace(linesNeeded = 1) {
       if (y + linesNeeded * lineHeight > pageHeight - bottomMargin) {
+        addFooter();
         doc.addPage();
         y = topMargin;
+        // Reset font and color to body defaults after page break
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
+        doc.setTextColor(black[0], black[1], black[2]);
       }
     }
 
-    // Add small logo and discreet Sidequest text in top-left
-    doc.addImage('/icons/sidequest_logo.png', 'PNG', leftMargin + 12, y, 8, 8); // 8x8px, top-left
-    doc.setFontSize(10);
-    doc.text('Sidequest', leftMargin + 24, y + 6, { align: 'left' });
-    y += 14;
+    // --- Footer function ---
+    function addFooter() {
+      const footerY = pageHeight - 10;
+      const logoWidth = 8;
+      const logoHeight = 8;
+      const text = 'Sidequest';
+      const textFontSize = 10;
+      const totalWidth = logoWidth + 2 + doc.getTextWidth(text);
+      const centerX = pageWidth / 2;
+      // Center logo and text
+      doc.addImage('/icons/sidequest_logo.png', 'PNG', centerX - totalWidth / 2, footerY - logoHeight / 2, logoWidth, logoHeight);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(textFontSize);
+      doc.setTextColor(black[0], black[1], black[2]);
+      doc.text(text, centerX - totalWidth / 2 + logoWidth + 2, footerY + 2, { align: 'left' });
+    }
+
+    // --- Remove header/logo from top ---
+    // doc.addImage('/icons/sidequest_logo.png', 'PNG', leftMargin + 16, y, 8, 8);
+    // doc.setFont('helvetica', 'bold');
+    // doc.setFontSize(10);
+    // doc.setTextColor(black[0], black[1], black[2]);
+    // doc.text('Sidequest', leftMargin + 28, y + 6, { align: 'left' });
+    // y += 14;
     doc.setFontSize(16);
+    doc.setTextColor(blue[0], blue[1], blue[2]);
     doc.text('Your Personalized Recommendations', pageWidth / 2, y, { align: 'center' });
     y += 15;
 
-    const maxWidth = 170;
-    const lineHeight = 6;
-
-    // Majors
+    // --- Majors Section ---
+    doc.setFont('helvetica', 'bold');
     doc.setFontSize(14);
+    doc.setTextColor(blue[0], blue[1], blue[2]);
     ensurePageSpace();
     doc.text('Recommended Majors:', 15, y);
     y += 8;
+    doc.setFont('helvetica', 'normal');
     doc.setFontSize(11);
+    doc.setTextColor(black[0], black[1], black[2]);
     results.majors.forEach((major) => {
       ensurePageSpace();
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(black[0], black[1], black[2]);
       doc.text(`• ${major.name} (${major.department})`, 18, y);
       y += lineHeight;
+      doc.setFont('helvetica', 'normal');
       const descLines = doc.splitTextToSize(major.description, maxWidth);
       ensurePageSpace(descLines.length);
       doc.text(descLines, 22, y);
       y += descLines.length * lineHeight;
       if (major.requirements && major.requirements.length > 0) {
+        doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
         const reqText = 'Requirements: ' + major.requirements.join(', ');
         const reqLines = doc.splitTextToSize(reqText, maxWidth);
         ensurePageSpace(reqLines.length);
         doc.text(reqLines, 22, y);
+        doc.setTextColor(black[0], black[1], black[2]);
         y += reqLines.length * lineHeight;
       }
       y += 2;
     });
-    y += 4;
+    y += sectionSpacing;
 
-    // Careers
+    // --- Careers Section ---
+    doc.setFont('helvetica', 'bold');
     doc.setFontSize(14);
+    doc.setTextColor(blue[0], blue[1], blue[2]);
     ensurePageSpace();
     doc.text('Career Paths:', 15, y);
     y += 8;
+    doc.setFont('helvetica', 'normal');
     doc.setFontSize(11);
+    doc.setTextColor(black[0], black[1], black[2]);
     results.careers.forEach((career) => {
       ensurePageSpace();
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(black[0], black[1], black[2]);
       doc.text(`• ${career.title}`, 18, y);
       y += lineHeight;
+      doc.setFont('helvetica', 'normal');
       const descLines = doc.splitTextToSize(career.description, maxWidth);
       ensurePageSpace(descLines.length);
       doc.text(descLines, 22, y);
       y += descLines.length * lineHeight;
-      const relMajors = 'Related Majors: ' + career.relatedMajors.join(', ');
-      const relMajorsLines = doc.splitTextToSize(relMajors, maxWidth);
-      ensurePageSpace(relMajorsLines.length);
-      doc.text(relMajorsLines, 22, y);
-      y += relMajorsLines.length * lineHeight;
+      if (career.relatedMajors && career.relatedMajors.length > 0) {
+        doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
+        const relMajors = 'Related Majors: ' + career.relatedMajors.join(', ');
+        const relMajorsLines = doc.splitTextToSize(relMajors, maxWidth);
+        ensurePageSpace(relMajorsLines.length);
+        doc.text(relMajorsLines, 22, y);
+        doc.setTextColor(black[0], black[1], black[2]);
+        y += relMajorsLines.length * lineHeight;
+      }
       if (career.salary) {
+        doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
         const salaryText = `Salary Range: $${career.salary.min.toLocaleString()} - $${career.salary.max.toLocaleString()}`;
         ensurePageSpace();
         doc.text(salaryText, 22, y);
+        doc.setTextColor(black[0], black[1], black[2]);
         y += lineHeight;
       }
       y += 2;
     });
-    y += 4;
+    y += sectionSpacing;
 
-    // Organizations
+    // --- Organizations Section ---
+    doc.setFont('helvetica', 'bold');
     doc.setFontSize(14);
+    doc.setTextColor(blue[0], blue[1], blue[2]);
     ensurePageSpace();
     doc.text('Student Organizations:', 15, y);
     y += 8;
+    doc.setFont('helvetica', 'normal');
     doc.setFontSize(11);
+    doc.setTextColor(black[0], black[1], black[2]);
     results.organizations.forEach((org) => {
       ensurePageSpace();
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(black[0], black[1], black[2]);
       doc.text(`• ${org.name} (${org.category})`, 18, y);
       y += lineHeight;
+      doc.setFont('helvetica', 'normal');
       const descLines = doc.splitTextToSize(org.description, maxWidth);
       ensurePageSpace(descLines.length);
       doc.text(descLines, 22, y);
       y += descLines.length * lineHeight;
       if (org.website) {
+        doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
         const webLines = doc.splitTextToSize('Website: ' + org.website, maxWidth);
         ensurePageSpace(webLines.length);
         doc.text(webLines, 22, y);
+        doc.setTextColor(black[0], black[1], black[2]);
         y += webLines.length * lineHeight;
       }
       y += 2;
     });
-    y += 4;
+    y += sectionSpacing;
 
-    // Events
+    // --- Events Section ---
+    doc.setFont('helvetica', 'bold');
     doc.setFontSize(14);
+    doc.setTextColor(blue[0], blue[1], blue[2]);
     ensurePageSpace();
     doc.text('Upcoming Events:', 15, y);
     y += 8;
+    doc.setFont('helvetica', 'normal');
     doc.setFontSize(11);
+    doc.setTextColor(black[0], black[1], black[2]);
     results.events.forEach((event) => {
       ensurePageSpace();
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(black[0], black[1], black[2]);
       doc.text(`• ${event.name} (${event.category})`, 18, y);
       y += lineHeight;
+      doc.setFont('helvetica', 'normal');
       const descLines = doc.splitTextToSize(event.description, maxWidth);
       ensurePageSpace(descLines.length);
       doc.text(descLines, 22, y);
       y += descLines.length * lineHeight;
+      doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
       const dateLoc = `Date: ${event.date} | Location: ${event.location}`;
       const dateLocLines = doc.splitTextToSize(dateLoc, maxWidth);
       ensurePageSpace(dateLocLines.length);
       doc.text(dateLocLines, 22, y);
+      doc.setTextColor(black[0], black[1], black[2]);
       y += dateLocLines.length * lineHeight;
       y += 2;
     });
 
+    // Add footer to last page
+    addFooter();
     doc.save('sidequest-results.pdf');
   };
 
