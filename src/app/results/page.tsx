@@ -45,9 +45,13 @@ export default function ResultsPage() {
   const handleDownloadPDF = () => {
     if (!results) return;
     const doc = new jsPDF();
+    const margin = 54; // 0.75 inch in points
+    const topMargin = margin;
+    const bottomMargin = margin;
+    const leftMargin = margin;
+    const rightMargin = margin;
+    const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
-    const bottomMargin = 20;
-    const topMargin = 20;
     let y = topMargin;
 
     // Helper to check for page break
@@ -58,17 +62,16 @@ export default function ResultsPage() {
       }
     }
 
-    // Add logo and title
-    doc.addImage('/icons/sidequest_logo.png', 'PNG', 97.5, y, 15, 15); // 15x15px, centered
-    y = 32;
-    doc.setFontSize(20);
-    doc.text('Sidequest', 105, y, { align: 'center' });
-    y += 10;
+    // Add small logo and discreet Sidequest text in top-left
+    doc.addImage('/icons/sidequest_logo.png', 'PNG', leftMargin, y, 8, 8); // 8x8px, top-left
+    doc.setFontSize(10);
+    doc.text('Sidequest', leftMargin + 12, y + 6, { align: 'left' });
+    y += 14;
     doc.setFontSize(16);
-    doc.text('Your Personalized Recommendations', 105, y, { align: 'center' });
+    doc.text('Your Personalized Recommendations', pageWidth / 2, y, { align: 'center' });
     y += 15;
 
-    const maxWidth = 170;
+    const maxWidth = pageWidth - leftMargin - rightMargin;
     const lineHeight = 6;
 
     // Majors
