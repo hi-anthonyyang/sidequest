@@ -121,12 +121,27 @@ export default function QuestionsPage() {
       )}
       {loading && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
-          <div className="flex space-x-4 mb-8">
-            <Image src="/icons/shield.svg" alt="Shield" width={32} height={32} className="w-8 h-8" />
-            <Image src="/icons/sword.svg" alt="Sword" width={32} height={32} className="w-8 h-8" />
-            <Image src="/icons/wand-sparkles.svg" alt="Wand" width={32} height={32} className="w-8 h-8" />
-          </div>
-          <p className="text-xl font-semibold text-blue-700">Building out your quests…</p>
+          <Image src="/icons/campfire.gif" alt="Campfire" width={48} height={48} className="mb-8" />
+          <p className="text-xl font-semibold text-blue-700 flex items-center justify-center">
+            Building out your quests
+            <span className="ml-1 animate-ellipsis">…</span>
+          </p>
+          <style jsx>{`
+            @keyframes ellipsis {
+              0% { content: ''; opacity: 1; }
+              25% { content: '.'; opacity: 1; }
+              50% { content: '..'; opacity: 1; }
+              75% { content: '...'; opacity: 1; }
+              100% { content: ''; opacity: 1; }
+            }
+            .animate-ellipsis::after {
+              display: inline-block;
+              content: '';
+              animation: ellipsis 1.2s steps(4, end) infinite;
+              width: 1.5em;
+              text-align: left;
+            }
+          `}</style>
         </div>
       )}
       <div className="container mx-auto px-4 py-16">
