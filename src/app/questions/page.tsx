@@ -10,33 +10,33 @@ import confetti from 'canvas-confetti';
 const questions: Question[] = [
   {
     id: 1,
-    text: "What do you usually Google or look up when you're just curious about something?",
-    placeholder: "This helps us see what really grabs your attention — even outside of school."
+    text: "What school subjects or topics do you naturally enjoy or do well in?",
+    placeholder: "For example: history, science, math, art, PE, or anything you just 'get'."
   },
   {
     id: 2,
-    text: "Think about a school project or activity you really got into. What was it, and why did you like it?",
-    placeholder: "We're looking for something that made you feel focused, excited, or proud — even if it was challenging."
+    text: "What projects or activities have you really enjoyed doing?",
+    placeholder: "For example: making a video, doing a group project, building something, or helping at an event."
   },
   {
     id: 3,
-    text: "If your future job helped other people, who would you want to help?",
-    placeholder: "It could be kids, families, your community, animals, the planet — anyone. No wrong answers."
+    text: "If you could help solve a problem, what would it be?",
+    placeholder: "For example: helping animals, improving mental health, fixing pollution, or making school better."
   },
   {
     id: 4,
-    text: "Which one sounds most like you: build something, lead something, fix something, or help someone?",
-    placeholder: "Go with what feels right — you can choose more than one if it fits. You can write something else that wasn't mentioned."
+    text: "Which one sounds most like you: I like to build, fix, help, or lead?",
+    placeholder: "You can say more than one — or write your own, like 'design' or 'create.'"
   },
   {
     id: 5,
-    text: "What do people usually ask you for help with?",
-    placeholder: "Think about your friends, siblings, classmates — big or small things count."
+    text: "What topics or things do you like learning about — in or out of school?",
+    placeholder: "For example: outer space, how people think, how businesses work, fashion, or how stuff is made."
   },
   {
     id: 6,
-    text: "What's something you'd actually want to get better at — even if it takes a while?",
-    placeholder: "This shows us where you want to grow — and what you're curious to learn."
+    text: "What do people usually ask you to help with?",
+    placeholder: "For example: tech stuff, advice, explaining things, fixing something, calming people down."
   }
 ];
 
