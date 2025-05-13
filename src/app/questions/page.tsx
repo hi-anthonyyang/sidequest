@@ -10,38 +10,33 @@ import confetti from 'canvas-confetti';
 const questions: Question[] = [
   {
     id: 1,
-    text: "What subjects or topics do you enjoy learning about — even outside of class?",
-    placeholder: "e.g., I love learning about astronomy, reading about world history, and exploring how computers work—even if it's not for school."
+    text: "What do you usually Google or look up when you're just curious about something?",
+    placeholder: "This helps us see what really grabs your attention — even outside of school."
   },
   {
     id: 2,
-    text: "What kinds of things do you love spending time on — especially when no one's telling you to?",
-    placeholder: "e.g., I spend hours drawing, building things with LEGO, playing guitar, or volunteering at the animal shelter just because I enjoy it."
+    text: "Think about a school project or activity you really got into. What was it, and why did you like it?",
+    placeholder: "We're looking for something that made you feel focused, excited, or proud — even if it was challenging."
   },
   {
     id: 3,
-    text: "What types of problems or challenges do you like figuring out?",
-    placeholder: "e.g., I like solving tricky puzzles, figuring out how to fix broken gadgets, or helping friends work through disagreements."
+    text: "If your future job helped other people, who would you want to help?",
+    placeholder: "It could be kids, families, your community, animals, the planet — anyone. No wrong answers."
   },
   {
     id: 4,
-    text: "When you picture your future, what kind of work or life feels exciting or meaningful to you?",
-    placeholder: "e.g., I imagine myself designing new technology, helping people as a nurse, or traveling the world to learn about different cultures."
+    text: "Which one sounds most like you: build something, lead something, fix something, or help someone?",
+    placeholder: "Go with what feels right — you can choose more than one if it fits. You can write something else that wasn't mentioned."
   },
   {
     id: 5,
-    text: "What kind of impact do you want to have on people, your community, or the world?",
-    placeholder: "e.g., I want to help people feel heard, make my neighborhood safer, or work on solutions to climate change."
+    text: "What do people usually ask you for help with?",
+    placeholder: "Think about your friends, siblings, classmates — big or small things count."
   },
   {
     id: 6,
-    text: "Do you like working more with people, tools, nature, technology, or ideas? Why?",
-    placeholder: "e.g., I love brainstorming with others, but I also enjoy working with computers and coming up with new ideas on my own."
-  },
-  {
-    id: 7,
-    text: "What kind of setting do you feel most energized in — quiet and focused, fast-paced and social, hands-on, creative...?",
-    placeholder: "e.g., I feel most alive in busy, creative spaces where I can collaborate, but sometimes I like quiet time to focus on my own projects."
+    text: "What's something you'd actually want to get better at — even if it takes a while?",
+    placeholder: "This shows us where you want to grow — and what you're curious to learn."
   }
 ];
 
