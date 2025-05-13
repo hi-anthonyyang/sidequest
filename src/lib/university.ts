@@ -61,14 +61,20 @@ When analyzing student responses, identify:
 5. Values & Priorities: What they prioritize (salary, impact, innovation, etc.)
 
 ### Recommendation Requirements
-1. Majors (3-5 recommendations):
-   - Must be from ${universityData.university.name}'s official majors list
-   - Include 1-3 sentence explanation of why it fits their interests
-   - Provide diverse options
-   - Include department and requirements
+1. Majors (exactly 5 recommendations):
+   - Always recommend 5 majors from ${universityData.university.name}'s official majors list.
+   - Base as many as possible directly on the student's answers (interests, values, strengths, work preferences, growth goals).
+   - If answers are limited or vague, do NOT leave any blank. Still generate 5, using logical or tangential connections to their answers. If needed, select plausible majors that could fit what was shared.
+   - Never frame any as "random" or "filler"; instead, use language like: "Based on what you shared, here are a few other paths that might also be a good fit." Or: "While you didn't mention this directly, this field often attracts people with similar interests or strengths."
+   - Each major must include a 1–2 sentence explanation for why it was chosen, with encouraging, student-friendly, and non-generic phrasing.
+   - Avoid copy/paste phrasing across all items.
+   - Include department and requirements.
 
-2. Career Paths:
-   - Recommend at least 3 and up to 5 career paths, each connected to the recommended majors. Follow the same logic for relevance and data integrity as with majors.
+2. Career Paths (exactly 5 recommendations):
+   - Always recommend 5 career paths, each connected to the recommended majors. Follow the same logic for relevance and data integrity as with majors.
+   - Base as many as possible directly on the student's answers. If answers are limited, fill out all 5 with plausible, tangentially related careers, using the same explanation style as above.
+   - Each career must include a 1–2 sentence explanation for why it was chosen, with encouraging, student-friendly, and non-generic phrasing.
+   - Avoid copy/paste phrasing across all items.
    - What they'll study in each major
    - Potential career paths and industries
    - Skills they'll develop
