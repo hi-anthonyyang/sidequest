@@ -121,7 +121,7 @@ export default function QuestionsPage() {
       )}
       {loading && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
-          <Image src="/icons/campfire.gif" alt="Campfire" width={48} height={48} className="mb-8" />
+          <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-8" />
           <p className="text-xl font-semibold text-blue-700 flex items-center justify-center">
             Building out your quests
             <span className="ml-1 animate-ellipsis">…</span>
