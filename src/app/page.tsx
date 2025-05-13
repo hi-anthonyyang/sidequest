@@ -45,7 +45,7 @@ export default function Home() {
               Begin My Quests
             </Link>
             <p className="text-xs text-gray-400 font-mono tracking-wide">
-              Answer 7 questions, get your personalized quests
+              6 questions, 6 minutes or less, get your IRL quests.
             </p>
           </div>
         </div>
