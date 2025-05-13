@@ -11,12 +11,12 @@ const questions: Question[] = [
   {
     id: 1,
     text: "What school subjects or topics do you naturally enjoy or do well in?",
-    placeholder: "For example: history, science, math, art, PE, or anything you just 'get'."
+    placeholder: "For example: history, science, math, art, PE — or anything that feels easy or interesting."
   },
   {
     id: 2,
-    text: "What projects or activities have you really enjoyed doing?",
-    placeholder: "For example: making a video, doing a group project, building something, or helping at an event."
+    text: "When you're working on something, do you like working alone, with a partner, in a small group, or leading a team?",
+    placeholder: "You can also say things like: 'I like clear steps,' 'I like to be in charge,' or 'I just do my own thing.'"
   },
   {
     id: 3,
@@ -25,13 +25,13 @@ const questions: Question[] = [
   },
   {
     id: 4,
-    text: "Which one sounds most like you: I like to build, fix, help, or lead?",
+    text: "Which one sounds most like you: I like to build things, I like to fix things, I like to help people, or I like to lead?",
     placeholder: "You can say more than one — or write your own, like 'design' or 'create.'"
   },
   {
     id: 5,
-    text: "What topics or things do you like learning about — in or out of school?",
-    placeholder: "For example: outer space, how people think, how businesses work, fashion, or how stuff is made."
+    text: "What kinds of things do you like to figure out or understand better?",
+    placeholder: "For example: how people think, how stuff works, how games are made, why things are unfair, or how to make money."
   },
   {
     id: 6,
