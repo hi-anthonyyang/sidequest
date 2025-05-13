@@ -46,6 +46,7 @@ export interface AssessmentResults {
   careers: CareerPath[];
   organizations: Organization[];
   events: Event[];
+  archetype?: string;
 }
 
 // New types for multi-university support
