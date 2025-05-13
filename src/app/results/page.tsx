@@ -42,6 +42,9 @@ export default function ResultsPage() {
     );
   }
 
+  // Archetype title logic
+  const archetypeTitle = results.archetype && results.archetype.trim() ? results.archetype : 'You Are: The Explorer 🧭';
+
   const handleDownloadPDF = () => {
     if (!results) return;
     const doc = new jsPDF();
@@ -86,16 +89,10 @@ export default function ResultsPage() {
       doc.text(text, centerX - totalWidth / 2 + logoWidth + 2, footerY + 2, { align: 'left' });
     }
 
-    // --- Remove header/logo from top ---
-    // doc.addImage('/icons/sidequest_logo.png', 'PNG', leftMargin + 16, y, 8, 8);
-    // doc.setFont('helvetica', 'bold');
-    // doc.setFontSize(10);
-    // doc.setTextColor(black[0], black[1], black[2]);
-    // doc.text('Sidequest', leftMargin + 28, y + 6, { align: 'left' });
-    // y += 14;
     doc.setFontSize(16);
     doc.setTextColor(blue[0], blue[1], blue[2]);
-    doc.text('Your Personalized Recommendations', pageWidth / 2, y, { align: 'center' });
+    doc.setFont('helvetica', 'bold');
+    doc.text(archetypeTitle, pageWidth / 2, y, { align: 'center' });
     y += 15;
 
     // --- Majors Section ---
@@ -252,8 +249,8 @@ export default function ResultsPage() {
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-            Your Personalized Recommendations
+          <h1 className="text-4xl font-bold text-blue-800 mb-8 text-center">
+            {archetypeTitle}
           </h1>
 
           {/* Majors Section */}

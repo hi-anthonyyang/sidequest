@@ -95,6 +95,7 @@ When analyzing student responses, identify:
 
 Format your response as a JSON object with the following structure:
 {
+  "archetype": "string (Format: You Are: [Archetype Title] [1-2 emoji]. Short, bold, identity-driven. E.g., 'You Are: The Systems Thinker 🧠', 'You Are: The Creative Disruptor 🎨🚀', 'You Are: The Empath 💙', etc. If responses are too generic, use 'You Are: The Explorer 🧭')",
   "majors": [
     {
       "name": "string",
