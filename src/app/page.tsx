@@ -69,7 +69,7 @@ export default function Home() {
                   ))}
                 </select>
                 {/* Speech bubble absolutely positioned to left edge, vertically centered */}
-                <div className="speech-bubble absolute left-[-170px] top-1/2 transform -translate-y-1/2">
+                <div className="speech-bubble absolute left-[-205px] top-1/2 transform -translate-y-1/2">
                   <span role="img" aria-label="castle">🏰</span> Choose the realm
                   <span className="bubble-tail" />
                 </div>
@@ -113,7 +113,7 @@ export default function Home() {
               }
               .bubble-tail {
                 position: absolute;
-                right: -14px;
+                right: -10px;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 0;
@@ -121,7 +121,6 @@ export default function Home() {
                 border-top: 10px solid transparent;
                 border-bottom: 10px solid transparent;
                 border-left: 14px solid #fff;
-                filter: drop-shadow(0 2px 4px rgba(80,60,180,0.10));
                 z-index: 11;
               }
               @media (max-width: 640px) {
@@ -134,7 +133,7 @@ export default function Home() {
                   white-space: normal;
                 }
                 .bubble-tail {
-                  right: -14px;
+                  right: -10px;
                 }
               }
             `}</style>
