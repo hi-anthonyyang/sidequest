@@ -53,13 +53,14 @@ export default function Home() {
 
           {/* University Selection Dropdown with Magical Glow and Speech Bubble */}
           <div className="flex flex-col items-center mt-16 mb-8">
-            <div className="relative flex items-start w-full max-w-xs">
+            <div className="relative flex flex-col items-center w-full max-w-xs mx-auto">
               {/* Speech Bubble */}
-              <div className="speech-bubble absolute -top-10 left-0 sm:left-[-1.5rem] z-10">
+              <div className="speech-bubble absolute -top-9 right-0 z-10">
                 <span role="img" aria-label="castle">🏰</span> Choose the realm
                 <span className="bubble-tail" />
               </div>
-              <div className="realm-glow w-full">
+              <div style={{ height: '14px' }} /> {/* Space between bubble and dropdown */}
+              <div className="realm-glow w-full mx-auto">
                 <select
                   id="university"
                   value={selectedUniversity}
@@ -105,7 +106,9 @@ export default function Home() {
                 font-size: 1rem;
                 font-weight: 500;
                 color: #6d28d9;
-                position: relative;
+                position: absolute;
+                right: 0;
+                top: 0;
                 display: inline-block;
                 margin-bottom: 0.5rem;
                 z-index: 10;
@@ -113,12 +116,12 @@ export default function Home() {
               }
               .bubble-tail {
                 position: absolute;
-                left: 2.2rem;
-                bottom: -10px;
+                right: 12px;
+                top: 100%;
                 width: 0;
                 height: 0;
                 border-left: 10px solid transparent;
-                border-right: 10px solid transparent;
+                border-right: 0px solid transparent;
                 border-top: 12px solid #fff;
                 filter: drop-shadow(0 2px 4px rgba(80,60,180,0.10));
                 z-index: 11;
@@ -126,14 +129,15 @@ export default function Home() {
               @media (max-width: 640px) {
                 .realm-glow { width: 100%; min-width: 0; }
                 .speech-bubble {
-                  left: 0;
+                  right: 0;
+                  left: auto;
                   font-size: 0.95rem;
                   padding: 0.4rem 0.8rem;
                   max-width: 90vw;
                   white-space: normal;
                 }
                 .bubble-tail {
-                  left: 1.5rem;
+                  right: 12px;
                 }
               }
             `}</style>
