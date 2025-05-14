@@ -44,7 +44,6 @@ export default function ResultsPage() {
 
   // Archetype title logic
   const archetypeTitle = results.archetype && results.archetype.trim() ? results.archetype : 'You Are: The Explorer 🧭';
-  const archetypeTitleNoEmoji = archetypeTitle.replace(/([\p{Emoji_Presentation}\p{Extended_Pictographic}])/gu, '').replace(/\s+$/,'').trim();
 
   const handleDownloadPDF = () => {
     if (!results) return;
