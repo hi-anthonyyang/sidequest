@@ -44,6 +44,7 @@ export default function ResultsPage() {
 
   // Archetype title logic
   const archetypeTitle = results.archetype && results.archetype.trim() ? results.archetype : 'You Are: The Explorer 🧭';
+  const archetypeTitleNoEmoji = archetypeTitle.replace(/([\p{Emoji_Presentation}\p{Extended_Pictographic}])/gu, '').replace(/\s+$/,'').trim();
 
   const handleDownloadPDF = () => {
     if (!results) return;
@@ -89,10 +90,12 @@ export default function ResultsPage() {
       doc.text(text, centerX - totalWidth / 2 + logoWidth + 2, footerY + 2, { align: 'left' });
     }
 
-    doc.setFontSize(16);
+    doc.setFontSize(18);
     doc.setTextColor(blue[0], blue[1], blue[2]);
     doc.setFont('helvetica', 'bold');
-    doc.text(archetypeTitle, pageWidth / 2, y, { align: 'center' });
+    // Remove all non-letter, non-number, non-punctuation, non-space characters (robust emoji/special char removal)
+    const cleanTitle = archetypeTitle.replace(/[^\p{L}\p{N}\p{P}\p{Z}]/gu, '').trim();
+    doc.text(cleanTitle, pageWidth / 2, y, { align: 'center' });
     y += 15;
 
     // --- Majors Section ---
