@@ -51,15 +51,15 @@ export default function Home() {
             </p>
           </div>
 
-          {/* University Selection Dropdown with Magical Glow and Speech Bubble (side-by-side) */}
+          {/* University Selection Dropdown with Magical Glow and Speech Bubble (side-by-side, improved alignment) */}
           <div className="flex flex-col items-center mt-16 mb-8">
-            <div className="flex flex-row items-center justify-center w-full max-w-xs mx-auto">
-              {/* Speech Bubble to the left */}
-              <div className="speech-bubble relative mr-3">
+            <div className="flex flex-row items-center justify-center w-full">
+              {/* Speech Bubble to the left, shifted further left */}
+              <div className="speech-bubble relative mr-6" style={{ minWidth: '170px' }}>
                 <span role="img" aria-label="castle">🏰</span> Choose the realm
                 <span className="bubble-tail" />
               </div>
-              <div className="realm-glow w-full mx-auto">
+              <div className="realm-glow" style={{ width: 220 }}>
                 <select
                   id="university"
                   value={selectedUniversity}
@@ -84,7 +84,6 @@ export default function Home() {
                 box-shadow: 0 0 6px rgba(147, 112, 219, 0.4);
                 transition: box-shadow 0.3s ease;
                 max-width: 100%;
-                width: 220px;
               }
               @keyframes glow-pulse {
                 0% {
@@ -134,6 +133,7 @@ export default function Home() {
                   min-width: 100px;
                   max-width: 60vw;
                   white-space: normal;
+                  margin-right: 0.5rem;
                 }
                 .bubble-tail {
                   right: -14px;
