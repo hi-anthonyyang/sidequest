@@ -51,8 +51,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* University Selection Dropdown */}
-          <div className="max-w-xs mx-auto mt-16 mb-8">
+          {/* University Selection Dropdown with Magical Glow */}
+          <div className="realm-glow max-w-xs mx-auto mt-16 mb-8" style={{ marginBottom: '1.5rem' }}>
             <label htmlFor="university" className="block text-base font-medium text-gray-700 mb-2 text-left">
               <span role="img" aria-label="castle">🏰</span> Choose the realm
             </label>
@@ -69,6 +69,32 @@ export default function Home() {
                 </option>
               ))}
             </select>
+            <style jsx>{`
+              .realm-glow {
+                position: relative;
+                display: inline-block;
+                animation: glow-pulse 2s infinite ease-in-out;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 6px rgba(147, 112, 219, 0.4);
+                transition: box-shadow 0.3s ease;
+                max-width: 100%;
+                width: 100%;
+              }
+              @keyframes glow-pulse {
+                0% {
+                  box-shadow: 0 0 6px rgba(147, 112, 219, 0.6);
+                }
+                50% {
+                  box-shadow: 0 0 14px rgba(147, 112, 219, 1), 0 0 24px rgba(147, 112, 219, 0.5);
+                }
+                100% {
+                  box-shadow: 0 0 6px rgba(147, 112, 219, 0.6);
+                }
+              }
+              @media (max-width: 640px) {
+                .realm-glow { max-width: 100%; width: 100%; }
+              }
+            `}</style>
           </div>
 
           <div className="mt-20 space-y-6">
