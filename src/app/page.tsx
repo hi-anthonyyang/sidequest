@@ -51,15 +51,14 @@ export default function Home() {
             </p>
           </div>
 
-          {/* University Selection Dropdown with Magical Glow and Speech Bubble */}
+          {/* University Selection Dropdown with Magical Glow and Speech Bubble (side-by-side) */}
           <div className="flex flex-col items-center mt-16 mb-8">
-            <div className="relative flex flex-col items-center w-full max-w-xs mx-auto">
-              {/* Speech Bubble */}
-              <div className="speech-bubble absolute -top-9 right-0 z-10">
+            <div className="flex flex-row items-center justify-center w-full max-w-xs mx-auto">
+              {/* Speech Bubble to the left */}
+              <div className="speech-bubble relative mr-3">
                 <span role="img" aria-label="castle">🏰</span> Choose the realm
                 <span className="bubble-tail" />
               </div>
-              <div style={{ height: '14px' }} /> {/* Space between bubble and dropdown */}
               <div className="realm-glow w-full mx-auto">
                 <select
                   id="university"
@@ -106,39 +105,41 @@ export default function Home() {
                 font-size: 1rem;
                 font-weight: 500;
                 color: #6d28d9;
-                position: absolute;
-                right: 0;
-                top: 0;
+                position: relative;
                 display: inline-block;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0;
                 z-index: 10;
                 white-space: nowrap;
+                min-width: 140px;
+                max-width: 180px;
               }
               .bubble-tail {
                 position: absolute;
-                right: 12px;
-                top: 100%;
+                right: -18px;
+                top: 50%;
+                transform: translateY(-50%);
                 width: 0;
                 height: 0;
-                border-left: 10px solid transparent;
-                border-right: 0px solid transparent;
-                border-top: 12px solid #fff;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-left: 14px solid #fff;
                 filter: drop-shadow(0 2px 4px rgba(80,60,180,0.10));
                 z-index: 11;
               }
               @media (max-width: 640px) {
                 .realm-glow { width: 100%; min-width: 0; }
                 .speech-bubble {
-                  right: 0;
-                  left: auto;
                   font-size: 0.95rem;
                   padding: 0.4rem 0.8rem;
-                  max-width: 90vw;
+                  min-width: 100px;
+                  max-width: 60vw;
                   white-space: normal;
                 }
                 .bubble-tail {
-                  right: 12px;
+                  right: -14px;
                 }
+                .flex-row { flex-direction: column !important; }
+                .speech-bubble { margin-bottom: 0.5rem; margin-right: 0; }
               }
             `}</style>
           </div>
