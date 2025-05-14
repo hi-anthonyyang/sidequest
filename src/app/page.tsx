@@ -51,14 +51,9 @@ export default function Home() {
             </p>
           </div>
 
-          {/* University Selection Dropdown with Magical Glow and Speech Bubble (side-by-side, improved alignment) */}
+          {/* University Selection Dropdown centered, with speech bubble on left edge */}
           <div className="flex flex-col items-center mt-16 mb-8">
-            <div className="flex flex-row items-center justify-center w-full">
-              {/* Speech Bubble to the left, shifted further left */}
-              <div className="speech-bubble relative mr-6" style={{ minWidth: '170px' }}>
-                <span role="img" aria-label="castle">🏰</span> Choose the realm
-                <span className="bubble-tail" />
-              </div>
+            <div className="relative w-full flex justify-center">
               <div className="realm-glow" style={{ width: 220 }}>
                 <select
                   id="university"
@@ -73,6 +68,11 @@ export default function Home() {
                     </option>
                   ))}
                 </select>
+                {/* Speech bubble absolutely positioned to left edge, vertically centered */}
+                <div className="speech-bubble absolute left-[-170px] top-1/2 transform -translate-y-1/2">
+                  <span role="img" aria-label="castle">🏰</span> Choose the realm
+                  <span className="bubble-tail" />
+                </div>
               </div>
             </div>
             <style jsx>{`
@@ -104,9 +104,8 @@ export default function Home() {
                 font-size: 1rem;
                 font-weight: 500;
                 color: #6d28d9;
-                position: relative;
+                position: absolute;
                 display: inline-block;
-                margin-bottom: 0;
                 z-index: 10;
                 white-space: nowrap;
                 min-width: 140px;
@@ -114,7 +113,7 @@ export default function Home() {
               }
               .bubble-tail {
                 position: absolute;
-                right: -18px;
+                right: -14px;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 0;
@@ -133,13 +132,10 @@ export default function Home() {
                   min-width: 100px;
                   max-width: 60vw;
                   white-space: normal;
-                  margin-right: 0.5rem;
                 }
                 .bubble-tail {
                   right: -14px;
                 }
-                .flex-row { flex-direction: column !important; }
-                .speech-bubble { margin-bottom: 0.5rem; margin-right: 0; }
               }
             `}</style>
           </div>
