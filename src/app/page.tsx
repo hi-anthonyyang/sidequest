@@ -51,24 +51,30 @@ export default function Home() {
             </p>
           </div>
 
-          {/* University Selection Dropdown with Magical Glow */}
-          <div className="realm-glow max-w-xs mx-auto mt-16 mb-8" style={{ marginBottom: '1.5rem' }}>
-            <label htmlFor="university" className="block text-base font-medium text-gray-700 mb-2 text-left">
-              <span role="img" aria-label="castle">🏰</span> Choose the realm
-            </label>
-            <select
-              id="university"
-              value={selectedUniversity}
-              onChange={handleUniversityChange}
-              className="w-full px-4 py-2 pr-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[#333333]"
-            >
-              <option value="" disabled>Select a university…</option>
-              {universities.map((university) => (
-                <option key={university.id} value={university.id}>
-                  {university.name}
-                </option>
-              ))}
-            </select>
+          {/* University Selection Dropdown with Magical Glow and Speech Bubble */}
+          <div className="flex flex-col items-center mt-16 mb-8">
+            <div className="relative flex items-start w-full max-w-xs">
+              {/* Speech Bubble */}
+              <div className="speech-bubble absolute -top-10 left-0 sm:left-[-1.5rem] z-10">
+                <span role="img" aria-label="castle">🏰</span> Choose the realm
+                <span className="bubble-tail" />
+              </div>
+              <div className="realm-glow w-full">
+                <select
+                  id="university"
+                  value={selectedUniversity}
+                  onChange={handleUniversityChange}
+                  className="w-full px-4 py-2 pr-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[#333333] text-base"
+                >
+                  <option value="" disabled>Select a university...</option>
+                  {universities.map((university) => (
+                    <option key={university.id} value={university.id}>
+                      {university.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
             <style jsx>{`
               .realm-glow {
                 position: relative;
@@ -78,7 +84,7 @@ export default function Home() {
                 box-shadow: 0 0 6px rgba(147, 112, 219, 0.4);
                 transition: box-shadow 0.3s ease;
                 max-width: 100%;
-                width: 100%;
+                width: 220px;
               }
               @keyframes glow-pulse {
                 0% {
@@ -91,8 +97,44 @@ export default function Home() {
                   box-shadow: 0 0 6px rgba(147, 112, 219, 0.6);
                 }
               }
+              .speech-bubble {
+                background: #fff;
+                border-radius: 1rem;
+                box-shadow: 0 2px 12px 0 rgba(80, 60, 180, 0.10);
+                padding: 0.5rem 1.1rem;
+                font-size: 1rem;
+                font-weight: 500;
+                color: #6d28d9;
+                position: relative;
+                display: inline-block;
+                margin-bottom: 0.5rem;
+                z-index: 10;
+                white-space: nowrap;
+              }
+              .bubble-tail {
+                position: absolute;
+                left: 2.2rem;
+                bottom: -10px;
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 12px solid #fff;
+                filter: drop-shadow(0 2px 4px rgba(80,60,180,0.10));
+                z-index: 11;
+              }
               @media (max-width: 640px) {
-                .realm-glow { max-width: 100%; width: 100%; }
+                .realm-glow { width: 100%; min-width: 0; }
+                .speech-bubble {
+                  left: 0;
+                  font-size: 0.95rem;
+                  padding: 0.4rem 0.8rem;
+                  max-width: 90vw;
+                  white-space: normal;
+                }
+                .bubble-tail {
+                  left: 1.5rem;
+                }
               }
             `}</style>
           </div>
