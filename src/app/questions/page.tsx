@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Question, AssessmentResponse, UniversityId } from '@/lib/types';
 import Image from 'next/image';
@@ -40,19 +40,25 @@ const questions: Question[] = [
   }
 ];
 
-const universities: { id: UniversityId; name: string }[] = [
-  { id: 'fresno_state', name: 'Fresno State' },
-  { id: 'reedley_college', name: 'Reedley College' }
-];
-
 export default function QuestionsPage() {
   const router = useRouter();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
-  const [selectedUniversity, setSelectedUniversity] = useState<UniversityId>('fresno_state');
+  const [selectedUniversity, setSelectedUniversity] = useState<UniversityId | null>(null);
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+
+  // On mount, load selected university from localStorage
+  useEffect(() => {
+    const stored = localStorage.getItem('selectedUniversity');
+    if (stored) {
+      setSelectedUniversity(stored as UniversityId);
+    } else {
+      // If not set, redirect to home page
+      router.replace('/');
+    }
+  }, [router]);
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -146,25 +152,6 @@ export default function QuestionsPage() {
       )}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
-          {/* University Selection */}
-          <div className="mb-8">
-            <label htmlFor="university" className="block text-sm font-medium text-gray-700 mb-2">
-              Select University
-            </label>
-            <select
-              id="university"
-              value={selectedUniversity}
-              onChange={(e) => setSelectedUniversity(e.target.value as UniversityId)}
-              className="w-full px-4 py-2 pr-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[#333333]"
-            >
-              {universities.map((university) => (
-                <option key={university.id} value={university.id}>
-                  {university.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
           <div className="mb-8">
             <div className="h-2 bg-gray-200 rounded-full">
               <div
