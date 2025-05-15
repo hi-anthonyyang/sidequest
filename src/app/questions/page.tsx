@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Question, AssessmentResponse, UniversityId } from '@/lib/types';
 import Image from 'next/image';
@@ -115,75 +115,77 @@ export default function QuestionsPage() {
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white relative">
-      {showSuccess && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
-          <p className="text-3xl font-bold text-green-600 mb-4">Success!</p>
-          <p className="text-lg text-gray-700">Your answers have been submitted.</p>
-        </div>
-      )}
-      {loading && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
-          <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-8" />
-          <p className="text-xl font-semibold text-blue-700 flex items-center justify-center">
-            Building out your quests
-            <span className="ml-1 animate-ellipsis">…</span>
-          </p>
-          <style jsx>{`
-            @keyframes ellipsis {
-              0% { content: ''; opacity: 1; }
-              25% { content: '.'; opacity: 1; }
-              50% { content: '..'; opacity: 1; }
-              75% { content: '...'; opacity: 1; }
-              100% { content: ''; opacity: 1; }
-            }
-            .animate-ellipsis::after {
-              display: inline-block;
-              content: '';
-              animation: ellipsis 1.2s steps(4, end) infinite;
-              width: 1.5em;
-              text-align: left;
-            }
-          `}</style>
-        </div>
-      )}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto">
-          <div className="mb-8">
-            <div className="h-2 bg-gray-200 rounded-full">
-              <div
-                className="h-2 bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <p className="text-sm text-gray-600 mt-2">
-              Question {currentQuestionIndex + 1} of {questions.length}
+    <Suspense fallback={<div>Loading...</div>}>
+      <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white relative">
+        {showSuccess && (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
+            <p className="text-3xl font-bold text-green-600 mb-4">Success!</p>
+            <p className="text-lg text-gray-700">Your answers have been submitted.</p>
+          </div>
+        )}
+        {loading && (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
+            <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-8" />
+            <p className="text-xl font-semibold text-blue-700 flex items-center justify-center">
+              Building out your quests
+              <span className="ml-1 animate-ellipsis">…</span>
             </p>
+            <style jsx>{`
+              @keyframes ellipsis {
+                0% { content: ''; opacity: 1; }
+                25% { content: '.'; opacity: 1; }
+                50% { content: '..'; opacity: 1; }
+                75% { content: '...'; opacity: 1; }
+                100% { content: ''; opacity: 1; }
+              }
+              .animate-ellipsis::after {
+                display: inline-block;
+                content: '';
+                animation: ellipsis 1.2s steps(4, end) infinite;
+                width: 1.5em;
+                text-align: left;
+              }
+            `}</style>
           </div>
+        )}
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto">
+            <div className="mb-8">
+              <div className="h-2 bg-gray-200 rounded-full">
+                <div
+                  className="h-2 bg-blue-600 rounded-full transition-all duration-300"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+              <p className="text-sm text-gray-600 mt-2">
+                Question {currentQuestionIndex + 1} of {questions.length}
+              </p>
+            </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-              {currentQuestion.text}
-            </h2>
-            
-            <textarea
-              value={currentAnswer}
-              onChange={(e) => setCurrentAnswer(e.target.value)}
-              placeholder={currentQuestion.placeholder}
-              className="w-full h-32 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder:text-gray-400 text-[#333333]"
-            />
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                {currentQuestion.text}
+              </h2>
+              
+              <textarea
+                value={currentAnswer}
+                onChange={(e) => setCurrentAnswer(e.target.value)}
+                placeholder={currentQuestion.placeholder}
+                className="w-full h-32 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder:text-gray-400 text-[#333333]"
+              />
 
-            <button
-              onClick={handleNext}
-              disabled={!currentAnswer.trim()}
-              className="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed"
-            >
-              {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Submit'}
-            </button>
+              <button
+                onClick={handleNext}
+                disabled={!currentAnswer.trim()}
+                className="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed"
+              >
+                {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Submit'}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </Suspense>
   );
 }
 
