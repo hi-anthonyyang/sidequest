@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { UniversityId } from '@/lib/types';
 
 const universities: { id: UniversityId; name: string }[] = [
@@ -12,15 +12,8 @@ const universities: { id: UniversityId; name: string }[] = [
 export default function Home() {
   const [selectedUniversity, setSelectedUniversity] = useState<UniversityId | ''>('');
 
-  useEffect(() => {
-    // Load from localStorage if available
-    const stored = localStorage.getItem('selectedUniversity');
-    if (stored) setSelectedUniversity(stored as UniversityId);
-  }, []);
-
   const handleUniversityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedUniversity(e.target.value as UniversityId);
-    localStorage.setItem('selectedUniversity', e.target.value);
   };
 
   return (
@@ -141,7 +134,7 @@ export default function Home() {
 
           <div className="mt-20 space-y-6">
             <Link 
-              href={selectedUniversity ? "/questions" : "#"}
+              href={selectedUniversity ? `/questions?university=${selectedUniversity}` : "#"}
               className={`inline-flex items-center gap-3 bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-medium tracking-wide hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 ${!selectedUniversity ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
               tabIndex={!selectedUniversity ? -1 : 0}
               aria-disabled={!selectedUniversity}

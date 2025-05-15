@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Question, AssessmentResponse, UniversityId } from '@/lib/types';
 import Image from 'next/image';
 // @ts-expect-error: no types for canvas-confetti
@@ -42,23 +42,20 @@ const questions: Question[] = [
 
 export default function QuestionsPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const universityId = searchParams.get('university') as UniversityId | null;
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
-  const [selectedUniversity, setSelectedUniversity] = useState<UniversityId | null>(null);
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  // On mount, load selected university from localStorage
+  // On mount, redirect to home if universityId is missing
   useEffect(() => {
-    const stored = localStorage.getItem('selectedUniversity');
-    if (stored) {
-      setSelectedUniversity(stored as UniversityId);
-    } else {
-      // If not set, redirect to home page
+    if (!universityId) {
       router.replace('/');
     }
-  }, [router]);
+  }, [router, universityId]);
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -70,7 +67,7 @@ export default function QuestionsPage() {
         },
         body: JSON.stringify({ 
           answers,
-          universityId: selectedUniversity
+          universityId: universityId
         }),
       });
 
