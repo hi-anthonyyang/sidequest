@@ -6,7 +6,8 @@ import { UniversityId } from '@/lib/types';
 
 const universities: { id: UniversityId; name: string }[] = [
   { id: 'fresno_state', name: 'Fresno State' },
-  { id: 'reedley_college', name: 'Reedley College' }
+  { id: 'reedley_college', name: 'Reedley College' },
+  { id: 'fresno_city_college', name: 'Fresno City College' }
 ];
 
 export default function Home() {
