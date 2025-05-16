@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { UniversityId } from '@/lib/types';
 
 const universities: { id: UniversityId; name: string }[] = [
+  { id: 'fresno_city_college', name: 'Fresno City College' },
   { id: 'fresno_state', name: 'Fresno State' },
-  { id: 'reedley_college', name: 'Reedley College' },
-  { id: 'fresno_city_college', name: 'Fresno City College' }
+  { id: 'reedley_college', name: 'Reedley College' }
 ];
 
 export default function Home() {

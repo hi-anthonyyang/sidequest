@@ -1,0 +1,541 @@
+{
+  "university": {
+    "id": "fresno_city_college",
+    "name": "Fresno City College",
+    "shortName": "FCC",
+    "description": "Fresno City College is a community college in the Central Valley of California.",
+    "website": "https://www.fresnocitycollege.edu",
+    "colors": {
+      "primary": "#D0103A",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "majors": [
+    {
+      "name": "Accounting, Associate in Science",
+      "description": "The AS Degree in Accounting qualifies the student for entry-level accounting positions in business, government, industry, and financial institutions. Students interested in pursuing a BS Degree in Accounting should consult the catalog of the institution to which they wish to transfer for the specific requirements of that program.",
+      "department": "Accounting"
+    },
+    {
+      "name": "Basic Police Academy, Certificate of Achievement",
+      "description": "Demonstrate the ability to communicate effectively and professionally through written, oral and electronic media. Identify the California laws that pertain to the enforcement and procedural aspects of law enforcement, recognizing the violations an officer is likely to encounter and describe the legal obligations in enforcing those laws.",
+      "department": "Administration of Justice"
+    },
+    {
+      "name": "Public Safety Dispatcher, Certificate",
+      "description": "Designed for the student needing to complete the Peace Officer Standards and Training (POST) Public Safety Dispatcher course required under POST Regulation.",
+      "department": "Administration of Justice"
+    },
+    {
+      "name": "Supervisor, Certificate",
+      "description": "Identify basic functions of a Public Safety Dispatcher. Recognize the required state and federal reporting laws as they pertain to a Public Safety Dispatcher.",
+      "department": "Administration of Justice"
+    },
+    {
+      "name": "Requalification - Basic Course, Certificate",
+      "description": "Designed for eligible students under California Commission on Peace Officer Standards and Training (POST) PAM Regulation, needing to complete the POST Requalification Course necessary to maintain their Basic POST Certificate.",
+      "department": "Administration of Justice"
+    },
+    {
+      "name": "Probation Core Course, Certificate",
+      "description": "Satisfies all the POST required retraining to become a sworn peace officer in the State of California. Qualified to enter a California Peace Officer's Field Training Program.",
+      "department": "Administration of Justice"
+    },
+    {
+      "name": "STC Basic Supervisor, Certificate",
+      "description": "Identify methodologies of supervision related to the probation and corrections professions. Designed for the student needing to complete the California Standards and Training for Corrections (STC) required course to become a supervisor for a California public safety agency.",
+      "department": "Administration of Justice"
+    },
+    {
+      "name": "African-American Studies, Associate in Arts",
+      "description": "The African American Studies degree is a social science based program designed to focus on the history, heritage, and social culture of African Americans and the African people of the diaspora.",
+      "department": "African-American Studies"
+    },
+    {
+      "name": "American Indian Studies, Associate in Arts",
+      "description": "American Indian Studies exists to serve Indian and non-Indian students who will be working in any service field, academic or social institution.",
+      "department": "American Indian Studies"
+    },
+    {
+      "name": "ASL/English Interpreting, Associate in Arts",
+      "description": "This degree is designed to prepare students for transfer as a junior to a baccalaureate degree program in American Sign Language (ASL), Deaf Studies or Interpreting.",
+      "department": "American Sign Language"
+    },
+    {
+      "name": "Anthropology for Transfer, Associate in Arts",
+      "description": "Anthropology is a program designed to acquaint students with human diversity through a broad approach to the study of people including the prehistoric, biological, and cultural perspectives. Because of its wide coverage, anthropology provides a versatile background that serves as a solid foundation for careers in many fields and vocations.",
+      "department": "Anthropology"
+    },
+    {
+      "name": "Archaeological Technician, Certificate of Achievement",
+      "description": "Students will have demonstrable skills in archaeological field methods. Students will have demonstrable skills in archaeological laboratory methods.",
+      "department": "Anthropology - Archaeology"
+    },
+    {
+      "name": "Employment Essentials, Certificate of Achievement",
+      "description": "A step incentive certificate signifying proficiency in basic employment skills (includes soft skills, written and oral communication, and problem solving skills). May be awarded after successful completion of units chosen from the list.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Architecture, Associate in Science",
+      "description": "This program provides comprehensive training in architectural design, drafting, and computer-aided design. Students should take courses in the order listed as not all courses are offered each semester.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Basic Architectural Contract Documents, Certificate",
+      "description": "This curriculum is designed to provide beginning knowledge and skills to individuals in the areas of architectural contract documents, accessibility and engineering principles.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Basic Architectural Design, Certificate",
+      "description": "This curriculum is designed to provide beginning knowledge and skills to individuals in the areas of architectural programming, design and presentation.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Basic Architecture Skills 1, Certificate",
+      "description": "This curriculum is designed to provide beginning knowledge and skills to individuals in the areas of architectural design, practice and CAD.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Basic Digital Architecture, Certificate",
+      "description": "This curriculum is designed to provide beginning knowledge and skills to individuals in the area of digital architecture tools including 3D computer modeling and presentation.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Basic Architecture Skills 2, Certificate",
+      "description": "This curriculum focuses on advanced 3D modeling techniques, including object manipulation, material application, and lighting effects using computer-aided design software.",
+      "department": "Applied Technology"
+    },
+    {
+      "name": "Art History for Transfer, Associate in Arts",
+      "description": "The Associate in Arts in Art History for Transfer Degree offers a core foundation for the study of art history across cultures and eras.",
+      "department": "Art"
+    },
+    {
+      "name": "Studio Arts for Transfer, Associate in Arts",
+      "description": "An Associate in Arts in Studio Arts for Transfer is designed for students who plan to complete a bachelor's degree in a similar major at a CSU campus.",
+      "department": "Art"
+    },
+    {
+      "name": "Studio Art - Three Dimensional Art, Certificate of Achievement",
+      "description": "This program provides comprehensive training in three-dimensional art forms, including sculpture, ceramics, and mixed media. Students develop skills in various materials and techniques.",
+      "department": "Art"
+    },
+    {
+      "name": "Asian American Studies, Associate in Arts",
+      "description": "Identify and describe major historical experiences of Asians and Asian Americans. Examine the cultural practices and evaluate how culture has evolved for the Asian American community.",
+      "department": "Asian American Studies"
+    },
+    {
+      "name": "Fender Mechanic, Associate in Science",
+      "description": "Training in this field is designed to prepare the student for employment as an advanced apprentice trainee in body repairing and reconstruction finishing.",
+      "department": "Automotive Collision Repair Technology"
+    },
+    {
+      "name": "Automotive Collision Technology, Certificate",
+      "description": "Designed for students who wish to attend the Automotive Collision Course and go straight into the work force.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Automotive Technology Administrator, Certificate of Achievement",
+      "description": "This program provides comprehensive training in automotive technology administration, including diesel technology, chassis systems, and power train systems.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Maintenance and Light Repair Technician, Certificate of Achievement",
+      "description": "Satisfactory completion of this curriculum prepares the student for employment as a Maintenance and Light Repair (MLR) service technician in the automotive/diesel service facility.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Automotive Technology, Associate in Science",
+      "description": "This program provides comprehensive training in automotive technology, including engine theory, electrical systems, performance, suspension, steering, wheel alignment, power trains, braking systems, and heating/ventilation/air conditioning.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Chassis Technician, Certificate of Achievement",
+      "description": "Satisfactory completion of this curriculum prepares the student for employment as an automotive chassis service technician.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Diesel Technology, Associate in Science",
+      "description": "Satisfactory completion of this curriculum prepares the student for entry-level employment as a skilled technician in the diesel technology service and repair industry. Students will perform actual service and repair procedures in the diesel technology laboratory.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Emission Technician, Certificate",
+      "description": "Satisfactory completion of this curriculum prepares the student for employment as an emission service technician.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Powertrain Technician, Certificate",
+      "description": "Satisfactory completion of this curriculum prepares the student for employment as an automotive powertrain service technician.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Hybrid Electric Vehicle (HEV), Certificate of Achievement",
+      "description": "This program provides training in hybrid and electric vehicle systems, focusing on electrical systems and diagnostic procedures to industry standards.",
+      "department": "Automotive Technology"
+    },
+    {
+      "name": "Biology - Formerly Life Science Degree, Associate in Science",
+      "description": "The Associate Degree in Biology provides a foundation for students wishing to explore or pursue a wide range of fields in the Biological Sciences. Students will learn about evolution and evaluate scientific evidence.",
+      "department": "Biology"
+    },
+    {
+      "name": "Biology for Transfer, Associate in Science",
+      "description": "The goal of the Associate in Science in Biology for Transfer program at Fresno City College is to award students with an associate degree, and provide them with special benefits/guarantees upon transfer to a CSU baccalaureate program in Biology.",
+      "department": "Biology"
+    },
+    {
+      "name": "Field Biologist, Certificate of Achievement",
+      "description": "The Field Biologist Certificate is a program designed to provide students with education and training in various aspects of field biology in preparation for entry level employment in the environmental consulting field or government agencies, entry level field research assistant positions, and continuing education in biology.",
+      "department": "Biology"
+    },
+    {
+      "name": "Human Biology, Associate in Science",
+      "description": "The Associate Degree in Human Biology provides a foundation for students exploring or pursuing a range of opportunities in Human Biology or Allied Health fields. The course pathway for this degree includes the foundational courses typically required for entry into Allied Health programs.",
+      "department": "Biology"
+    },
+    {
+      "name": "Business Administration 2.0, Associate in Science",
+      "description": "Business is an exciting major for students with a variety of interests and career goals including options in entrepreneurship, marketing, business law, management, computer information systems, accounting, and finance.",
+      "department": "Business Administration"
+    },
+    {
+      "name": "Work Competencies, Certificate",
+      "description": "A step incentive certificate signifying proficiency in basic knowledge and skills related to human relations and general business concepts required for success in today's competitive economy.",
+      "department": "Business Administration"
+    },
+    {
+      "name": "Human Resources Assistant, Certificate",
+      "description": "A step incentive certificate signifying proficiency in basic knowledge and skills required for an entry-level human resource assistant.",
+      "department": "Business Administration"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Alpha Gamma Sigma (AGS)",
+      "description": "Honor society for community college students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Allied-Health Professionals Club",
+      "description": "Student organization for allied health students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "American Sign Language Club (ASL)",
+      "description": "Promotes awareness and education of American Sign Language and Deaf culture",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Architecture Club",
+      "description": "Student organization for architecture students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Art for Community Transformation (ACT)",
+      "description": "Promotes art and community engagement",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Asian American Club",
+      "description": "Promotes Asian American culture and awareness",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Computer Aided Drafting & Design (CADD) Club",
+      "description": "Student organization for CADD students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Early Childhood Education & Educators Club (ECEE)",
+      "description": "Student organization for early childhood education students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Electrical Systems Technology Club (EST)",
+      "description": "Student organization for electrical systems technology students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Fresno City Guitar Society",
+      "description": "Student organization for guitar enthusiasts",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "History Club",
+      "description": "Student organization for history enthusiasts",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Hmong American Student Association",
+      "description": "Promotes Hmong culture and awareness",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Human Services Student Association",
+      "description": "Student organization for human services students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Kinesiology Club",
+      "description": "Student organization for kinesiology students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "LGBTQ+ Spectrum",
+      "description": "Promotes LGBTQ+ awareness and support",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Literature & Arts Society",
+      "description": "Promotes literature and arts appreciation",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "M.E.Ch.A.",
+      "description": "Movimiento Estudiantil Chicano de Aztlán - Promotes Chicano culture and awareness",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Native American Intertribal Students Association (NAISA)",
+      "description": "Promotes Native American culture and awareness",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "New Media Club",
+      "description": "Student organization for new media students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Nutrition & Culinary Club",
+      "description": "Student organization for nutrition and culinary students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Pan Afrikan Student Union (PASU)",
+      "description": "Promotes African culture and awareness",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Philosophy Club",
+      "description": "Student organization for philosophy enthusiasts",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Pre-Health Society",
+      "description": "Student organization for pre-health students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Science & Engineering Club",
+      "description": "Student organization for science and engineering students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Student Nurses' Association (SNA)",
+      "description": "Student organization for nursing students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Student Paralegal Association (SPA)",
+      "description": "Student organization for paralegal students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Student Success Club",
+      "description": "Promotes student success and academic achievement",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Teachers of Tomorrow",
+      "description": "Student organization for future teachers",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "UMOJA Community Club",
+      "description": "Promotes African American student success",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Veterans Club",
+      "description": "Support organization for veteran students",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    },
+    {
+      "name": "Volunteer Club",
+      "description": "Promotes community service and volunteerism",
+      "website": "https://www.fresnocitycollege.edu/student-life/clubs-and-organizations.html",
+      "contact": "Student Activities Office"
+    }
+  ],
+  "events": [
+    {
+      "name": "Transfer Thursday",
+      "description": "Meet with a Transfer Counselor to learn about the transfer application dates and deadlines, CSU, UC, and HBCU transfer requirements, and ask quick questions about the transfer process.",
+      "date": "2024-05-16",
+      "location": "University Mall Outside"
+    },
+    {
+      "name": "Dean's Medallion Reception",
+      "description": "Join us in celebrating student's success in achieving the Dean's Medallion!",
+      "date": "2024-05-16",
+      "location": "OAB Auditorium"
+    },
+    {
+      "name": "Certificate Ceremony",
+      "description": "Annual certificate ceremony for graduating students",
+      "date": "2024-05-17",
+      "location": "Gymnasium"
+    },
+    {
+      "name": "Commercial Music City Sounds",
+      "description": "This event will highlight the work of the commercial music students in a concert setting.",
+      "date": "2024-05-17",
+      "location": "FCC Theatre"
+    },
+    {
+      "name": "Latino Achievement Celebration",
+      "description": "Celebration of Latino student achievements",
+      "date": "2024-05-18",
+      "location": "FCC Gymnasium"
+    },
+    {
+      "name": "Finals Week",
+      "description": "Good luck on your finals!",
+      "date": "2024-05-20",
+      "location": "Campus Wide"
+    },
+    {
+      "name": "FCC Symphonic Band Concert",
+      "description": "This concert features the FCC Symphonic Band in the last concert of the spring semester.",
+      "date": "2024-05-21",
+      "location": "FCC Theatre"
+    },
+    {
+      "name": "End of Spring Semester",
+      "description": "End of Spring Semester",
+      "date": "2024-05-24",
+      "location": "Campus wide"
+    },
+    {
+      "name": "Graduation",
+      "description": "Annual graduation ceremony",
+      "date": "2024-05-24",
+      "location": "Save Mart Center"
+    },
+    {
+      "name": "Fresno Community Concert Band - Remember Our Heroes",
+      "description": "Annual memorial concert",
+      "date": "2024-05-26",
+      "location": "Shaghoian Concert Hall"
+    },
+    {
+      "name": "Memorial Day",
+      "description": "Campus Closed for Holiday",
+      "date": "2024-05-27",
+      "location": "Campus wide"
+    },
+    {
+      "name": "Start of Summer Session",
+      "description": "Beginning of summer classes",
+      "date": "2024-05-28",
+      "location": "Campus wide"
+    },
+    {
+      "name": "New Wrinkles - That's Entertainment",
+      "description": "Annual musical production",
+      "date": "2024-05-30",
+      "location": "FCC Theatre"
+    },
+    {
+      "name": "Men of Color Summit",
+      "description": "Annual summit for men of color",
+      "date": "2024-11-15",
+      "location": "FCC OAB Auditorium"
+    }
+  ],
+  "careers": [
+    {
+      "name": "Accounting",
+      "description": "Entry-level positions in business, government, industry, and financial institutions",
+      "requirements": "Associate in Science in Accounting"
+    },
+    {
+      "name": "Law Enforcement",
+      "description": "Positions in police departments, sheriff's offices, and other law enforcement agencies",
+      "requirements": "Basic Police Academy Certificate"
+    },
+    {
+      "name": "Automotive Technology",
+      "description": "Positions in automotive repair and maintenance",
+      "requirements": "Automotive Technology Associate in Science"
+    },
+    {
+      "name": "Biology",
+      "description": "Entry-level positions in biological sciences and preparation for transfer to four-year institutions",
+      "requirements": "Biology Associate in Science"
+    },
+    {
+      "name": "Business Administration",
+      "description": "Entry-level positions in business management, marketing, and administration",
+      "requirements": "Business Administration Associate in Science"
+    },
+    {
+      "name": "Nursing",
+      "description": "Registered Nurse positions in healthcare facilities",
+      "requirements": "Registered Nursing Associate in Science"
+    },
+    {
+      "name": "Dental Hygiene",
+      "description": "Dental Hygienist positions in dental offices",
+      "requirements": "Dental Hygiene Associate in Science"
+    },
+    {
+      "name": "Radiologic Technology",
+      "description": "Radiologic Technologist positions in healthcare facilities",
+      "requirements": "Radiologic Technology Associate in Science"
+    },
+    {
+      "name": "Respiratory Care",
+      "description": "Respiratory Care Practitioner positions in healthcare facilities",
+      "requirements": "Respiratory Care Practitioner Associate in Science"
+    },
+    {
+      "name": "Welding Technology",
+      "description": "Welder positions in manufacturing and construction",
+      "requirements": "Welding Technology Associate in Science"
+    }
+  ]
+}
