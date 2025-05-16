@@ -4,6 +4,7 @@ import { UniversityData, UniversityId } from './types';
 const universityDataCache: Record<UniversityId, UniversityData | null> = {
   fresno_state: null,
   reedley_college: null,
+  fresno_city_college: null,
 };
 
 export async function getUniversityData(universityId: UniversityId): Promise<UniversityData> {
