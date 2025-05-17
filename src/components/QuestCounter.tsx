@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const QuestCounter = () => {
-  const [count, setCount] = useState(341);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     // Calculate days since start date (March 1, 2024)
@@ -14,7 +14,7 @@ const QuestCounter = () => {
     
     // Increment by 9 for each day passed
     const totalIncrement = daysDiff * 9;
-    setCount(341 + totalIncrement);
+    setCount(totalIncrement);
   }, []);
 
   return (
