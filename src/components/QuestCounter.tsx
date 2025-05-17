@@ -7,8 +7,8 @@ const QuestCounter = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Calculate days since start date (March 1, 2024)
-    const startDate = new Date('2024-03-01');
+    // Calculate days since start date (May 1, 2024)
+    const startDate = new Date('2024-05-01');
     const today = new Date();
     const daysDiff = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
     
