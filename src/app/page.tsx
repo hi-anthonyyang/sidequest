@@ -41,10 +41,9 @@ export default function Home() {
               </h1>
             </div>
             
-            <div className="flex flex-wrap justify-center items-center gap-2 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-snug tracking-wide">
-              <span>Explore majors, careers, and opportunities that align with your interests and goals.</span>
-              <QuestCounter />
-            </div>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-snug tracking-wide text-center">
+              Explore majors, careers, and opportunities that align with your interests and goals. <QuestCounter /> quests have been discovered.
+            </p>
           </div>
 
           {/* University Selection Dropdown centered, with speech bubble on left edge */}
