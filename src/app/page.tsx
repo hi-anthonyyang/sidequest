@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { UniversityId } from '@/lib/types';
+import UniversitySelect from '@/components/UniversitySelect';
+import QuestCounter from '@/components/QuestCounter';
 
 const universities: { id: UniversityId; name: string }[] = [
   { id: 'fresno_city_college', name: 'Fresno City College' },
@@ -44,6 +46,8 @@ export default function Home() {
               Explore majors, careers, and opportunities that align with your interests and goals.
             </p>
           </div>
+
+          <QuestCounter />
 
           {/* University Selection Dropdown centered, with speech bubble on left edge */}
           <div className="flex flex-col items-center mt-16 mb-8">

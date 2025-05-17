@@ -1,1 +1,579 @@
-[]
+[
+  {
+    "timestamp": "2025-05-12T05:35:29.138Z",
+    "sessionId": "bed1a6a4-765e-4ba7-ae4a-e813efb76d6d",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "stats"
+      },
+      {
+        "questionId": 2,
+        "answer": "ted talks"
+      },
+      {
+        "questionId": 3,
+        "answer": "ask about religion"
+      },
+      {
+        "questionId": 4,
+        "answer": "not sure"
+      },
+      {
+        "questionId": 5,
+        "answer": "not sure"
+      },
+      {
+        "questionId": 6,
+        "answer": "ideas and tech"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Mathematics - Statistics Option, B.S.",
+          "description": "This major will allow you to deepen your understanding of statistics, which you've expressed an interest in. It will provide you with the mathematical foundation and data analysis skills that are valuable in many fields.",
+          "department": "Department of Mathematics",
+          "requirements": [
+            "Calculus 1 & 2",
+            "Linear Algebra",
+            "Probability Theory",
+            "Statistical Inference"
+          ]
+        },
+        {
+          "name": "Computer Science, B.S.",
+          "description": "Given your interest in technology and ideas, a major in Computer Science could be a good fit. This field is all about using technology to solve problems and innovate, which aligns with your interest.",
+          "department": "Department of Computer Science",
+          "requirements": [
+            "Intro to Computer Science",
+            "Data Structures",
+            "Algorithm Analysis",
+            "Computer Architecture"
+          ]
+        },
+        {
+          "name": "Business Administration - Data Analytics Option, B.S.",
+          "description": "This major combines your interest in statistics with business and technology. You'll learn to analyze and interpret complex data, a skill that's increasingly in demand across all sectors.",
+          "department": "Craig School of Business",
+          "requirements": [
+            "Introduction to Business",
+            "Business Statistics",
+            "Data Mining",
+            "Business Forecasting"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Data Analyst",
+          "description": "In this role, you would analyze data to help businesses make informed decisions. This career path aligns with your interest in statistics and technology.",
+          "relatedMajors": [
+            "Mathematics - Statistics Option, B.S.",
+            "Business Administration - Data Analytics Option, B.S."
+          ],
+          "salary": {
+            "min": 55000,
+            "max": 90000
+          }
+        },
+        {
+          "title": "Software Developer",
+          "description": "As a software developer, you would create computer programs and applications, turning ideas into functional software. This career path aligns with your interest in technology and ideas.",
+          "relatedMajors": [
+            "Computer Science, B.S."
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 120000
+          }
+        },
+        {
+          "title": "Business Intelligence Analyst",
+          "description": "In this role, you would use data to identify market trends and business opportunities. This aligns with your interest in statistics, ideas, and technology.",
+          "relatedMajors": [
+            "Business Administration - Data Analytics Option, B.S."
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 100000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Data Analytics Student Association",
+          "description": "A student organization focused on promoting the understanding and application of data analytics.",
+          "category": "Academics",
+          "website": "N/A"
+        },
+        {
+          "name": "Computer Science Club",
+          "description": "A club that fosters a community of students interested in computer science and provides opportunities for learning and collaboration.",
+          "category": "Academics",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Mathematics Club Meeting",
+          "description": "A regular meeting of the Mathematics Club, where students can discuss and explore topics related to mathematics, including statistics.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Academic"
+        },
+        {
+          "name": "Computer Science Department Seminar",
+          "description": "A seminar series where speakers present on a variety of computer science topics. Could be a great way to learn about the latest tech trends and ideas.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Academic"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-13T09:20:04.065Z",
+    "sessionId": "7b2f8cd7-fcff-4e61-9d26-82839370d414",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "philosophy and tech and physics and ai"
+      },
+      {
+        "questionId": 2,
+        "answer": "i liked investment stocks in elementary"
+      },
+      {
+        "questionId": 3,
+        "answer": "community and planet"
+      },
+      {
+        "questionId": 4,
+        "answer": "all of them"
+      },
+      {
+        "questionId": 5,
+        "answer": "ideas"
+      }
+    ],
+    "gptResponse": {
+      "majors": [
+        {
+          "name": "Philosophy, B.A.",
+          "description": "Perfect for exploring the foundational concepts and ideas behind AI and other technological advancements.",
+          "department": "Department of Philosophy",
+          "requirements": [
+            "Completion of core courses",
+            "Elective courses"
+          ]
+        },
+        {
+          "name": "Computer Science, B.S.",
+          "description": "Allows students to delve deep into the mechanics of programming, algorithms and data structures, which are integral to AI developments.",
+          "department": "Department of Computer Science",
+          "requirements": [
+            "Completion of core courses",
+            "Elective courses"
+          ]
+        },
+        {
+          "name": "Physics, B.S.",
+          "description": "A great choice for understanding the fundamental principles of the universe, which could enhance your understanding of tech and AI.",
+          "department": "Department of Physics",
+          "requirements": [
+            "Completion of core courses",
+            "Elective courses"
+          ]
+        },
+        {
+          "name": "Business Administration - Finance Option, B.S.",
+          "description": "Ideal for understanding the financial markets and investment strategies, which could be useful if you are interested in stocks.",
+          "department": "Department of Business Administration",
+          "requirements": [
+            "Completion of core courses",
+            "Elective courses"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "AI Specialist",
+          "description": "Works on developing and implementing AI models and systems.",
+          "relatedMajors": [
+            "Computer Science, B.S.",
+            "Physics, B.S."
+          ],
+          "salary": {
+            "min": 70000,
+            "max": 150000
+          }
+        },
+        {
+          "title": "Philosophy Professor",
+          "description": "Teaches philosophy courses at a university level and conducts research.",
+          "relatedMajors": [
+            "Philosophy, B.A."
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 100000
+          }
+        },
+        {
+          "title": "Financial Analyst",
+          "description": "Assesses investment opportunities and advises businesses and individuals on investment strategies.",
+          "relatedMajors": [
+            "Business Administration - Finance Option, B.S."
+          ],
+          "salary": {
+            "min": 50000,
+            "max": 100000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Computer Science Club",
+          "description": "An organization that promotes interest in the various areas of computer science.",
+          "category": "Academic Club",
+          "website": "N/A"
+        },
+        {
+          "name": "Philosophy Club",
+          "description": "A place for students interested in philosophy to discuss ideas and meet like-minded people.",
+          "category": "Academic Club",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "General Club Meeting",
+          "description": "Regular meeting of the Computer Science Club. Open to all students interested in Computer Science.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Club Meeting"
+        },
+        {
+          "name": "Tri-Beta's 1st Spring Meeting",
+          "description": "First meeting of the spring semester for the Tri-Beta Biological Society. Open to all students interested in biology and related fields.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Club Meeting"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-14T04:14:35.995Z",
+    "sessionId": "57a1a706-3e5d-4afc-8818-deda1ee2cf24",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "history"
+      },
+      {
+        "questionId": 2,
+        "answer": "small group"
+      },
+      {
+        "questionId": 3,
+        "answer": "poverty"
+      },
+      {
+        "questionId": 4,
+        "answer": "build things"
+      },
+      {
+        "questionId": 5,
+        "answer": "idk"
+      }
+    ],
+    "gptResponse": {
+      "archetype": "You Are: The Historical Builder 🏗️📚",
+      "majors": [
+        {
+          "name": "History",
+          "description": "Dive deeper into the study of past events, significant historical periods, and influential figures. This major will help you understand the roots of contemporary issues and how they have evolved over time.",
+          "department": "History",
+          "requirements": []
+        },
+        {
+          "name": "Engineering: Civil",
+          "description": "This major will equip you with the skills to design, construct, and maintain the physical and natural built environment. You will have the opportunity to 'build things' as you expressed in your interests.",
+          "department": "Engineering",
+          "requirements": []
+        },
+        {
+          "name": "Sociology",
+          "description": "A major in Sociology will help you understand social behavior and the underlying patterns that govern it. This will be beneficial in addressing societal issues like poverty.",
+          "department": "Sociology",
+          "requirements": []
+        },
+        {
+          "name": "Political Science",
+          "description": "Studying Political Science will provide you a deeper understanding of political systems and structures which can lead to policy changes that address societal issues like poverty.",
+          "department": "Political Science",
+          "requirements": []
+        },
+        {
+          "name": "Economics",
+          "description": "An Economics major provides an understanding of economic models and principles that can be used to address and solve societal issues like poverty.",
+          "department": "Economics",
+          "requirements": []
+        }
+      ],
+      "careers": [
+        {
+          "title": "Historian",
+          "description": "As a Historian, you will analyze and interpret historical records to understand the past. You will work in research institutions, museums, archives, and government agencies.",
+          "relatedMajors": [
+            "History"
+          ],
+          "salary": {
+            "min": 38000,
+            "max": 107000
+          }
+        },
+        {
+          "title": "Civil Engineer",
+          "description": "As a Civil Engineer, you will design, construct, supervise, operate, and maintain large construction projects and systems. You'll have the opportunity to 'build things' as you mentioned.",
+          "relatedMajors": [
+            "Engineering: Civil"
+          ],
+          "salary": {
+            "min": 54000,
+            "max": 122020
+          }
+        },
+        {
+          "title": "Sociologist",
+          "description": "As a Sociologist, you will study societal behaviors and trends. This will provide you the opportunity to understand and address societal issues like poverty.",
+          "relatedMajors": [
+            "Sociology"
+          ],
+          "salary": {
+            "min": 39000,
+            "max": 101000
+          }
+        },
+        {
+          "title": "Policy Analyst",
+          "description": "As a Policy Analyst, you will research, analyze, and recommend policies to address societal issues like poverty.",
+          "relatedMajors": [
+            "Political Science",
+            "Economics"
+          ],
+          "salary": {
+            "min": 47000,
+            "max": 94000
+          }
+        },
+        {
+          "title": "Economist",
+          "description": "As an Economist, you will study the production and distribution of resources, goods, and services. Your understanding of economic issues will be crucial in proposing solutions to societal problems like poverty.",
+          "relatedMajors": [
+            "Economics"
+          ],
+          "salary": {
+            "min": 59000,
+            "max": 124000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Alpha Gamma Sigma Honors",
+          "description": "Join the Alpha Gamma Sigma Honors Society to engage with other high-achieving students who are passionate about academic studies and community service. This organization could provide a platform for you to explore your interests in history and societal issues.",
+          "category": "Honors & Academic",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Board of Trustees Regular Board Meeting",
+          "description": "Attend the Board of Trustees Regular Board Meeting to get a first-hand experience of how decisions at the college level are made. This experience can be a valuable insight into how policies are formed and implemented.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Administration, Board of Trustees"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-05-15T06:47:24.682Z",
+    "sessionId": "9fbe6710-cbfb-4644-849b-e081e3e5bbae",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "math"
+      },
+      {
+        "questionId": 2,
+        "answer": "physics"
+      },
+      {
+        "questionId": 3,
+        "answer": "poverty"
+      },
+      {
+        "questionId": 4,
+        "answer": "fix"
+      },
+      {
+        "questionId": 5,
+        "answer": "idk"
+      }
+    ],
+    "gptResponse": {
+      "archetype": "You Are: The Problem Solver 🧮🔬",
+      "majors": [
+        {
+          "name": "Mathematics - Applied Math Option, B.S.",
+          "description": "This major offers a strong foundation in mathematical theory and its practical applications. You'll learn how to use mathematical models to solve complex real-world problems, which could include issues related to poverty.",
+          "department": "Department of Mathematics",
+          "requirements": [
+            "Completion of required Mathematics courses",
+            "Completion of General Education requirements"
+          ]
+        },
+        {
+          "name": "Physics, B.S.",
+          "description": "As a Physics major, you will get an in-depth understanding of the fundamental laws governing the universe. Physics is not just about understanding the world around us, but also about using that understanding to improve the world, which aligns with your desire to 'fix' things.",
+          "department": "Department of Physics",
+          "requirements": [
+            "Completion of required Physics courses",
+            "Completion of General Education requirements"
+          ]
+        },
+        {
+          "name": "Economics, B.A.",
+          "description": "Economics is a discipline that can help understand and address social issues like poverty. By studying economic systems, trends, and principles, you can gain insights into economic disparities and potential solutions.",
+          "department": "Department of Economics",
+          "requirements": [
+            "Completion of required Economics courses",
+            "Completion of General Education requirements"
+          ]
+        },
+        {
+          "name": "Sociology, B.A.",
+          "description": "Sociology is the study of social life, social change, and the social causes and consequences of human behavior. This major would allow you to study poverty from a social perspective, understanding its causes, impacts, and potential solutions.",
+          "department": "Department of Sociology",
+          "requirements": [
+            "Completion of required Sociology courses",
+            "Completion of General Education requirements"
+          ]
+        },
+        {
+          "name": "Interdisciplinary Studies, B.A.",
+          "description": "An Interdisciplinary Studies degree allows you to customize your educational experience by combining areas of study that align with your unique interests and career goals. You could combine elements of Mathematics, Physics, Economics, and Sociology to create a comprehensive approach to understanding and addressing poverty.",
+          "department": "Division of Undergraduate Studies",
+          "requirements": [
+            "Completion of required Interdisciplinary Studies courses",
+            "Completion of General Education requirements"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Mathematician",
+          "description": "Mathematicians use advanced mathematical techniques to solve problems in various fields. You could apply your mathematical knowledge to analyze and interpret data on poverty, contributing to solutions.",
+          "relatedMajors": [
+            "Mathematics - Applied Math Option, B.S."
+          ],
+          "salary": {
+            "min": 57000,
+            "max": 122000
+          }
+        },
+        {
+          "title": "Physicist",
+          "description": "Physicists study the natural world, from the smallest particles to the vastness of the universe. Your understanding of physical laws and systems could be applied in innovative ways to tackle social problems.",
+          "relatedMajors": [
+            "Physics, B.S."
+          ],
+          "salary": {
+            "min": 62000,
+            "max": 131000
+          }
+        },
+        {
+          "title": "Economist",
+          "description": "Economists study the production and distribution of resources, goods, and services. Understanding economic systems and trends is key to addressing issues like poverty.",
+          "relatedMajors": [
+            "Economics, B.A."
+          ],
+          "salary": {
+            "min": 59000,
+            "max": 124000
+          }
+        },
+        {
+          "title": "Sociologist",
+          "description": "Sociologists study society and social behavior, which could include research into the causes and impacts of poverty. This could lead to policy recommendations to address such issues.",
+          "relatedMajors": [
+            "Sociology, B.A."
+          ],
+          "salary": {
+            "min": 45000,
+            "max": 83000
+          }
+        },
+        {
+          "title": "Policy Analyst",
+          "description": "Policy analysts research and analyze issues that impact the public and recommend legislation and government intervention to address them. With a background in Interdisciplinary Studies, you could bring a multifaceted approach to poverty alleviation.",
+          "relatedMajors": [
+            "Interdisciplinary Studies, B.A."
+          ],
+          "salary": {
+            "min": 48000,
+            "max": 102000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Mathematics Club",
+          "description": "A club that fosters an appreciation of mathematics among students and the community. They host various activities and events to engage students in mathematical discussions and problem-solving.",
+          "category": "Academic",
+          "website": "N/A"
+        },
+        {
+          "name": "Society of Physics Students",
+          "description": "The Society of Physics Students (SPS) is a professional association designed for students with interest in physics. They host activities to promote the understanding and appreciation of physics.",
+          "category": "Academic",
+          "website": "N/A"
+        },
+        {
+          "name": "Economics Student Association",
+          "description": "A student organization dedicated to promoting the understanding of economics. They host events, discussions, and activities related to economic topics.",
+          "category": "Academic",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "General Club Meeting",
+          "description": "Regular meeting of the Mathematics Club. A great opportunity to meet like-minded students and discuss topics of interest.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Academic"
+        },
+        {
+          "name": "Physics Colloquium",
+          "description": "An event where students can learn about different aspects of physics from guest speakers.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Academic"
+        },
+        {
+          "name": "Economics Seminar Series",
+          "description": "A series of seminars on various topics in economics, often featuring guest speakers from the field.",
+          "date": "N/A",
+          "location": "N/A",
+          "category": "Academic"
+        }
+      ]
+    }
+  }
+]
