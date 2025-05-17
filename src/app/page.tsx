@@ -41,10 +41,8 @@ export default function Home() {
               </h1>
             </div>
             
-            <div className="space-y-4">
-              <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-snug tracking-wide">
-                Explore majors, careers, and opportunities that align with your interests and goals.
-              </p>
+            <div className="flex flex-wrap justify-center items-center gap-2 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-snug tracking-wide">
+              <span>Explore majors, careers, and opportunities that align with your interests and goals.</span>
               <QuestCounter />
             </div>
           </div>
