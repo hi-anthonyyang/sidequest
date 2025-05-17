@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const DIGIT_HEIGHT = 32; // px, adjust for your font size
 const ANIMATION_DURATION = 0.6; // seconds
