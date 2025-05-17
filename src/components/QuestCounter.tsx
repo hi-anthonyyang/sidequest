@@ -7,8 +7,8 @@ const QuestCounter = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Calculate days since start date (May 1, 2024)
-    const startDate = new Date('2024-05-01');
+    // Calculate days since start date (May 1, 2025)
+    const startDate = new Date('2025-05-01');
     const today = new Date();
     const daysDiff = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
     
@@ -18,18 +18,15 @@ const QuestCounter = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-2 text-lg md:text-xl font-medium text-gray-700">
-      <motion.span
-        key={count}
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="font-bold text-blue-600"
-      >
-        {count.toLocaleString()}
-      </motion.span>
-      <span>quests have been discovered.</span>
-    </div>
+    <motion.span
+      key={count}
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="font-bold text-blue-600"
+    >
+      {count.toLocaleString()}
+    </motion.span>
   );
 };
 
