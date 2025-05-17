@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { UniversityId } from '@/lib/types';
-import UniversitySelect from '@/components/UniversitySelect';
 import QuestCounter from '@/components/QuestCounter';
 
 const universities: { id: UniversityId; name: string }[] = [
