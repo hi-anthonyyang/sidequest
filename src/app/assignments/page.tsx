@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 import { PaperClipIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import InfoIcon from '@/components/icons/InfoIcon';
-import CopyIcon from '../../components/icons/CopyIcon';
+import CopyIcon from '@/components/icons/CopyIcon';
 
 const DIFFERENTIATION_STRATEGIES = [
   { id: 'simplify', label: 'Simplify Language', tooltip: 'Use easier words and shorter sentences.' },
