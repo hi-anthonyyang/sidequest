@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+// NavPanel: Trivial change to force redeploy
 export default function NavPanel() {
   console.log('NavPanel rendered');
   const [collapsed, setCollapsed] = useState(false);
