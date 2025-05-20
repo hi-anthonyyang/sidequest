@@ -53,9 +53,13 @@ export default function AssignmentsPage() {
       }
       setVariations(data.variations);
       setAssignmentsLeft((prev) => Math.max(0, prev - 1));
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error generating variations:', error);
-      setError(error.message || 'Failed to generate variations. Please try again.');
+      if (error instanceof Error) {
+        setError(error.message || 'Failed to generate variations. Please try again.');
+      } else {
+        setError('Failed to generate variations. Please try again.');
+      }
       alert('Failed to generate variations. Please try again.');
     } finally {
       setIsLoading(false);
