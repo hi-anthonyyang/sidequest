@@ -37,6 +37,8 @@ const QuestCounter = () => {
       }
     }
     fetchCount();
+    const interval = setInterval(fetchCount, 43200000); // 12 hours in ms
+    return () => clearInterval(interval);
   }, []);
 
   // Split count into digits, keep leading zeros for smooth animation
