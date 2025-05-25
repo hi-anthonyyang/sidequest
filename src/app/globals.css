@@ -24,3 +24,40 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Shimmer Animation Styles */
+.shimmer {
+  -webkit-mask: linear-gradient(-60deg, #000 40%, #0005, #000 60%) right/200% 100%;
+  mask: linear-gradient(-60deg, #000 40%, #0005, #000 60%) right/200% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2s linear infinite;
+  line-height: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0% {
+    -webkit-mask-position: right;
+    mask-position: right;
+  }
+  100% {
+    -webkit-mask-position: left;
+    mask-position: left;
+  }
+}
+
+/* Ellipsis animation for loading text */
+@keyframes ellipsis {
+  0% { content: ''; opacity: 1; }
+  25% { content: '.'; opacity: 1; }
+  50% { content: '..'; opacity: 1; }
+  75% { content: '...'; opacity: 1; }
+  100% { content: ''; opacity: 1; }
+}
+.animate-ellipsis::after {
+  display: inline-block;
+  content: '';
+  animation: ellipsis 1.2s steps(4, end) infinite;
+  width: 1.5em;
+  text-align: left;
+}
