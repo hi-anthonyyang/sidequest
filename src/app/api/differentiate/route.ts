@@ -81,11 +81,12 @@ export async function POST(req: Request) {
     }
     
     return NextResponse.json({ variations });
-  } catch (error: any) {
-    console.error('Error in differentiation API:', error);
+  } catch (error) {
+    const err = error as Error;
+    console.error('Error in differentiation API:', err);
     // Return error message in response for debugging (only for development)
     return NextResponse.json(
-      { error: 'Failed to process assignment', message: error.message, stack: error.stack },
+      { error: 'Failed to process assignment', message: err.message, stack: err.stack },
       { status: 500 }
     );
   }
