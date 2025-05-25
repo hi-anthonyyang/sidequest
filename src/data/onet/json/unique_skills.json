@@ -1,0 +1,142 @@
+{
+  "2.A.1.a": {
+    "id": "2.A.1.a",
+    "name": "Reading Comprehension"
+  },
+  "2.A.1.b": {
+    "id": "2.A.1.b",
+    "name": "Active Listening"
+  },
+  "2.A.1.c": {
+    "id": "2.A.1.c",
+    "name": "Writing"
+  },
+  "2.A.1.d": {
+    "id": "2.A.1.d",
+    "name": "Speaking"
+  },
+  "2.A.1.e": {
+    "id": "2.A.1.e",
+    "name": "Mathematics"
+  },
+  "2.A.1.f": {
+    "id": "2.A.1.f",
+    "name": "Science"
+  },
+  "2.A.2.a": {
+    "id": "2.A.2.a",
+    "name": "Critical Thinking"
+  },
+  "2.A.2.b": {
+    "id": "2.A.2.b",
+    "name": "Active Learning"
+  },
+  "2.A.2.c": {
+    "id": "2.A.2.c",
+    "name": "Learning Strategies"
+  },
+  "2.A.2.d": {
+    "id": "2.A.2.d",
+    "name": "Monitoring"
+  },
+  "2.B.1.a": {
+    "id": "2.B.1.a",
+    "name": "Social Perceptiveness"
+  },
+  "2.B.1.b": {
+    "id": "2.B.1.b",
+    "name": "Coordination"
+  },
+  "2.B.1.c": {
+    "id": "2.B.1.c",
+    "name": "Persuasion"
+  },
+  "2.B.1.d": {
+    "id": "2.B.1.d",
+    "name": "Negotiation"
+  },
+  "2.B.1.e": {
+    "id": "2.B.1.e",
+    "name": "Instructing"
+  },
+  "2.B.1.f": {
+    "id": "2.B.1.f",
+    "name": "Service Orientation"
+  },
+  "2.B.2.i": {
+    "id": "2.B.2.i",
+    "name": "Complex Problem Solving"
+  },
+  "2.B.3.a": {
+    "id": "2.B.3.a",
+    "name": "Operations Analysis"
+  },
+  "2.B.3.b": {
+    "id": "2.B.3.b",
+    "name": "Technology Design"
+  },
+  "2.B.3.c": {
+    "id": "2.B.3.c",
+    "name": "Equipment Selection"
+  },
+  "2.B.3.d": {
+    "id": "2.B.3.d",
+    "name": "Installation"
+  },
+  "2.B.3.e": {
+    "id": "2.B.3.e",
+    "name": "Programming"
+  },
+  "2.B.3.g": {
+    "id": "2.B.3.g",
+    "name": "Operations Monitoring"
+  },
+  "2.B.3.h": {
+    "id": "2.B.3.h",
+    "name": "Operation and Control"
+  },
+  "2.B.3.j": {
+    "id": "2.B.3.j",
+    "name": "Equipment Maintenance"
+  },
+  "2.B.3.k": {
+    "id": "2.B.3.k",
+    "name": "Troubleshooting"
+  },
+  "2.B.3.l": {
+    "id": "2.B.3.l",
+    "name": "Repairing"
+  },
+  "2.B.3.m": {
+    "id": "2.B.3.m",
+    "name": "Quality Control Analysis"
+  },
+  "2.B.4.e": {
+    "id": "2.B.4.e",
+    "name": "Judgment and Decision Making"
+  },
+  "2.B.4.g": {
+    "id": "2.B.4.g",
+    "name": "Systems Analysis"
+  },
+  "2.B.4.h": {
+    "id": "2.B.4.h",
+    "name": "Systems Evaluation"
+  },
+  "2.B.5.a": {
+    "id": "2.B.5.a",
+    "name": "Time Management"
+  },
+  "2.B.5.b": {
+    "id": "2.B.5.b",
+    "name": "Management of Financial Resources"
+  },
+  "2.B.5.c": {
+    "id": "2.B.5.c",
+    "name": "Management of Material Resources"
+  },
+  "2.B.5.d": {
+    "id": "2.B.5.d",
+    "name": "Management of Personnel Resources"
+  }
+}

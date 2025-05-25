@@ -59,6 +59,27 @@ export async function POST(request: Request) {
     // Parse the JSON response
     const recommendations = JSON.parse(response);
 
+    // Count the number of individual majors generated
+    let majorsCount = 0;
+    if (Array.isArray(recommendations.majors)) {
+      majorsCount = recommendations.majors.length;
+    } else if (Array.isArray(recommendations)) {
+      majorsCount = recommendations.length;
+    }
+
+    // Increment the persistent majors counter
+    const majorsCountPath = path.resolve(process.cwd(), 'majors_count.json');
+    let currentCount = 0;
+    try {
+      const file = await fs.readFile(majorsCountPath, 'utf8');
+      const data = JSON.parse(file);
+      currentCount = typeof data.count === 'number' ? data.count : 0;
+    } catch {
+      currentCount = 0;
+    }
+    const newCount = currentCount + majorsCount;
+    await fs.writeFile(majorsCountPath, JSON.stringify({ count: newCount }, null, 2), 'utf8');
+
     // After getting the GPT response:
     const submission = {
       timestamp: new Date().toISOString(),
