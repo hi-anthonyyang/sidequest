@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import uniqueSkillsData from '../../data/onet/json/unique_skills.json';
 
 export type SkillStatus = 'goal' | 'achieved';
 export type SkillProficiency = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
@@ -55,6 +56,11 @@ export default function SkillTree() {
   const [editProficiency, setEditProficiency] = useState<SkillProficiency>('Beginner');
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [careerProgress, setCareerProgress] = useState<any[]>([]);
+  const [loadingCareers, setLoadingCareers] = useState(false);
+  const [dismissedCareers, setDismissedCareers] = useState<string[]>([]);
+  const [highlightedCareer, setHighlightedCareer] = useState<string | null>(null);
+  const [careerAnimationState, setCareerAnimationState] = useState<'idle' | 'highlighting' | 'unhighlighting'>('idle');
 
   // Zoom and pan state
   const [scale, setScale] = useState(1);
@@ -124,24 +130,43 @@ export default function SkillTree() {
       return;
     }
     setLoading(true);
-    fetch(`/api/skills/search?q=${encodeURIComponent(search)}&offset=0`)
-      .then(res => res.json())
-      .then(data => {
-        setSkills(data.results);
-        setHasMore(data.hasMore);
-        setOffset(5);
-      })
-      .finally(() => setLoading(false));
+    // Simple local search in uniqueSkillsData
+    const allSkills = Object.values(uniqueSkillsData);
+    const filtered = allSkills.filter(skill =>
+      skill.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setSkills(filtered.slice(0, 5));
+    setHasMore(filtered.length > 5);
+    setOffset(5);
+    setLoading(false);
   }, [search]);
 
-  function addSkill(skill: SkillSearchResult) {
+  // Extract achieved skills from tree
+  const achievedSkills = tree.root.children.map((s: any) => ({ elementId: s.id }));
+
+  // Fetch career progress from backend
+  useEffect(() => {
+    if (!mounted) return;
+    setLoadingCareers(true);
+    fetch('/api/careers/progress', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ achievedSkills }),
+    })
+      .then(res => res.json())
+      .then(data => setCareerProgress(data.results))
+      .finally(() => setLoadingCareers(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify(achievedSkills), mounted]);
+
+  function addSkill(skill: { id: string; name: string }) {
     setTree((prev: SkillTreeData) => ({
       ...prev,
       root: {
         ...prev.root,
         children: [
           ...prev.root.children,
-          { ...skill },
+          { id: skill.id, name: skill.name },
         ],
       },
     }));
@@ -153,14 +178,14 @@ export default function SkillTree() {
 
   function showMore() {
     setLoading(true);
-    fetch(`/api/skills/search?q=${encodeURIComponent(search)}&offset=${offset}`)
-      .then(res => res.json())
-      .then(data => {
-        setSkills(prev => [...prev, ...data.results]);
-        setHasMore(data.hasMore);
-        setOffset(offset + 5);
-      })
-      .finally(() => setLoading(false));
+    const allSkills = Object.values(uniqueSkillsData);
+    const filtered = allSkills.filter(skill =>
+      skill.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setSkills(prev => [...prev, ...filtered.slice(offset, offset + 5)]);
+    setHasMore(filtered.length > offset + 5);
+    setOffset(offset + 5);
+    setLoading(false);
   }
 
   function openEditSkill(idx: number) {
@@ -224,7 +249,7 @@ export default function SkillTree() {
             const height = 400; // SVG height
             const cx = width / 2;
             const cy = height / 2;
-            const r = 180; // increased radius for skill nodes
+            const r = 180; // radius for skill nodes
             const nodeCount = tree.root.children.length;
             // Calculate positions for skill nodes in a circle
             const skillPositions = tree.root.children.map((_: Skill, idx: number) => {
@@ -235,6 +260,27 @@ export default function SkillTree() {
                 angle,
               };
             });
+
+            // Career nodes: at least 2 achieved, not dismissed, max 5
+            let eligibleCareers = (careerProgress || []).filter(
+              c => c.achievedCount >= 2 && !dismissedCareers.includes(c.code)
+            );
+            const careerNodes = eligibleCareers.slice(0, 3);
+            const careerRingR = r + 90;
+            const careerCount = careerNodes.length;
+            const careerPositions = careerNodes.map((career, idx) => {
+              const angle = (2 * Math.PI * idx) / Math.max(1, careerCount) - Math.PI / 2;
+              return {
+                ...career,
+                x: cx + careerRingR * Math.cos(angle),
+                y: cy + careerRingR * Math.sin(angle),
+                angle,
+              };
+            });
+
+            // Debug: log careerPositions
+            console.log('DEBUG: careerPositions', careerPositions.length, careerPositions);
+
             return (
               <motion.g
                 animate={{
@@ -246,36 +292,100 @@ export default function SkillTree() {
                 style={{ touchAction: 'none', cursor: dragging.current ? 'grabbing' : 'grab' }}
               >
                 {/* Lines to children */}
-                {skillPositions.map((pos: { x: number; y: number }, idx: number) => (
-                  <line
-                    key={tree.root.children[idx].id + '-line'}
-                    x1={cx}
-                    y1={cy}
-                    x2={pos.x}
-                    y2={pos.y}
-                    stroke={hoveredIdx === idx ? '#2563eb' : '#bbb'}
-                    strokeWidth={hoveredIdx === idx ? 4 : 2}
-                    style={
-                      hoveredIdx === idx
-                        ? {
-                            transition: 'stroke-width 0.18s cubic-bezier(0.4,0,0.2,1), stroke 0.18s cubic-bezier(0.4,0,0.2,1)',
-                          }
-                        : { transition: 'stroke-width 0.18s cubic-bezier(0.4,0,0.2,1), stroke 0.18s cubic-bezier(0.4,0,0.2,1)' }
+                {skillPositions.map((pos: { x: number; y: number }, idx: number) => {
+                  // Highlight logic for skill links
+                  let isConnected = false;
+                  if (highlightedCareer) {
+                    const career = careerNodes.find(c => c.code === highlightedCareer);
+                    if (career && career.requiredSkills.some((s: any) => s.id === tree.root.children[idx].id)) {
+                      isConnected = true;
                     }
-                  />
-                ))}
+                  }
+                  const dimmed = highlightedCareer && !isConnected;
+                  return (
+                    <motion.line
+                      key={tree.root.children[idx].id + '-line'}
+                      x1={cx}
+                      y1={cy}
+                      x2={pos.x}
+                      y2={pos.y}
+                      stroke={hoveredIdx === idx || isConnected ? '#2563eb' : '#bbb'}
+                      strokeWidth={hoveredIdx === idx || isConnected ? 4 : 2}
+                      initial={{ opacity: 1 }}
+                      animate={{ 
+                        opacity: dimmed ? 0.3 : 1,
+                        strokeWidth: hoveredIdx === idx || isConnected ? 4 : 2
+                      }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    />
+                  );
+                })}
+
+                {/* Lines from career nodes to their required skills */}
+                {careerPositions.map((career, cIdx) =>
+                  (career.requiredSkills || []).map((skill: any) => {
+                    const skillIdx = tree.root.children.findIndex((s: any) => s.id === skill.id);
+                    if (skillIdx === -1 && highlightedCareer !== career.code) return null;
+                    if (skillIdx === -1) {
+                      const missingSkillAngle = (2 * Math.PI * tree.root.children.length) / (tree.root.children.length + 1) - Math.PI / 2;
+                      const missingSkillX = cx + r * Math.cos(missingSkillAngle);
+                      const missingSkillY = cy + r * Math.sin(missingSkillAngle);
+                      return (
+                        <motion.line
+                          key={career.code + '-' + skill.id}
+                          x1={career.x}
+                          y1={career.y}
+                          x2={missingSkillX}
+                          y2={missingSkillY}
+                          stroke={career.state === 'unlocked' ? '#22c55e' : '#bbb'}
+                          strokeWidth={2}
+                          initial={{ opacity: 0.5 }}
+                          animate={{ 
+                            opacity: highlightedCareer === career.code ? 0.9 : 0.5,
+                            strokeWidth: highlightedCareer === career.code ? 3 : 2
+                          }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        />
+                      );
+                    }
+                    const skillPos = skillPositions[skillIdx];
+                    return (
+                      <motion.line
+                        key={career.code + '-' + skill.id}
+                        x1={career.x}
+                        y1={career.y}
+                        x2={skillPos.x}
+                        y2={skillPos.y}
+                        stroke={career.state === 'unlocked' ? '#22c55e' : '#bbb'}
+                        strokeWidth={2}
+                        initial={{ opacity: 0.5 }}
+                        animate={{ 
+                          opacity: highlightedCareer === career.code ? 0.9 : 0.5,
+                          strokeWidth: highlightedCareer === career.code ? 3 : 2
+                        }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      />
+                    );
+                  })
+                )}
+
                 {tree.root.children.map((child: Skill, idx: number) => {
                   const pos = skillPositions[idx];
-                  // Dynamic width for skill node based on text length
                   const text = child.name.length > 12 ? child.name.slice(0, 12) + '…' : child.name;
-                  const textWidth = Math.max(90, text.length * 12 + 32); // +32 for padding
-                  // Color logic
+                  const textWidth = Math.max(90, text.length * 12 + 32);
                   let fill = '#fff';
                   if (child.status === 'achieved') fill = '#2563eb';
                   else if (child.status === 'goal') fill = '#e0edff';
                   const isHovered = hoveredIdx === idx;
-                  // Directional bounce: move outward along the angle
-                  const bounceDistance = isHovered ? 18 : 0;
+                  let isConnected = false;
+                  if (highlightedCareer) {
+                    const career = careerNodes.find(c => c.code === highlightedCareer);
+                    if (career && career.requiredSkills.some((s: any) => s.id === child.id)) {
+                      isConnected = true;
+                    }
+                  }
+                  const dimmed = highlightedCareer && !isConnected;
+                  const bounceDistance = isHovered || isConnected ? 18 : 0;
                   const tx = Math.cos(pos.angle) * bounceDistance;
                   const ty = Math.sin(pos.angle) * bounceDistance;
                   return (
@@ -288,15 +398,16 @@ export default function SkillTree() {
                       animate={{
                         x: tx,
                         y: ty,
-                        scale: isHovered ? 1.08 : 1,
+                        scale: isHovered || isConnected ? 1.08 : 1,
+                        opacity: dimmed ? 0.3 : 1
                       }}
                       transition={{
                         type: 'spring',
                         stiffness: 400,
-                        damping: 18,
+                        damping: 18
                       }}
                     >
-                      <rect
+                      <motion.rect
                         x={pos.x - textWidth / 2}
                         y={pos.y - 26}
                         rx={32}
@@ -306,9 +417,10 @@ export default function SkillTree() {
                         fill={fill}
                         stroke="#2563eb"
                         strokeWidth={3}
-                        style={{
-                          filter: isHovered ? 'drop-shadow(0 0 12px #2563eb55)' : 'none',
+                        animate={{
+                          filter: isHovered || isConnected ? 'drop-shadow(0 0 12px #2563eb55)' : 'none'
                         }}
+                        transition={{ duration: 0.3 }}
                       />
                       <text
                         x={pos.x}
@@ -324,6 +436,87 @@ export default function SkillTree() {
                     </motion.g>
                   );
                 })}
+
+                {/* Career nodes */}
+                {careerPositions.map((career, idx) => {
+                  const isUnlocked = career.state === 'unlocked';
+                  const text = career.title.length > 16 ? career.title.slice(0, 14) + '…' : career.title;
+                  const textWidth = Math.max(110, text.length * 12 + 32);
+                  const isHighlighted = highlightedCareer === career.code;
+                  return (
+                    <motion.g
+                      key={career.code}
+                      style={{ cursor: isUnlocked ? 'pointer' : 'not-allowed' }}
+                      onMouseEnter={() => {
+                        setHighlightedCareer(career.code);
+                        setCareerAnimationState('highlighting');
+                      }}
+                      onMouseLeave={() => {
+                        setHighlightedCareer(null);
+                        setCareerAnimationState('unhighlighting');
+                      }}
+                      animate={{
+                        opacity: highlightedCareer && !isHighlighted ? 0.3 : 1,
+                        scale: isHighlighted ? 1.05 : 1
+                      }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 300,
+                        damping: 20
+                      }}
+                    >
+                      <motion.rect
+                        x={career.x - textWidth / 2}
+                        y={career.y - 30}
+                        rx={32}
+                        ry={32}
+                        width={textWidth}
+                        height={60}
+                        fill={isUnlocked ? '#22c55e' : '#e5e7eb'}
+                        stroke={isUnlocked ? '#16a34a' : '#bbb'}
+                        strokeWidth={3}
+                        opacity={isUnlocked ? 1 : 0.6}
+                        animate={{
+                          filter: isHighlighted ? 'drop-shadow(0 0 12px #22c55e55)' : 'none'
+                        }}
+                        transition={{ duration: 0.3 }}
+                      />
+                      <text
+                        x={career.x}
+                        y={career.y + 7}
+                        textAnchor="middle"
+                        fill={isUnlocked ? '#fff' : '#94a3b8'}
+                        fontSize={18}
+                        fontWeight="bold"
+                        style={{ pointerEvents: 'none', userSelect: 'none' }}
+                      >
+                        {text}
+                      </text>
+                      {/* Dismiss (X) button */}
+                      <motion.g
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => setDismissedCareers(prev => [...prev, career.code])}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <rect x={career.x + textWidth / 2 - 22} y={career.y - 38} width={20} height={20} rx={5} fill="#fff" opacity={0.9} />
+                        <text x={career.x + textWidth / 2 - 12} y={career.y - 24} textAnchor="middle" fontSize={16} fill="#bbb" fontWeight="bold">×</text>
+                      </motion.g>
+                      {!isUnlocked && (
+                        <motion.g
+                          animate={{
+                            scale: isHighlighted ? 1.1 : 1
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <rect x={career.x - 12} y={career.y - 12} width={24} height={24} rx={6} fill="#fff" opacity={0.8} />
+                          <text x={career.x} y={career.y + 6} textAnchor="middle" fontSize={18} fill="#bbb" fontWeight="bold">🔒</text>
+                        </motion.g>
+                      )}
+                    </motion.g>
+                  );
+                })}
+
                 {/* Root node ('You') and Add Skill '+' button rendered last for top stacking */}
                 <circle cx={cx} cy={cy} r={40} fill="#3867e3" />
                 <text x={cx} y={cy + 7} textAnchor="middle" fill="#fff" fontSize={24} fontWeight="bold">You</text>
