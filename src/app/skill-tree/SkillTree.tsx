@@ -214,6 +214,15 @@ export default function SkillTree() {
     setEditingSkillIdx(null);
   }
 
+  function removeSkill(idx: number) {
+    setTree(prev => {
+      const children = [...prev.root.children];
+      children.splice(idx, 1);
+      return { ...prev, root: { ...prev.root, children } };
+    });
+    setEditingSkillIdx(null);
+  }
+
   return (
     <div className="w-full flex flex-col items-center">
       {mounted && (
@@ -327,25 +336,55 @@ export default function SkillTree() {
                     const skillIdx = tree.root.children.findIndex((s: any) => s.id === skill.id);
                     if (skillIdx === -1 && highlightedCareer !== career.code) return null;
                     if (skillIdx === -1) {
+                      // Find angle for missing skill
                       const missingSkillAngle = (2 * Math.PI * tree.root.children.length) / (tree.root.children.length + 1) - Math.PI / 2;
                       const missingSkillX = cx + r * Math.cos(missingSkillAngle);
                       const missingSkillY = cy + r * Math.sin(missingSkillAngle);
+                      // Dynamic width for ghost node based on text length
+                      const text = skill.name.length > 12 ? skill.name.slice(0, 12) + '…' : skill.name;
+                      const textWidth = Math.max(90, text.length * 12 + 32); // +32 for padding
                       return (
-                        <motion.line
-                          key={career.code + '-' + skill.id}
-                          x1={career.x}
-                          y1={career.y}
-                          x2={missingSkillX}
-                          y2={missingSkillY}
-                          stroke={career.state === 'unlocked' ? '#22c55e' : '#bbb'}
-                          strokeWidth={2}
-                          initial={{ opacity: 0.5 }}
-                          animate={{ 
-                            opacity: highlightedCareer === career.code ? 0.9 : 0.5,
-                            strokeWidth: highlightedCareer === career.code ? 3 : 2
-                          }}
-                          transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        />
+                        <g key={career.code + '-' + skill.id + '-ghost'}>
+                          <motion.line
+                            x1={career.x}
+                            y1={career.y}
+                            x2={missingSkillX}
+                            y2={missingSkillY}
+                            stroke={career.state === 'unlocked' ? '#22c55e' : '#bbb'}
+                            strokeWidth={2}
+                            initial={{ opacity: 0.5 }}
+                            animate={{ 
+                              opacity: highlightedCareer === career.code ? 0.9 : 0.5,
+                              strokeWidth: highlightedCareer === career.code ? 3 : 2
+                            }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            strokeDasharray="6 4"
+                          />
+                          <rect
+                            x={missingSkillX - textWidth / 2}
+                            y={missingSkillY - 26}
+                            rx={32}
+                            ry={32}
+                            width={textWidth}
+                            height={52}
+                            fill="#f3f4f6"
+                            stroke="#bbb"
+                            strokeWidth={2}
+                            opacity={0.7}
+                            style={{ strokeDasharray: '6 4' }}
+                          />
+                          <text
+                            x={missingSkillX}
+                            y={missingSkillY + 7}
+                            textAnchor="middle"
+                            fill="#94a3b8"
+                            fontSize={16}
+                            fontWeight="bold"
+                            style={{ pointerEvents: 'none', userSelect: 'none' }}
+                          >
+                            {text}
+                          </text>
+                        </g>
                       );
                     }
                     const skillPos = skillPositions[skillIdx];
@@ -503,15 +542,7 @@ export default function SkillTree() {
                         <text x={career.x + textWidth / 2 - 12} y={career.y - 24} textAnchor="middle" fontSize={16} fill="#bbb" fontWeight="bold">×</text>
                       </motion.g>
                       {!isUnlocked && (
-                        <motion.g
-                          animate={{
-                            scale: isHighlighted ? 1.1 : 1
-                          }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <rect x={career.x - 12} y={career.y - 12} width={24} height={24} rx={6} fill="#fff" opacity={0.8} />
-                          <text x={career.x} y={career.y + 6} textAnchor="middle" fontSize={18} fill="#bbb" fontWeight="bold">🔒</text>
-                        </motion.g>
+                        null
                       )}
                     </motion.g>
                   );
@@ -650,7 +681,9 @@ export default function SkillTree() {
               if (e.key === 'Escape') cancelEditSkill();
             }}
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Edit Skill</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">
+              {editingSkillIdx !== null ? tree.root.children[editingSkillIdx].name : 'Edit Skill'}
+            </h2>
             <div className="mb-4">
               <label className="block font-semibold mb-2 text-gray-800">Status</label>
               <div className="flex gap-4">
@@ -683,7 +716,13 @@ export default function SkillTree() {
                 ))}
               </div>
             </div>
-            <div className="flex justify-end gap-2">
+            <div className="flex justify-end gap-2 mt-4">
+              <button
+                className="px-4 py-2 bg-red-100 text-red-600 rounded hover:bg-red-200 font-semibold"
+                onClick={() => removeSkill(editingSkillIdx)}
+              >
+                Remove Skill
+              </button>
               <button
                 className="px-4 py-2 bg-gray-100 text-gray-500 rounded hover:bg-gray-200 font-semibold"
                 onClick={cancelEditSkill}

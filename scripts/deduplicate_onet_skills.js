@@ -31,10 +31,13 @@ for (const occ of occData) {
   occupationSkills[code] = [];
 }
 for (const row of skillsData) {
-  const code = row['O*NET-SOC Code'];
-  const id = row['Element ID'];
-  if (occupationSkills[code] && !occupationSkills[code].includes(id)) {
-    occupationSkills[code].push(id);
+  // Only include skills with Importance >= 4.0
+  if (row['Scale Name'] === 'Importance' && Number(row['Data Value']) >= 4.0) {
+    const code = row['O*NET-SOC Code'];
+    const id = row['Element ID'];
+    if (occupationSkills[code] && !occupationSkills[code].includes(id)) {
+      occupationSkills[code].push(id);
+    }
   }
 }
 
