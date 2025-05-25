@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 export type SkillStatus = 'goal' | 'achieved';
 export type SkillProficiency = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
@@ -55,9 +56,61 @@ export default function SkillTree() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 
+  // Zoom and pan state
+  const [scale, setScale] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const controls = useAnimation();
+  const svgRef = React.useRef<SVGSVGElement>(null);
+  const dragging = React.useRef(false);
+  const lastPan = React.useRef({ x: 0, y: 0 });
+  const dragStart = React.useRef({ x: 0, y: 0 });
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Auto-fit tree when nodes change
+  useEffect(() => {
+    if (!mounted) return;
+    const nodeCount = tree.root.children.length;
+    if (nodeCount === 0) {
+      setScale(1);
+      setPan({ x: 0, y: 0 });
+      return;
+    }
+    // Calculate bounding box of all nodes
+    const width = 600;
+    const height = 400;
+    const r = 180;
+    const cx = width / 2;
+    const cy = height / 2;
+    const skillPositions = tree.root.children.map((_: Skill, idx: number) => {
+      const angle = (2 * Math.PI * idx) / nodeCount - Math.PI / 2;
+      return {
+        x: cx + r * Math.cos(angle),
+        y: cy + r * Math.sin(angle),
+      };
+    });
+    let minX = cx, maxX = cx, minY = cy, maxY = cy;
+    skillPositions.forEach(pos => {
+      minX = Math.min(minX, pos.x);
+      maxX = Math.max(maxX, pos.x);
+      minY = Math.min(minY, pos.y);
+      maxY = Math.max(maxY, pos.y);
+    });
+    // Add some padding
+    minX -= 80; maxX += 80; minY -= 60; maxY += 60;
+    const treeW = maxX - minX;
+    const treeH = maxY - minY;
+    const scaleX = width / treeW;
+    const scaleY = height / treeH;
+    const fitScale = Math.min(scaleX, scaleY, 1);
+    setScale(fitScale);
+    // Center the tree
+    const centerX = (minX + maxX) / 2;
+    const centerY = (minY + maxY) / 2;
+    setPan({ x: width / 2 - centerX, y: height / 2 - centerY });
+  }, [tree.root.children.length, mounted]);
 
   useEffect(() => {
     saveTree(tree);
@@ -139,14 +192,39 @@ export default function SkillTree() {
   return (
     <div className="w-full flex flex-col items-center">
       {mounted && (
-        <svg width="100%" height={400} style={{ minHeight: 400, display: 'block' }}>
-          {/* Center coordinates for the root node */}
+        <svg
+          ref={svgRef}
+          width="100%"
+          height={400}
+          style={{ minHeight: 400, display: 'block', touchAction: 'none', userSelect: 'none' }}
+          onWheel={e => {
+            e.preventDefault();
+            let nextScale = scale * (e.deltaY < 0 ? 1.08 : 0.92);
+            nextScale = Math.max(0.3, Math.min(2.5, nextScale));
+            setScale(nextScale);
+          }}
+          onPointerDown={e => {
+            dragging.current = true;
+            lastPan.current = { ...pan };
+            dragStart.current = { x: e.clientX, y: e.clientY };
+            (e.target as SVGSVGElement).setPointerCapture(e.pointerId);
+          }}
+          onPointerMove={e => {
+            if (!dragging.current) return;
+            const dx = e.clientX - dragStart.current.x;
+            const dy = e.clientY - dragStart.current.y;
+            setPan({ x: lastPan.current.x + dx, y: lastPan.current.y + dy });
+          }}
+          onPointerUp={e => {
+            dragging.current = false;
+          }}
+        >
           {(() => {
             const width = 600; // SVG width
             const height = 400; // SVG height
             const cx = width / 2;
             const cy = height / 2;
-            const r = 120; // radius for skill nodes
+            const r = 180; // increased radius for skill nodes
             const nodeCount = tree.root.children.length;
             // Calculate positions for skill nodes in a circle
             const skillPositions = tree.root.children.map((_: Skill, idx: number) => {
@@ -154,10 +232,19 @@ export default function SkillTree() {
               return {
                 x: cx + r * Math.cos(angle),
                 y: cy + r * Math.sin(angle),
+                angle,
               };
             });
             return (
-              <g>
+              <motion.g
+                animate={{
+                  scale: scale,
+                  x: pan.x,
+                  y: pan.y,
+                }}
+                transition={{ type: 'spring', stiffness: 120, damping: 18 }}
+                style={{ touchAction: 'none', cursor: dragging.current ? 'grabbing' : 'grab' }}
+              >
                 {/* Lines to children */}
                 {skillPositions.map((pos: { x: number; y: number }, idx: number) => (
                   <line
@@ -166,14 +253,14 @@ export default function SkillTree() {
                     y1={cy}
                     x2={pos.x}
                     y2={pos.y}
-                    stroke="#bbb"
-                    strokeWidth={2}
-                    className={
+                    stroke={hoveredIdx === idx ? '#2563eb' : '#bbb'}
+                    strokeWidth={hoveredIdx === idx ? 4 : 2}
+                    style={
                       hoveredIdx === idx
-                        ? 'skill-link-animated'
-                        : hoveredIdx === null
-                        ? ''
-                        : ''
+                        ? {
+                            transition: 'stroke-width 0.18s cubic-bezier(0.4,0,0.2,1), stroke 0.18s cubic-bezier(0.4,0,0.2,1)',
+                          }
+                        : { transition: 'stroke-width 0.18s cubic-bezier(0.4,0,0.2,1), stroke 0.18s cubic-bezier(0.4,0,0.2,1)' }
                     }
                   />
                 ))}
@@ -186,13 +273,28 @@ export default function SkillTree() {
                   let fill = '#fff';
                   if (child.status === 'achieved') fill = '#2563eb';
                   else if (child.status === 'goal') fill = '#e0edff';
+                  const isHovered = hoveredIdx === idx;
+                  // Directional bounce: move outward along the angle
+                  const bounceDistance = isHovered ? 18 : 0;
+                  const tx = Math.cos(pos.angle) * bounceDistance;
+                  const ty = Math.sin(pos.angle) * bounceDistance;
                   return (
-                    <g
+                    <motion.g
                       key={child.id}
                       style={{ cursor: 'pointer' }}
                       onClick={() => openEditSkill(idx)}
                       onMouseEnter={() => setHoveredIdx(idx)}
                       onMouseLeave={() => setHoveredIdx(null)}
+                      animate={{
+                        x: tx,
+                        y: ty,
+                        scale: isHovered ? 1.08 : 1,
+                      }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 18,
+                      }}
                     >
                       <rect
                         x={pos.x - textWidth / 2}
@@ -204,8 +306,9 @@ export default function SkillTree() {
                         fill={fill}
                         stroke="#2563eb"
                         strokeWidth={3}
-                        className={hoveredIdx === idx ? 'skill-node-hover' : ''}
-                        style={{ transition: 'all 0.18s cubic-bezier(0.4,0,0.2,1)' }}
+                        style={{
+                          filter: isHovered ? 'drop-shadow(0 0 12px #2563eb55)' : 'none',
+                        }}
                       />
                       <text
                         x={pos.x}
@@ -218,7 +321,7 @@ export default function SkillTree() {
                       >
                         {text}
                       </text>
-                    </g>
+                    </motion.g>
                   );
                 })}
                 {/* Root node ('You') and Add Skill '+' button rendered last for top stacking */}
@@ -251,7 +354,7 @@ export default function SkillTree() {
                     filter="brightness(0) invert(1)"
                   />
                 </g>
-              </g>
+              </motion.g>
             );
           })()}
         </svg>
@@ -328,14 +431,6 @@ export default function SkillTree() {
             @keyframes modalPopIn {
               0% { opacity: 0; transform: scale(0.95); }
               100% { opacity: 1; transform: scale(1); }
-            }
-            .skill-node-hover {
-              filter: drop-shadow(0 0 12px #2563eb55);
-              transform: scale(1.05);
-            }
-            .skill-link-animated {
-              animation: skillLinkPulse 0.4s ease-in-out alternate infinite;
-              stroke: #2563eb;
             }
             @keyframes skillLinkPulse {
               0% { stroke-width: 2; }
