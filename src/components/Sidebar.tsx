@@ -54,6 +54,13 @@ export default function Sidebar() {
           <Image src="/icons/scroll-text.svg" alt="Assignments" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
           {showText && !collapsed && 'Assignments'}
         </Link>
+        <Link
+          href="/skill-tree"
+          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/skill-tree' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
+        >
+          <Image src="/icons/sword.svg" alt="Skill Tree" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
+          {showText && !collapsed && 'Skill Tree'}
+        </Link>
       </div>
     </nav>
   );
