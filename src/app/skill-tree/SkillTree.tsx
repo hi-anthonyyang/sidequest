@@ -2,9 +2,30 @@
 
 import React, { useEffect, useState } from 'react';
 
+interface Skill {
+  id: string;
+  name: string;
+  proficient?: boolean;
+}
+
+interface SkillNode {
+  id: string;
+  name: string;
+  children: Skill[];
+}
+
+interface SkillTreeData {
+  root: SkillNode;
+}
+
+interface SkillSearchResult {
+  id: string;
+  name: string;
+}
+
 const LOCAL_STORAGE_KEY = 'skillTree';
 
-function loadTree() {
+function loadTree(): SkillTreeData {
   try {
     const data = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (data) return JSON.parse(data);
@@ -12,15 +33,15 @@ function loadTree() {
   return { root: { id: 'root', name: 'You', children: [] } };
 }
 
-function saveTree(tree: any) {
+function saveTree(tree: SkillTreeData) {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tree));
 }
 
 export default function SkillTree() {
-  const [tree, setTree] = useState<any>(loadTree());
+  const [tree, setTree] = useState<SkillTreeData>(loadTree());
   const [showModal, setShowModal] = useState(false);
   const [search, setSearch] = useState('');
-  const [skills, setSkills] = useState<any[]>([]);
+  const [skills, setSkills] = useState<SkillSearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const [offset, setOffset] = useState(0);
@@ -47,8 +68,8 @@ export default function SkillTree() {
       .finally(() => setLoading(false));
   }, [search]);
 
-  function addSkill(skill: { id: string; name: string }) {
-    setTree((prev: any) => ({
+  function addSkill(skill: SkillSearchResult) {
+    setTree((prev: SkillTreeData) => ({
       ...prev,
       root: {
         ...prev.root,
@@ -65,7 +86,7 @@ export default function SkillTree() {
   }
 
   function toggleProficient(idx: number) {
-    setTree((prev: any) => {
+    setTree((prev: SkillTreeData) => {
       const children = [...prev.root.children];
       children[idx] = { ...children[idx], proficient: !children[idx].proficient };
       return { ...prev, root: { ...prev.root, children } };
@@ -96,7 +117,7 @@ export default function SkillTree() {
           const r = 120; // radius for skill nodes
           const nodeCount = tree.root.children.length;
           // Calculate positions for skill nodes in a circle
-          const skillPositions = tree.root.children.map((_: any, idx: number) => {
+          const skillPositions = tree.root.children.map((_: Skill, idx: number) => {
             const angle = (2 * Math.PI * idx) / nodeCount - Math.PI / 2; // start at top
             return {
               x: cx + r * Math.cos(angle),
@@ -137,7 +158,7 @@ export default function SkillTree() {
                 />
               </g>
               {/* Lines to children */}
-              {skillPositions.map((pos: any, idx: number) => (
+              {skillPositions.map((pos: { x: number; y: number }, idx: number) => (
                 <line
                   key={tree.root.children[idx].id + '-line'}
                   x1={cx}
@@ -149,8 +170,8 @@ export default function SkillTree() {
                 />
               ))}
               {/* Child skill nodes */}
-              {tree.root.children.map((child: any, idx: number) => {
-                const pos: any = skillPositions[idx];
+              {tree.root.children.map((child: Skill, idx: number) => {
+                const pos = skillPositions[idx];
                 return (
                   <g key={child.id}>
                     <circle
@@ -209,7 +230,7 @@ export default function SkillTree() {
               {loading && <div className="text-gray-500">Searching…</div>}
               {!loading && skills.length === 0 && search.length >= 3 && <div className="text-gray-500">No skills found.</div>}
               {skills.map(skill => {
-                const alreadyAdded = tree.root.children.some((c: any) => c.id === skill.id);
+                const alreadyAdded = tree.root.children.some((c: Skill) => c.id === skill.id);
                 return (
                   <div
                     key={skill.id}
