@@ -207,9 +207,11 @@ export default function AssignmentsPage() {
                       alt="Wand Sparkles"
                       width={20}
                       height={20}
-                      className="w-5 h-5 brightness-0 invert"
+                      className={`w-5 h-5 brightness-0 invert${isLoading ? ' shimmer' : ''}`}
                     />
-                    {isLoading ? 'Generating...' : 'Generate Variations'}
+                    <span className={isLoading ? 'shimmer' : ''}>
+                      {isLoading ? 'Generating...' : 'Generate Variations'}
+                    </span>
                   </span>
                 </button>
               </form>
@@ -248,10 +250,20 @@ export default function AssignmentsPage() {
                   </div>
                 </div>
               ) : (
-                <div className="flex flex-col items-center justify-center h-full text-gray-400">
-                  <span className="text-2xl">🪄</span>
-                  <span className="mt-2">Your generated variations will appear here.</span>
-                </div>
+                isLoading ? (
+                  <div className="flex flex-col items-center justify-center h-full text-gray-400">
+                    <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-8" />
+                    <span className="text-xl font-semibold text-blue-700 flex items-center justify-center">
+                      Building out your variations
+                      <span className="ml-1 animate-ellipsis">…</span>
+                    </span>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full text-gray-400">
+                    <span className="text-2xl">🪄</span>
+                    <span className="mt-2">Your generated variations will appear here.</span>
+                  </div>
+                )
               )}
             </div>
           </div>
