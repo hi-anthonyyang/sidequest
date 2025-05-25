@@ -2,10 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 
+export type SkillStatus = 'goal' | 'achieved';
+export type SkillProficiency = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
+
 interface Skill {
   id: string;
   name: string;
-  proficient?: boolean;
+  status?: SkillStatus;
+  proficiency?: SkillProficiency;
 }
 
 interface SkillNode {
@@ -45,6 +49,15 @@ export default function SkillTree() {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const [offset, setOffset] = useState(0);
+  const [editingSkillIdx, setEditingSkillIdx] = useState<number | null>(null);
+  const [editStatus, setEditStatus] = useState<SkillStatus>('goal');
+  const [editProficiency, setEditProficiency] = useState<SkillProficiency>('Beginner');
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     saveTree(tree);
@@ -75,7 +88,7 @@ export default function SkillTree() {
         ...prev.root,
         children: [
           ...prev.root.children,
-          { ...skill, proficient: false },
+          { ...skill },
         ],
       },
     }));
@@ -83,14 +96,6 @@ export default function SkillTree() {
     setSearch('');
     setSkills([]);
     setOffset(0);
-  }
-
-  function toggleProficient(idx: number) {
-    setTree((prev: SkillTreeData) => {
-      const children = [...prev.root.children];
-      children[idx] = { ...children[idx], proficient: !children[idx].proficient };
-      return { ...prev, root: { ...prev.root, children } };
-    });
   }
 
   function showMore() {
@@ -105,102 +110,152 @@ export default function SkillTree() {
       .finally(() => setLoading(false));
   }
 
+  function openEditSkill(idx: number) {
+    const skill = tree.root.children[idx];
+    setEditingSkillIdx(idx);
+    setEditStatus(skill.status || 'goal');
+    setEditProficiency(skill.proficiency || 'Beginner');
+    setShowModal(false);
+  }
+
+  function saveEditSkill() {
+    if (editingSkillIdx === null) return;
+    setTree(prev => {
+      const children = [...prev.root.children];
+      children[editingSkillIdx] = {
+        ...children[editingSkillIdx],
+        status: editStatus,
+        proficiency: editStatus === 'achieved' ? editProficiency : undefined,
+      };
+      return { ...prev, root: { ...prev.root, children } };
+    });
+    setEditingSkillIdx(null);
+  }
+
+  function cancelEditSkill() {
+    setEditingSkillIdx(null);
+  }
+
   return (
     <div className="w-full flex flex-col items-center">
-      <svg width="100%" height={400} style={{ minHeight: 400, display: 'block' }}>
-        {/* Center coordinates for the root node */}
-        {(() => {
-          const width = 600; // SVG width
-          const height = 400; // SVG height
-          const cx = width / 2;
-          const cy = height / 2;
-          const r = 120; // radius for skill nodes
-          const nodeCount = tree.root.children.length;
-          // Calculate positions for skill nodes in a circle
-          const skillPositions = tree.root.children.map((_: Skill, idx: number) => {
-            const angle = (2 * Math.PI * idx) / nodeCount - Math.PI / 2; // start at top
-            return {
-              x: cx + r * Math.cos(angle),
-              y: cy + r * Math.sin(angle),
-            };
-          });
-          return (
-            <g>
-              {/* Root node ('You') */}
-              <circle cx={cx} cy={cy} r={40} fill="#3867e3" />
-              <text x={cx} y={cy + 7} textAnchor="middle" fill="#fff" fontSize={24} fontWeight="bold">You</text>
-              {/* Add Skill '+' button */}
-              <g
-                style={{ cursor: 'pointer' }}
-                onClick={() => setShowModal(true)}
-                tabIndex={0}
-                aria-label="Add Skill"
-              >
-                {/* Overlay the plus button at the bottom right of the 'You' node */}
-                <circle
-                  cx={cx + 28}
-                  cy={cy + 28}
-                  r={12}
-                  fill="#2563eb"
-                  stroke="#fff"
-                  strokeWidth={2}
-                  filter="drop-shadow(0 2px 6px rgba(0,0,0,0.08))"
-                />
-                {/* Use the plus.svg icon */}
-                <image
-                  href="/icons/plus.svg"
-                  x={cx + 28 - 8}
-                  y={cy + 28 - 8}
-                  width={16}
-                  height={16}
-                  style={{ pointerEvents: 'none', userSelect: 'none' }}
-                  filter="brightness(0) invert(1)"
-                />
-              </g>
-              {/* Lines to children */}
-              {skillPositions.map((pos: { x: number; y: number }, idx: number) => (
-                <line
-                  key={tree.root.children[idx].id + '-line'}
-                  x1={cx}
-                  y1={cy}
-                  x2={pos.x}
-                  y2={pos.y}
-                  stroke="#bbb"
-                  strokeWidth={2}
-                />
-              ))}
-              {/* Child skill nodes */}
-              {tree.root.children.map((child: Skill, idx: number) => {
-                const pos = skillPositions[idx];
-                return (
-                  <g key={child.id}>
-                    <circle
-                      cx={pos.x}
-                      cy={pos.y}
-                      r={32}
-                      fill={child.proficient ? '#22c55e' : '#fff'}
-                      stroke="#2563eb"
-                      strokeWidth={3}
+      {mounted && (
+        <svg width="100%" height={400} style={{ minHeight: 400, display: 'block' }}>
+          {/* Center coordinates for the root node */}
+          {(() => {
+            const width = 600; // SVG width
+            const height = 400; // SVG height
+            const cx = width / 2;
+            const cy = height / 2;
+            const r = 120; // radius for skill nodes
+            const nodeCount = tree.root.children.length;
+            // Calculate positions for skill nodes in a circle
+            const skillPositions = tree.root.children.map((_: Skill, idx: number) => {
+              const angle = (2 * Math.PI * idx) / nodeCount - Math.PI / 2; // start at top
+              return {
+                x: cx + r * Math.cos(angle),
+                y: cy + r * Math.sin(angle),
+              };
+            });
+            return (
+              <g>
+                {/* Lines to children */}
+                {skillPositions.map((pos: { x: number; y: number }, idx: number) => (
+                  <line
+                    key={tree.root.children[idx].id + '-line'}
+                    x1={cx}
+                    y1={cy}
+                    x2={pos.x}
+                    y2={pos.y}
+                    stroke="#bbb"
+                    strokeWidth={2}
+                    className={
+                      hoveredIdx === idx
+                        ? 'skill-link-animated'
+                        : hoveredIdx === null
+                        ? ''
+                        : ''
+                    }
+                  />
+                ))}
+                {tree.root.children.map((child: Skill, idx: number) => {
+                  const pos = skillPositions[idx];
+                  // Dynamic width for skill node based on text length
+                  const text = child.name.length > 12 ? child.name.slice(0, 12) + '…' : child.name;
+                  const textWidth = Math.max(90, text.length * 12 + 32); // +32 for padding
+                  // Color logic
+                  let fill = '#fff';
+                  if (child.status === 'achieved') fill = '#2563eb';
+                  else if (child.status === 'goal') fill = '#e0edff';
+                  return (
+                    <g
+                      key={child.id}
                       style={{ cursor: 'pointer' }}
-                      onClick={() => toggleProficient(idx)}
-                    />
-                    <text
-                      x={pos.x}
-                      y={pos.y + 7}
-                      textAnchor="middle"
-                      fill={child.proficient ? '#fff' : '#2563eb'}
-                      fontSize={18}
-                      fontWeight="bold"
+                      onClick={() => openEditSkill(idx)}
+                      onMouseEnter={() => setHoveredIdx(idx)}
+                      onMouseLeave={() => setHoveredIdx(null)}
                     >
-                      {child.name.length > 14 ? child.name.slice(0, 12) + '…' : child.name}
-                    </text>
-                  </g>
-                );
-              })}
-            </g>
-          );
-        })()}
-      </svg>
+                      <rect
+                        x={pos.x - textWidth / 2}
+                        y={pos.y - 26}
+                        rx={32}
+                        ry={32}
+                        width={textWidth}
+                        height={52}
+                        fill={fill}
+                        stroke="#2563eb"
+                        strokeWidth={3}
+                        className={hoveredIdx === idx ? 'skill-node-hover' : ''}
+                        style={{ transition: 'all 0.18s cubic-bezier(0.4,0,0.2,1)' }}
+                      />
+                      <text
+                        x={pos.x}
+                        y={pos.y + 7}
+                        textAnchor="middle"
+                        fill={child.status === 'achieved' ? '#fff' : '#2563eb'}
+                        fontSize={18}
+                        fontWeight="bold"
+                        style={{ pointerEvents: 'none', userSelect: 'none' }}
+                      >
+                        {text}
+                      </text>
+                    </g>
+                  );
+                })}
+                {/* Root node ('You') and Add Skill '+' button rendered last for top stacking */}
+                <circle cx={cx} cy={cy} r={40} fill="#3867e3" />
+                <text x={cx} y={cy + 7} textAnchor="middle" fill="#fff" fontSize={24} fontWeight="bold">You</text>
+                <g
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => setShowModal(true)}
+                  tabIndex={0}
+                  aria-label="Add Skill"
+                >
+                  {/* Overlay the plus button at the bottom right of the 'You' node */}
+                  <circle
+                    cx={cx + 28}
+                    cy={cy + 28}
+                    r={12}
+                    fill="#2563eb"
+                    stroke="#fff"
+                    strokeWidth={2}
+                    filter="drop-shadow(0 2px 6px rgba(0,0,0,0.08))"
+                  />
+                  {/* Use the plus.svg icon */}
+                  <image
+                    href="/icons/plus.svg"
+                    x={cx + 28 - 8}
+                    y={cy + 28 - 8}
+                    width={16}
+                    height={16}
+                    style={{ pointerEvents: 'none', userSelect: 'none' }}
+                    filter="brightness(0) invert(1)"
+                  />
+                </g>
+              </g>
+            );
+          })()}
+        </svg>
+      )}
       {showModal && (
         <div
           className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none"
@@ -268,6 +323,92 @@ export default function SkillTree() {
             >
               Cancel
             </button>
+          </div>
+          <style>{`
+            @keyframes modalPopIn {
+              0% { opacity: 0; transform: scale(0.95); }
+              100% { opacity: 1; transform: scale(1); }
+            }
+            .skill-node-hover {
+              filter: drop-shadow(0 0 12px #2563eb55);
+              transform: scale(1.05);
+            }
+            .skill-link-animated {
+              animation: skillLinkPulse 0.4s ease-in-out alternate infinite;
+              stroke: #2563eb;
+            }
+            @keyframes skillLinkPulse {
+              0% { stroke-width: 2; }
+              50% { stroke-width: 4; }
+              100% { stroke-width: 2; }
+            }
+          `}</style>
+        </div>
+      )}
+      {editingSkillIdx !== null && (
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none"
+          onClick={e => {
+            if (e.target === e.currentTarget) cancelEditSkill();
+          }}
+        >
+          <div
+            className="bg-white/60 backdrop-blur-md border border-white/30 shadow-xl rounded-2xl p-8 w-full max-w-md pointer-events-auto transform transition-all duration-300"
+            style={{
+              animation: 'modalPopIn 0.25s cubic-bezier(0.4,0,0.2,1)',
+            }}
+            tabIndex={-1}
+            onKeyDown={e => {
+              if (e.key === 'Escape') cancelEditSkill();
+            }}
+          >
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Edit Skill</h2>
+            <div className="mb-4">
+              <label className="block font-semibold mb-2 text-gray-800">Status</label>
+              <div className="flex gap-4">
+                <button
+                  className={`px-4 py-2 rounded-lg font-semibold border transition-colors ${editStatus === 'goal' ? 'bg-blue-100 text-blue-700 border-blue-200' : 'bg-white text-gray-700 border-gray-200 hover:bg-blue-50'}`}
+                  onClick={() => setEditStatus('goal')}
+                >
+                  Set as a goal
+                </button>
+                <button
+                  className={`px-4 py-2 rounded-lg font-semibold border transition-colors ${editStatus === 'achieved' ? 'bg-blue-600 text-white border-blue-700' : 'bg-white text-gray-700 border-gray-200 hover:bg-blue-50'}`}
+                  onClick={() => setEditStatus('achieved')}
+                >
+                  Achieved
+                </button>
+              </div>
+            </div>
+            <div className="mb-6">
+              <label className="block font-semibold mb-2 text-gray-800">Proficiency</label>
+              <div className="flex gap-2 flex-wrap">
+                {(['Beginner', 'Intermediate', 'Advanced', 'Expert'] as SkillProficiency[]).map(level => (
+                  <button
+                    key={level}
+                    className={`px-3 py-1 rounded-lg font-semibold border text-sm transition-colors ${editStatus !== 'achieved' ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed' : editProficiency === level ? 'bg-blue-600 text-white border-blue-700' : 'bg-white text-blue-700 border-blue-200 hover:bg-blue-50'}`}
+                    onClick={() => editStatus === 'achieved' && setEditProficiency(level)}
+                    disabled={editStatus !== 'achieved'}
+                  >
+                    {level}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-end gap-2">
+              <button
+                className="px-4 py-2 bg-gray-100 text-gray-500 rounded hover:bg-gray-200 font-semibold"
+                onClick={cancelEditSkill}
+              >
+                Cancel
+              </button>
+              <button
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 font-semibold"
+                onClick={saveEditSkill}
+              >
+                Save
+              </button>
+            </div>
           </div>
           <style>{`
             @keyframes modalPopIn {
