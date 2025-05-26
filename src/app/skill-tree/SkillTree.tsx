@@ -255,9 +255,7 @@ export default function SkillTree() {
             const dy = e.clientY - dragStart.current.y;
             setPan({ x: lastPan.current.x + dx, y: lastPan.current.y + dy });
           }}
-          onPointerUp={e => {
-            dragging.current = false;
-          }}
+          onPointerUp={() => { dragging.current = false; }}
         >
           {(() => {
             const width = 600; // SVG width
@@ -283,8 +281,8 @@ export default function SkillTree() {
             const careerNodes = eligibleCareers.slice(0, 3);
             const careerRingR = r + 90;
             const careerCount = careerNodes.length;
-            const careerPositions = careerNodes.map((career) => {
-              const angle = (2 * Math.PI * career.achievedCount) / Math.max(1, careerCount) - Math.PI / 2;
+            const careerPositions = careerNodes.map((career, idx) => {
+              const angle = (2 * Math.PI * idx) / Math.max(1, careerCount) - Math.PI / 2;
               return {
                 ...career,
                 x: cx + careerRingR * Math.cos(angle),
@@ -338,7 +336,7 @@ export default function SkillTree() {
 
                 {/* Lines from career nodes to their required skills */}
                 {careerPositions.map((career) =>
-                  (career.requiredSkills || []).map((skill: { id: string; name: string }) => {
+                  (career.requiredSkills || []).map((skill: { id: string; name: string }, idx: number) => {
                     const skillIdx = tree.root.children.findIndex((s: { id: string; name: string }) => s.id === skill.id);
                     if (skillIdx === -1 && highlightedCareer !== career.code) return null;
                     if (skillIdx === -1) {
