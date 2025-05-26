@@ -22,8 +22,18 @@ function getOccupationSkills() {
   return occupationSkills;
 }
 
-// Load and cache careers data
-let careersData: any[] | null = null;
+interface Career {
+  'O*NET-SOC Code': string;
+  Title: string;
+  Description: string;
+  // add other fields as needed
+}
+
+interface AchievedSkill {
+  elementId: string;
+}
+
+let careersData: Career[] | null = null;
 function getCareersData() {
   if (!careersData) {
     const filePath = path.join(process.cwd(), 'src/data/onet/json/Occupation Data_Occupation_Data.json');
@@ -54,7 +64,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Set of achieved skill IDs
-  const achievedIds = new Set(achievedSkills.map((s: any) => s.elementId));
+  const achievedIds = new Set((achievedSkills as AchievedSkill[]).map((s) => s.elementId));
   console.log('API DEBUG: achievedIds', Array.from(achievedIds));
 
   // For each career, calculate progress

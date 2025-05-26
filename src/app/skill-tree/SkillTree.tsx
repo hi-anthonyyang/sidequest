@@ -29,6 +29,15 @@ interface SkillSearchResult {
   name: string;
 }
 
+interface CareerProgress {
+  code: string;
+  title: string;
+  state: string;
+  requiredSkills: { id: string; name: string }[];
+  achievedCount: number;
+  // add other fields as needed
+}
+
 const LOCAL_STORAGE_KEY = 'skillTree';
 
 function loadTree(): SkillTreeData {
@@ -56,16 +65,13 @@ export default function SkillTree() {
   const [editProficiency, setEditProficiency] = useState<SkillProficiency>('Beginner');
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
-  const [careerProgress, setCareerProgress] = useState<any[]>([]);
-  const [loadingCareers, setLoadingCareers] = useState(false);
+  const [careerProgress, setCareerProgress] = useState<CareerProgress[]>([]);
   const [dismissedCareers, setDismissedCareers] = useState<string[]>([]);
   const [highlightedCareer, setHighlightedCareer] = useState<string | null>(null);
-  const [careerAnimationState, setCareerAnimationState] = useState<'idle' | 'highlighting' | 'unhighlighting'>('idle');
 
   // Zoom and pan state
   const [scale, setScale] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
-  const controls = useAnimation();
   const svgRef = React.useRef<SVGSVGElement>(null);
   const dragging = React.useRef(false);
   const lastPan = React.useRef({ x: 0, y: 0 });
@@ -142,12 +148,11 @@ export default function SkillTree() {
   }, [search]);
 
   // Extract achieved skills from tree
-  const achievedSkills = tree.root.children.map((s: any) => ({ elementId: s.id }));
+  const achievedSkills = tree.root.children.map((s: Skill) => ({ elementId: s.id }));
 
   // Fetch career progress from backend
   useEffect(() => {
     if (!mounted) return;
-    setLoadingCareers(true);
     fetch('/api/careers/progress', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -155,7 +160,7 @@ export default function SkillTree() {
     })
       .then(res => res.json())
       .then(data => setCareerProgress(data.results))
-      .finally(() => setLoadingCareers(false));
+      .finally(() => setLoading(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(achievedSkills), mounted]);
 
@@ -488,11 +493,9 @@ export default function SkillTree() {
                       style={{ cursor: isUnlocked ? 'pointer' : 'not-allowed' }}
                       onMouseEnter={() => {
                         setHighlightedCareer(career.code);
-                        setCareerAnimationState('highlighting');
                       }}
                       onMouseLeave={() => {
                         setHighlightedCareer(null);
-                        setCareerAnimationState('unhighlighting');
                       }}
                       animate={{
                         opacity: highlightedCareer && !isHighlighted ? 0.3 : 1,
