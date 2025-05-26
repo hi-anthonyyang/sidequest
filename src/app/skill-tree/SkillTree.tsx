@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import uniqueSkillsData from '../../data/onet/json/unique_skills.json';
 
 export type SkillStatus = 'goal' | 'achieved';
@@ -276,7 +276,7 @@ export default function SkillTree() {
             });
 
             // Career nodes: at least 2 achieved, not dismissed, max 5
-            let eligibleCareers = (careerProgress || []).filter(
+            const eligibleCareers = (careerProgress || []).filter(
               c => c.achievedCount >= 2 && !dismissedCareers.includes(c.code)
             );
             const careerNodes = eligibleCareers.slice(0, 3);
@@ -311,7 +311,7 @@ export default function SkillTree() {
                   let isConnected = false;
                   if (highlightedCareer) {
                     const career = careerNodes.find(c => c.code === highlightedCareer);
-                    if (career && career.requiredSkills.some((s: any) => s.id === tree.root.children[idx].id)) {
+                    if (career && career.requiredSkills.some((s: { id: string; name: string }) => s.id === tree.root.children[idx].id)) {
                       isConnected = true;
                     }
                   }
@@ -337,8 +337,8 @@ export default function SkillTree() {
 
                 {/* Lines from career nodes to their required skills */}
                 {careerPositions.map((career, cIdx) =>
-                  (career.requiredSkills || []).map((skill: any) => {
-                    const skillIdx = tree.root.children.findIndex((s: any) => s.id === skill.id);
+                  (career.requiredSkills || []).map((skill: { id: string; name: string }) => {
+                    const skillIdx = tree.root.children.findIndex((s: { id: string; name: string }) => s.id === skill.id);
                     if (skillIdx === -1 && highlightedCareer !== career.code) return null;
                     if (skillIdx === -1) {
                       // Find angle for missing skill
@@ -424,7 +424,7 @@ export default function SkillTree() {
                   let isConnected = false;
                   if (highlightedCareer) {
                     const career = careerNodes.find(c => c.code === highlightedCareer);
-                    if (career && career.requiredSkills.some((s: any) => s.id === child.id)) {
+                    if (career && career.requiredSkills.some((s: { id: string; name: string }) => s.id === child.id)) {
                       isConnected = true;
                     }
                   }
