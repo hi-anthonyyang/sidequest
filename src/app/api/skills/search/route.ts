@@ -25,10 +25,10 @@ function loadSkills() {
     const idField = "Element ID";
     const occField = "O*NET-SOC Code";
     const skillMap = new Map<string, Skill>();
-    data.forEach((item: Record<string, any>) => {
-      const id = item[idField];
-      const name = item[nameField];
-      const occ = item[occField];
+    data.forEach((item: Record<string, unknown>) => {
+      const id = item[idField] as string;
+      const name = item[nameField] as string;
+      const occ = item[occField] as string;
       if (!skillMap.has(id)) {
         skillMap.set(id, { id, name, occupations: [occ], raw: item });
       } else {
