@@ -336,7 +336,7 @@ export default function SkillTree() {
 
                 {/* Lines from career nodes to their required skills */}
                 {careerPositions.map((career) =>
-                  (career.requiredSkills || []).map((skill: { id: string; name: string }, idx: number) => {
+                  (career.requiredSkills || []).map((skill: { id: string; name: string }) => {
                     const skillIdx = tree.root.children.findIndex((s: { id: string; name: string }) => s.id === skill.id);
                     if (skillIdx === -1 && highlightedCareer !== career.code) return null;
                     if (skillIdx === -1) {
