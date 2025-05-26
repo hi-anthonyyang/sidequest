@@ -6,9 +6,16 @@ import fs from 'fs';
 // Path to the skills JSON file
 const SKILLS_PATH = path.join(process.cwd(), 'src/data/onet/json/Skills_Skills.json');
 
+interface Skill {
+  id: string;
+  name: string;
+  occupations: string[];
+  raw: Record<string, unknown>;
+}
+
 // Cache for skills and Fuse instance
-let skillsCache: any[] = [];
-let fuseCache: Fuse<any> | null = null;
+let skillsCache: Skill[] = [];
+let fuseCache: Fuse<Skill> | null = null;
 
 function loadSkills() {
   if (skillsCache.length === 0) {
@@ -17,15 +24,15 @@ function loadSkills() {
     const nameField = "Element Name";
     const idField = "Element ID";
     const occField = "O*NET-SOC Code";
-    const skillMap = new Map();
-    data.forEach((item: any) => {
+    const skillMap = new Map<string, Skill>();
+    data.forEach((item: Record<string, any>) => {
       const id = item[idField];
       const name = item[nameField];
       const occ = item[occField];
       if (!skillMap.has(id)) {
         skillMap.set(id, { id, name, occupations: [occ], raw: item });
       } else {
-        skillMap.get(id).occupations.push(occ);
+        skillMap.get(id)!.occupations.push(occ);
       }
     });
     skillsCache = Array.from(skillMap.values());
