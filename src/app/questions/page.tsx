@@ -43,7 +43,7 @@ const questions: Question[] = [
 function QuestionsPageClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const universityId = searchParams.get('university') as UniversityId | null;
+  const universityId = searchParams?.get('university') as UniversityId | null;
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
