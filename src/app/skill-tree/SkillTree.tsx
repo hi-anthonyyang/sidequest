@@ -229,13 +229,14 @@ export default function SkillTree() {
   }
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full min-h-[700px] flex flex-col items-center">
       {mounted && (
         <svg
           ref={svgRef}
           width="100%"
-          height={400}
-          style={{ minHeight: 400, display: 'block', touchAction: 'none', userSelect: 'none' }}
+          height={700}
+          style={{ minHeight: 700, display: 'block', touchAction: 'none', userSelect: 'none' }}
+          viewBox="0 0 1200 800"
           onWheel={e => {
             e.preventDefault();
             let nextScale = scale * (e.deltaY < 0 ? 1.08 : 0.92);
