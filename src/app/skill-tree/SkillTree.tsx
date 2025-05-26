@@ -122,7 +122,7 @@ export default function SkillTree() {
     const centerX = (minX + maxX) / 2;
     const centerY = (minY + maxY) / 2;
     setPan({ x: width / 2 - centerX, y: height / 2 - centerY });
-  }, [tree.root.children.length, mounted]);
+  }, [tree.root.children, mounted]);
 
   useEffect(() => {
     saveTree(tree);
@@ -283,8 +283,8 @@ export default function SkillTree() {
             const careerNodes = eligibleCareers.slice(0, 3);
             const careerRingR = r + 90;
             const careerCount = careerNodes.length;
-            const careerPositions = careerNodes.map((career, idx) => {
-              const angle = (2 * Math.PI * idx) / Math.max(1, careerCount) - Math.PI / 2;
+            const careerPositions = careerNodes.map((career) => {
+              const angle = (2 * Math.PI * career.achievedCount) / Math.max(1, careerCount) - Math.PI / 2;
               return {
                 ...career,
                 x: cx + careerRingR * Math.cos(angle),
@@ -337,7 +337,7 @@ export default function SkillTree() {
                 })}
 
                 {/* Lines from career nodes to their required skills */}
-                {careerPositions.map((career, cIdx) =>
+                {careerPositions.map((career) =>
                   (career.requiredSkills || []).map((skill: { id: string; name: string }) => {
                     const skillIdx = tree.root.children.findIndex((s: { id: string; name: string }) => s.id === skill.id);
                     if (skillIdx === -1 && highlightedCareer !== career.code) return null;
@@ -483,7 +483,7 @@ export default function SkillTree() {
                 })}
 
                 {/* Career nodes */}
-                {careerPositions.map((career, idx) => {
+                {careerPositions.map((career) => {
                   const isUnlocked = career.state === 'unlocked';
                   const text = career.title.length > 16 ? career.title.slice(0, 14) + '…' : career.title;
                   const textWidth = Math.max(110, text.length * 12 + 32);
