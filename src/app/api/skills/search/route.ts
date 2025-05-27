@@ -3,7 +3,6 @@ import path from 'path';
 import fs from 'fs';
 
 // Load O*NET data files
-const SKILLS_PATH = path.join(process.cwd(), 'src/data/onet/json/Skills_Skills.json');
 const UNIQUE_SKILLS_PATH = path.join(process.cwd(), 'src/data/onet/json/unique_skills.json');
 const OCCUPATION_SKILLS_PATH = path.join(process.cwd(), 'src/data/onet/json/occupation_skills.json');
 
