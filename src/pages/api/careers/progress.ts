@@ -13,7 +13,7 @@ function getUniqueSkills() {
 }
 
 // Load and cache occupation-skills mapping
-let occupationSkills: Record<string, string[]> | null = null;
+let occupationSkills: Record<string, Record<string, { importance: number; level: number }>> | null = null;
 function getOccupationSkills() {
   if (!occupationSkills) {
     const filePath = path.join(process.cwd(), 'src/data/onet/json/occupation_skills.json');
@@ -70,7 +70,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // For each career, calculate progress
   const results = careers.map(career => {
     const code = career['O*NET-SOC Code'];
-    const requiredSkillIds = occSkillsMap[code] || [];
+    const requiredSkills = occSkillsMap[code] || {};
+    const requiredSkillIds = Object.keys(requiredSkills);
     const achieved = requiredSkillIds.filter(id => achievedIds.has(id));
     const progress = achieved.length / requiredSkillIds.length;
     let state: 'locked' | 'unlocked' = 'locked';
@@ -79,7 +80,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       code,
       title: career['Title'],
       description: career['Description'],
-      requiredSkills: requiredSkillIds.map(id => uniqueSkillsMap[id] || { id, name: id }),
+      requiredSkills: requiredSkillIds.map(id => ({
+        ...uniqueSkillsMap[id],
+        importance: requiredSkills[id]?.importance || 0,
+        level: requiredSkills[id]?.level || 0
+      })),
       achievedSkills: achieved,
       progress,
       state,

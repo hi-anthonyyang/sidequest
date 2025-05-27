@@ -12,6 +12,8 @@ interface Skill {
   name: string;
   status?: SkillStatus;
   proficiency?: SkillProficiency;
+  importance?: number;
+  level?: number;
 }
 
 interface SkillNode {
@@ -27,13 +29,15 @@ interface SkillTreeData {
 interface SkillSearchResult {
   id: string;
   name: string;
+  importance?: number;
+  level?: number;
 }
 
 interface CareerProgress {
   code: string;
   title: string;
   state: string;
-  requiredSkills: { id: string; name: string }[];
+  requiredSkills: { id: string; name: string; importance: number; level: number }[];
   achievedCount: number;
   // add other fields as needed
 }
@@ -136,15 +140,31 @@ export default function SkillTree() {
       return;
     }
     setLoading(true);
-    // Simple local search in uniqueSkillsData
-    const allSkills = Object.values(uniqueSkillsData);
-    const filtered = allSkills.filter(skill =>
-      skill.name.toLowerCase().includes(search.toLowerCase())
-    );
-    setSkills(filtered.slice(0, 5));
-    setHasMore(filtered.length > 5);
-    setOffset(5);
-    setLoading(false);
+    
+    // Load occupation skills data
+    fetch('/api/skills/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: search }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        setSkills(data.results.slice(0, 5));
+        setHasMore(data.results.length > 5);
+        setOffset(5);
+      })
+      .catch(err => {
+        console.error('Error searching skills:', err);
+        // Fallback to local search if API fails
+        const allSkills = Object.values(uniqueSkillsData);
+        const filtered = allSkills.filter(skill =>
+          skill.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setSkills(filtered.slice(0, 5));
+        setHasMore(filtered.length > 5);
+        setOffset(5);
+      })
+      .finally(() => setLoading(false));
   }, [search]);
 
   // Extract achieved skills from tree
@@ -164,14 +184,19 @@ export default function SkillTree() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(achievedSkills), mounted]);
 
-  function addSkill(skill: { id: string; name: string }) {
+  function addSkill(skill: { id: string; name: string; importance?: number; level?: number }) {
     setTree((prev: SkillTreeData) => ({
       ...prev,
       root: {
         ...prev.root,
         children: [
           ...prev.root.children,
-          { id: skill.id, name: skill.name },
+          { 
+            id: skill.id, 
+            name: skill.name,
+            importance: skill.importance,
+            level: skill.level
+          },
         ],
       },
     }));
@@ -183,14 +208,29 @@ export default function SkillTree() {
 
   function showMore() {
     setLoading(true);
-    const allSkills = Object.values(uniqueSkillsData);
-    const filtered = allSkills.filter(skill =>
-      skill.name.toLowerCase().includes(search.toLowerCase())
-    );
-    setSkills(prev => [...prev, ...filtered.slice(offset, offset + 5)]);
-    setHasMore(filtered.length > offset + 5);
-    setOffset(offset + 5);
-    setLoading(false);
+    fetch('/api/skills/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: search, offset }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        setSkills(prev => [...prev, ...data.results.slice(0, 5)]);
+        setHasMore(data.results.length > offset + 5);
+        setOffset(offset + 5);
+      })
+      .catch(err => {
+        console.error('Error searching more skills:', err);
+        // Fallback to local search if API fails
+        const allSkills = Object.values(uniqueSkillsData);
+        const filtered = allSkills.filter(skill =>
+          skill.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setSkills(prev => [...prev, ...filtered.slice(offset, offset + 5)]);
+        setHasMore(filtered.length > offset + 5);
+        setOffset(offset + 5);
+      })
+      .finally(() => setLoading(false));
   }
 
   function openEditSkill(idx: number) {
@@ -431,6 +471,12 @@ export default function SkillTree() {
                   const bounceDistance = isHovered || isConnected ? 18 : 0;
                   const tx = Math.cos(pos.angle) * bounceDistance;
                   const ty = Math.sin(pos.angle) * bounceDistance;
+
+                  // Calculate opacity based on importance (if available)
+                  const importanceOpacity = child.importance ? Math.min(1, child.importance / 5) : 1;
+                  // Calculate glow intensity based on level (if available)
+                  const levelGlow = child.level ? `drop-shadow(0 0 ${Math.min(16, child.level * 3)}px #2563eb55)` : 'none';
+
                   return (
                     <motion.g
                       key={child.id}
@@ -442,7 +488,7 @@ export default function SkillTree() {
                         x: tx,
                         y: ty,
                         scale: isHovered || isConnected ? 1.08 : 1,
-                        opacity: dimmed ? 0.3 : 1
+                        opacity: dimmed ? 0.3 : importanceOpacity
                       }}
                       transition={{
                         type: 'spring',
@@ -461,7 +507,7 @@ export default function SkillTree() {
                         stroke="#2563eb"
                         strokeWidth={3}
                         animate={{
-                          filter: isHovered || isConnected ? 'drop-shadow(0 0 12px #2563eb55)' : 'none'
+                          filter: isHovered || isConnected ? levelGlow : 'none'
                         }}
                         transition={{ duration: 0.3 }}
                       />
@@ -628,7 +674,9 @@ export default function SkillTree() {
                     tabIndex={alreadyAdded ? -1 : 0}
                     style={{ outline: 'none' }}
                   >
-                    <span>{skill.name}</span>
+                    <div className="flex flex-col">
+                      <span>{skill.name}</span>
+                    </div>
                     {alreadyAdded && (
                       <span className="ml-2 text-green-600 font-semibold flex items-center">
                         Added <span className="ml-1">✓</span>
