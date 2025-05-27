@@ -1,5 +1,6 @@
 import React from 'react';
 import SkillTree from './SkillTree';
+import SkillRadialTree from './SkillRadialTree';
 
 export default function SkillTreePage() {
   return (
@@ -14,6 +15,8 @@ export default function SkillTreePage() {
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">
                 Explore and track your real-life skills and career paths in a gamified skill tree.
               </p>
+              <SkillRadialTree />
+              <div className="my-12 border-t border-gray-200" />
               <SkillTree />
             </div>
           </div>
