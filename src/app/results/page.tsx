@@ -453,7 +453,7 @@ export default function ResultsPage() {
               onClick={handleStartOver}
               className="flex items-center gap-2 border border-blue-600 text-blue-600 bg-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200 shadow-md transform hover:scale-105 active:scale-95"
             >
-              <img src="/icons/list-restart.svg" alt="Start Over" width={20} height={20} className="inline-block align-middle" />
+              <Image src="/icons/list-restart.svg" alt="Start Over" width={20} height={20} className="inline-block align-middle" />
               Start Over
             </button>
           </div>
