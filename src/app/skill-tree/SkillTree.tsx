@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import uniqueSkillsData from '../../data/onet/json/unique_skills.json';
 
 export type SkillStatus = 'goal' | 'achieved';
 export type SkillProficiency = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
@@ -73,6 +72,9 @@ export default function SkillTree() {
   const [dismissedCareers, setDismissedCareers] = useState<string[]>([]);
   const [highlightedCareer, setHighlightedCareer] = useState<string | null>(null);
 
+  // Add state for uniqueSkillsData
+  const [uniqueSkillsData, setUniqueSkillsData] = useState<any>(null);
+
   // Zoom and pan state
   const [scale, setScale] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
@@ -83,6 +85,10 @@ export default function SkillTree() {
 
   useEffect(() => {
     setMounted(true);
+    // Fetch uniqueSkillsData
+    fetch('/data/onet/json/unique_skills.json')
+      .then(res => res.json())
+      .then(setUniqueSkillsData);
   }, []);
 
   // Auto-fit tree when nodes change
@@ -149,23 +155,27 @@ export default function SkillTree() {
     })
       .then(res => res.json())
       .then(data => {
-        setSkills(data.results.slice(0, 5));
-        setHasMore(data.results.length > 5);
+        const allSkills: SkillSearchResult[] = (Object.values(uniqueSkillsData) as unknown[]).map(s => s as SkillSearchResult);
+        const filtered: SkillSearchResult[] = allSkills.filter(skill =>
+          skill.name && typeof skill.name === 'string' && skill.name.toLowerCase().includes(search.toLowerCase())
+        );
+        setSkills(filtered.slice(0, 5));
+        setHasMore(filtered.length > 5);
         setOffset(5);
       })
       .catch(err => {
         console.error('Error searching skills:', err);
         // Fallback to local search if API fails
-        const allSkills = Object.values(uniqueSkillsData);
-        const filtered = allSkills.filter(skill =>
-          skill.name.toLowerCase().includes(search.toLowerCase())
+        const allSkills: SkillSearchResult[] = (Object.values(uniqueSkillsData) as unknown[]).map(s => s as SkillSearchResult);
+        const filtered: SkillSearchResult[] = allSkills.filter((skill: SkillSearchResult) =>
+          skill.name && typeof skill.name === 'string' && skill.name.toLowerCase().includes(search.toLowerCase())
         );
         setSkills(filtered.slice(0, 5));
         setHasMore(filtered.length > 5);
         setOffset(5);
       })
       .finally(() => setLoading(false));
-  }, [search]);
+  }, [search, uniqueSkillsData]);
 
   // Extract achieved skills from tree
   const achievedSkills = tree.root.children.map((s: Skill) => ({ elementId: s.id }));
@@ -222,9 +232,9 @@ export default function SkillTree() {
       .catch(err => {
         console.error('Error searching more skills:', err);
         // Fallback to local search if API fails
-        const allSkills = Object.values(uniqueSkillsData);
-        const filtered = allSkills.filter(skill =>
-          skill.name.toLowerCase().includes(search.toLowerCase())
+        const allSkills: SkillSearchResult[] = (Object.values(uniqueSkillsData) as unknown[]).map(s => s as SkillSearchResult);
+        const filtered: SkillSearchResult[] = allSkills.filter((skill: SkillSearchResult) =>
+          skill.name && typeof skill.name === 'string' && skill.name.toLowerCase().includes(search.toLowerCase())
         );
         setSkills(prev => [...prev, ...filtered.slice(offset, offset + 5)]);
         setHasMore(filtered.length > offset + 5);
@@ -266,6 +276,11 @@ export default function SkillTree() {
       return { ...prev, root: { ...prev.root, children } };
     });
     setEditingSkillIdx(null);
+  }
+
+  // Show loading state if uniqueSkillsData is not loaded
+  if (!uniqueSkillsData) {
+    return <div>Loading...</div>;
   }
 
   return (
