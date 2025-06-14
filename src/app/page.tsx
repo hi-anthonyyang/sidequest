@@ -65,7 +65,7 @@ export default function Home() {
                 </select>
                 {/* Speech bubble absolutely positioned to left edge, vertically centered */}
                 <div className="speech-bubble absolute left-[-205px] top-1/2 transform -translate-y-1/2">
-                  <span role="img" aria-label="castle">🏰</span> Choose the realm
+                  <span className="bubble-text"><span role="img" aria-label="castle">🏰</span> Choose the realm</span>
                   <span className="bubble-tail" />
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function Home() {
                 white-space: nowrap;
                 min-width: 140px;
                 max-width: 180px;
-                margin-left: 6px;
+                margin-left: -10px;
               }
               .bubble-tail {
                 position: absolute;
@@ -118,6 +118,10 @@ export default function Home() {
                 border-bottom: 10px solid transparent;
                 border-left: 14px solid #fff;
                 z-index: 11;
+              }
+              .bubble-text {
+                display: inline-block;
+                margin-left: -12px;
               }
               @media (max-width: 640px) {
                 .realm-glow { width: 100%; min-width: 0; }
