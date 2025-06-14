@@ -39,12 +39,14 @@ export default function SkillRadialTree() {
     fetch("/data/onet/json/Occupation Data_Occupation_Data.json").then(res => res.json()).then(setOccupationData);
   }, []);
 
-  const occupationOptions = occupationData
-    ? occupationData.map((occ) => ({
-        value: occ["O*NET-SOC Code"],
-        label: occ.Title,
-      }))
-    : [];
+  const occupationOptions = useMemo(() => (
+    occupationData
+      ? occupationData.map((occ) => ({
+          value: occ["O*NET-SOC Code"],
+          label: occ.Title,
+        }))
+      : []
+  ), [occupationData]);
 
   // Set default selected occupation after data loads
   useEffect(() => {
@@ -76,6 +78,10 @@ export default function SkillRadialTree() {
   // Compute related occupations (top 3 by overlapping skills)
   const relatedOccupations = useMemo(() => {
     if (!selectedOcc || !occupationSkills || !occupationData) return [];
+    const getSkillIdsForOccupation = (code: string): Set<string> => {
+      if (!occupationSkills) return new Set();
+      return new Set(Object.keys(occupationSkills[code] || {}));
+    };
     const selectedSkillIds = getSkillIdsForOccupation(selectedOcc);
     return occupationOptions
       .filter(opt => opt.value !== selectedOcc)
@@ -92,7 +98,7 @@ export default function SkillRadialTree() {
       .filter(o => o.sharedCount > 0)
       .sort((a, b) => b.sharedCount - a.sharedCount)
       .slice(0, 3);
-  }, [selectedOcc, occupationSkills, getSkillIdsForOccupation, occupationOptions, occupationData]);
+  }, [selectedOcc, occupationSkills, occupationOptions, occupationData]);
 
   // Radial layout
   const width = 600;

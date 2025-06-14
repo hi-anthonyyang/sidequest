@@ -3,8 +3,6 @@ import OpenAI from 'openai';
 import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
-import { promises as fs } from 'fs';
-import path from 'path';
 import { randomUUID } from 'crypto';
 
 // Initialize OpenAI client
@@ -58,22 +56,6 @@ export async function POST(request: Request) {
 
     // Parse the JSON response
     const recommendations = JSON.parse(response);
-
-    // Count the number of individual majors generated
-    let majorsCount = 0;
-    if (Array.isArray(recommendations.majors)) {
-      majorsCount = recommendations.majors.length;
-    } else if (Array.isArray(recommendations)) {
-      majorsCount = recommendations.length;
-    }
-
-    // After getting the GPT response:
-    const submission = {
-      timestamp: new Date().toISOString(),
-      sessionId: randomUUID(),
-      answers,
-      gptResponse: recommendations
-    };
 
     return NextResponse.json(recommendations);
   } catch (error) {
