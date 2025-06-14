@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
     // Call OpenAI API
     const completion = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages,
       temperature: 0.7,
       max_tokens: 2000,
@@ -67,19 +67,6 @@ export async function POST(request: Request) {
       majorsCount = recommendations.length;
     }
 
-    // Increment the persistent majors counter
-    const majorsCountPath = path.resolve(process.cwd(), 'majors_count.json');
-    let currentCount = 0;
-    try {
-      const file = await fs.readFile(majorsCountPath, 'utf8');
-      const data = JSON.parse(file);
-      currentCount = typeof data.count === 'number' ? data.count : 0;
-    } catch {
-      currentCount = 0;
-    }
-    const newCount = currentCount + majorsCount;
-    await fs.writeFile(majorsCountPath, JSON.stringify({ count: newCount }, null, 2), 'utf8');
-
     // After getting the GPT response:
     const submission = {
       timestamp: new Date().toISOString(),
@@ -87,26 +74,6 @@ export async function POST(request: Request) {
       answers,
       gptResponse: recommendations
     };
-
-    // Write to submissions.json (append-only array)
-    (async () => {
-      try {
-        const submissionsPath = path.resolve(process.cwd(), 'submissions.json');
-        let submissions = [];
-        try {
-          const file = await fs.readFile(submissionsPath, 'utf8');
-          submissions = JSON.parse(file);
-        } catch {
-          // File does not exist or is invalid, start fresh
-          submissions = [];
-        }
-        submissions.push(submission);
-        await fs.writeFile(submissionsPath, JSON.stringify(submissions, null, 2), 'utf8');
-      } catch (err) {
-        // Log but do not block the API response
-        console.error('Failed to write submission:', err);
-      }
-    })();
 
     return NextResponse.json(recommendations);
   } catch (error) {
