@@ -105,6 +105,7 @@ export default function Home() {
                 white-space: nowrap;
                 min-width: 140px;
                 max-width: 180px;
+                margin-left: 6px;
               }
               .bubble-tail {
                 position: absolute;
