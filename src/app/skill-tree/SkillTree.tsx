@@ -161,7 +161,7 @@ export default function SkillTree() {
       body: JSON.stringify({ query: search }),
     })
       .then(res => res.json())
-      .then(data => {
+      .then(() => {
         if (!uniqueSkillsData) return;
         const allSkills: SkillSearchResult[] = Object.values(uniqueSkillsData).map(s => s as SkillSearchResult);
         const filtered: SkillSearchResult[] = allSkills.filter(skill =>
