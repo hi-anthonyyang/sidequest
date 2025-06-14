@@ -67,11 +67,6 @@ export default function SkillRadialTree() {
     }));
   }
 
-  function getSkillIdsForOccupation(code: string): Set<string> {
-    if (!occupationSkills) return new Set();
-    return new Set(Object.keys(occupationSkills[code] || {}));
-  }
-
   const skills = selectedOcc ? getSkillsForOccupation(selectedOcc) : [];
   const occ = selectedOcc && occupationData ? occupationData.find(o => o["O*NET-SOC Code"] === selectedOcc) : null;
 

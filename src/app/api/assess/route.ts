@@ -3,7 +3,6 @@ import OpenAI from 'openai';
 import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
-import { randomUUID } from 'crypto';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
