@@ -41,6 +41,13 @@ interface CareerProgress {
   // add other fields as needed
 }
 
+interface UniqueSkill {
+  id: string;
+  name: string;
+  description?: string;
+}
+type UniqueSkillsMap = Record<string, UniqueSkill>;
+
 const LOCAL_STORAGE_KEY = 'skillTree';
 
 function loadTree(): SkillTreeData {
@@ -73,7 +80,7 @@ export default function SkillTree() {
   const [highlightedCareer, setHighlightedCareer] = useState<string | null>(null);
 
   // Add state for uniqueSkillsData
-  const [uniqueSkillsData, setUniqueSkillsData] = useState<any>(null);
+  const [uniqueSkillsData, setUniqueSkillsData] = useState<UniqueSkillsMap | null>(null);
 
   // Zoom and pan state
   const [scale, setScale] = useState(1);
@@ -155,7 +162,8 @@ export default function SkillTree() {
     })
       .then(res => res.json())
       .then(data => {
-        const allSkills: SkillSearchResult[] = (Object.values(uniqueSkillsData) as unknown[]).map(s => s as SkillSearchResult);
+        if (!uniqueSkillsData) return;
+        const allSkills: SkillSearchResult[] = Object.values(uniqueSkillsData).map(s => s as SkillSearchResult);
         const filtered: SkillSearchResult[] = allSkills.filter(skill =>
           skill.name && typeof skill.name === 'string' && skill.name.toLowerCase().includes(search.toLowerCase())
         );
@@ -166,7 +174,8 @@ export default function SkillTree() {
       .catch(err => {
         console.error('Error searching skills:', err);
         // Fallback to local search if API fails
-        const allSkills: SkillSearchResult[] = (Object.values(uniqueSkillsData) as unknown[]).map(s => s as SkillSearchResult);
+        if (!uniqueSkillsData) return;
+        const allSkills: SkillSearchResult[] = Object.values(uniqueSkillsData).map(s => s as SkillSearchResult);
         const filtered: SkillSearchResult[] = allSkills.filter((skill: SkillSearchResult) =>
           skill.name && typeof skill.name === 'string' && skill.name.toLowerCase().includes(search.toLowerCase())
         );
@@ -225,6 +234,7 @@ export default function SkillTree() {
     })
       .then(res => res.json())
       .then(data => {
+        if (!uniqueSkillsData) return;
         setSkills(prev => [...prev, ...data.results.slice(0, 5)]);
         setHasMore(data.results.length > offset + 5);
         setOffset(offset + 5);
@@ -232,7 +242,8 @@ export default function SkillTree() {
       .catch(err => {
         console.error('Error searching more skills:', err);
         // Fallback to local search if API fails
-        const allSkills: SkillSearchResult[] = (Object.values(uniqueSkillsData) as unknown[]).map(s => s as SkillSearchResult);
+        if (!uniqueSkillsData) return;
+        const allSkills: SkillSearchResult[] = Object.values(uniqueSkillsData).map(s => s as SkillSearchResult);
         const filtered: SkillSearchResult[] = allSkills.filter((skill: SkillSearchResult) =>
           skill.name && typeof skill.name === 'string' && skill.name.toLowerCase().includes(search.toLowerCase())
         );

@@ -14,10 +14,23 @@ interface Occupation {
   description: string;
 }
 
+interface UniqueSkill {
+  id: string;
+  name: string;
+  description?: string;
+}
+type UniqueSkillsMap = Record<string, UniqueSkill>;
+
+interface SkillRating {
+  importance: number;
+  level: number;
+}
+type OccupationSkillsMap = Record<string, Record<string, SkillRating>>;
+
 export default function SkillRadialTree() {
-  const [occupationSkills, setOccupationSkills] = useState<any>(null);
-  const [uniqueSkills, setUniqueSkills] = useState<any>(null);
-  const [occupationData, setOccupationData] = useState<any>(null);
+  const [occupationSkills, setOccupationSkills] = useState<OccupationSkillsMap | null>(null);
+  const [uniqueSkills, setUniqueSkills] = useState<UniqueSkillsMap | null>(null);
+  const [occupationData, setOccupationData] = useState<Occupation[] | null>(null);
   const [selectedOcc, setSelectedOcc] = useState<string>("");
 
   useEffect(() => {
@@ -29,7 +42,7 @@ export default function SkillRadialTree() {
   // Build a lookup for occupation code to occupation
   const occupationMap: Record<string, Occupation> = {};
   if (occupationData) {
-    (occupationData as any[]).forEach((occ) => {
+    occupationData.forEach((occ) => {
       occupationMap[occ["O*NET-SOC Code"]] = {
         code: occ["O*NET-SOC Code"],
         title: occ["Title"],
@@ -53,10 +66,10 @@ export default function SkillRadialTree() {
 
   function getSkillsForOccupation(code: string): Skill[] {
     if (!occupationSkills || !uniqueSkills) return [];
-    const skillsObj = (occupationSkills as any)[code] || {};
-    return Object.entries(skillsObj).map(([skillId, val]: any) => ({
+    const skillsObj = occupationSkills[code] || {};
+    return Object.entries(skillsObj).map(([skillId, val]) => ({
       id: skillId,
-      name: (uniqueSkills as any)[skillId]?.name || skillId,
+      name: uniqueSkills[skillId]?.name || skillId,
       importance: val.importance,
       level: val.level,
     }));
@@ -64,7 +77,7 @@ export default function SkillRadialTree() {
 
   function getSkillIdsForOccupation(code: string): Set<string> {
     if (!occupationSkills) return new Set();
-    return new Set(Object.keys((occupationSkills as any)[code] || {}));
+    return new Set(Object.keys(occupationSkills[code] || {}));
   }
 
   const skills = selectedOcc ? getSkillsForOccupation(selectedOcc) : [];
