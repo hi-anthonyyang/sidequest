@@ -95,7 +95,7 @@ export default function Home() {
                 background: #fff;
                 border-radius: 1rem;
                 box-shadow: 0 2px 12px 0 rgba(80, 60, 180, 0.10);
-                padding: 0.5rem 1.1rem;
+                padding: 0.5rem 1.4rem;
                 font-size: 1rem;
                 font-weight: 500;
                 color: #6d28d9;
