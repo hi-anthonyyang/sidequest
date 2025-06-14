@@ -9,9 +9,9 @@ interface Skill {
 }
 
 interface Occupation {
-  code: string;
-  title: string;
-  description: string;
+  "O*NET-SOC Code": string;
+  Title: string;
+  Description: string;
 }
 
 interface UniqueSkill {
@@ -39,22 +39,12 @@ export default function SkillRadialTree() {
     fetch("/data/onet/json/Occupation Data_Occupation_Data.json").then(res => res.json()).then(setOccupationData);
   }, []);
 
-  // Build a lookup for occupation code to occupation
-  const occupationMap: Record<string, Occupation> = {};
-  if (occupationData) {
-    occupationData.forEach((occ) => {
-      occupationMap[occ["O*NET-SOC Code"]] = {
-        code: occ["O*NET-SOC Code"],
-        title: occ["Title"],
-        description: occ["Description"],
-      };
-    });
-  }
-
-  const occupationOptions = Object.values(occupationMap).map((occ) => ({
-    value: occ.code,
-    label: occ.title,
-  }));
+  const occupationOptions = occupationData
+    ? occupationData.map((occ) => ({
+        value: occ["O*NET-SOC Code"],
+        label: occ.Title,
+      }))
+    : [];
 
   // Set default selected occupation after data loads
   useEffect(() => {
@@ -81,27 +71,28 @@ export default function SkillRadialTree() {
   }
 
   const skills = selectedOcc ? getSkillsForOccupation(selectedOcc) : [];
-  const occ = selectedOcc ? occupationMap[selectedOcc] : null;
+  const occ = selectedOcc && occupationData ? occupationData.find(o => o["O*NET-SOC Code"] === selectedOcc) : null;
 
   // Compute related occupations (top 3 by overlapping skills)
   const relatedOccupations = useMemo(() => {
-    if (!selectedOcc || !occupationSkills) return [];
+    if (!selectedOcc || !occupationSkills || !occupationData) return [];
     const selectedSkillIds = getSkillIdsForOccupation(selectedOcc);
     return occupationOptions
       .filter(opt => opt.value !== selectedOcc)
       .map(opt => {
         const otherSkillIds = getSkillIdsForOccupation(opt.value);
         const shared = [...selectedSkillIds].filter(id => otherSkillIds.has(id));
+        const occ = occupationData.find(o => o["O*NET-SOC Code"] === opt.value);
         return {
           code: opt.value,
-          title: occupationMap[opt.value]?.title,
+          title: occ ? occ.Title : '',
           sharedCount: shared.length,
         };
       })
       .filter(o => o.sharedCount > 0)
       .sort((a, b) => b.sharedCount - a.sharedCount)
       .slice(0, 3);
-  }, [selectedOcc, occupationSkills]);
+  }, [selectedOcc, occupationSkills, getSkillIdsForOccupation, occupationOptions, occupationData]);
 
   // Radial layout
   const width = 600;
@@ -130,8 +121,8 @@ export default function SkillRadialTree() {
           ))}
         </select>
         <div className="mb-4 text-center bg-white/80 border border-gray-200 rounded-lg p-4 shadow-sm max-w-xl">
-          <h2 className="text-2xl font-bold text-gray-900">{occ?.title}</h2>
-          <p className="text-gray-700 text-base mt-2">{occ?.description}</p>
+          <h2 className="text-2xl font-bold text-gray-900">{occ?.Title}</h2>
+          <p className="text-gray-700 text-base mt-2">{occ?.Description}</p>
         </div>
         <svg width={width} height={height}>
           {/* Center node */}
@@ -146,7 +137,7 @@ export default function SkillRadialTree() {
             fontSize={18}
             style={{ textShadow: "0 1px 4px #0008" }}
           >
-            {occ?.title?.split(' ')[0] || 'Occupation'}
+            {occ?.Title?.split(' ')[0] || 'Occupation'}
           </text>
           {/* Skill nodes */}
           {skills.map((skill, i) => {
