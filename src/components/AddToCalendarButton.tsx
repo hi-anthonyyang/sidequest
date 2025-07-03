@@ -1,9 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { CalendarIcon, CheckIcon } from 'lucide-react';
-import { addEvent, createEventFromAssessmentResult } from '@/lib/calendar';
-import { Major, CareerPath, Organization } from '@/lib/types';
+import { addEvent, createEventFromAssessmentResult, eventExists } from '@/lib/calendar';
+import { Major, CareerPath, Organization, Event } from '@/lib/types';
 
 interface AddToCalendarButtonProps {
   type: 'major' | 'career' | 'organization' | 'event';
@@ -20,15 +20,19 @@ export default function AddToCalendarButton({
 }: AddToCalendarButtonProps) {
   const [isAdded, setIsAdded] = useState(false);
 
+  // Check if the event already exists when component mounts
+  useEffect(() => {
+    const event = createEventFromAssessmentResult(type, item, university);
+    const exists = eventExists(event.name, event.date);
+    setIsAdded(exists);
+  }, [type, item, university]);
+
   const handleAddToCalendar = () => {
+    if (isAdded) return; // Prevent duplicate additions
+    
     const event = createEventFromAssessmentResult(type, item, university);
     addEvent(event);
     setIsAdded(true);
-    
-    // Reset the "added" state after 3 seconds
-    setTimeout(() => {
-      setIsAdded(false);
-    }, 3000);
   };
 
   return (

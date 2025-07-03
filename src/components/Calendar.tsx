@@ -10,10 +10,9 @@ type CalendarView = 'today' | '3-day' | '7-day' | 'month';
 
 interface CalendarProps {
   events?: Event[];
-  onAddEvent?: (event: Omit<Event, 'date'> & { date: Date }) => void;
 }
 
-export default function Calendar({ events = [], onAddEvent }: CalendarProps) {
+export default function Calendar({ events = [] }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState<CalendarView>('month');
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -227,7 +226,6 @@ function MonthView({
   onDateClick: (date: Date) => void;
 }) {
   const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-  const endOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
   const startOfCalendar = new Date(startOfMonth);
   startOfCalendar.setDate(startOfCalendar.getDate() - startOfMonth.getDay());
   

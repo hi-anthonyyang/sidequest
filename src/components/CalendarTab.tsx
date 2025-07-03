@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Calendar from '@/components/Calendar';
 import { Event } from '@/lib/types';
-import { getStoredEvents, addEvent } from '@/lib/calendar';
+import { getStoredEvents } from '@/lib/calendar';
 
 export default function CalendarTab() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -44,16 +44,7 @@ export default function CalendarTab() {
     }
   }, []);
 
-  const handleAddEvent = (eventData: Omit<Event, 'date'> & { date: Date }) => {
-    const newEvent: Event = {
-      ...eventData,
-      date: eventData.date.toISOString(),
-      id: Date.now().toString()
-    };
-    
-    addEvent(newEvent);
-    setEvents(prev => [...prev, newEvent]);
-  };
+
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -67,7 +58,6 @@ export default function CalendarTab() {
         
         <Calendar 
           events={events}
-          onAddEvent={handleAddEvent}
         />
         
         {/* Info Section */}
@@ -100,7 +90,7 @@ export default function CalendarTab() {
             <div>
               <h4 className="font-medium text-yellow-900">Coming Soon: Assessment Integration</h4>
               <p className="text-sm text-yellow-700 mt-1">
-                After completing your Sidequest assessment, you'll be able to add recommended events, 
+                After completing your Sidequest assessment, you&apos;ll be able to add recommended events, 
                 career fairs, and important dates directly to your calendar.
               </p>
             </div>

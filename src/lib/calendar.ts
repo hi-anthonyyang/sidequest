@@ -1,4 +1,4 @@
-import { Event } from '@/lib/types';
+import { Event, Major, CareerPath, Organization } from '@/lib/types';
 
 // Key for localStorage
 const CALENDAR_EVENTS_KEY = 'sidequest_calendar_events';
@@ -27,6 +27,15 @@ export function saveEvents(events: Event[]): void {
   }
 }
 
+// Check if an event already exists in the calendar
+export function eventExists(eventName: string, eventDate: string): boolean {
+  const events = getStoredEvents();
+  return events.some(event => 
+    event.name === eventName && 
+    event.date.split('T')[0] === eventDate.split('T')[0] // Compare dates only, not time
+  );
+}
+
 // Add a new event
 export function addEvent(event: Event): void {
   const events = getStoredEvents();
@@ -44,7 +53,7 @@ export function removeEvent(eventId: string): void {
 // Convert assessment result items to calendar events
 export function createEventFromAssessmentResult(
   type: 'career' | 'organization' | 'major' | 'event',
-  item: any,
+  item: Major | CareerPath | Organization | Event,
   university?: string
 ): Event {
   const baseDate = new Date();
@@ -52,39 +61,43 @@ export function createEventFromAssessmentResult(
   
   switch (type) {
     case 'career':
+      const career = item as CareerPath;
       return {
-        name: `${item.title} Career Exploration`,
-        description: `Research and explore opportunities in ${item.title}. ${item.description}`,
+        name: `${career.title} Career Exploration`,
+        description: `Research and explore opportunities in ${career.title}. ${career.description}`,
         date: baseDate.toISOString(),
         location: 'Online Research',
         category: 'Career'
       };
     
     case 'organization':
+      const org = item as Organization;
       return {
-        name: `${item.name} Meeting`,
-        description: `Attend ${item.name} meeting or event. ${item.description}`,
+        name: `${org.name} Meeting`,
+        description: `Attend ${org.name} meeting or event. ${org.description}`,
         date: baseDate.toISOString(),
-        location: item.location || `${university} Campus`,
+        location: `${university} Campus`,
         category: 'Extracurricular'
       };
     
     case 'major':
+      const major = item as Major;
       return {
-        name: `${item.name} Information Session`,
-        description: `Learn more about ${item.name} major in ${item.department}. ${item.description}`,
+        name: `${major.name} Information Session`,
+        description: `Learn more about ${major.name} major in ${major.department}. ${major.description}`,
         date: baseDate.toISOString(),
-        location: `${item.department} Department`,
+        location: `${major.department} Department`,
         category: 'Academic'
       };
     
     case 'event':
+      const event = item as Event;
       return {
-        name: item.name,
-        description: item.description || 'Event from assessment recommendations',
-        date: item.date, // Use the actual event date
-        location: item.location || 'TBD',
-        category: item.category || 'Event'
+        name: event.name,
+        description: event.description || 'Event from assessment recommendations',
+        date: event.date, // Use the actual event date
+        location: event.location || 'TBD',
+        category: event.category || 'Event'
       };
     
     default:
