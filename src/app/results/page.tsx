@@ -276,19 +276,12 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.majors.map((major, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-xl font-semibold text-gray-900">
-                              {major.name}
-                              {major.department && major.department !== 'N/A' && (
-                                <span className="text-sm text-gray-500"> ({major.department})</span>
-                              )}
-                            </h3>
-                            <AddToCalendarButton 
-                              type="major" 
-                              item={major} 
-                              className="ml-4 flex-shrink-0"
-                            />
-                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                            {major.name}
+                            {major.department && major.department !== 'N/A' && (
+                              <span className="text-sm text-gray-500"> ({major.department})</span>
+                            )}
+                          </h3>
                           {major.description && major.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{major.description}</p>
                           )}
@@ -332,16 +325,9 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.careers.map((career, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-xl font-semibold text-gray-900">
-                              {career.title}
-                            </h3>
-                            <AddToCalendarButton 
-                              type="career" 
-                              item={career} 
-                              className="ml-4 flex-shrink-0"
-                            />
-                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                            {career.title}
+                          </h3>
                           {career.description && career.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{career.description}</p>
                           )}
@@ -384,16 +370,9 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.organizations.map((org, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-xl font-semibold text-gray-900">
-                              {org.name}
-                            </h3>
-                            <AddToCalendarButton 
-                              type="organization" 
-                              item={org} 
-                              className="ml-4 flex-shrink-0"
-                            />
-                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                            {org.name}
+                          </h3>
                           {org.description && org.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{org.description}</p>
                           )}
@@ -426,7 +405,7 @@ export default function ResultsPage() {
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                   <Disclosure.Button className="w-full px-6 py-4 text-left bg-blue-600 text-white font-semibold flex justify-between items-center">
                     <span className="flex items-center gap-2">
-                      <Image src="/icons/calendar-1.svg" alt="Events" width={20} height={20} className="filter invert brightness-200" />
+                      <Image src="/icons/calendar-days.svg" alt="Events" width={20} height={20} className="filter invert brightness-200" />
                       Upcoming Events
                     </span>
                     <ChevronUpIcon
@@ -439,12 +418,21 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.events.map((event, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                            {event.name}
-                            {event.category && event.category !== 'N/A' && (
-                              <span className="text-sm text-gray-500"> ({event.category})</span>
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className="text-xl font-semibold text-gray-900">
+                              {event.name}
+                              {event.category && event.category !== 'N/A' && (
+                                <span className="text-sm text-gray-500"> ({event.category})</span>
+                              )}
+                            </h3>
+                            {event.date && event.date !== 'N/A' && (
+                              <AddToCalendarButton 
+                                type="event" 
+                                item={event} 
+                                className="ml-4 flex-shrink-0"
+                              />
                             )}
-                          </h3>
+                          </div>
                           {event.description && event.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{event.description}</p>
                           )}

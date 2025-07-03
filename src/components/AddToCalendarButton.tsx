@@ -6,8 +6,8 @@ import { addEvent, createEventFromAssessmentResult } from '@/lib/calendar';
 import { Major, CareerPath, Organization } from '@/lib/types';
 
 interface AddToCalendarButtonProps {
-  type: 'major' | 'career' | 'organization';
-  item: Major | CareerPath | Organization;
+  type: 'major' | 'career' | 'organization' | 'event';
+  item: Major | CareerPath | Organization | Event;
   university?: string;
   className?: string;
 }

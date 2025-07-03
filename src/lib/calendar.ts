@@ -43,7 +43,7 @@ export function removeEvent(eventId: string): void {
 
 // Convert assessment result items to calendar events
 export function createEventFromAssessmentResult(
-  type: 'career' | 'organization' | 'major',
+  type: 'career' | 'organization' | 'major' | 'event',
   item: any,
   university?: string
 ): Event {
@@ -76,6 +76,15 @@ export function createEventFromAssessmentResult(
         date: baseDate.toISOString(),
         location: `${item.department} Department`,
         category: 'Academic'
+      };
+    
+    case 'event':
+      return {
+        name: item.name,
+        description: item.description || 'Event from assessment recommendations',
+        date: item.date, // Use the actual event date
+        location: item.location || 'TBD',
+        category: item.category || 'Event'
       };
     
     default:
