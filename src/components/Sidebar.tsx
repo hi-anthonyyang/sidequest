@@ -44,12 +44,12 @@ export default function Sidebar() {
           href="/"
           className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
         >
-          <Image src="/icons/calendar-1.svg" alt="Calendar" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
+          <Image src="/icons/calendar-days.svg" alt="Calendar" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
           {showText && !collapsed && 'Calendar'}
         </Link>
         <Link 
-          href="/?tab=quests"
-          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/' && typeof window !== 'undefined' && window.location.search.includes('tab=quests') ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
+          href="/quests"
+          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/quests' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
         >
           <Image src="/icons/backpack.svg" alt="Quests" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
           {showText && !collapsed && 'Quests'}
