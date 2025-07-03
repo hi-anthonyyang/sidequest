@@ -24,6 +24,7 @@ export interface Organization {
 }
 
 export interface Event {
+  id?: string;
   name: string;
   description: string;
   date: string;

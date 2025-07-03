@@ -575,5 +575,182 @@
         }
       ]
     }
+  },
+  {
+    "timestamp": "2025-06-14T01:13:19.773Z",
+    "sessionId": "27e39f3a-b731-4aa6-b16e-bfa233dac25b",
+    "answers": [
+      {
+        "questionId": 1,
+        "answer": "test"
+      },
+      {
+        "questionId": 2,
+        "answer": "test"
+      },
+      {
+        "questionId": 3,
+        "answer": "test"
+      },
+      {
+        "questionId": 4,
+        "answer": "test"
+      },
+      {
+        "questionId": 5,
+        "answer": "test"
+      }
+    ],
+    "gptResponse": {
+      "archetype": "You Are: The Explorer 🧭",
+      "majors": [
+        {
+          "name": "Interdisciplinary Studies, B.A.",
+          "description": "This program allows you to explore various fields and customize a plan of study that matches your individual interests.",
+          "department": "College of Arts and Humanities",
+          "requirements": [
+            "Complete all lower-division General Education requirements",
+            "Maintain a minimum GPA of 2.0"
+          ]
+        },
+        {
+          "name": "Interdisciplinary Studies, B.S.",
+          "description": "A flexible degree that incorporates multiple fields of study, allowing you to tailor your educational journey.",
+          "department": "College of Science and Mathematics",
+          "requirements": [
+            "Complete all lower-division General Education requirements",
+            "Maintain a minimum GPA of 2.0"
+          ]
+        },
+        {
+          "name": "Communication, B.A.",
+          "description": "This major gives you the opportunity to develop effective communication skills, which are crucial in all fields.",
+          "department": "College of Arts and Humanities",
+          "requirements": [
+            "Complete all lower-division General Education requirements",
+            "Maintain a minimum GPA of 2.0"
+          ]
+        },
+        {
+          "name": "Cognitive Science, B.S.",
+          "description": "An interdisciplinary field that studies the mind and its processes, combining elements of psychology, computer science, philosophy, and linguistics.",
+          "department": "College of Science and Mathematics",
+          "requirements": [
+            "Complete all lower-division General Education requirements",
+            "Maintain a minimum GPA of 2.0"
+          ]
+        },
+        {
+          "name": "Business Administration - Management Option, B.S.",
+          "description": "This major will provide you with a broad understanding of business operations and management principles.",
+          "department": "Craig School of Business",
+          "requirements": [
+            "Complete all lower-division General Education requirements",
+            "Maintain a minimum GPA of 2.0"
+          ]
+        }
+      ],
+      "careers": [
+        {
+          "title": "Project Manager",
+          "description": "Oversee projects from start to finish, ensuring they are completed on time and within budget.",
+          "relatedMajors": [
+            "Business Administration - Management Option, B.S."
+          ],
+          "salary": {
+            "min": 55000,
+            "max": 110000
+          }
+        },
+        {
+          "title": "Marketing Manager",
+          "description": "Develop marketing strategies and campaigns for a company or organization.",
+          "relatedMajors": [
+            "Business Administration - Management Option, B.S."
+          ],
+          "salary": {
+            "min": 65000,
+            "max": 130000
+          }
+        },
+        {
+          "title": "User Experience Designer",
+          "description": "Design and improve the way users interact with products or systems.",
+          "relatedMajors": [
+            "Cognitive Science, B.S."
+          ],
+          "salary": {
+            "min": 60000,
+            "max": 120000
+          }
+        },
+        {
+          "title": "Corporate Trainer",
+          "description": "Develop and deliver training programs to improve employee skills and knowledge.",
+          "relatedMajors": [
+            "Communication, B.A."
+          ],
+          "salary": {
+            "min": 45000,
+            "max": 80000
+          }
+        },
+        {
+          "title": "Nonprofit Program Director",
+          "description": "Oversee the planning and delivery of programs that serve a nonprofit organization's mission.",
+          "relatedMajors": [
+            "Interdisciplinary Studies, B.A.",
+            "Interdisciplinary Studies, B.S."
+          ],
+          "salary": {
+            "min": 40000,
+            "max": 85000
+          }
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Interdisciplinary Student Association",
+          "description": "A group for students interested in exploring multiple fields of study.",
+          "category": "Academic",
+          "website": "N/A"
+        },
+        {
+          "name": "Business Club",
+          "description": "A club for students interested in business and entrepreneurship.",
+          "category": "Academic",
+          "website": "N/A"
+        },
+        {
+          "name": "Communication Club",
+          "description": "A club for students interested in developing their communication skills.",
+          "category": "Academic",
+          "website": "N/A"
+        }
+      ],
+      "events": [
+        {
+          "name": "Interdisciplinary Studies Meetup",
+          "description": "A networking event for students in the Interdisciplinary Studies program.",
+          "date": "TBA",
+          "location": "TBA",
+          "category": "Meetup"
+        },
+        {
+          "name": "Business Club Meeting",
+          "description": "A regular meeting of the Business Club to discuss upcoming activities and events.",
+          "date": "TBA",
+          "location": "TBA",
+          "category": "Meeting"
+        },
+        {
+          "name": "Communication Club Workshop",
+          "description": "A workshop focused on improving communication skills.",
+          "date": "TBA",
+          "location": "TBA",
+          "category": "Workshop"
+        }
+      ]
+    }
   }
 ]

@@ -6,6 +6,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/24/outline';
 import { jsPDF } from 'jspdf';
 import Image from 'next/image';
+import AddToCalendarButton from '@/components/AddToCalendarButton';
 
 export default function ResultsPage() {
   const [results, setResults] = useState<AssessmentResults | null>(null);
@@ -275,12 +276,19 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.majors.map((major, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                            {major.name}
-                            {major.department && major.department !== 'N/A' && (
-                              <span className="text-sm text-gray-500"> ({major.department})</span>
-                            )}
-                          </h3>
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className="text-xl font-semibold text-gray-900">
+                              {major.name}
+                              {major.department && major.department !== 'N/A' && (
+                                <span className="text-sm text-gray-500"> ({major.department})</span>
+                              )}
+                            </h3>
+                            <AddToCalendarButton 
+                              type="major" 
+                              item={major} 
+                              className="ml-4 flex-shrink-0"
+                            />
+                          </div>
                           {major.description && major.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{major.description}</p>
                           )}
@@ -324,9 +332,16 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.careers.map((career, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                            {career.title}
-                          </h3>
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className="text-xl font-semibold text-gray-900">
+                              {career.title}
+                            </h3>
+                            <AddToCalendarButton 
+                              type="career" 
+                              item={career} 
+                              className="ml-4 flex-shrink-0"
+                            />
+                          </div>
                           {career.description && career.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{career.description}</p>
                           )}
@@ -369,9 +384,16 @@ export default function ResultsPage() {
                     <div className="space-y-6">
                       {results.organizations.map((org, index) => (
                         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                            {org.name}
-                          </h3>
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className="text-xl font-semibold text-gray-900">
+                              {org.name}
+                            </h3>
+                            <AddToCalendarButton 
+                              type="organization" 
+                              item={org} 
+                              className="ml-4 flex-shrink-0"
+                            />
+                          </div>
                           {org.description && org.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{org.description}</p>
                           )}
