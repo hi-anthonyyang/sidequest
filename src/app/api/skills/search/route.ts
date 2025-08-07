@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs';
 
-// Load O*NET data files
-const UNIQUE_SKILLS_PATH = path.join(process.cwd(), 'src/data/onet/json/unique_skills.json');
-const OCCUPATION_SKILLS_PATH = path.join(process.cwd(), 'src/data/onet/json/occupation_skills.json');
+// Load O*NET data files (canonical location under public for reuse by client and server)
+const UNIQUE_SKILLS_PATH = path.join(process.cwd(), 'public', 'data', 'onet', 'json', 'unique_skills.json');
+const OCCUPATION_SKILLS_PATH = path.join(process.cwd(), 'public', 'data', 'onet', 'json', 'occupation_skills.json');
 
 interface SkillRating {
   importance: number;
