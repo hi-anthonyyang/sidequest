@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 export async function GET() {
-  const majorsCountPath = path.resolve(process.cwd(), 'majors_count.json');
+  const majorsCountPath = path.resolve(process.cwd(), 'src/data/majors_count.json');
   let count = 0;
   try {
     const file = await fs.readFile(majorsCountPath, 'utf8');

@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   return (
     <nav className={`relative bg-white border-r border-gray-200 p-4 transition-all duration-300 ${collapsed ? 'w-20' : 'w-64'}`} style={{ minWidth: collapsed ? '5rem' : '16rem' }}>
-      <div className="flex flex-col items-end mb-8">
+      <div className={`flex flex-col ${collapsed ? 'items-center' : 'items-end'} mb-8`}>
         <button
           className="p-1 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 z-10"
           onClick={() => setCollapsed((prev) => !prev)}
@@ -33,20 +33,23 @@ export default function Sidebar() {
           <Image
             src={collapsed ? "/icons/panel-left-open.svg" : "/icons/panel-left-close.svg"}
             alt={collapsed ? "Open" : "Close"}
-            width={20}
-            height={20}
-            className="w-5 h-5"
+            width={28}
+            height={28}
+            className="w-7 h-7"
           />
         </button>
       </div>
       <div className="space-y-2 mt-4">
-        <Link 
-          href="/"
-          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
+        {/* Calendar (disabled) */}
+        <div
+          role="link"
+          aria-disabled
+          tabIndex={-1}
+          className={`flex items-center gap-4 px-4 py-3 text-gray-400 text-lg rounded-lg ${collapsed ? 'justify-center' : ''} cursor-not-allowed select-none opacity-60`}
         >
-          <Image src="/icons/calendar-days.svg" alt="Calendar" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
+          <Image src="/icons/calendar-days.svg" alt="Calendar (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Calendar'}
-        </Link>
+        </div>
         <Link 
           href="/quests"
           className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/quests' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
@@ -54,13 +57,16 @@ export default function Sidebar() {
           <Image src="/icons/backpack.svg" alt="Quests" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
           {showText && !collapsed && 'Quests'}
         </Link>
-        <Link 
-          href="/assignments"
-          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/assignments' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
+        {/* Assignments (disabled) */}
+        <div
+          role="link"
+          aria-disabled
+          tabIndex={-1}
+          className={`flex items-center gap-4 px-4 py-3 text-gray-400 text-lg rounded-lg ${collapsed ? 'justify-center' : ''} cursor-not-allowed select-none opacity-60`}
         >
-          <Image src="/icons/scroll-text.svg" alt="Assignments" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
+          <Image src="/icons/scroll-text.svg" alt="Assignments (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Assignments'}
-        </Link>
+        </div>
         {/* Temporarily hidden Skill Tree navigation
         <Link
           href="/skill-tree"

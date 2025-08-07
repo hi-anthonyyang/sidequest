@@ -1,0 +1,6 @@
+---
+description: Work directly on the main branch. Do not create any feature branches.
+globs:
+  - "*"
+alwaysApply: true
+---
