@@ -1,9 +1,5 @@
-import CalendarTab from '@/components/CalendarTab';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <CalendarTab />
-    </main>
-  );
+  redirect('/quests');
 }

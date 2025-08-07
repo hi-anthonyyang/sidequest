@@ -4,8 +4,8 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Block access to Calendar (root) and Assignments pages
-  if (pathname === '/' || pathname.startsWith('/assignments')) {
+  // Block access to Assignments pages only
+  if (pathname.startsWith('/assignments')) {
     const url = request.nextUrl.clone();
     url.pathname = '/quests';
     url.search = '';
@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/assignments/:path*'],
+  matcher: ['/assignments/:path*'],
 };
 
 
