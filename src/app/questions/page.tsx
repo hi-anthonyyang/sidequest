@@ -48,7 +48,7 @@ function QuestionsPageClient() {
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
   const [loading, setLoading] = useState(false);
-  const ETA_MS = 31000; // target perceived wait (ms)
+  const ETA_MS = 17000; // target perceived wait (ms)
   const [etaRemaining, setEtaRemaining] = useState(ETA_MS);
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -78,7 +78,12 @@ function QuestionsPageClient() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit assessment');
+        let detail = '';
+        try {
+          const err = await response.json();
+          detail = err?.message || err?.error || '';
+        } catch {}
+        throw new Error(detail ? `Failed to submit assessment: ${detail}` : 'Failed to submit assessment');
       }
 
       // Show success and confetti before navigating
