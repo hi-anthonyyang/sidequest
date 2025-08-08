@@ -6,7 +6,7 @@ import fs from 'fs';
 let uniqueSkills: Record<string, { id: string; name: string }> | null = null;
 function getUniqueSkills() {
   if (!uniqueSkills) {
-    const filePath = path.join(process.cwd(), 'src/data/onet/json/unique_skills.json');
+    const filePath = path.join(process.cwd(), 'public/data/onet/json/unique_skills.json');
     uniqueSkills = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   }
   return uniqueSkills;
@@ -16,7 +16,7 @@ function getUniqueSkills() {
 let occupationSkills: Record<string, Record<string, { importance: number; level: number }>> | null = null;
 function getOccupationSkills() {
   if (!occupationSkills) {
-    const filePath = path.join(process.cwd(), 'src/data/onet/json/occupation_skills.json');
+    const filePath = path.join(process.cwd(), 'public/data/onet/json/occupation_skills.json');
     occupationSkills = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   }
   return occupationSkills;
@@ -36,7 +36,7 @@ interface AchievedSkill {
 let careersData: Career[] | null = null;
 function getCareersData() {
   if (!careersData) {
-    const filePath = path.join(process.cwd(), 'src/data/onet/json/Occupation Data_Occupation_Data.json');
+    const filePath = path.join(process.cwd(), 'public/data/onet/json/Occupation Data_Occupation_Data.json');
     const raw = fs.readFileSync(filePath, 'utf-8');
     careersData = JSON.parse(raw);
   }
