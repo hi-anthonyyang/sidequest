@@ -50,7 +50,7 @@ function QuestionsPageClient() {
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  // On mount, redirect to home if universityId is missing
+  // On mount, redirect to home (which forwards to /quests) if universityId is missing
   useEffect(() => {
     if (!universityId) {
       router.replace('/');
@@ -195,14 +195,4 @@ export default function QuestionsPage() {
   );
 }
 
-// Add this to your globals.css or tailwind config:
-// .animate-spin-slow { animation: spin 2s linear infinite; }
-// .animate-scroll-x { animation: scroll-x 3s linear infinite; }
-// @keyframes spin { 100% { transform: rotate(360deg); } }
-// @keyframes scroll-x { 0% { transform: translateX(0); } 100% { transform: translateX(-40px); } }
-
-// Add this to your globals.css:
-// .animate-spin-y-slow { animation: spinY 2.5s linear infinite; }
-// .animate-spin-y-slower { animation: spinY 2.8s linear infinite; }
-// .animate-spin-y-slowest { animation: spinY 3s linear infinite; }
-// @keyframes spinY { 100% { transform: rotateY(360deg); } } 
+// (animation helper comments removed; kept CSS for the inline ellipsis animation above)
