@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { recordAssess } from '@/app/api/admin/metrics/route';
+import { recordAssess } from '@/lib/metrics';
 import OpenAI from 'openai';
 import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
