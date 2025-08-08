@@ -68,6 +68,11 @@ Feature flags
 - `FEATURE_ASSIGNMENTS_ENABLED` (server): when `true`, enables `/api/differentiate`; otherwise returns 403
 - `NEXT_PUBLIC_FEATURE_CALENDAR_ENABLED` (client): when `true`, renders Calendar UI components
 
+Model configuration (assessment)
+- Defaults (overridable via env):
+  - `OPENAI_ASSESS_MODEL=gpt-4o-mini`
+  - `OPENAI_ASSESS_FALLBACK_MODEL=gpt-4o`
+
 ## Project Structure
 
 ```

@@ -36,13 +36,29 @@ export async function POST(request: Request) {
     // Log the messages sent to OpenAI
     console.log('OpenAI messages:', JSON.stringify(messages, null, 2));
 
-    // Call OpenAI API
-    const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages,
-      temperature: 0.7,
-      max_tokens: 2000,
-    });
+    // Call OpenAI API with default model and fallback
+    const defaultModel = process.env.OPENAI_ASSESS_MODEL || 'gpt-4o-mini';
+    const fallbackModel = process.env.OPENAI_ASSESS_FALLBACK_MODEL || 'gpt-4o';
+
+    let completion;
+    try {
+      completion = await openai.chat.completions.create({
+        model: defaultModel,
+        messages,
+        temperature: 0.7,
+        max_tokens: 900,
+        response_format: { type: 'json_object' },
+      });
+    } catch (primaryErr) {
+      console.error('[ASSESS] primary model failed:', primaryErr);
+      completion = await openai.chat.completions.create({
+        model: fallbackModel,
+        messages,
+        temperature: 0.7,
+        max_tokens: 900,
+        response_format: { type: 'json_object' },
+      });
+    }
 
     const response = completion.choices[0]?.message?.content;
 
