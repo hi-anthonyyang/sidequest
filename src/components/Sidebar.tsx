@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 
 // NavPanel: Trivial change to force redeploy
 export default function Sidebar() {
-  console.log('Sidebar rendered');
   const [collapsed, setCollapsed] = useState(false);
   const [showText, setShowText] = useState(true);
   const pathname = usePathname();
