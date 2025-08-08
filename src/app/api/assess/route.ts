@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { recordAssess } from '@/app/api/admin/metrics/route';
 import OpenAI from 'openai';
 import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
@@ -40,6 +41,7 @@ export async function POST(request: Request) {
     const defaultModel = process.env.OPENAI_ASSESS_MODEL || 'gpt-4o-mini';
     const fallbackModel = process.env.OPENAI_ASSESS_FALLBACK_MODEL || 'gpt-4o';
 
+    const start = Date.now();
     let completion;
     try {
       completion = await openai.chat.completions.create({
@@ -71,10 +73,13 @@ export async function POST(request: Request) {
 
     // Parse the JSON response
     const recommendations = JSON.parse(response);
+    recordAssess(Date.now() - start, true);
 
     return NextResponse.json(recommendations);
   } catch (error) {
     console.error('Error processing assessment:', error);
+    // record failure with duration if start exists
+    try { (global as any).start && recordAssess(Date.now() - (global as any).start, false); } catch {}
     return NextResponse.json(
       { error: 'Failed to process assessment' },
       { status: 500 }
