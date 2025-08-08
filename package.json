@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf .next"
+    "clean": "rm -rf .next",
+    "clean:deps": "rm -rf node_modules",
+    "reset": "rm -rf .next node_modules && npm ci"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
