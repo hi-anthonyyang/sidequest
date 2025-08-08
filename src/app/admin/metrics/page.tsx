@@ -5,7 +5,7 @@ import { getAssessStats } from '@/lib/metrics';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export default async function AdminMetricsPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+export default async function AdminMetricsPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   // Server-side guard (defense-in-depth in case middleware is bypassed)
   const h = await headers();
   const authHeader = h.get('authorization') || '';
@@ -39,7 +39,7 @@ export default async function AdminMetricsPage({ searchParams }: { searchParams:
     );
   }
 
-  const sp = searchParams || {};
+  const sp = await searchParams;
   const range = typeof sp.range === 'string' ? sp.range : 'today';
   const ranges: Record<string, number | undefined> = {
     today: 24 * 60 * 60 * 1000,
