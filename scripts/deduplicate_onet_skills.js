@@ -1,15 +1,25 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
 
-// Load O*NET skills data
-const skillsPath = path.join(__dirname, '../src/data/onet/json/Skills_Skills.json');
-const skillsRaw = fs.readFileSync(skillsPath, 'utf-8');
-const skillsData = JSON.parse(skillsRaw);
+// Inputs (derived JSON produced from O*NET spreadsheets)
+const INPUT_DIR = path.join(__dirname, '../src/data/onet/json');
+const OUTPUT_DIR_PUBLIC = path.join(__dirname, '../public/data/onet/json');
 
-// Load O*NET occupation data
-const occPath = path.join(__dirname, '../src/data/onet/json/Occupation Data_Occupation_Data.json');
-const occRaw = fs.readFileSync(occPath, 'utf-8');
-const occData = JSON.parse(occRaw);
+// Ensure output directory exists
+fs.mkdirSync(OUTPUT_DIR_PUBLIC, { recursive: true });
+
+function readJson(fileName) {
+  const filePath = path.join(INPUT_DIR, fileName);
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Missing input JSON: ${filePath}. Run onet:convert first.`);
+  }
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
+// Load inputs
+const skillsData = readJson('Skills_Skills.json');
+const occData = readJson('Occupation Data_Occupation_Data.json');
 
 // 1. Build unique skills dictionary
 const uniqueSkills = {};
@@ -54,7 +64,7 @@ for (const row of skillsData) {
 }
 
 // Second pass: Filter to top skills per occupation
-const TOP_SKILLS_PER_OCCUPATION = 10; // Adjust this number as needed
+const TOP_SKILLS_PER_OCCUPATION = Number(process.env.TOP_SKILLS_PER_OCCUPATION || 10);
 for (const code of Object.keys(occupationSkills)) {
   const skills = occupationSkills[code];
   
@@ -83,16 +93,14 @@ for (const code of Object.keys(occupationSkills)) {
     }, {});
 }
 
-// Write unique skills to file
+// Write outputs for app consumption (public)
 fs.writeFileSync(
-  path.join(__dirname, '../src/data/onet/json/unique_skills.json'),
+  path.join(OUTPUT_DIR_PUBLIC, 'unique_skills.json'),
   JSON.stringify(uniqueSkills, null, 2)
 );
-
-// Write occupation-skills mapping to file
 fs.writeFileSync(
-  path.join(__dirname, '../src/data/onet/json/occupation_skills.json'),
+  path.join(OUTPUT_DIR_PUBLIC, 'occupation_skills.json'),
   JSON.stringify(occupationSkills, null, 2)
 );
 
-console.log('Done! Wrote unique_skills.json and occupation_skills.json'); 
+console.log('[ONET] Wrote public data: unique_skills.json, occupation_skills.json');

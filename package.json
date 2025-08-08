@@ -9,7 +9,9 @@
     "lint": "next lint",
     "clean": "rm -rf .next",
     "clean:deps": "rm -rf node_modules",
-    "reset": "rm -rf .next node_modules && npm ci"
+    "reset": "rm -rf .next node_modules && npm ci",
+    "onet:convert": "node scripts/convert_onet_xlsx_to_json.js",
+    "onet:dedupe": "node scripts/deduplicate_onet_skills.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
