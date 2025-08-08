@@ -54,12 +54,22 @@ Notes
 - The homepage redirects to `/quests` (`src/app/page.tsx`).
 - `middleware.ts` blocks access to `/assignments/*` while the feature is in development.
 
+### Maintenance scripts
+
+Common commands added to ease local workflows:
+
+- `npm run clean`: remove Next.js build artifacts (`.next/`)
+- `npm run clean:deps`: remove `node_modules/`
+- `npm run reset`: remove `.next/` and `node_modules/`, then reinstall with `npm ci`
+- `npm run onet:convert`: convert O*NET `.xlsx` files from `src/data/onet/` into JSON under `src/data/onet/json/`
+- `npm run onet:dedupe`: generate `public/data/onet/json/{unique_skills,occupation_skills}.json` used by the app
+
 ## Project Structure
 
 ```
 sidequest/
 ├── public/
-│   └── data/onet/json/             # O*NET JSON datasets (client + server reuse)
+│   └── data/onet/json/             # Canonical O*NET datasets (client + server reuse)
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx                # Redirects to /quests (homepage)
@@ -77,16 +87,25 @@ sidequest/
 │   └── data/
 │       ├── universities/*           # Per-university datasets
 │       └── majors_count.json        # App data
+├── src/pages/api/careers/*          # Legacy routes (use app router when possible)
 ├── middleware.ts                    # Blocks /assignments access
 └── .env.local                       # Environment variables
 ```
 
 ## Data Files
 
-- O*NET datasets are served from `public/data/onet/json/*` so they are accessible to both client and server code.
+- O*NET datasets are served from `public/data/onet/json/*` (canonical location) so they are accessible to both client and server code.
 - Internal application data (e.g., `majors_count.json`, university datasets) live under `src/data/*`.
 
 This separation keeps the repo root clean and clarifies which data is public versus app-internal.
+
+## API overview
+
+- `POST /api/assess` (App Router): accepts `{ answers, universityId }` and returns recommendations
+- `POST /api/differentiate` (App Router): generates assignment variations (feature in progress)
+- `GET /api/majors-count` (App Router): returns `{ count }` used by counters
+- `POST /api/skills/search` (App Router): skill search over O*NET datasets
+- Legacy: `/pages/api/careers/*` retained for backward compatibility and reads from `public/data/onet/json/*`
 
 ## Contributing
 
