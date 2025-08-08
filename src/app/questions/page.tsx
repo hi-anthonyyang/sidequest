@@ -48,7 +48,7 @@ function QuestionsPageClient() {
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
   const [loading, setLoading] = useState(false);
-  const ETA_MS = 5000; // target perceived wait (ms)
+  const ETA_MS = 31000; // target perceived wait (ms)
   const [etaRemaining, setEtaRemaining] = useState(ETA_MS);
   const [showSuccess, setShowSuccess] = useState(false);
 

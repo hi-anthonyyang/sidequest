@@ -53,6 +53,8 @@ export async function POST(request: Request) {
       });
     } catch (primaryErr) {
       console.error('[ASSESS] primary model failed:', primaryErr);
+      // Gentle backoff for transient 429/5xx
+      await new Promise((r) => setTimeout(r, 600));
       completion = await openai.chat.completions.create({
         model: fallbackModel,
         messages,
@@ -80,9 +82,7 @@ export async function POST(request: Request) {
     console.error('Error processing assessment:', error);
     // We cannot reliably get duration here without stored start; record as error only
     try { recordAssess(0, false); } catch {}
-    return NextResponse.json(
-      { error: 'Failed to process assessment' },
-      { status: 500 }
-    );
+    const errMsg = (error as Error)?.message || 'Failed to process assessment';
+    return NextResponse.json({ error: 'Failed to process assessment', message: errMsg }, { status: 500 });
   }
 } 
