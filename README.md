@@ -1,26 +1,29 @@
-# Major & Career Exploration Tool
+# SIDEQUEST — Major & Career Exploration
 
-A Next.js web application that helps students explore majors, careers, and opportunities at [University Name]. The tool uses OpenAI's GPT-4 to provide personalized recommendations based on student interests and goals.
+Sidequest is a Next.js web application that helps students discover their main and side quests: majors, careers, and campus opportunities that align with their interests and goals.
+
+The experience centers around a short assessment that generates personalized recommendations with the help of OpenAI.
 
 ## Features
 
-- Interactive assessment with 5-7 open-ended questions
-- Personalized recommendations for:
-  - Relevant majors
-  - Career paths
-  - Student organizations
-  - Upcoming events
-- Clean, responsive UI with mobile support
-- Collapsible sections for easy navigation of results
+- Interactive assessment (6 short questions)
+- Quests flow
+  - Select a university, then begin the assessment
+  - Recommendations summarized as “quests” (majors, careers, orgs, events)
+- Results page with sections and copy-to-calendar support
+- Skill search API endpoint (O*NET skills) used across features
+- Sidebar navigation with clear visibility of future features
+  - Calendar and Assignments are intentionally greyed out and disabled
+  - Direct access to Assignments is blocked by middleware
+- Modern, responsive UI
 
 ## Tech Stack
 
-- Next.js 14
+- Next.js (App Router)
 - TypeScript
 - Tailwind CSS
-- OpenAI GPT-4 API
-- Headless UI
-- Heroicons
+- OpenAI API
+- Headless UI / Heroicons
 
 ## Getting Started
 
@@ -47,30 +50,43 @@ npm run dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+Notes
+- The homepage redirects to `/quests` (`src/app/page.tsx`).
+- `middleware.ts` blocks access to `/assignments/*` while the feature is in development.
+
 ## Project Structure
 
 ```
 sidequest/
+├── public/
+│   └── data/onet/json/             # O*NET JSON datasets (client + server reuse)
 ├── src/
-│   ├── app/                    # Next.js app directory
-│   │   ├── page.tsx           # Landing page
-│   │   ├── questions/         # Assessment questions
-│   │   └── results/           # Results display
-│   ├── components/            # React components
-│   ├── lib/                   # Utility functions and types
-│   └── data/                  # Static data files
-├── public/                    # Static assets
-└── .env.local                # Environment variables
+│   ├── app/
+│   │   ├── page.tsx                # Redirects to /quests (homepage)
+│   │   ├── quests/                 # Quests landing (main entry)
+│   │   ├── questions/              # Assessment flow
+│   │   ├── results/                # Results display
+│   │   ├── skill-tree/             # Experimental skill tree
+│   │   └── api/
+│   │       ├── assess/route.ts     # GPT-backed assessment
+│   │       ├── differentiate/route.ts  # Assignment differentiation (future)
+│   │       ├── majors-count/route.ts   # Reads src/data/majors_count.json
+│   │       └── skills/search/route.ts  # O*NET skill search
+│   ├── components/                  # UI components (e.g., Sidebar, QuestsTab)
+│   ├── lib/                         # Utilities, types, university data helpers
+│   └── data/
+│       ├── universities/*           # Per-university datasets
+│       └── majors_count.json        # App data
+├── middleware.ts                    # Blocks /assignments access
+└── .env.local                       # Environment variables
 ```
 
 ## Data Files
 
-The application uses the following data files (to be provided):
-- Majors and Minors data
-- Student Organizations data
-- Events data
+- O*NET datasets are served from `public/data/onet/json/*` so they are accessible to both client and server code.
+- Internal application data (e.g., `majors_count.json`, university datasets) live under `src/data/*`.
 
-These files should be placed in the `src/data` directory in JSON format.
+This separation keeps the repo root clean and clarifies which data is public versus app-internal.
 
 ## Contributing
 
