@@ -39,11 +39,27 @@ export default async function AdminMetricsPage() {
     );
   }
 
-  const stats = { assess: getAssessStats() };
+  const { searchParams } = new URL(h.get('x-url') || 'http://localhost');
+  const range = searchParams.get('range') || 'today';
+  const ranges: Record<string, number | undefined> = {
+    today: 24 * 60 * 60 * 1000,
+    last3d: 3 * 24 * 60 * 60 * 1000,
+    last5d: 5 * 24 * 60 * 60 * 1000,
+    last30d: 30 * 24 * 60 * 60 * 1000,
+    all: undefined,
+  };
+  const stats = { assess: getAssessStats(ranges[range]) };
   return (
     <main className="min-h-screen bg-white p-6">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-2xl font-semibold text-gray-900 mb-4">Admin Metrics</h1>
+        <div className="mb-4 flex items-center gap-2 text-sm">
+          <a className={`px-3 py-1 rounded ${range==='today'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'}`} href="?range=today">Today</a>
+          <a className={`px-3 py-1 rounded ${range==='last3d'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'}`} href="?range=last3d">Last 3 days</a>
+          <a className={`px-3 py-1 rounded ${range==='last5d'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'}`} href="?range=last5d">Last 5 days</a>
+          <a className={`px-3 py-1 rounded ${range==='last30d'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'}`} href="?range=last30d">Last 30 days</a>
+          <a className={`px-3 py-1 rounded ${range==='all'?'bg-blue-600 text-white':'bg-gray-100 text-gray-700'}`} href="?range=all">All time</a>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="rounded-lg border border-gray-200 bg-white p-4">
             <div className="text-sm text-gray-500">Assess requests</div>

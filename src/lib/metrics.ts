@@ -1,15 +1,12 @@
 // Ephemeral in-memory metrics for simple admin dashboard
 // Note: resets on deploy/instance restart
 
-let assessDurations: number[] = [];
-let assessCount = 0;
-let assessErrors = 0;
+type MetricEntry = { ts: number; durationMs: number; ok: boolean };
+const assessEntries: MetricEntry[] = [];
 
 export function recordAssess(durationMs: number, ok: boolean): void {
-  assessCount += 1;
-  if (durationMs > 0) assessDurations.push(durationMs);
-  if (!ok) assessErrors += 1;
-  if (assessDurations.length > 5000) assessDurations = assessDurations.slice(-2500);
+  assessEntries.push({ ts: Date.now(), durationMs: Math.max(0, Math.round(durationMs)), ok });
+  if (assessEntries.length > 10000) assessEntries.splice(0, assessEntries.length - 6000);
 }
 
 function percentile(arr: number[], p: number): number {
@@ -19,12 +16,17 @@ function percentile(arr: number[], p: number): number {
   return Math.round(sorted[idx]);
 }
 
-export function getAssessStats() {
+export function getAssessStats(rangeMs?: number) {
+  const now = Date.now();
+  const windowed = rangeMs && rangeMs > 0 ? assessEntries.filter(e => now - e.ts <= rangeMs) : assessEntries;
+  const durations = windowed.map(e => e.durationMs).filter(n => n > 0);
+  const count = windowed.length;
+  const errors = windowed.filter(e => !e.ok).length;
   return {
-    count: assessCount,
-    p50Ms: percentile(assessDurations, 50),
-    p95Ms: percentile(assessDurations, 95),
-    errors: assessErrors,
+    count,
+    p50Ms: percentile(durations, 50),
+    p95Ms: percentile(durations, 95),
+    errors,
   };
 }
 
