@@ -1,9 +1,36 @@
+import { headers } from 'next/headers';
 import { getAssessStats } from '@/lib/metrics';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default function AdminMetricsPage() {
+  // Server-side guard (defense-in-depth in case middleware is bypassed)
+  const h = headers();
+  const authHeader = h.get('authorization') || '';
+  const expectedUser = (process.env.ADMIN_BASIC_USER || '').trim();
+  const expectedPass = (process.env.ADMIN_BASIC_PASS || '').trim();
+  let authorized = false;
+  if (expectedUser && expectedPass) {
+    const [scheme, encoded] = authHeader.split(' ');
+    if (scheme === 'Basic' && encoded) {
+      try {
+        const decoded = Buffer.from(encoded, 'base64').toString('utf8');
+        const sep = decoded.indexOf(':');
+        const user = sep >= 0 ? decoded.slice(0, sep) : '';
+        const pass = sep >= 0 ? decoded.slice(sep + 1) : '';
+        authorized = user === expectedUser && pass === expectedPass;
+      } catch {}
+    }
+  }
+  if (!authorized) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-gray-600">Unauthorized</div>
+      </main>
+    );
+  }
+
   const stats = { assess: getAssessStats() };
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6">
