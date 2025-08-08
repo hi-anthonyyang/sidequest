@@ -24,7 +24,7 @@ export default function Sidebar() {
     <nav className={`relative bg-white border-r border-gray-200 p-4 transition-all duration-300 ${collapsed ? 'w-20' : 'w-64'}`} style={{ minWidth: collapsed ? '5rem' : '16rem' }}>
       <div className={`flex flex-col ${collapsed ? 'items-center' : 'items-end'} mb-8`}>
         <button
-          className="p-1 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 z-10"
+          className="p-1 rounded hover:bg-gray-100 focus:outline-none focus:ring-0 focus-visible:outline-none z-10"
           onClick={() => setCollapsed((prev) => !prev)}
           aria-label={collapsed ? 'Open navigation panel' : 'Close navigation panel'}
           style={{ position: 'static' }}
