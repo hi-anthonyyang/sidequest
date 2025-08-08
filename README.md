@@ -64,6 +64,10 @@ Common commands added to ease local workflows:
 - `npm run onet:convert`: convert O*NET `.xlsx` files from `src/data/onet/` into JSON under `src/data/onet/json/`
 - `npm run onet:dedupe`: generate `public/data/onet/json/{unique_skills,occupation_skills}.json` used by the app
 
+Feature flags
+- `FEATURE_ASSIGNMENTS_ENABLED` (server): when `true`, enables `/api/differentiate`; otherwise returns 403
+- `NEXT_PUBLIC_FEATURE_CALENDAR_ENABLED` (client): when `true`, renders Calendar UI components
+
 ## Project Structure
 
 ```
