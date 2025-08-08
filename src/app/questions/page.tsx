@@ -48,6 +48,8 @@ function QuestionsPageClient() {
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
   const [loading, setLoading] = useState(false);
+  const ETA_MS = 5000; // target perceived wait (ms)
+  const [etaRemaining, setEtaRemaining] = useState(ETA_MS);
   const [showSuccess, setShowSuccess] = useState(false);
 
   // On mount, redirect to home (which forwards to /quests) if universityId is missing
@@ -59,6 +61,10 @@ function QuestionsPageClient() {
 
   const handleSubmit = async () => {
     setLoading(true);
+    setEtaRemaining(ETA_MS);
+    const ticker = window.setInterval(() => {
+      setEtaRemaining((prev) => Math.max(0, prev - 100));
+    }, 100);
     try {
       const response = await fetch('/api/assess', {
         method: 'POST',
@@ -77,6 +83,7 @@ function QuestionsPageClient() {
 
       // Show success and confetti before navigating
       setShowSuccess(true);
+      window.clearInterval(ticker);
       confetti({
         particleCount: 120,
         spread: 70,
@@ -89,6 +96,8 @@ function QuestionsPageClient() {
       }, 1200);
     } catch (error) {
       setLoading(false);
+      setEtaRemaining(0);
+      window.clearInterval(ticker);
       console.error('Error submitting assessment:', error);
       // Handle error appropriately
     }
@@ -123,27 +132,24 @@ function QuestionsPageClient() {
         </div>
       )}
       {loading && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90">
-          <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-8" />
-          <p className="text-xl font-semibold text-blue-700 flex items-center justify-center">
-            Building out your quests
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90 px-4">
+          <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-6" />
+          <p className="text-lg md:text-xl font-semibold text-blue-700 flex items-center justify-center mb-3">
+            Preparing your results
             <span className="ml-1 animate-ellipsis">…</span>
           </p>
+          <div className="w-full max-w-sm">
+            <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-blue-600 transition-[width] duration-100 ease-linear"
+                style={{ width: `${Math.min(100, (1 - etaRemaining / ETA_MS) * 100)}%` }}
+              />
+            </div>
+            <p className="mt-2 text-xs text-gray-500 text-center">~{Math.max(0, Math.ceil(etaRemaining / 1000))}s remaining</p>
+          </div>
           <style jsx>{`
-            @keyframes ellipsis {
-              0% { content: ''; opacity: 1; }
-              25% { content: '.'; opacity: 1; }
-              50% { content: '..'; opacity: 1; }
-              75% { content: '...'; opacity: 1; }
-              100% { content: ''; opacity: 1; }
-            }
-            .animate-ellipsis::after {
-              display: inline-block;
-              content: '';
-              animation: ellipsis 1.2s steps(4, end) infinite;
-              width: 1.5em;
-              text-align: left;
-            }
+            @keyframes ellipsis { 0% { content: ''; opacity: 1; } 25% { content: '.'; opacity: 1; } 50% { content: '..'; opacity: 1; } 75% { content: '...'; opacity: 1; } 100% { content: ''; opacity: 1; } }
+            .animate-ellipsis::after { display: inline-block; content: ''; animation: ellipsis 1.2s steps(4, end) infinite; width: 1.5em; text-align: left; }
           `}</style>
         </div>
       )}
