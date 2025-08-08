@@ -4,9 +4,9 @@ import { getAssessStats } from '@/lib/metrics';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export default function AdminMetricsPage() {
+export default async function AdminMetricsPage() {
   // Server-side guard (defense-in-depth in case middleware is bypassed)
-  const h = headers();
+  const h = await headers();
   const authHeader = h.get('authorization') || '';
   const expectedUser = (process.env.ADMIN_BASIC_USER || '').trim();
   const expectedPass = (process.env.ADMIN_BASIC_PASS || '').trim();
