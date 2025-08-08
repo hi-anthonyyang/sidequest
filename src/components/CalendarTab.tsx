@@ -7,10 +7,6 @@ import { getStoredEvents } from '@/lib/calendar';
 export default function CalendarTab() {
   // Feature flag: keep Calendar disabled unless explicitly enabled
   const calendarEnabled = process.env.NEXT_PUBLIC_FEATURE_CALENDAR_ENABLED === 'true';
-  if (!calendarEnabled) {
-    return null;
-  }
-
   const [events, setEvents] = useState<Event[]>([]);
 
   // Load events from localStorage on component mount
@@ -49,6 +45,10 @@ export default function CalendarTab() {
       setEvents(storedEvents);
     }
   }, []);
+
+  if (!calendarEnabled) {
+    return null;
+  }
 
   return (
     <div className="container mx-auto px-4 py-6">

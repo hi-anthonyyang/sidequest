@@ -78,8 +78,8 @@ export async function POST(request: Request) {
     return NextResponse.json(recommendations);
   } catch (error) {
     console.error('Error processing assessment:', error);
-    // record failure with duration if start exists
-    try { (global as any).start && recordAssess(Date.now() - (global as any).start, false); } catch {}
+    // We cannot reliably get duration here without stored start; record as error only
+    try { recordAssess(0, false); } catch {}
     return NextResponse.json(
       { error: 'Failed to process assessment' },
       { status: 500 }
