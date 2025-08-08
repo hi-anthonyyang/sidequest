@@ -25,7 +25,7 @@ export default function AdminMetricsPage() {
   }
   if (!authorized) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
+      <main className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-gray-600">Unauthorized</div>
       </main>
     );
@@ -33,7 +33,7 @@ export default function AdminMetricsPage() {
 
   const stats = { assess: getAssessStats() };
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6">
+    <main className="min-h-screen bg-white p-6">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-2xl font-semibold text-gray-900 mb-4">Admin Metrics</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
