@@ -1,4 +1,4 @@
-import { headers } from 'next/headers';
+import { headers, cookies } from 'next/headers';
 import { getAssessStats } from '@/lib/metrics';
 
 export const dynamic = 'force-dynamic';
@@ -11,6 +11,10 @@ export default async function AdminMetricsPage() {
   const expectedUser = (process.env.ADMIN_BASIC_USER || '').trim();
   const expectedPass = (process.env.ADMIN_BASIC_PASS || '').trim();
   let authorized = false;
+  // Cookie-based session from login API
+  const cookieStore = await cookies();
+  const hasCookie = cookieStore.get('admin_auth')?.value === 'ok';
+  if (hasCookie) authorized = true;
   if (expectedUser && expectedPass) {
     const [scheme, encoded] = authHeader.split(' ');
     if (scheme === 'Basic' && encoded) {
@@ -25,8 +29,40 @@ export default async function AdminMetricsPage() {
   }
   if (!authorized) {
     return (
-      <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-gray-600">Unauthorized</div>
+      <main className="min-h-screen bg-white flex items-center justify-center p-6">
+        <div className="w-full max-w-sm border border-gray-200 rounded-lg p-6 shadow-sm bg-white">
+          <h1 className="text-xl font-semibold text-gray-900 mb-4">Admin Login</h1>
+          <form
+            className="space-y-4"
+            method="post"
+            action="/api/admin/login"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget as HTMLFormElement;
+              const data = Object.fromEntries(new FormData(form).entries());
+              fetch('/api/admin/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: data.username, password: data.password }),
+              })
+                .then(async (res) => {
+                  if (res.ok) location.reload();
+                  else alert('Invalid credentials');
+                })
+                .catch(() => alert('Login failed'));
+            }}
+          >
+            <div>
+              <label className="block text-sm text-gray-700 mb-1">Username</label>
+              <input name="username" type="text" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            </div>
+            <div>
+              <label className="block text-sm text-gray-700 mb-1">Password</label>
+              <input name="password" type="password" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            </div>
+            <button type="submit" className="w-full bg-blue-600 text-white rounded-md py-2 font-medium hover:bg-blue-700">Sign in</button>
+          </form>
+        </div>
       </main>
     );
   }
