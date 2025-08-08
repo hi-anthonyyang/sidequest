@@ -7,6 +7,14 @@ const openai = new OpenAI({
 
 export async function POST(req: Request) {
   try {
+    // Feature flag: disable this endpoint in production until Assignments is launched
+    if (process.env.FEATURE_ASSIGNMENTS_ENABLED !== 'true') {
+      return NextResponse.json(
+        { error: 'Assignments feature is disabled' },
+        { status: 403 }
+      );
+    }
+
     const { assignment, strategies, numVariations, stayOnTopic } = await req.json();
 
     if (!assignment) {

@@ -12,6 +12,7 @@ interface CalendarProps {
   events?: Event[];
 }
 
+// Temporarily unused UI; kept for future enablement
 export default function Calendar({ events = [] }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState<CalendarView>('month');
