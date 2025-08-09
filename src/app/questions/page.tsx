@@ -44,6 +44,8 @@ function QuestionsPageClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const universityId = searchParams?.get('university') as UniversityId | null;
+  const email = searchParams?.get('email');
+  const studentId = searchParams?.get('studentId');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
@@ -73,7 +75,9 @@ function QuestionsPageClient() {
         },
         body: JSON.stringify({ 
           answers,
-          universityId: universityId
+          universityId: universityId,
+          email,
+          studentId
         }),
       });
 

@@ -10,6 +10,18 @@ export type AssessmentRecord = {
   completionTokens: number | null;
   latencyMs: number | null;
   success: boolean;
+  // optional pseudonymous fields packed into JSON later if present
+  // These are not columns; they will be embedded inside result_json for now
+  // to avoid schema churn per rules.
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  email_hash?: string | null;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  student_id_hash?: string | null;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  email_domain?: string | null;
 };
 
 /**
@@ -35,7 +47,16 @@ export async function saveAssessmentRecord(record: AssessmentRecord): Promise<vo
   `;
 
   const answersParam = JSON.stringify(record.answersJson);
-  const resultParam = record.resultJson ? JSON.stringify(record.resultJson) : null;
+  // Attach optional pseudonymous identifiers into result payload under _meta
+  const withMeta = {
+    ...(record.resultJson as Record<string, unknown> | null),
+    _meta: {
+      email_hash: (record as any).email_hash ?? null,
+      student_id_hash: (record as any).student_id_hash ?? null,
+      email_domain: (record as any).email_domain ?? null,
+    },
+  };
+  const resultParam = record.resultJson ? JSON.stringify(withMeta) : null;
   await sql`
     insert into assessments (
       created_at, university_id, answers_json, result_json,

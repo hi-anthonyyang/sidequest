@@ -14,7 +14,7 @@ const openai = new OpenAI({
 
 export async function POST(request: Request) {
   try {
-    const { answers, universityId = 'fresno_state' } = await request.json();
+    const { answers, universityId = 'fresno_state', email, studentId } = await request.json();
 
     if (!Array.isArray(answers)) {
       return NextResponse.json(
@@ -121,6 +121,31 @@ export async function POST(request: Request) {
 
     // Fire-and-forget persistence; do not block response on DB write
     try {
+      // Pseudonymous linkage using HMAC-SHA256
+      const secret = (process.env.APP_HASH_SECRET || '').trim();
+      const toHex = (buf: ArrayBuffer) => Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+      let emailHash: string | null = null;
+      let studentIdHash: string | null = null;
+      let emailDomain: string | null = null;
+      if (secret && typeof crypto !== 'undefined' && (email || studentId)) {
+        const key = await crypto.subtle.importKey(
+          'raw',
+          new TextEncoder().encode(secret),
+          { name: 'HMAC', hash: 'SHA-256' },
+          false,
+          ['sign']
+        );
+        if (email) {
+          const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(String(email).toLowerCase()));
+          emailHash = toHex(sig);
+          const at = String(email).indexOf('@');
+          emailDomain = at > -1 ? String(email).slice(at + 1).toLowerCase() : null;
+        }
+        if (studentId) {
+          const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(String(studentId)));
+          studentIdHash = toHex(sig);
+        }
+      }
       await saveAssessmentRecord({
         universityId,
         answersJson: answers,
@@ -130,6 +155,13 @@ export async function POST(request: Request) {
         completionTokens: completion.usage?.completion_tokens ?? null,
         latencyMs: latency,
         success: true,
+        // Attach hashes in JSON form for now (avoid extra columns per rules)
+        // @ts-expect-error store extra fields; assessStore serializes JSON
+        email_hash: emailHash,
+        // @ts-expect-error store extra fields; assessStore serializes JSON
+        student_id_hash: studentIdHash,
+        // @ts-expect-error store extra fields; assessStore serializes JSON
+        email_domain: emailDomain,
       });
     } catch (persistErr) {
       // Swallow persist errors to keep UX smooth
