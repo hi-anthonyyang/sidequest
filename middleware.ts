@@ -40,8 +40,16 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Block access to Assignments pages only
+  // Block access to Assignments pages
   if (pathname.startsWith('/assignments')) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/quests';
+    url.search = '';
+    return NextResponse.redirect(url);
+  }
+
+  // Block access to Calendar pages
+  if (pathname.startsWith('/calendar')) {
     const url = request.nextUrl.clone();
     url.pathname = '/quests';
     url.search = '';
@@ -52,7 +60,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/assignments/:path*', '/admin/:path*', '/api/admin/:path*'],
+  matcher: ['/assignments/:path*', '/calendar/:path*', '/admin/:path*', '/api/admin/:path*'],
 };
 
 
