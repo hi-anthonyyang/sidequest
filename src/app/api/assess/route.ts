@@ -36,48 +36,55 @@ export async function POST(request: Request) {
       }))
     ];
 
-    // (removed verbose logging of OpenAI request payload)
+    // Low-signal detection: if the combined answers are extremely short/repetitive
+    const allText = answers.map((a: AssessmentResponse) => (a?.answer || '').trim()).join(' ').toLowerCase();
+    const uniqueTokens = new Set(allText.split(/[^a-z0-9]+/).filter(Boolean));
+    const avgLen = answers.length ? allText.length / answers.length : 0;
+    const isLowSignal = allText.length < 40 || uniqueTokens.size < 8 || /(.)\1{3,}/.test(allText);
 
-    // Call OpenAI API with default model and fallback
+    // Call OpenAI API with default model and fallback unless we are in low-signal mode
     const defaultModel = process.env.OPENAI_ASSESS_MODEL || 'gpt-4o-mini';
     const fallbackModel = process.env.OPENAI_ASSESS_FALLBACK_MODEL || 'gpt-4o';
 
     const start = Date.now();
     let completion;
-    try {
-      completion = await openai.chat.completions.create({
-        model: defaultModel,
-        messages,
-        temperature: 0.7,
-        max_tokens: 1200,
-        response_format: { type: 'json_object' },
-      });
-    } catch (primaryErr) {
-      console.error('[ASSESS] primary model failed:', primaryErr);
-      // Gentle backoff for transient 429/5xx
-      await new Promise((r) => setTimeout(r, 600));
-      completion = await openai.chat.completions.create({
-        model: fallbackModel,
-        messages,
-        temperature: 0.7,
-        max_tokens: 1200,
-        response_format: { type: 'json_object' },
-      });
+    if (!isLowSignal) {
+      try {
+        completion = await openai.chat.completions.create({
+          model: defaultModel,
+          messages,
+          temperature: 0.7,
+          max_tokens: 1200,
+          response_format: { type: 'json_object' },
+        });
+      } catch (primaryErr) {
+        console.error('[ASSESS] primary model failed:', primaryErr);
+        // Gentle backoff for transient 429/5xx
+        await new Promise((r) => setTimeout(r, 600));
+        completion = await openai.chat.completions.create({
+          model: fallbackModel,
+      messages,
+      temperature: 0.7,
+          max_tokens: 1200,
+          response_format: { type: 'json_object' },
+    });
+      }
     }
 
-    const response = completion.choices[0]?.message?.content;
+    const response = completion?.choices?.[0]?.message?.content;
 
     // (removed verbose logging of OpenAI raw response)
 
-    if (!response) {
+    if (!response && !isLowSignal) {
       throw new Error('No response from OpenAI');
     }
 
     // Parse the JSON response with a forgiving fallback
-    let recommendations: AssessmentResults;
-    try {
-      recommendations = JSON.parse(response);
-    } catch (e) {
+    let recommendations: AssessmentResults | null = null;
+    if (response) {
+      try {
+        recommendations = JSON.parse(response);
+      } catch (e) {
       // Try to salvage JSON when the model returns extra text or code fences
       try {
         const cleaned = response
@@ -117,7 +124,10 @@ export async function POST(request: Request) {
     recordAssess(latency, true);
 
     // Post-process: ensure minimum counts with personalized top-ups
-    const normalized = enrichWithTopUps(answers, universityData, recommendations);
+    // Low-signal balanced fallback: assemble a diverse set by category
+    const normalized = isLowSignal
+      ? balancedFallback(universityData)
+      : enrichWithTopUps(answers, universityData, recommendations as AssessmentResults);
 
     // Fire-and-forget persistence; do not block response on DB write
     try {
@@ -329,3 +339,57 @@ function enrichWithTopUps(
     events,
   };
 }
+
+// Balanced fallback for extremely low-signal inputs
+function balancedFallback(uni: UniversityData): AssessmentResults {
+  const categories: { name: string; match: (m: { name: string; department: string; description: string }) => boolean }[] = [
+    { name: 'STEM', match: (m) => /math|engineer|computer|physics|chem|bio|science|technology|data|stat/i.test(`${m.name} ${m.department} ${m.description}`) },
+    { name: 'Social Science', match: (m) => /psychology|sociology|political|anthropology|economics|communication|history/i.test(`${m.name} ${m.department} ${m.description}`) },
+    { name: 'Business', match: (m) => /business|management|marketing|finance|account/i.test(`${m.name} ${m.department} ${m.description}`) },
+    { name: 'Arts & Design', match: (m) => /art|design|music|theatre|theater|graphic|film|media/i.test(`${m.name} ${m.department} ${m.description}`) },
+    { name: 'Health', match: (m) => /nurs|health|kines|public health|pre-med|pre med|rehab/i.test(`${m.name} ${m.department} ${m.description}`) },
+    { name: 'Education & Public Service', match: (m) => /education|teaching|public|policy|criminal|justice|social work/i.test(`${m.name} ${m.department} ${m.description}`) },
+  ];
+
+  // Helper: pick first good match with light randomness among top few
+  function pickFrom(matches: typeof uni.majors) {
+    const top = matches.slice(0, 6);
+    if (top.length === 0) return null;
+    const idx = Math.floor(Math.random() * top.length);
+    return top[idx];
+  }
+
+  const chosenMajors: typeof uni.majors = [];
+  for (const cat of categories) {
+    const matches = uni.majors.filter(cat.match);
+    const picked = pickFrom(matches);
+    if (picked) chosenMajors.push(picked);
+    if (chosenMajors.length >= 5) break;
+  }
+  // Fill to 5 if needed
+  if (chosenMajors.length < 5) {
+    const remaining = uni.majors.filter((m) => !chosenMajors.includes(m));
+    while (chosenMajors.length < 5 && remaining.length) {
+      chosenMajors.push(remaining.shift()!);
+    }
+  }
+
+  // Derive simple careers from majors
+  const careers = chosenMajors.slice(0, 5).map((m) => ({
+    title: `${m.name} Career`,
+    description: `Pathways related to ${m.name}.`,
+    relatedMajors: [m.name],
+  }));
+
+  // Reuse existing orgs/events: pick 3 each with light diversity
+  const organizations = uni.organizations.slice(0, 3);
+  const events = uni.events.slice(0, 3);
+
+  return {
+    archetype: 'You Are: The Explorer 🧭',
+    majors: chosenMajors.slice(0, 5),
+    careers,
+    organizations,
+    events,
+  };
+} 
