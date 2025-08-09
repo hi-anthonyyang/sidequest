@@ -73,8 +73,29 @@ export async function POST(request: Request) {
       throw new Error('No response from OpenAI');
     }
 
-    // Parse the JSON response
-    const recommendations = JSON.parse(response);
+    // Parse the JSON response with a forgiving fallback
+    let recommendations: unknown;
+    try {
+      recommendations = JSON.parse(response);
+    } catch (e) {
+      // Try to salvage JSON when the model returns extra text or code fences
+      try {
+        const cleaned = response
+          .replace(/^```json\s*/i, '')
+          .replace(/```\s*$/i, '');
+        const start = cleaned.indexOf('{');
+        const end = cleaned.lastIndexOf('}');
+        if (start !== -1 && end !== -1 && end > start) {
+          const slice = cleaned.slice(start, end + 1);
+          recommendations = JSON.parse(slice);
+        } else {
+          throw e;
+        }
+      } catch (err) {
+        console.error('[ASSESS] JSON parse failed. Raw:', response?.slice(0, 500));
+        throw err;
+      }
+    }
     recordAssess(Date.now() - start, true);
 
     return NextResponse.json(recommendations);
