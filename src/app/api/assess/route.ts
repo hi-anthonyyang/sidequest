@@ -155,13 +155,9 @@ export async function POST(request: Request) {
         completionTokens: completion.usage?.completion_tokens ?? null,
         latencyMs: latency,
         success: true,
-        // Attach hashes in JSON form for now (avoid extra columns per rules)
-        // @ts-expect-error store extra fields; assessStore serializes JSON
-        email_hash: emailHash,
-        // @ts-expect-error store extra fields; assessStore serializes JSON
-        student_id_hash: studentIdHash,
-        // @ts-expect-error store extra fields; assessStore serializes JSON
-        email_domain: emailDomain,
+        emailHash: emailHash,
+        studentIdHash: studentIdHash,
+        emailDomain: emailDomain,
       });
     } catch (persistErr) {
       // Swallow persist errors to keep UX smooth
