@@ -70,6 +70,7 @@ export async function POST(request: Request) {
     });
       }
     }
+  }
 
     const response = completion?.choices?.[0]?.message?.content;
 
