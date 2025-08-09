@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         model: defaultModel,
         messages,
         temperature: 0.7,
-        max_tokens: 900,
+        max_tokens: 1200,
         response_format: { type: 'json_object' },
       });
     } catch (primaryErr) {
@@ -59,7 +59,7 @@ export async function POST(request: Request) {
         model: fallbackModel,
         messages,
         temperature: 0.7,
-        max_tokens: 900,
+        max_tokens: 1200,
         response_format: { type: 'json_object' },
       });
     }
@@ -92,8 +92,25 @@ export async function POST(request: Request) {
           throw e;
         }
       } catch (err) {
-        console.error('[ASSESS] JSON parse failed. Raw:', response?.slice(0, 500));
-        throw err;
+        // Final attempt: ask model to repair to strict JSON only
+        console.warn('[ASSESS] JSON parse failed; attempting repair. Raw start:', response?.slice(0, 300));
+        const repair = await openai.chat.completions.create({
+          model: fallbackModel,
+          messages: [
+            { role: 'system', content: 'You are a JSON sanitizer. Return strictly valid JSON only, no prose, matching the same structure as provided.' },
+            { role: 'user', content: `Fix this into valid strict JSON (do not add fields):\n${response}` },
+          ],
+          temperature: 0,
+          max_tokens: 800,
+          response_format: { type: 'json_object' },
+        });
+        const repaired = repair.choices[0]?.message?.content || '';
+        try {
+          recommendations = JSON.parse(repaired);
+        } catch (finalErr) {
+          console.error('[ASSESS] JSON repair failed. Repaired start:', repaired?.slice(0, 300));
+          throw finalErr;
+        }
       }
     }
     recordAssess(Date.now() - start, true);
