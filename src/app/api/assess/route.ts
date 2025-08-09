@@ -147,17 +147,79 @@ function enrichWithTopUps(
     return s;
   };
 
+  // Domain boosts: gently bias majors when user mentions domain-specific words
+  // Keep this intentionally small and obvious to avoid over-engineering.
+  const domainGroups: { keywords: string[]; majors: string[]; boost: number }[] = [
+    {
+      // furniture / home / built environment → design + architecture related majors
+      keywords: [
+        'chair',
+        'chairs',
+        'furniture',
+        'sofa',
+        'couch',
+        'table',
+        'wall',
+        'room',
+        'house',
+        'home',
+        'interior',
+        'decorate',
+        'decoration',
+        'design',
+        'building',
+        'architecture',
+        'construction'
+      ],
+      majors: [
+        'Interior Design, B.A.',
+        'Architectural Studies, B.S.',
+        'Construction Management, B.S.',
+        'Civil Engineering, B.S.',
+        'Integrated Design, B.A.',
+        'Industrial Technology, B.S.'
+      ],
+      boost: 4,
+    },
+  ];
+
+  const hasAny = (text: string, words: string[]) => {
+    const t = text.toLowerCase();
+    return words.some((w) => t.includes(w));
+  };
+
+  const majorBoost = (majorName: string): number => {
+    let b = 0;
+    for (const g of domainGroups) {
+      if (hasAny(userText, g.keywords) && g.majors.includes(majorName)) {
+        b += g.boost;
+      }
+    }
+    return b;
+  };
+
   // Ensure 5 majors
   const majors = Array.isArray(rec.majors) ? [...rec.majors] : [];
+  const majorScores = new Map<string, number>();
   if (majors.length < 5) {
     const existing = new Set(majors.map(m => m.name));
     const candidates = uni.majors
       .filter(m => !existing.has(m.name))
-      .map(m => ({ m, s: score(`${m.name} ${m.description} ${m.department}`) }))
+      .map(m => {
+        const s = score(`${m.name} ${m.description} ${m.department}`) + majorBoost(m.name);
+        majorScores.set(m.name, s);
+        return { m, s };
+      })
       .sort((a, b) => b.s - a.s);
     for (const c of candidates) {
       majors.push(c.m);
       if (majors.length >= 5) break;
+    }
+  } else {
+    // still compute scores for already-selected majors to inform career derivation
+    for (const m of majors) {
+      const s = score(`${m.name} ${m.description} ${m.department}`) + majorBoost(m.name);
+      majorScores.set(m.name, s);
     }
   }
 
@@ -175,10 +237,13 @@ function enrichWithTopUps(
         };
       })
       .filter(d => !existingTitles.has(d.title))
-      .map(d => ({ d, s: score(d.title) }))
+      .map(d => ({
+        d,
+        s: (majorScores.get(d.relatedMajors[0]) || 0) + score(d.title),
+      }))
       .sort((a, b) => b.s - a.s);
     for (const c of derived) {
-      careers.push(c.d as unknown as AssessmentResults['careers'][number]);
+      careers.push(c.d as unknown as AssessmentResults["careers"][number]);
       if (careers.length >= 5) break;
     }
   }
