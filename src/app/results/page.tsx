@@ -76,18 +76,15 @@ export default function ResultsPage() {
     // --- Footer function ---
     function addFooter() {
       const footerY = pageHeight - 10;
-      const logoWidth = 8;
-      const logoHeight = 8;
       const text = 'Sidequest';
       const textFontSize = 10;
-      const totalWidth = logoWidth + 2 + doc.getTextWidth(text);
+      const textWidth = doc.getTextWidth(text);
       const centerX = pageWidth / 2;
-      // Center logo and text
-      doc.addImage('/icons/sidequest_logo.png', 'PNG', centerX - totalWidth / 2, footerY - logoHeight / 2, logoWidth, logoHeight);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(textFontSize);
       doc.setTextColor(black[0], black[1], black[2]);
-      doc.text(text, centerX - totalWidth / 2 + logoWidth + 2, footerY + 2, { align: 'left' });
+      // Center just the text (logo removed)
+      doc.text(text, centerX - textWidth / 2, footerY + 2, { align: 'left' });
     }
 
     doc.setFontSize(18);
