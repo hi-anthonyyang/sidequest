@@ -24,8 +24,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Log request body for debugging
-    console.log('[DIFFERENTIATE] Request body:', { assignment, strategies, numVariations, stayOnTopic });
+    // (removed verbose logging of request body)
 
     const strategiesList = strategies.join(', ');
     const evenSplitInstruction = (strategies.length === numVariations && strategies.length > 1)
@@ -52,8 +51,7 @@ export async function POST(req: Request) {
         ],
         response_format: { type: "json_object" }
       });
-      // Log OpenAI response for debugging
-      console.log('[DIFFERENTIATE] OpenAI response:', completion);
+      // (removed verbose logging of OpenAI response)
     } catch (openaiError) {
       console.error('[DIFFERENTIATE] OpenAI API error:', openaiError);
       throw openaiError;
