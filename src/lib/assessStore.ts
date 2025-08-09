@@ -34,13 +34,15 @@ export async function saveAssessmentRecord(record: AssessmentRecord): Promise<vo
     );
   `;
 
+  const answersParam = JSON.stringify(record.answersJson);
+  const resultParam = record.resultJson ? JSON.stringify(record.resultJson) : null;
   await sql`
     insert into assessments (
       created_at, university_id, answers_json, result_json,
       model, prompt_tokens, completion_tokens, latency_ms, success
     ) values (
-      ${record.createdAt ?? new Date()}, ${record.universityId}, ${sql.json(record.answersJson)},
-      ${record.resultJson ? sql.json(record.resultJson) : null},
+      ${record.createdAt ?? new Date()}, ${record.universityId}, ${answersParam}::jsonb,
+      ${resultParam}::jsonb,
       ${record.model}, ${record.promptTokens}, ${record.completionTokens}, ${record.latencyMs}, ${record.success}
     );
   `;
