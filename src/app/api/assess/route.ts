@@ -92,7 +92,7 @@ export async function POST(request: Request) {
         } else {
           throw e;
         }
-      } catch (_err) {
+      } catch {
         // Final attempt: ask model to repair to strict JSON only
         console.warn('[ASSESS] JSON parse failed; attempting repair. Raw start:', response?.slice(0, 300));
         const repair = await openai.chat.completions.create({
