@@ -35,8 +35,7 @@ export async function POST(request: Request) {
       }))
     ];
 
-    // Log the messages sent to OpenAI
-    console.log('OpenAI messages:', JSON.stringify(messages, null, 2));
+    // (removed verbose logging of OpenAI request payload)
 
     // Call OpenAI API with default model and fallback
     const defaultModel = process.env.OPENAI_ASSESS_MODEL || 'gpt-4o-mini';
@@ -67,8 +66,7 @@ export async function POST(request: Request) {
 
     const response = completion.choices[0]?.message?.content;
 
-    // Log the raw response from OpenAI
-    console.log('OpenAI raw response:', response);
+    // (removed verbose logging of OpenAI raw response)
 
     if (!response) {
       throw new Error('No response from OpenAI');
