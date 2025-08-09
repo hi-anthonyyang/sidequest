@@ -5,6 +5,7 @@ import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import type { AssessmentResults, UniversityData } from '@/lib/types';
+import { saveAssessmentRecord } from '@/lib/assessStore';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -112,10 +113,29 @@ export async function POST(request: Request) {
         }
       }
     }
-    recordAssess(Date.now() - start, true);
+    const latency = Date.now() - start;
+    recordAssess(latency, true);
 
     // Post-process: ensure minimum counts with personalized top-ups
     const normalized = enrichWithTopUps(answers, universityData, recommendations);
+
+    // Fire-and-forget persistence; do not block response on DB write
+    try {
+      await saveAssessmentRecord({
+        universityId,
+        answersJson: answers,
+        resultJson: normalized,
+        model: completion.model || defaultModel,
+        promptTokens: completion.usage?.prompt_tokens ?? null,
+        completionTokens: completion.usage?.completion_tokens ?? null,
+        latencyMs: latency,
+        success: true,
+      });
+    } catch (persistErr) {
+      // Swallow persist errors to keep UX smooth
+      console.warn('[ASSESS] persist failed', persistErr);
+    }
+
     return NextResponse.json(normalized);
   } catch (error) {
     console.error('Error processing assessment:', error);
