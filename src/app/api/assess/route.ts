@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
-import type { AssessmentResults, Major, UniversityData } from '@/lib/types';
+import type { AssessmentResults, UniversityData } from '@/lib/types';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
         } else {
           throw e;
         }
-      } catch (err) {
+      } catch (_err) {
         // Final attempt: ask model to repair to strict JSON only
         console.warn('[ASSESS] JSON parse failed; attempting repair. Raw start:', response?.slice(0, 300));
         const repair = await openai.chat.completions.create({
@@ -178,7 +178,7 @@ function enrichWithTopUps(
       .map(d => ({ d, s: score(d.title) }))
       .sort((a, b) => b.s - a.s);
     for (const c of derived) {
-      careers.push(c.d as any);
+      careers.push(c.d as unknown as AssessmentResults['careers'][number]);
       if (careers.length >= 5) break;
     }
   }
