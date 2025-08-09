@@ -14,6 +14,8 @@ const openai = new OpenAI({
 export async function POST(request: Request) {
   try {
     const { answers, universityId = 'fresno_state' } = await request.json();
+    const url = new URL(request.url);
+    const isMock = url.searchParams.get('mock') === '1' || process.env.ASSESS_MOCK === '1';
 
     if (!Array.isArray(answers)) {
       return NextResponse.json(
@@ -34,6 +36,21 @@ export async function POST(request: Request) {
         content: `Question ${answer.questionId}: ${answer.answer}`
       }))
     ];
+
+    // If mock mode, skip OpenAI and return deterministic top-ups for load testing
+    if (isMock) {
+      const mockRec: AssessmentResults = {
+        archetype: 'You Are: The Explorer 🧭',
+        majors: [],
+        careers: [],
+        organizations: [],
+        events: [],
+      };
+      const normalized = enrichWithTopUps(answers, universityData, mockRec);
+      // Record a tiny duration for metrics so dashboard reflects traffic
+      try { recordAssess(5, true); } catch {}
+      return NextResponse.json(normalized);
+    }
 
     // Log the messages sent to OpenAI
     console.log('OpenAI messages:', JSON.stringify(messages, null, 2));
