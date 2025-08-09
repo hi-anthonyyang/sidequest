@@ -4,6 +4,7 @@ import OpenAI from 'openai';
 import { AssessmentResponse, UniversityId } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
+import type { AssessmentResults, Major, UniversityData } from '@/lib/types';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -74,7 +75,7 @@ export async function POST(request: Request) {
     }
 
     // Parse the JSON response with a forgiving fallback
-    let recommendations: unknown;
+    let recommendations: AssessmentResults;
     try {
       recommendations = JSON.parse(response);
     } catch (e) {
@@ -115,7 +116,9 @@ export async function POST(request: Request) {
     }
     recordAssess(Date.now() - start, true);
 
-    return NextResponse.json(recommendations);
+    // Post-process: ensure minimum counts with personalized top-ups
+    const normalized = enrichWithTopUps(answers, universityData, recommendations);
+    return NextResponse.json(normalized);
   } catch (error) {
     console.error('Error processing assessment:', error);
     // We cannot reliably get duration here without stored start; record as error only
@@ -124,3 +127,94 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Failed to process assessment', message: errMsg }, { status: 500 });
   }
 } 
+
+function enrichWithTopUps(
+  answers: { questionId: number; answer: string }[],
+  uni: UniversityData,
+  rec: AssessmentResults
+): AssessmentResults {
+  const userText = answers.map(a => a.answer).join(' ').toLowerCase();
+
+  // Helper: keyword score
+  const score = (text: string) => {
+    const words = userText.split(/[^a-z0-9]+/).filter(Boolean);
+    const t = (text || '').toLowerCase();
+    let s = 0;
+    for (const w of words) {
+      if (w.length < 3) continue;
+      if (t.includes(w)) s += 1;
+    }
+    return s;
+  };
+
+  // Ensure 5 majors
+  const majors = Array.isArray(rec.majors) ? [...rec.majors] : [];
+  if (majors.length < 5) {
+    const existing = new Set(majors.map(m => m.name));
+    const candidates = uni.majors
+      .filter(m => !existing.has(m.name))
+      .map(m => ({ m, s: score(`${m.name} ${m.description} ${m.department}`) }))
+      .sort((a, b) => b.s - a.s);
+    for (const c of candidates) {
+      majors.push(c.m);
+      if (majors.length >= 5) break;
+    }
+  }
+
+  // Ensure 5 careers (derive simple titles from majors when missing)
+  const careers = Array.isArray(rec.careers) ? [...rec.careers] : [];
+  if (careers.length < 5) {
+    const existingTitles = new Set(careers.map(c => c.title));
+    const derived = majors
+      .map((m) => {
+        const title = `${m.name} Career`;
+        return {
+          title,
+          description: `Pathways related to ${m.name}.`,
+          relatedMajors: [m.name],
+        };
+      })
+      .filter(d => !existingTitles.has(d.title))
+      .map(d => ({ d, s: score(d.title) }))
+      .sort((a, b) => b.s - a.s);
+    for (const c of derived) {
+      careers.push(c.d as any);
+      if (careers.length >= 5) break;
+    }
+  }
+
+  // Optionally top-up orgs/events to minimum 3 with keyword match
+  const organizations = Array.isArray(rec.organizations) ? [...rec.organizations] : [];
+  if (organizations.length < 3) {
+    const existing = new Set(organizations.map(o => o.name));
+    const candidates = uni.organizations
+      .filter(o => !existing.has(o.name))
+      .map(o => ({ o, s: score(`${o.name} ${o.description} ${o.category}`) }))
+      .sort((a, b) => b.s - a.s);
+    for (const c of candidates) {
+      organizations.push(c.o);
+      if (organizations.length >= 3) break;
+    }
+  }
+
+  const events = Array.isArray(rec.events) ? [...rec.events] : [];
+  if (events.length < 3) {
+    const existing = new Set(events.map(e => e.name));
+    const candidates = uni.events
+      .filter(e => !existing.has(e.name))
+      .map(e => ({ e, s: score(`${e.name} ${e.description} ${e.category}`) }))
+      .sort((a, b) => b.s - a.s);
+    for (const c of candidates) {
+      events.push(c.e);
+      if (events.length >= 3) break;
+    }
+  }
+
+  return {
+    archetype: rec.archetype,
+    majors,
+    careers,
+    organizations,
+    events,
+  };
+}
