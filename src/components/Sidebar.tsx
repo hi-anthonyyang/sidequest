@@ -66,15 +66,16 @@ export default function Sidebar() {
           <Image src="/icons/scroll-text.svg" alt="Assignments (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Assignments'}
         </div>
-        {/* Temporarily hidden Skill Tree navigation
-        <Link
-          href="/skill-tree"
-          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/skill-tree' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
+        {/* Skill Tree (disabled like Calendar/Assignments) */}
+        <div
+          role="link"
+          aria-disabled
+          tabIndex={-1}
+          className={`flex items-center gap-4 px-4 py-3 text-gray-400 text-lg rounded-lg ${collapsed ? 'justify-center' : ''} cursor-not-allowed select-none opacity-60`}
         >
-          <Image src="/icons/sword.svg" alt="Skill Tree" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
+          <Image src="/icons/sword.svg" alt="Skill Tree (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Skill Tree'}
-        </Link>
-        */}
+        </div>
       </div>
     </nav>
   );
