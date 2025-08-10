@@ -22,5 +22,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: 'Bad request' }, { status: 400 });
   }
 }
-
-
