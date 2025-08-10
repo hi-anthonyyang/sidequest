@@ -1,3 +1,5 @@
+// University helpers only. DB helpers live in src/lib/db.ts
+
 import { UniversityData, UniversityId } from './types';
 
 // Cache for university data
