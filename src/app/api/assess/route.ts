@@ -182,7 +182,7 @@ export async function POST(request: Request) {
     const errMsg = (error as Error)?.message || 'Failed to process assessment';
     return NextResponse.json({ error: 'Failed to process assessment', message: errMsg }, { status: 500 });
   }
-} 
+}
 
 function enrichWithTopUps(
   answers: { questionId: number; answer: string }[],
@@ -277,6 +277,7 @@ function enrichWithTopUps(
       const s = score(`${m.name} ${m.description} ${m.department}`) + majorBoost(m.name);
       majorScores.set(m.name, s);
     }
+  }
 
   // Ensure 5 careers (derive simple titles from majors when missing)
   const careers = Array.isArray(rec.careers) ? [...rec.careers] : [];
