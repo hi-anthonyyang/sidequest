@@ -277,7 +277,6 @@ function enrichWithTopUps(
       const s = score(`${m.name} ${m.description} ${m.department}`) + majorBoost(m.name);
       majorScores.set(m.name, s);
     }
-  }
 
   // Ensure 5 careers (derive simple titles from majors when missing)
   const careers = Array.isArray(rec.careers) ? [...rec.careers] : [];
