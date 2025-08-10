@@ -63,14 +63,13 @@ export async function POST(request: Request) {
         await new Promise((r) => setTimeout(r, 600));
         completion = await openai.chat.completions.create({
           model: fallbackModel,
-          messages,
-          temperature: 0.7,
+      messages,
+      temperature: 0.7,
           max_tokens: 1200,
           response_format: { type: 'json_object' },
-        });
+    });
       }
     }
-  }
 
     const response = completion?.choices?.[0]?.message?.content;
 
