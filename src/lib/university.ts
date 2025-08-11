@@ -64,9 +64,9 @@ When analyzing student responses, identify:
 5. Values & Priorities: What they prioritize (salary, impact, innovation, etc.)
 
 ### Recommendation Requirements
-1. Majors (exactly 5):
+ 1. Majors (exactly 5):
    - Always pick 5 from the official majors list.
-   - Keep each description concise (<= 140 characters), friendly, and specific.
+   - Keep each description concise, descriptive, and <= 250 characters.
    - Include department and up to 2 short requirement bullets.
 
 2. Career Paths (exactly 5):
