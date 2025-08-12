@@ -50,6 +50,13 @@ export function middleware(request: NextRequest) {
 
   // Block access to Calendar pages
   if (pathname.startsWith('/calendar')) {
+  // Block access to Skill Tree pages
+  if (pathname.startsWith('/skill-tree')) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/quests';
+    url.search = '';
+    return NextResponse.redirect(url);
+  }
     const url = request.nextUrl.clone();
     url.pathname = '/quests';
     url.search = '';
@@ -60,7 +67,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/assignments/:path*', '/calendar/:path*', '/admin/:path*', '/api/admin/:path*'],
+  matcher: ['/assignments/:path*', '/calendar/:path*', '/skill-tree/:path*', '/admin/:path*', '/api/admin/:path*'],
 };
 
 
