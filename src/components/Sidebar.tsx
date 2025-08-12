@@ -39,6 +39,14 @@ export default function Sidebar() {
         </button>
       </div>
       <div className="space-y-2 mt-4">
+        {/* Quests (active) */}
+        <Link 
+          href="/quests"
+          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/quests' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
+        >
+          <Image src="/icons/backpack.svg" alt="Quests" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
+          {showText && !collapsed && 'Quests'}
+        </Link>
         {/* Calendar (disabled) */}
         <div
           role="link"
@@ -49,13 +57,6 @@ export default function Sidebar() {
           <Image src="/icons/calendar-days.svg" alt="Calendar (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Calendar'}
         </div>
-        <Link 
-          href="/quests"
-          className={`flex items-center gap-4 px-4 py-3 text-gray-800 text-lg ${pathname === '/quests' ? 'font-bold' : 'font-normal'} hover:bg-gray-100 rounded-lg transition-colors ${collapsed ? 'justify-center' : ''}`}
-        >
-          <Image src="/icons/backpack.svg" alt="Quests" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0" />
-          {showText && !collapsed && 'Quests'}
-        </Link>
         {/* Assignments (disabled) */}
         <div
           role="link"
@@ -73,7 +74,7 @@ export default function Sidebar() {
           tabIndex={-1}
           className={`flex items-center gap-4 px-4 py-3 text-gray-400 text-lg rounded-lg ${collapsed ? 'justify-center' : ''} cursor-not-allowed select-none opacity-60`}
         >
-          <Image src="/icons/sword.svg" alt="Skill Tree (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
+          <Image src="/list-tree.svg" alt="Skill Tree (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Skill Tree'}
         </div>
       </div>
