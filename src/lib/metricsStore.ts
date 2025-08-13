@@ -104,14 +104,7 @@ export async function getAssessStatsDb(from?: Date, to?: Date): Promise<AssessSt
   const end = to ?? new Date();
   const start = from ?? new Date(end.getTime() - 24 * 60 * 60 * 1000);
 
-  const rows = await sql<{
-    count: number;
-    errors: number;
-    p50_ms: number | null;
-    p95_ms: number | null;
-    total_prompt_tokens: number | null;
-    total_completion_tokens: number | null;
-  }[]>`
+  const rowsRaw = await sql`
     select
       count(*)::int as count,
       sum(case when success then 0 else 1 end)::int as errors,
@@ -122,6 +115,15 @@ export async function getAssessStatsDb(from?: Date, to?: Date): Promise<AssessSt
     from assessment_metrics
     where created_at >= ${start} and created_at <= ${end}
   `;
+
+  const rows = rowsRaw as unknown as Array<{
+    count: number;
+    errors: number;
+    p50_ms: number | null;
+    p95_ms: number | null;
+    total_prompt_tokens: number | null;
+    total_completion_tokens: number | null;
+  }>;
 
   const r = rows[0];
   if (!r) {
