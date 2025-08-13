@@ -1,6 +1,7 @@
 import { headers, cookies } from 'next/headers';
 import LoginForm from '@/app/admin/LoginForm';
 import { getAssessStats } from '@/lib/metrics';
+import { getAssessStatsDb } from '@/lib/metricsStore';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -48,7 +49,18 @@ export default async function AdminMetricsPage({ searchParams }: { searchParams:
     last30d: 30 * 24 * 60 * 60 * 1000,
     all: undefined,
   };
-  const stats = { assess: getAssessStats(ranges[range]) };
+  // Prefer persistent DB stats; fall back to in-memory if DB unavailable
+  let assessStats = { count: 0, errors: 0, p50Ms: 0, p95Ms: 0, totalPromptTokens: 0, totalCompletionTokens: 0 };
+  try {
+    const now = new Date();
+    const ms = ranges[range];
+    const from = typeof ms === 'number' ? new Date(now.getTime() - ms) : undefined;
+    assessStats = await getAssessStatsDb(from, now);
+  } catch {
+    const mem = getAssessStats(ranges[range]);
+    assessStats = { ...mem, totalPromptTokens: 0, totalCompletionTokens: 0 };
+  }
+  const stats = { assess: assessStats };
   return (
     <main className="min-h-screen bg-white p-6">
       <div className="container mx-auto max-w-4xl">
@@ -76,6 +88,10 @@ export default async function AdminMetricsPage({ searchParams }: { searchParams:
           <div className="rounded-lg border border-gray-200 bg-white p-4 md:col-span-3">
             <div className="text-sm text-gray-500">Errors</div>
             <div className="text-2xl font-bold">{stats.assess.errors}</div>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-white p-4 md:col-span-3">
+            <div className="text-sm text-gray-500">Tokens (prompt / completion)</div>
+            <div className="text-2xl font-bold">{stats.assess.totalPromptTokens.toLocaleString()} / {stats.assess.totalCompletionTokens.toLocaleString()}</div>
           </div>
         </div>
       </div>

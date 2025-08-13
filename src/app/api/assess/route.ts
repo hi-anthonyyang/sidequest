@@ -5,6 +5,7 @@ import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityI
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import { saveAssessmentRecord } from '@/lib/assessStore';
+import { saveAssessmentMetric, refreshDailyRollupFor } from '@/lib/metricsStore';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -123,6 +124,24 @@ export async function POST(request: Request) {
         studentIdHash,
         emailDomain,
       });
+
+      // Store persistent lightweight metrics row
+      try {
+        const commitSha = process.env.VERCEL_GIT_COMMIT_SHA || process.env.COMMIT_SHA || process.env.SOURCE_VERSION || null;
+        await saveAssessmentMetric({
+          universityId: String(universityId),
+          latencyMs: latency,
+          success: true,
+          model: completion?.model || defaultModel,
+          promptTokens: completion?.usage?.prompt_tokens ?? null,
+          completionTokens: completion?.usage?.completion_tokens ?? null,
+          commitSha,
+        });
+        // Update daily rollup for today (idempotent upsert)
+        await refreshDailyRollupFor(new Date());
+      } catch {
+        // ignore metric failures
+      }
     } catch {
       // swallow
     }
