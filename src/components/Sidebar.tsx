@@ -74,7 +74,7 @@ export default function Sidebar() {
           tabIndex={-1}
           className={`flex items-center gap-4 px-4 py-3 text-gray-400 text-lg rounded-lg ${collapsed ? 'justify-center' : ''} cursor-not-allowed select-none opacity-60`}
         >
-          <Image src="/list-tree.svg" alt="Skill Tree (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
+          <Image src="/icons/folder-tree.svg" alt="Skill Tree (coming soon)" width={28} height={28} className="w-7 h-7 min-w-[28px] min-h-[28px] flex-shrink-0 opacity-30 grayscale" />
           {showText && !collapsed && 'Skill Tree'}
         </div>
       </div>
