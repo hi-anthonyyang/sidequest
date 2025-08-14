@@ -7,6 +7,7 @@ import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import { saveAssessmentRecord } from '@/lib/assessStore';
 import { saveAssessmentMetric, refreshDailyRollupFor } from '@/lib/metricsStore';
 import { runSelector, materializeSelection } from '@/lib/selector';
+import { fillMissingDescriptions } from '@/lib/describe';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -93,6 +94,10 @@ export async function POST(request: Request) {
       const selection = await runSelector(openai, answers, uniData);
       const materialized = materializeSelection(selection, uniData);
       normalized = enrichWithTopUps(answers, uniData, materialized);
+      // Backfill missing descriptions with a tiny model pass
+      try {
+        normalized = await fillMissingDescriptions(openai, uniData, normalized);
+      } catch {}
     } else {
       normalized = enrichWithTopUps(answers, uniData, (rec as AssessmentResults) || { majors: [], careers: [], organizations: [], events: [] });
     }
