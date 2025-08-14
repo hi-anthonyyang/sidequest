@@ -6,6 +6,7 @@ import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import { saveAssessmentRecord } from '@/lib/assessStore';
 import { saveAssessmentMetric, refreshDailyRollupFor } from '@/lib/metricsStore';
+import { runSelector, materializeSelection } from '@/lib/selector';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -86,9 +87,15 @@ export async function POST(request: Request) {
     const latency = Date.now() - start;
     recordAssess(latency, true);
 
-    const normalized: AssessmentResults = isLowSignal
-      ? balancedFallback(uniData)
-      : enrichWithTopUps(answers, uniData, (rec as AssessmentResults) || { majors: [], careers: [], organizations: [], events: [] });
+    let normalized: AssessmentResults;
+    if (isLowSignal) {
+      // Small selector path: choose names only, then materialize + top-up
+      const selection = await runSelector(openai, answers, uniData);
+      const materialized = materializeSelection(selection, uniData);
+      normalized = enrichWithTopUps(answers, uniData, materialized);
+    } else {
+      normalized = enrichWithTopUps(answers, uniData, (rec as AssessmentResults) || { majors: [], careers: [], organizations: [], events: [] });
+    }
 
     // Persist (best-effort)
     try {
@@ -214,10 +221,4 @@ function enrichWithTopUps(
   return { archetype: rec.archetype, majors, careers, organizations, events };
 }
 
-function balancedFallback(uni: UniversityData): AssessmentResults {
-  const majors = uni.majors.slice(0, 5);
-  const careers = majors.map((m) => ({ title: `${m.name} Career`, description: `Pathways related to ${m.name}.`, relatedMajors: [m.name] }));
-  const organizations = uni.organizations.slice(0, 3);
-  const events = uni.events.slice(0, 3);
-  return { archetype: 'You Are: The Explorer 🧭', majors, careers, organizations, events };
-} 
+// Note: generic balancedFallback removed in favor of selector path for low-signal
