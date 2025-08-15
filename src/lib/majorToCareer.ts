@@ -62,6 +62,63 @@ const MAJOR_TO_SOC_MAP: Record<string, string[]> = {
   'Engineering': ['17-2141.00', '17-2051.00', '17-2112.00'], // Mechanical Engineers, Civil Engineers, Industrial Engineers
   'Civil Engineering': ['17-2051.00', '17-3022.00'], // Civil Engineers, Civil Engineering Technicians
   'Mechanical Engineering': ['17-2141.00', '17-3027.00'], // Mechanical Engineers, Mechanical Engineering Technicians
+  
+  // Agriculture & Life Sciences
+  'Agricultural Business': ['11-9013.00', '13-1051.00', '25-9021.00'], // Farm Managers, Cost Estimators, Farm/Home Management Advisors
+  'Animal Science': ['19-1011.00', '29-1131.00', '19-4021.00'], // Animal Scientists, Veterinarians, Biological Technicians
+  'Agriculture': ['11-9013.00', '19-1011.00', '25-9021.00'], // Farm Managers, Animal Scientists, Agricultural Advisors
+  
+  // Architecture & Design
+  'Architecture': ['17-1011.00', '17-3011.00', '27-1025.00'], // Architects, Architectural Drafters, Interior Designers
+  'Architectural Studies': ['17-1011.00', '17-3011.00', '27-1025.00'], // Architects, Architectural Drafters, Interior Designers
+  
+  // Specialized Sciences
+  'Biochemistry': ['19-1021.00', '19-2031.00', '19-1042.00'], // Biochemists, Chemists, Medical Scientists
+  'Physics': ['19-2012.00', '25-1054.00', '17-2199.00'], // Physicists, Physics Teachers, Engineers
+  'Mathematics': ['15-2021.00', '25-1022.00', '15-2041.00'], // Mathematicians, Math Teachers, Statisticians
+  
+  // Ethnic & Cultural Studies
+  'Africana Studies': ['25-1062.00', '19-3093.00', '27-3022.00'], // Area Studies Teachers, Historians, Reporters
+  'Ethnic Studies': ['25-1062.00', '19-3093.00', '21-1093.00'], // Area Studies Teachers, Historians, Social Service Assistants
+  
+  // Liberal Arts & Humanities  
+  'Liberal Arts': ['25-1123.00', '27-3041.00', '13-1151.00'], // English Teachers, Editors, Training Specialists
+  'Philosophy': ['25-1126.00', '23-1011.00', '27-3041.00'], // Philosophy Teachers, Lawyers, Editors
+  'Religious Studies': ['21-2011.00', '25-1126.00', '21-1093.00'] // Clergy, Philosophy Teachers, Social Service Assistants
+};
+
+/**
+ * Smart fallback mapping for unmapped major fields
+ */
+const FALLBACK_MAPPING: Record<string, string> = {
+  // Agriculture-related
+  'Agricultural': 'Agriculture',
+  'Farm': 'Agriculture',
+  'Ranch': 'Agriculture',
+  
+  // Animal-related
+  'Animal': 'Animal Science',
+  'Veterinary': 'Animal Science',
+  'Dairy': 'Animal Science',
+  'Livestock': 'Animal Science',
+  
+  // Studies/Cultural fields
+  'Studies': 'Liberal Arts',
+  'Cultural': 'Ethnic Studies',
+  
+  // Science fields
+  'Science': 'Biology',
+  'Chemistry': 'Chemistry',
+  'Math': 'Mathematics',
+  
+  // Arts fields
+  'Design': 'Art',
+  'Media': 'Communication',
+  'Film': 'Communication',
+  
+  // Education fields
+  'Teaching': 'Education',
+  'Teacher': 'Education',
 };
 
 /**
@@ -71,8 +128,25 @@ export function getCareersForMajor(majorName: string): CareerPath[] {
   // Extract field name from full major title (e.g., "Psychology, B.A." -> "Psychology")
   const fieldName = majorName.split(',')[0].trim();
   
-  // Get SOC codes for this major field
-  const socCodes = MAJOR_TO_SOC_MAP[fieldName] || [];
+  // Try direct mapping first
+  let socCodes = MAJOR_TO_SOC_MAP[fieldName] || [];
+  
+  // If no direct match, try fallback mapping
+  if (socCodes.length === 0) {
+    for (const [keyword, mappedField] of Object.entries(FALLBACK_MAPPING)) {
+      if (fieldName.toLowerCase().includes(keyword.toLowerCase())) {
+        socCodes = MAJOR_TO_SOC_MAP[mappedField] || [];
+        console.log(`Fallback mapping: "${fieldName}" → "${mappedField}"`);
+        break;
+      }
+    }
+  }
+  
+  // If still no match, use generic Liberal Arts mapping
+  if (socCodes.length === 0) {
+    socCodes = MAJOR_TO_SOC_MAP['Liberal Arts'] || [];
+    console.log(`Generic fallback: "${fieldName}" → Liberal Arts careers`);
+  }
   
   // Find matching occupations in O*NET data
   const careers: CareerPath[] = [];
