@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { recordAssess } from '@/lib/metrics';
-import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityId } from '@/lib/types';
+import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityId, CareerPath } from '@/lib/types';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import { saveAssessmentRecord } from '@/lib/assessStore';
@@ -221,7 +221,7 @@ function enrichWithTopUps(
     };
     
     // Generate careers based on recommended majors
-    const fallbackCareers: Array<{ title: string; description: string; relatedMajors: string[] }> = [];
+    const fallbackCareers: CareerPath[] = [];
     for (const major of majors.slice(0, 3)) { // Use top 3 majors
       const majorField = major.name.split(',')[0].trim(); // Extract field from "Psychology, B.A."
       const careerOptions = majorToCareerMap[majorField] || [`${majorField} Specialist`];
@@ -231,7 +231,10 @@ function enrichWithTopUps(
           fallbackCareers.push({
             title: careerTitle,
             description: `Professional opportunities in ${majorField.toLowerCase()} that utilize skills and knowledge from the ${major.name} program.`,
-            relatedMajors: [major.name]
+            relatedMajors: [major.name],
+            salary: undefined,
+            growthOutlook: undefined,
+            educationLevel: undefined
           });
           existingTitles.add(careerTitle);
         }
@@ -240,7 +243,7 @@ function enrichWithTopUps(
     
     // Add fallback careers to the list
     for (const fallback of fallbackCareers) {
-      careers.push(fallback as AssessmentResults['careers'][number]);
+      careers.push(fallback);
     }
   }
 
