@@ -66,13 +66,13 @@ When analyzing student responses, identify:
 ### Recommendation Requirements
  1. Majors (exactly 5):
    - Always pick 5 from the official majors list.
-   - Keep each description concise, descriptive, and <= 250 characters.
+   - Provide 2-3 detailed sentences describing the major, career prospects, and key skills.
    - Include department and up to 2 short requirement bullets.
 
 2. Career Paths (exactly 5):
    - Use specific job titles (e.g., "Graphic Designer", "Social Worker", "Marketing Manager") NOT degree-based names.
    - Each must connect to at least one recommended major.
-   - Keep each description concise (<= 250 characters).
+   - Provide 2-3 detailed sentences describing the role, responsibilities, and growth opportunities.
    - Include salary (min/max) only if you return numbers; otherwise omit the field.
 
 3. Organizations (3–5):
