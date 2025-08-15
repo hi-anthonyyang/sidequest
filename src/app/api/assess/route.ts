@@ -96,12 +96,15 @@ export async function POST(request: Request) {
       const selection = await runSelector(openai, answers, uniData);
       const materialized = materializeSelection(selection, uniData);
       normalized = enrichWithTopUps(answers, uniData, materialized);
-      // Backfill missing descriptions with a tiny model pass
-      try {
-        normalized = await fillMissingDescriptions(openai, uniData, normalized);
-      } catch {}
     } else {
       normalized = enrichWithTopUps(answers, uniData, (rec as AssessmentResults) || { majors: [], careers: [], organizations: [], events: [] });
+    }
+
+    // Backfill missing descriptions for both workflows (majors from university dataset need descriptions)
+    try {
+      normalized = await fillMissingDescriptions(openai, uniData, normalized);
+    } catch (error) {
+      console.warn('Description backfill failed:', error);
     }
 
     // Generate careers from majors using O*NET data (new workflow)
