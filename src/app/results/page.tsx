@@ -294,9 +294,6 @@ export default function ResultsPage() {
                           {major.description && major.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{major.description}</p>
                           )}
-                          {major.department && major.department !== 'N/A' && (
-                            <p className="text-sm text-gray-500">Department: {major.department}</p>
-                          )}
                           {major.requirements && major.requirements.length > 0 && major.requirements[0] !== 'N/A' && (
                             <div className="mt-2">
                               <h4 className="text-sm font-semibold text-gray-700">Requirements:</h4>
