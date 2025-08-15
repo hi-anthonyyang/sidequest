@@ -240,7 +240,7 @@ function enrichWithTopUps(
     
     // Add fallback careers to the list
     for (const fallback of fallbackCareers) {
-      careers.push(fallback as any);
+      careers.push(fallback as AssessmentResults['careers'][number]);
     }
   }
 
