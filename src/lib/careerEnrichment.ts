@@ -1,4 +1,5 @@
 import { CareerPath } from '@/lib/types';
+import { mapCareerToSOC, getOccupationBySOC } from '@/lib/socMapping';
 
 interface CareerOneStopResponse {
   OccupationDetail?: Array<{
@@ -69,21 +70,16 @@ function mapGrowthOutlook(brightOutlook?: string): string {
   return 'Stable'; // Default fallback
 }
 
-async function fetchCareerData(careerTitle: string): Promise<EnrichedCareerData | null> {
+async function fetchCareerDataBySOC(socCode: string, careerTitle: string): Promise<EnrichedCareerData | null> {
   const userId = process.env.CAREERONESTOP_USER_ID;
   const token = process.env.CAREERONESTOP_API_TOKEN;
   
   if (!userId || !token) {
-    console.warn('CareerOneStop API credentials not configured');
     return null;
   }
 
   try {
-    // Clean career title for API call
-    const cleanTitle = careerTitle.replace(/[^\w\s]/g, '').trim();
-    const encodedTitle = encodeURIComponent(cleanTitle);
-    
-    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${encodedTitle}/US?wages=true&outlook=true&education=true`;
+    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${socCode}/US?wages=true&outlook=true&education=true`;
     
     const response = await fetch(url, {
       method: 'GET',
@@ -91,12 +87,10 @@ async function fetchCareerData(careerTitle: string): Promise<EnrichedCareerData 
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',
       },
-      // 3 second timeout to avoid blocking assess endpoint
       signal: AbortSignal.timeout(3000),
     });
 
     if (!response.ok) {
-      console.warn(`CareerOneStop API error: ${response.status} for ${careerTitle}`);
       return null;
     }
 
@@ -120,9 +114,92 @@ async function fetchCareerData(careerTitle: string): Promise<EnrichedCareerData 
     };
     
   } catch (error) {
-    console.warn(`CareerOneStop API call failed for ${careerTitle}:`, error);
     return null;
   }
+}
+
+async function fetchCareerDataByTitle(careerTitle: string): Promise<EnrichedCareerData | null> {
+  const userId = process.env.CAREERONESTOP_USER_ID;
+  const token = process.env.CAREERONESTOP_API_TOKEN;
+  
+  if (!userId || !token) {
+    return null;
+  }
+
+  try {
+    // Clean career title for API call
+    const cleanTitle = careerTitle.replace(/[^\w\s]/g, '').trim();
+    const encodedTitle = encodeURIComponent(cleanTitle);
+    
+    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${encodedTitle}/US?wages=true&outlook=true&education=true`;
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json',
+      },
+      signal: AbortSignal.timeout(3000),
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const data: CareerOneStopResponse = await response.json();
+    const occupation = data.OccupationDetail?.[0];
+    
+    if (!occupation) {
+      return null;
+    }
+
+    // Extract salary data (prefer annual wages)
+    const annualWage = occupation.Wages?.find(w => w.RateType === 'Annual');
+    const salaryMin = annualWage?.Pct10;
+    const salaryMax = annualWage?.Pct90;
+    
+    return {
+      salaryMin,
+      salaryMax,
+      growthOutlook: mapGrowthOutlook(occupation.BrightOutlook),
+      educationLevel: mapEducationLevel(occupation.TypicalEducation),
+    };
+    
+  } catch (error) {
+    return null;
+  }
+}
+
+async function fetchCareerData(careerTitle: string): Promise<EnrichedCareerData | null> {
+  const userId = process.env.CAREERONESTOP_USER_ID;
+  const token = process.env.CAREERONESTOP_API_TOKEN;
+  
+  if (!userId || !token) {
+    console.warn('CareerOneStop API credentials not configured');
+    return null;
+  }
+
+  // Strategy 1: Try SOC code lookup first (more reliable)
+  const socCode = mapCareerToSOC(careerTitle);
+  if (socCode) {
+    const occupation = getOccupationBySOC(socCode);
+    console.log(`Mapped "${careerTitle}" → "${occupation?.Title}" (${socCode})`);
+    
+    const socResult = await fetchCareerDataBySOC(socCode, careerTitle);
+    if (socResult) {
+      return socResult;
+    }
+  }
+  
+  // Strategy 2: Fallback to title-based search
+  console.log(`SOC lookup failed for "${careerTitle}", trying title search`);
+  const titleResult = await fetchCareerDataByTitle(careerTitle);
+  
+  if (!titleResult) {
+    console.warn(`CareerOneStop API: No data found for "${careerTitle}"`);
+  }
+  
+  return titleResult;
 }
 
 export async function enrichCareersWithRealData(careers: CareerPath[]): Promise<CareerPath[]> {
