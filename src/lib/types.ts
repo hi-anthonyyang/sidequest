@@ -40,6 +40,8 @@ export interface CareerPath {
     min: number;
     max: number;
   };
+  growthOutlook?: string;
+  educationLevel?: string;
 }
 
 export interface AssessmentResults {

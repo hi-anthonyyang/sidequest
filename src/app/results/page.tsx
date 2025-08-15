@@ -150,6 +150,26 @@ export default function ResultsPage() {
       ensurePageSpace(descLines.length);
       doc.text(descLines, 22, y);
       y += descLines.length * lineHeight;
+      // Career details in a single line when possible
+      const details = [];
+      if (career.salary && career.salary.min && career.salary.max) {
+        details.push(`Salary: $${career.salary.min.toLocaleString()} - $${career.salary.max.toLocaleString()}`);
+      }
+      if (career.growthOutlook) {
+        details.push(`Growth: ${career.growthOutlook}`);
+      }
+      if (career.educationLevel) {
+        details.push(`Education: ${career.educationLevel}`);
+      }
+      if (details.length > 0) {
+        doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
+        const detailsText = details.join(' | ');
+        const detailsLines = doc.splitTextToSize(detailsText, maxWidth);
+        ensurePageSpace(detailsLines.length);
+        doc.text(detailsLines, 22, y);
+        doc.setTextColor(black[0], black[1], black[2]);
+        y += detailsLines.length * lineHeight;
+      }
       if (career.relatedMajors && career.relatedMajors.length > 0) {
         doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
         const relMajors = 'Related Majors: ' + career.relatedMajors.join(', ');
@@ -158,14 +178,6 @@ export default function ResultsPage() {
         doc.text(relMajorsLines, 22, y);
         doc.setTextColor(black[0], black[1], black[2]);
         y += relMajorsLines.length * lineHeight;
-      }
-      if (career.salary) {
-        doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
-        const salaryText = `Salary Range: $${career.salary.min.toLocaleString()} - $${career.salary.max.toLocaleString()}`;
-        ensurePageSpace();
-        doc.text(salaryText, 22, y);
-        doc.setTextColor(black[0], black[1], black[2]);
-        y += lineHeight;
       }
       y += 2;
     });
@@ -328,14 +340,20 @@ export default function ResultsPage() {
                           {career.description && career.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{career.description}</p>
                           )}
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-gray-500 space-y-1">
+                            <div className="flex flex-wrap gap-4">
+                              {career.salary && career.salary.min && career.salary.max && (
+                                <span>Salary: ${career.salary.min.toLocaleString()} - ${career.salary.max.toLocaleString()}</span>
+                              )}
+                              {career.growthOutlook && (
+                                <span>Growth: {career.growthOutlook}</span>
+                              )}
+                              {career.educationLevel && (
+                                <span>Education: {career.educationLevel}</span>
+                              )}
+                            </div>
                             {career.relatedMajors && career.relatedMajors.length > 0 && career.relatedMajors[0] !== 'N/A' && (
                               <p>Related Majors: {career.relatedMajors.filter(m => m && m !== 'N/A').join(', ')}</p>
-                            )}
-                            {career.salary && career.salary.min && career.salary.max && (
-                              <p>
-                                Salary Range: ${career.salary.min.toLocaleString()} - ${career.salary.max.toLocaleString()}
-                              </p>
                             )}
                           </div>
                         </div>

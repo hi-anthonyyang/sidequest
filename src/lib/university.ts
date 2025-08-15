@@ -71,7 +71,7 @@ When analyzing student responses, identify:
 
 2. Career Paths (exactly 5):
    - Each must connect to at least one recommended major.
-   - Keep each description concise (<= 140 characters).
+   - Keep each description concise (<= 250 characters).
    - Include salary (min/max) only if you return numbers; otherwise omit the field.
 
 3. Organizations (3–5):
