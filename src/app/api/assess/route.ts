@@ -201,15 +201,8 @@ function enrichWithTopUps(
   }
 
   const careers = Array.isArray(rec.careers) ? [...rec.careers] : [];
-  if (careers.length < 5) {
-    const existingTitles = new Set(careers.map((c) => c.title));
-    const derived = majors
-      .map((m) => ({ title: `${m.name} Career`, description: `Pathways related to ${m.name}.`, relatedMajors: [m.name] }))
-      .filter((d) => !existingTitles.has(d.title))
-      .map((d) => ({ d, s: (majorScores.get(d.relatedMajors[0]) || 0) + score(d.title) }))
-      .sort((a, b) => b.s - a.s);
-    for (const c of derived) { careers.push(c.d as unknown as AssessmentResults['careers'][number]); if (careers.length >= 5) break; }
-  }
+  // Note: Skip career top-ups to avoid generating degree-based titles
+  // LLM should provide 5 careers with proper job titles
 
   const organizations = Array.isArray(rec.organizations) ? [...rec.organizations] : [];
   if (organizations.length < 3) {
