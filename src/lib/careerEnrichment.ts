@@ -70,7 +70,7 @@ function mapGrowthOutlook(brightOutlook?: string): string {
   return 'Stable'; // Default fallback
 }
 
-async function fetchCareerDataBySOC(socCode: string, careerTitle: string): Promise<EnrichedCareerData | null> {
+async function fetchCareerDataBySOC(socCode: string): Promise<EnrichedCareerData | null> {
   const userId = process.env.CAREERONESTOP_USER_ID;
   const token = process.env.CAREERONESTOP_API_TOKEN;
   
@@ -113,7 +113,7 @@ async function fetchCareerDataBySOC(socCode: string, careerTitle: string): Promi
       educationLevel: mapEducationLevel(occupation.TypicalEducation),
     };
     
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -165,7 +165,7 @@ async function fetchCareerDataByTitle(careerTitle: string): Promise<EnrichedCare
       educationLevel: mapEducationLevel(occupation.TypicalEducation),
     };
     
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -185,7 +185,7 @@ async function fetchCareerData(careerTitle: string): Promise<EnrichedCareerData 
     const occupation = getOccupationBySOC(socCode);
     console.log(`Mapped "${careerTitle}" → "${occupation?.Title}" (${socCode})`);
     
-    const socResult = await fetchCareerDataBySOC(socCode, careerTitle);
+    const socResult = await fetchCareerDataBySOC(socCode);
     if (socResult) {
       return socResult;
     }
