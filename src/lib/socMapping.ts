@@ -1,4 +1,4 @@
-import occupationData from '@/../../public/data/onet/json/Occupation Data_Occupation_Data.json';
+import occupationData from '../../public/data/onet/json/Occupation Data_Occupation_Data.json';
 
 interface OccupationEntry {
   'O*NET-SOC Code': string;
