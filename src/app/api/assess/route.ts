@@ -201,8 +201,48 @@ function enrichWithTopUps(
   }
 
   const careers = Array.isArray(rec.careers) ? [...rec.careers] : [];
-  // Note: Skip career top-ups to avoid generating degree-based titles
-  // LLM should provide 5 careers with proper job titles
+  
+  // If LLM provided fewer than 5 careers, add fallback careers with proper job titles
+  if (careers.length < 5) {
+    const existingTitles = new Set(careers.map((c) => c.title));
+    
+    // Map majors to realistic career titles (not degree-based)
+    const majorToCareerMap: Record<string, string[]> = {
+      'Psychology': ['Clinical Psychologist', 'School Counselor', 'Human Resources Specialist'],
+      'Business': ['Marketing Manager', 'Financial Analyst', 'Operations Manager'],
+      'Communication': ['Public Relations Specialist', 'Social Media Manager', 'Content Writer'],
+      'Art': ['Graphic Designer', 'Art Therapist', 'Museum Curator'],
+      'Computer Science': ['Software Engineer', 'Data Analyst', 'UX Designer'],
+      'Biology': ['Research Scientist', 'Healthcare Administrator', 'Environmental Consultant'],
+      'Education': ['Elementary Teacher', 'Curriculum Developer', 'Education Administrator'],
+      'History': ['Historian', 'Archivist', 'Museum Director'],
+      'Sociology': ['Social Worker', 'Community Organizer', 'Policy Analyst'],
+      'Economics': ['Economic Analyst', 'Financial Advisor', 'Market Research Analyst']
+    };
+    
+    // Generate careers based on recommended majors
+    const fallbackCareers: Array<{ title: string; description: string; relatedMajors: string[] }> = [];
+    for (const major of majors.slice(0, 3)) { // Use top 3 majors
+      const majorField = major.name.split(',')[0].trim(); // Extract field from "Psychology, B.A."
+      const careerOptions = majorToCareerMap[majorField] || [`${majorField} Specialist`];
+      
+      for (const careerTitle of careerOptions) {
+        if (!existingTitles.has(careerTitle) && fallbackCareers.length < (5 - careers.length)) {
+          fallbackCareers.push({
+            title: careerTitle,
+            description: `Professional opportunities in ${majorField.toLowerCase()} that utilize skills and knowledge from the ${major.name} program.`,
+            relatedMajors: [major.name]
+          });
+          existingTitles.add(careerTitle);
+        }
+      }
+    }
+    
+    // Add fallback careers to the list
+    for (const fallback of fallbackCareers) {
+      careers.push(fallback as any);
+    }
+  }
 
   const organizations = Array.isArray(rec.organizations) ? [...rec.organizations] : [];
   if (organizations.length < 3) {
