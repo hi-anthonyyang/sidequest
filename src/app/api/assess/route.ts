@@ -8,6 +8,7 @@ import { saveAssessmentRecord } from '@/lib/assessStore';
 import { saveAssessmentMetric, refreshDailyRollupFor } from '@/lib/metricsStore';
 import { runSelector, materializeSelection } from '@/lib/selector';
 import { fillMissingDescriptions } from '@/lib/describe';
+import { enrichCareersWithRealData } from '@/lib/careerEnrichment';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -100,6 +101,13 @@ export async function POST(request: Request) {
       } catch {}
     } else {
       normalized = enrichWithTopUps(answers, uniData, (rec as AssessmentResults) || { majors: [], careers: [], organizations: [], events: [] });
+    }
+
+    // Enrich careers with real salary, growth, and education data
+    try {
+      normalized.careers = await enrichCareersWithRealData(normalized.careers);
+    } catch {
+      // Continue with original career data if enrichment fails
     }
 
     // Persist (best-effort)
