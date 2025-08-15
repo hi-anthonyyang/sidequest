@@ -69,12 +69,9 @@ When analyzing student responses, identify:
    - Provide 2-3 detailed sentences describing the major, career prospects, and key skills.
    - Include department and up to 2 short requirement bullets.
 
-2. Career Paths (exactly 5):
-   - CRITICAL: Use ONLY specific job titles like "Graphic Designer", "Social Worker", "Marketing Manager". 
-   - NEVER use format like "Art, B.A. Career" or "Major Name + Career" - these are invalid.
-   - Each must connect to at least one recommended major.
-   - REQUIRED: Provide 2-3 detailed sentences describing the role, responsibilities, and growth opportunities.
-   - Include salary (min/max) only if you return numbers; otherwise omit the field.
+2. Career Paths:
+   - DO NOT GENERATE CAREERS. Leave the careers array empty: "careers": []
+   - Careers will be automatically generated based on your major recommendations using official O*NET data.
 
 3. Organizations (3–5):
    - Must be from the official organizations list. Include category and website if available.
@@ -105,17 +102,7 @@ Format your response as a JSON object with the following structure (fields optio
       "requirements": ["string"]
     }
   ],
-  "careers": [
-    {
-      "title": "string (MUST be specific job title like 'Graphic Designer', 'Social Worker', NEVER 'Art, B.A. Career')",
-      "description": "string (REQUIRED: 2-3 detailed sentences about the role)",
-      "relatedMajors": ["string"],
-      "salary": {
-        "min": number,
-        "max": number
-      }
-    }
-  ],
+  "careers": [],
   "organizations": [
     {
       "name": "string",
