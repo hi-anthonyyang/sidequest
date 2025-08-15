@@ -5,14 +5,21 @@ interface CareerOneStopResponse {
   OccupationDetail?: Array<{
     OnetTitle?: string;
     OnetCode?: string;
-    TypicalEducation?: string;
     BrightOutlook?: string;
-    Wages?: Array<{
-      RateType?: string;
-      Median?: number;
-      Pct10?: number;
-      Pct90?: number;
-    }>;
+    Wages?: {
+      NationalWagesList?: Array<{
+        RateType?: string;
+        Median?: string;
+        Pct10?: string;
+        Pct90?: string;
+      }>;
+    };
+    EducationTraining?: {
+      EducationType?: Array<{
+        EducationLevel?: string;
+        Value?: string;
+      }>;
+    };
   }>;
 }
 
@@ -24,10 +31,18 @@ interface EnrichedCareerData {
 }
 
 // Map CareerOneStop education codes to readable labels
-function mapEducationLevel(education?: string): string {
-  if (!education) return '';
+function mapEducationLevel(educationTypes?: Array<{EducationLevel?: string; Value?: string}>): string {
+  if (!educationTypes || educationTypes.length === 0) return '';
   
-  const eduLower = education.toLowerCase();
+  // Find the education type with the highest value (most common requirement)
+  const sortedEducation = educationTypes
+    .filter(et => et.EducationLevel && et.Value)
+    .sort((a, b) => parseFloat(b.Value!) - parseFloat(a.Value!));
+  
+  const topEducation = sortedEducation[0]?.EducationLevel;
+  if (!topEducation) return '';
+  
+  const eduLower = topEducation.toLowerCase();
   
   if (eduLower.includes('high school') || eduLower.includes('no formal')) {
     return 'High school';
@@ -48,7 +63,7 @@ function mapEducationLevel(education?: string): string {
     return 'Doctoral degree';
   }
   
-  return education; // Return original if no match
+  return topEducation; // Return original if no match
 }
 
 // Map growth outlook to 1-2 word labels
@@ -79,18 +94,21 @@ async function fetchCareerDataBySOC(socCode: string): Promise<EnrichedCareerData
   }
 
   try {
-    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${socCode}/US?wages=true&outlook=true&education=true`;
+    // Use correct API endpoint with required query parameters
+    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${socCode}/US?wages=true&training=true&projectedEmployment=true`;
     
     const response = await fetch(url, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',
+        'Content-Type': 'application/json',
       },
-      signal: AbortSignal.timeout(3000),
+      signal: AbortSignal.timeout(5000),
     });
 
     if (!response.ok) {
+      console.warn(`CareerOneStop API error for SOC ${socCode}:`, response.status, response.statusText);
       return null;
     }
 
@@ -101,19 +119,20 @@ async function fetchCareerDataBySOC(socCode: string): Promise<EnrichedCareerData
       return null;
     }
 
-    // Extract salary data (prefer annual wages)
-    const annualWage = occupation.Wages?.find(w => w.RateType === 'Annual');
-    const salaryMin = annualWage?.Pct10;
-    const salaryMax = annualWage?.Pct90;
+    // Extract salary data from NationalWagesList (prefer Annual wages)
+    const annualWage = occupation.Wages?.NationalWagesList?.find(w => w.RateType === 'Annual');
+    const salaryMin = annualWage?.Pct10 ? parseFloat(annualWage.Pct10) : undefined;
+    const salaryMax = annualWage?.Pct90 ? parseFloat(annualWage.Pct90) : undefined;
     
     return {
       salaryMin,
       salaryMax,
       growthOutlook: mapGrowthOutlook(occupation.BrightOutlook),
-      educationLevel: mapEducationLevel(occupation.TypicalEducation),
+      educationLevel: mapEducationLevel(occupation.EducationTraining?.EducationType),
     };
     
-  } catch {
+  } catch (error) {
+    console.warn(`CareerOneStop API request failed for SOC ${socCode}:`, error);
     return null;
   }
 }
@@ -131,18 +150,20 @@ async function fetchCareerDataByTitle(careerTitle: string): Promise<EnrichedCare
     const cleanTitle = careerTitle.replace(/[^\w\s]/g, '').trim();
     const encodedTitle = encodeURIComponent(cleanTitle);
     
-    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${encodedTitle}/US?wages=true&outlook=true&education=true`;
+    const url = `https://api.careeronestop.org/v1/occupation/${userId}/${encodedTitle}/US?wages=true&training=true&projectedEmployment=true`;
     
     const response = await fetch(url, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/json',
+        'Content-Type': 'application/json',
       },
-      signal: AbortSignal.timeout(3000),
+      signal: AbortSignal.timeout(5000),
     });
 
     if (!response.ok) {
+      console.warn(`CareerOneStop API error for title "${careerTitle}":`, response.status, response.statusText);
       return null;
     }
 
@@ -153,19 +174,20 @@ async function fetchCareerDataByTitle(careerTitle: string): Promise<EnrichedCare
       return null;
     }
 
-    // Extract salary data (prefer annual wages)
-    const annualWage = occupation.Wages?.find(w => w.RateType === 'Annual');
-    const salaryMin = annualWage?.Pct10;
-    const salaryMax = annualWage?.Pct90;
+    // Extract salary data from NationalWagesList (prefer Annual wages)
+    const annualWage = occupation.Wages?.NationalWagesList?.find(w => w.RateType === 'Annual');
+    const salaryMin = annualWage?.Pct10 ? parseFloat(annualWage.Pct10) : undefined;
+    const salaryMax = annualWage?.Pct90 ? parseFloat(annualWage.Pct90) : undefined;
     
     return {
       salaryMin,
       salaryMax,
       growthOutlook: mapGrowthOutlook(occupation.BrightOutlook),
-      educationLevel: mapEducationLevel(occupation.TypicalEducation),
+      educationLevel: mapEducationLevel(occupation.EducationTraining?.EducationType),
     };
     
-  } catch {
+  } catch (error) {
+    console.warn(`CareerOneStop API request failed for title "${careerTitle}":`, error);
     return null;
   }
 }
