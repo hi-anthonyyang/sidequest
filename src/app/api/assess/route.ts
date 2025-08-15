@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { recordAssess } from '@/lib/metrics';
-import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityId, CareerPath } from '@/lib/types';
+import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityId } from '@/lib/types';
 import { generateCareersFromMajors } from '@/lib/majorToCareer';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
