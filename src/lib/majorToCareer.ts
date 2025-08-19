@@ -1,5 +1,6 @@
 import occupationData from '../../public/data/onet/json/Occupation Data_Occupation_Data.json';
 import { CareerPath, Major } from './types';
+import OpenAI from 'openai';
 
 interface OccupationEntry {
   'O*NET-SOC Code': string;
@@ -202,4 +203,71 @@ export function getSOCCodeForCareer(careerTitle: string): string | null {
     occ.Title.toLowerCase() === careerTitle.toLowerCase()
   );
   return occupation ? occupation['O*NET-SOC Code'] : null;
+}
+
+/**
+ * Generate personalized connections between careers and majors using LLM
+ */
+export async function generateCareerConnections(
+  careers: CareerPath[],
+  studentAnswers: string[],
+  openai: OpenAI
+): Promise<CareerPath[]> {
+  if (careers.length === 0) {
+    return careers;
+  }
+
+  try {
+    const studentText = studentAnswers.join(' ');
+    const careerList = careers.map((career, i) => 
+      `${i + 1}. Major: ${career.relatedMajors[0]}, Career: ${career.title}`
+    ).join('\n');
+
+    const prompt = `You are a career counselor creating personalized connections for a student.
+
+STUDENT'S RESPONSES: "${studentText}"
+
+TASK: For each major-career pair, write an engaging 1-2 sentence connection that:
+- Identifies their expressed interests/strengths from their responses
+- Explains WHY this career path might excite them based on their responses
+- Uses motivating, "you-focused" language that mirrors their voice
+
+EXAMPLES:
+- Your passion for helping others and understanding human behavior makes Psychology ideal for Clinical Psychology - you'll master therapeutic techniques and research methods to transform lives.
+- Your creative problem-solving and love for technology align perfectly with Computer Science leading to Software Development - you'll build innovative solutions that impact millions.
+
+MAJOR-CAREER PAIRS:
+${careerList}
+
+Return ${careers.length} numbered connections (max 180 characters each). Include their actual words when relevant to make them feel heard and understood.`;
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [{ role: 'user', content: prompt }],
+      max_tokens: 400,
+      temperature: 0.7,
+    });
+
+    const response = completion.choices[0]?.message?.content || '';
+    const connections = response
+      .split('\n')
+      .map(line => line.replace(/^\d+\.\s*/, '').trim())
+      .map(line => line.replace(/^["']|["']$/g, '')) // Remove quotes from start/end
+      .filter(Boolean);
+
+    // Apply connections to careers
+    return careers.map((career, index) => ({
+      ...career,
+      majorConnection: connections[index] || 
+        `${career.relatedMajors[0]} provides the foundational knowledge and skills needed for ${career.title}.`
+    }));
+
+  } catch (error) {
+    console.warn('Failed to generate career connections:', error);
+    // Return careers with generic fallback connections
+    return careers.map(career => ({
+      ...career,
+      majorConnection: `${career.relatedMajors[0]} provides the foundational knowledge and skills needed for ${career.title}.`
+    }));
+  }
 }

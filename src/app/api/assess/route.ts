@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { recordAssess } from '@/lib/metrics';
 import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityId } from '@/lib/types';
-import { generateCareersFromMajors } from '@/lib/majorToCareer';
+import { generateCareersFromMajors, generateCareerConnections } from '@/lib/majorToCareer';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import { saveAssessmentRecord } from '@/lib/assessStore';
@@ -116,6 +116,21 @@ export async function POST(request: Request) {
     } catch (error) {
       console.warn('Major-to-career generation failed:', error);
       // Keep existing careers if generation fails
+    }
+
+    // Generate personalized career connections using LLM
+    try {
+      if (normalized.careers && normalized.careers.length > 0) {
+        normalized.careers = await generateCareerConnections(
+          normalized.careers,
+          answers.map(a => a.answer),
+          openai
+        );
+        console.log(`Generated personalized connections for ${normalized.careers.length} careers`);
+      }
+    } catch (error) {
+      console.warn('Career connection generation failed:', error);
+      // Continue with careers without connections
     }
 
     // Enrich careers with real salary, growth, and education data
