@@ -170,6 +170,12 @@ export default function ResultsPage() {
         doc.setTextColor(black[0], black[1], black[2]);
         y += detailsLines.length * lineHeight;
       }
+      if (career.majorConnection) {
+        const connLines = doc.splitTextToSize(career.majorConnection, maxWidth);
+        ensurePageSpace(connLines.length);
+        doc.text(connLines, 22, y);
+        y += connLines.length * lineHeight;
+      }
       if (career.relatedMajors && career.relatedMajors.length > 0) {
         doc.setTextColor(secondaryGray[0], secondaryGray[1], secondaryGray[2]);
         const relMajors = 'Related Majors: ' + career.relatedMajors.join(', ');
@@ -336,6 +342,9 @@ export default function ResultsPage() {
                           </h3>
                           {career.description && career.description !== 'N/A' && (
                             <p className="text-gray-600 mb-2">{career.description}</p>
+                          )}
+                          {career.majorConnection && (
+                            <p className="text-gray-600 mb-2">{career.majorConnection}</p>
                           )}
                           <div className="text-sm text-gray-500 space-y-1">
                             <div className="flex flex-wrap gap-4">

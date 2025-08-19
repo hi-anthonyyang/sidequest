@@ -42,6 +42,7 @@ export interface CareerPath {
   };
   growthOutlook?: string;
   educationLevel?: string;
+  majorConnection?: string;
 }
 
 export interface AssessmentResults {

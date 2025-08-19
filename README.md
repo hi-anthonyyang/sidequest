@@ -126,3 +126,7 @@ This separation keeps the repo root clean and clarifies which data is public ver
 ## License
 
 [Your chosen license]
+
+## Roadmap of work
+1. Users need to understand WHY a career connects to their major.
+2. Allow users to select top 2 careers and generate the journey for each: Entry-level position, mid-career, advanced roles, alternative paths.
