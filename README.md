@@ -2,7 +2,7 @@
 
 Sidequest is a Next.js web application that helps students discover their main and side quests: majors, careers, and campus opportunities that align with their interests and goals.
 
-The experience centers around a short assessment that generates personalized recommendations with the help of OpenAI.
+The experience centers around a short assessment that generates personalized recommendations with the help of OpenAI using an innovative Interest-First workflow.
 
 ## Features
 
@@ -108,9 +108,20 @@ sidequest/
 
 This separation keeps the repo root clean and clarifies which data is public versus app-internal.
 
+## Assessment Workflow
+
+Sidequest uses an **Interest-First workflow** that provides more relevant and engaging recommendations:
+
+1. **Interest Analysis**: Student responses are analyzed to identify career interests and motivations
+2. **Career Matching**: Careers are selected directly from O*NET database based on interests (not rigid major mappings)
+3. **Major Generation**: University majors are then matched to the selected careers using LLM analysis
+4. **Personalized Connections**: Natural connections are generated explaining why each career aligns with student interests
+
+This approach ensures students receive career recommendations that genuinely match their interests, with majors that actually lead to those careers.
+
 ## API overview
 
-- `POST /api/assess` (App Router): accepts `{ answers, universityId }` and returns recommendations
+- `POST /api/assess` (App Router): accepts `{ answers, universityId }` and returns recommendations using Interest-First workflow
 - `POST /api/differentiate` (App Router): generates assignment variations (feature in progress)
 - `GET /api/majors-count` (App Router): returns `{ count }` used by counters
 - `POST /api/skills/search` (App Router): skill search over O*NET datasets

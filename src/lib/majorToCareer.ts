@@ -10,190 +10,7 @@ interface OccupationEntry {
 
 const occupations = occupationData as OccupationEntry[];
 
-/**
- * Major field to O*NET occupation mapping
- * Maps academic fields to relevant SOC codes
- */
-const MAJOR_TO_SOC_MAP: Record<string, string[]> = {
-  // Psychology
-  'Psychology': ['19-3033.00', '21-1014.00', '13-1071.00', '25-2012.00'], // Clinical Psychologists, Mental Health Counselors, HR Specialists, Elementary Teachers
-  
-  // Business & Management  
-  'Business': ['11-2021.00', '13-2051.00', '11-1021.00', '13-1161.00'], // Marketing Managers, Financial Analysts, General Managers, Market Research Analysts
-  'Business Administration': ['11-2021.00', '13-2051.00', '11-1021.00', '13-1161.00'],
-  'Marketing': ['11-2021.00', '13-1161.00', '27-3031.00'], // Marketing Managers, Market Research Analysts, Public Relations Specialists
-  'Finance': ['13-2051.00', '13-2052.00', '13-2061.00'], // Financial Analysts, Personal Financial Advisors, Financial Examiners
-  
-  // Communication & Media
-  'Communication': ['27-3031.00', '27-3042.00', '27-1024.00'], // Public Relations Specialists, Technical Writers, Graphic Designers  
-  'Journalism': ['27-3022.00', '27-3041.00', '27-4032.00'], // Reporters, Editors, Film/Video Editors
-  
-  // Arts & Design
-  'Art': ['27-1024.00', '29-1129.01', '25-4012.00'], // Graphic Designers, Art Therapists, Curators
-  'Graphic Design': ['27-1024.00', '27-1014.00', '15-1255.00'], // Graphic Designers, Multimedia Artists, Web Designers
-  
-  // Computer Science & Technology
-  'Computer Science': ['15-1252.00', '15-1211.00', '15-1255.00', '15-1244.00'], // Software Developers, Computer Systems Analysts, Web Developers, Database Administrators
-  'Information Technology': ['15-1244.00', '15-1142.00', '15-1211.00'], // Database Administrators, Network Support Specialists, Computer Systems Analysts
-  
-  // Sciences
-  'Biology': ['19-1042.00', '29-9011.00', '19-4021.00'], // Medical Scientists, Occupational Health Specialists, Biological Technicians
-  'Chemistry': ['19-2031.00', '19-4031.00', '15-2041.00'], // Chemists, Chemical Technicians, Statisticians
-  'Environmental Science': ['19-2041.00', '17-2081.00', '19-4042.00'], // Environmental Scientists, Environmental Engineers, Environmental Technicians
-  
-  // Education
-  'Education': ['25-2021.00', '25-2012.00', '11-9032.00'], // Elementary Teachers, Kindergarten Teachers, Education Administrators
-  'Elementary Education': ['25-2021.00', '25-2012.00'], // Elementary Teachers, Kindergarten Teachers
-  
-  // Social Sciences
-  'Sociology': ['21-1023.00', '19-3041.00', '21-1093.00'], // Mental Health/Substance Abuse Social Workers, Sociologists, Social/Human Service Assistants
-  'Social Work': ['21-1023.00', '21-1021.00', '21-1093.00'], // Mental Health Social Workers, Child/Family Social Workers, Social Service Assistants
-  'Political Science': ['19-3094.00', '23-2011.00', '25-1065.00'], // Political Scientists, Paralegals, Political Science Teachers
-  'History': ['25-1125.00', '25-4012.00', '27-3022.00'], // History Teachers, Curators, Reporters
-  'Anthropology': ['19-3091.00', '25-4012.00', '19-3093.00'], // Anthropologists, Curators, Historians
-  
-  // Economics & Statistics
-  'Economics': ['19-3011.00', '13-2051.00', '15-2041.00'], // Economists, Financial Analysts, Statisticians
-  
-  // Health Sciences
-  'Nursing': ['29-1141.00', '29-1151.00', '29-1171.00'], // Registered Nurses, Nurse Anesthetists, Nurse Practitioners
-  'Public Health': ['19-1041.00', '21-1022.00', '29-9011.00'], // Epidemiologists, Healthcare Social Workers, Occupational Health Specialists
-  
-  // Engineering (common fields)
-  'Engineering': ['17-2141.00', '17-2051.00', '17-2112.00'], // Mechanical Engineers, Civil Engineers, Industrial Engineers
-  'Civil Engineering': ['17-2051.00', '17-3022.00'], // Civil Engineers, Civil Engineering Technicians
-  'Mechanical Engineering': ['17-2141.00', '17-3027.00'], // Mechanical Engineers, Mechanical Engineering Technicians
-  
-  // Agriculture & Life Sciences
-  'Agricultural Business': ['11-9013.00', '13-1051.00', '25-9021.00'], // Farm Managers, Cost Estimators, Farm/Home Management Advisors
-  'Animal Science': ['19-1011.00', '29-1131.00', '19-4021.00'], // Animal Scientists, Veterinarians, Biological Technicians
-  'Agriculture': ['11-9013.00', '19-1011.00', '25-9021.00'], // Farm Managers, Animal Scientists, Agricultural Advisors
-  
-  // Architecture & Design
-  'Architecture': ['17-1011.00', '17-3011.00', '27-1025.00'], // Architects, Architectural Drafters, Interior Designers
-  'Architectural Studies': ['17-1011.00', '17-3011.00', '27-1025.00'], // Architects, Architectural Drafters, Interior Designers
-  
-  // Specialized Sciences
-  'Biochemistry': ['19-1021.00', '19-2031.00', '19-1042.00'], // Biochemists, Chemists, Medical Scientists
-  'Physics': ['19-2012.00', '25-1054.00', '17-2199.00'], // Physicists, Physics Teachers, Engineers
-  'Mathematics': ['15-2021.00', '25-1022.00', '15-2041.00'], // Mathematicians, Math Teachers, Statisticians
-  
-  // Ethnic & Cultural Studies
-  'Africana Studies': ['25-1062.00', '19-3093.00', '27-3022.00'], // Area Studies Teachers, Historians, Reporters
-  'Ethnic Studies': ['25-1062.00', '19-3093.00', '21-1093.00'], // Area Studies Teachers, Historians, Social Service Assistants
-  
-  // Liberal Arts & Humanities  
-  'Liberal Arts': ['25-1123.00', '27-3041.00', '13-1151.00'], // English Teachers, Editors, Training Specialists
-  'Philosophy': ['25-1126.00', '23-1011.00', '27-3041.00'], // Philosophy Teachers, Lawyers, Editors
-  'Religious Studies': ['21-2011.00', '25-1126.00', '21-1093.00'] // Clergy, Philosophy Teachers, Social Service Assistants
-};
 
-/**
- * Smart fallback mapping for unmapped major fields
- */
-const FALLBACK_MAPPING: Record<string, string> = {
-  // Agriculture-related
-  'Agricultural': 'Agriculture',
-  'Farm': 'Agriculture',
-  'Ranch': 'Agriculture',
-  
-  // Animal-related
-  'Animal': 'Animal Science',
-  'Veterinary': 'Animal Science',
-  'Dairy': 'Animal Science',
-  'Livestock': 'Animal Science',
-  
-  // Studies/Cultural fields
-  'Studies': 'Liberal Arts',
-  'Cultural': 'Ethnic Studies',
-  
-  // Science fields
-  'Science': 'Biology',
-  'Chemistry': 'Chemistry',
-  'Math': 'Mathematics',
-  
-  // Arts fields
-  'Design': 'Art',
-  'Media': 'Communication',
-  'Film': 'Communication',
-  
-  // Education fields
-  'Teaching': 'Education',
-  'Teacher': 'Education',
-};
-
-/**
- * Get careers for a given major using O*NET data
- */
-export function getCareersForMajor(majorName: string): CareerPath[] {
-  // Extract field name from full major title (e.g., "Psychology, B.A." -> "Psychology")
-  const fieldName = majorName.split(',')[0].trim();
-  
-  // Try direct mapping first
-  let socCodes = MAJOR_TO_SOC_MAP[fieldName] || [];
-  
-  // If no direct match, try fallback mapping
-  if (socCodes.length === 0) {
-    for (const [keyword, mappedField] of Object.entries(FALLBACK_MAPPING)) {
-      if (fieldName.toLowerCase().includes(keyword.toLowerCase())) {
-        socCodes = MAJOR_TO_SOC_MAP[mappedField] || [];
-        console.log(`Fallback mapping: "${fieldName}" → "${mappedField}"`);
-        break;
-      }
-    }
-  }
-  
-  // If still no match, use generic Liberal Arts mapping
-  if (socCodes.length === 0) {
-    socCodes = MAJOR_TO_SOC_MAP['Liberal Arts'] || [];
-    console.log(`Generic fallback: "${fieldName}" → Liberal Arts careers`);
-  }
-  
-  // Find matching occupations in O*NET data
-  const careers: CareerPath[] = [];
-  
-  for (const socCode of socCodes) {
-    const occupation = occupations.find(occ => occ['O*NET-SOC Code'] === socCode);
-    if (occupation && careers.length < 8) { // Get up to 8 per major for variety
-      careers.push({
-        title: occupation.Title,
-        description: occupation.Description || `Professional opportunities in ${fieldName.toLowerCase()} utilizing specialized knowledge and skills.`,
-        relatedMajors: [majorName],
-        // These will be filled by CareerOneStop API
-        salary: undefined,
-        growthOutlook: undefined,
-        educationLevel: undefined
-      });
-    }
-  }
-  
-  return careers;
-}
-
-/**
- * Generate careers from multiple majors, ensuring diversity and relevance
- */
-export function generateCareersFromMajors(majors: Major[]): CareerPath[] {
-  const allCareers: CareerPath[] = [];
-  const seenTitles = new Set<string>();
-  
-  // Get careers for each major
-  for (const major of majors) {
-    const majorCareers = getCareersForMajor(major.name);
-    
-    // Add unique careers (avoid duplicates across majors)
-    for (const career of majorCareers) {
-      if (!seenTitles.has(career.title) && allCareers.length < 15) {
-        allCareers.push(career);
-        seenTitles.add(career.title);
-      }
-    }
-  }
-  
-  // Return top 5 most relevant careers
-  // Prioritize careers that match multiple majors or are from top majors
-  return allCareers.slice(0, 5);
-}
 
 /**
  * Get SOC code for a career title (for CareerOneStop API)
@@ -203,6 +20,242 @@ export function getSOCCodeForCareer(careerTitle: string): string | null {
     occ.Title.toLowerCase() === careerTitle.toLowerCase()
   );
   return occupation ? occupation['O*NET-SOC Code'] : null;
+}
+
+/**
+ * Generate careers directly from student interests using O*NET database
+ * This is the new Interest-First approach
+ */
+export async function generateCareersFromInterests(
+  studentAnswers: string[],
+  openai: OpenAI
+): Promise<CareerPath[]> {
+  if (!studentAnswers || studentAnswers.length === 0) {
+    return [];
+  }
+
+  try {
+    const studentText = studentAnswers.join(' ');
+    
+    // Create a focused sample of careers for LLM to choose from
+    const careerSample = occupations.slice(0, 200).map(occ => ({
+      code: occ['O*NET-SOC Code'],
+      title: occ.Title,
+      description: occ.Description.substring(0, 150) + '...'
+    }));
+
+    const prompt = `You are a career counselor analyzing a student's interests to recommend careers.
+
+STUDENT'S RESPONSES: "${studentText}"
+
+TASK: From the career list below, select the 5 careers that BEST match your expressed interests, personality, and goals.
+
+Focus on:
+- What activities you enjoy (hands-on, creative, analytical, helping people, etc.)
+- Your work style preferences (team vs individual, structured vs flexible)
+- Your motivations and values
+- Skills you want to develop or use
+
+AVAILABLE CAREERS:
+${careerSample.map((career, i) => `${i + 1}. ${career.title} (${career.code}): ${career.description}`).join('\n')}
+
+Return EXACTLY 5 career selections in this JSON format:
+{
+  "careers": [
+    {
+      "title": "Career Title",
+      "socCode": "XX-XXXX.XX",
+      "matchReason": "Brief explanation of why this matches your interests (max 420 chars)"
+    }
+  ]
+}
+
+Choose careers that genuinely align with your responses, not generic ones.`;
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [{ role: 'user', content: prompt }],
+      max_tokens: 1200, // Increased for longer matchReason descriptions
+      temperature: 0.7,
+      response_format: { type: 'json_object' }
+    });
+
+    const response = completion.choices[0]?.message?.content || '';
+    const parsed = JSON.parse(response);
+    
+    if (!parsed.careers || !Array.isArray(parsed.careers)) {
+      throw new Error('Invalid response format');
+    }
+
+    // Convert to CareerPath format
+    const careers: CareerPath[] = parsed.careers.slice(0, 5).map((career: { title: string; socCode: string; matchReason: string }) => {
+      const occupation = occupations.find(occ => occ['O*NET-SOC Code'] === career.socCode);
+      
+      return {
+        title: career.title,
+        description: occupation?.Description || career.matchReason || 'Career opportunity based on your interests.',
+        relatedMajors: [], // Will be filled in Phase 2
+        majorConnection: career.matchReason || `This career aligns with your expressed interests and goals.`,
+        // These will be enriched later
+        salary: undefined,
+        growthOutlook: undefined,
+        educationLevel: undefined
+      };
+    });
+
+    console.log(`Generated ${careers.length} careers from student interests`);
+    return careers;
+
+  } catch (error) {
+    console.warn('Interest-to-career generation failed:', error);
+    
+    // Fallback: return a few generic careers
+    return [
+      {
+        title: 'Business Analyst',
+        description: 'Analyze business processes and recommend improvements.',
+        relatedMajors: [],
+        majorConnection: 'This career offers diverse opportunities to apply analytical thinking.',
+        salary: undefined,
+        growthOutlook: undefined,
+        educationLevel: undefined
+      }
+    ];
+  }
+}
+
+
+
+/**
+ * Generate majors from careers using university data
+ * This completes the Interest-First workflow: Interests → Careers → Majors
+ */
+export async function generateMajorsFromCareers(
+  careers: CareerPath[],
+  universityData: { majors: Array<{ name: string; department?: string; description?: string; requirements?: string[] }>; university?: { name?: string } },
+  openai: OpenAI
+): Promise<{ majors: Major[], updatedCareers: CareerPath[] }> {
+  if (!careers || careers.length === 0 || !universityData?.majors) {
+    return { majors: [], updatedCareers: careers };
+  }
+
+  try {
+    // Extract available majors from university
+    const availableMajors = universityData.majors.map((major) => ({
+      name: major.name,
+      department: major.department || '',
+      description: major.description || `${major.name} program at ${universityData.university?.name || 'this university'}.`,
+      requirements: major.requirements || []
+    }));
+
+    const careerList = careers.map(career => 
+      `${career.title}: ${career.description.substring(0, 100)}...`
+    ).join('\n');
+
+    const majorList = availableMajors.map((major, i: number) => 
+      `${i + 1}. ${major.name} (${major.department})`
+    ).join('\n');
+
+    const prompt = `You are an academic advisor helping a student choose majors based on their career interests.
+
+STUDENT'S CAREER INTERESTS:
+${careerList}
+
+AVAILABLE MAJORS AT THIS UNIVERSITY:
+${majorList}
+
+TASK: Select the 3-5 majors that would BEST prepare you for your career interests.
+
+Consider:
+- Which majors provide the foundational knowledge and skills needed for these careers
+- Academic pathways that lead to these career opportunities
+- Interdisciplinary connections between majors and careers
+
+Return in this JSON format:
+{
+  "majors": [
+    {
+      "name": "Exact Major Name",
+      "description": "Clear, informative 2-3 sentence description of what students will learn, skills they'll develop, and career opportunities this major provides. Connect it to their interests and be specific about outcomes.",
+      "relevanceReason": "Brief explanation of how this major connects to their careers (max 420 chars)"
+    }
+  ],
+  "careerMajorConnections": [
+    {
+      "careerTitle": "Exact Career Title",
+      "connectedMajors": ["Major Name 1", "Major Name 2"]
+    }
+  ]
+}
+
+Choose majors that genuinely connect to the careers, not just popular ones. Make descriptions informative and straightforward, focusing on practical skills and career preparation rather than exciting language.`;
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [{ role: 'user', content: prompt }],
+      max_tokens: 1000, // Increased for richer major descriptions
+      temperature: 0.7,
+      response_format: { type: 'json_object' }
+    });
+
+    const response = completion.choices[0]?.message?.content || '';
+    const parsed = JSON.parse(response);
+
+    if (!parsed.majors || !Array.isArray(parsed.majors)) {
+      throw new Error('Invalid response format');
+    }
+
+    // Convert to Major format
+    const selectedMajors: Major[] = parsed.majors.slice(0, 5).map((major: { name: string; description: string; relevanceReason: string }) => {
+      const universityMajor = availableMajors.find((um) => 
+        um.name.toLowerCase().includes(major.name.toLowerCase()) ||
+        major.name.toLowerCase().includes(um.name.toLowerCase())
+      );
+
+      return {
+        name: universityMajor?.name || major.name,
+        department: universityMajor?.department || '',
+        // Use LLM-generated rich description, fallback to university description, then generic
+        description: major.description || universityMajor?.description || `${major.name} provides comprehensive education and training in this field, preparing students for diverse career opportunities.`,
+        requirements: universityMajor?.requirements || []
+      };
+    });
+
+    // Update careers with related majors
+    const updatedCareers: CareerPath[] = careers.map(career => {
+      const connections = parsed.careerMajorConnections?.find((conn: { careerTitle: string; connectedMajors: string[] }) => 
+        conn.careerTitle === career.title
+      );
+      
+      const relatedMajors = connections?.connectedMajors || [selectedMajors[0]?.name || ''];
+      
+      return {
+        ...career,
+        relatedMajors: relatedMajors.filter(Boolean)
+      };
+    });
+
+    console.log(`Generated ${selectedMajors.length} majors from ${careers.length} careers`);
+    return { majors: selectedMajors, updatedCareers };
+
+  } catch (error) {
+    console.warn('Career-to-major generation failed:', error);
+    
+    // Fallback: return a few generic majors
+    const fallbackMajors = universityData.majors.slice(0, 3).map((major) => ({
+      name: major.name,
+      department: major.department || '',
+      description: major.description || `${major.name} provides comprehensive education and training in this field, preparing students for diverse career opportunities.`,
+      requirements: major.requirements || []
+    }));
+
+    const updatedCareers = careers.map(career => ({
+      ...career,
+      relatedMajors: [fallbackMajors[0]?.name || 'General Studies']
+    }));
+
+    return { majors: fallbackMajors, updatedCareers };
+  }
 }
 
 /**
@@ -228,9 +281,9 @@ export async function generateCareerConnections(
 STUDENT'S RESPONSES: "${studentText}"
 
 TASK: For each major-career pair, write an engaging 1-2 sentence connection that:
-- Identifies their expressed interests/strengths from their responses
-- Explains WHY this career path might excite them based on their responses
-- Uses motivating, "you-focused" language that mirrors their voice
+- Identifies your expressed interests/strengths from your responses
+- Explains WHY this career path might excite you based on your responses  
+- Uses motivating, direct "you" language that mirrors your voice
 
 EXAMPLES:
 - Your passion for helping others and understanding human behavior makes Psychology ideal for Clinical Psychology - you'll master therapeutic techniques and research methods to transform lives.
@@ -239,12 +292,12 @@ EXAMPLES:
 MAJOR-CAREER PAIRS:
 ${careerList}
 
-Return ${careers.length} numbered connections (max 180 characters each). Include their actual words when relevant to make them feel heard and understood.`;
+Return ${careers.length} numbered connections (max 420 characters each). Use direct "you" language and include your actual words when relevant to make you feel heard and understood.`;
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
       messages: [{ role: 'user', content: prompt }],
-      max_tokens: 400,
+      max_tokens: 800, // Increased for longer career connections
       temperature: 0.7,
     });
 

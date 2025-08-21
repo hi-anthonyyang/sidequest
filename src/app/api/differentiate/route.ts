@@ -24,7 +24,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // (removed verbose logging of request body)
+
 
     const strategiesList = strategies.join(', ');
     const evenSplitInstruction = (strategies.length === numVariations && strategies.length > 1)

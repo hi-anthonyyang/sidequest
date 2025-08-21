@@ -42,12 +42,9 @@ ${orgsList}
 ### Official Events
 ${eventsList}
 
-- Recommend at least 3 and up to 5 majors from the official majors list above, prioritizing those that are most relevant to the student's interests and the recommended career paths. If fewer than 3 majors are directly relevant, include the closest or most broadly applicable majors from the official list, but do not invent or guess new majors.
-- For every career path you recommend, ensure that at least one of the recommended majors is a valid, common, or closely related pathway to that career, based on the official majors list above. A 'closely related' major is one that is commonly accepted as a pathway to the career, or that provides broadly applicable skills or knowledge for that field.
-- The "relatedMajors" field for each career must only include majors from the official majors list above.
-- Do not recommend career paths that have no reasonable or related major available at the institution.
+- Recommend at least 3 and up to 5 majors from the official majors list above, prioritizing those that are most relevant to the student's interests. If fewer than 3 majors are directly relevant, include the closest or most broadly applicable majors from the official list, but do not invent or guess new majors.
 - If any field (description, date, location, etc.) is missing or empty in the official data, leave it blank or use "N/A". Do not invent or guess information.
-- When recommending a career path that does not have a direct major, briefly explain how a related major could prepare a student for that path.
+
 - Relevance is more important than quantity: if you cannot find 3 truly relevant majors, recommend only those that are genuinely applicable, even if fewer than 3.
 
 ### Core Purpose
@@ -71,7 +68,7 @@ When analyzing student responses, identify:
 
 2. Career Paths:
    - DO NOT GENERATE CAREERS. Leave the careers array empty: "careers": []
-   - Careers will be automatically generated based on your major recommendations using official O*NET data.
+   - Careers will be automatically generated based on student interests using official O*NET data.
 
 3. Organizations (3–5):
    - Must be from the official organizations list. Include category and website if available.

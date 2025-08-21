@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { recordAssess } from '@/lib/metrics';
 import type { AssessmentResults, AssessmentResponse, UniversityData, UniversityId } from '@/lib/types';
-import { generateCareersFromMajors, generateCareerConnections } from '@/lib/majorToCareer';
+import { generateCareersFromInterests, generateMajorsFromCareers, generateCareerConnections } from '@/lib/majorToCareer';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import { getUniversityData, getSystemPrompt } from '@/lib/university';
 import { saveAssessmentRecord } from '@/lib/assessStore';
@@ -107,30 +107,52 @@ export async function POST(request: Request) {
       console.warn('Description backfill failed:', error);
     }
 
-    // Generate careers from majors using O*NET data (new workflow)
+    // NEW INTEREST-FIRST WORKFLOW: Generate careers directly from student interests
+    // But preserve organizations and events from LLM if they exist
+    const originalOrganizations = normalized.organizations || [];
+    const originalEvents = normalized.events || [];
+    
     try {
-      if (normalized.majors && normalized.majors.length > 0) {
-        normalized.careers = generateCareersFromMajors(normalized.majors);
-        console.log(`Generated ${normalized.careers.length} careers from ${normalized.majors.length} majors`);
-      }
+      normalized.careers = await generateCareersFromInterests(
+        answers.map(a => a.answer),
+        openai
+      );
+      console.log(`Generated ${normalized.careers.length} careers from student interests`);
     } catch (error) {
-      console.warn('Major-to-career generation failed:', error);
+      console.warn('Interest-to-career generation failed:', error);
       // Keep existing careers if generation fails
     }
 
-    // Generate personalized career connections using LLM
+    // Generate majors from careers (completing the Interest-First workflow)
     try {
       if (normalized.careers && normalized.careers.length > 0) {
+        const { majors, updatedCareers } = await generateMajorsFromCareers(
+          normalized.careers,
+          uniData,
+          openai
+        );
+        normalized.majors = majors;
+        normalized.careers = updatedCareers;
+        console.log(`Generated ${majors.length} majors from ${normalized.careers.length} careers`);
+      }
+    } catch (error) {
+      console.warn('Career-to-major generation failed:', error);
+      // Keep existing majors/careers if generation fails
+    }
+
+    // Enhanced career connections (careers already align with interests, so this adds polish)
+    try {
+      if (normalized.careers && normalized.careers.length > 0 && normalized.careers.some(c => !c.majorConnection)) {
         normalized.careers = await generateCareerConnections(
           normalized.careers,
           answers.map(a => a.answer),
           openai
         );
-        console.log(`Generated personalized connections for ${normalized.careers.length} careers`);
+        console.log(`Enhanced connections for ${normalized.careers.length} careers`);
       }
     } catch (error) {
-      console.warn('Career connection generation failed:', error);
-      // Continue with careers without connections
+      console.warn('Career connection enhancement failed:', error);
+      // Continue with existing connections
     }
 
     // Enrich careers with real salary, growth, and education data
@@ -138,6 +160,15 @@ export async function POST(request: Request) {
       normalized.careers = await enrichCareersWithRealData(normalized.careers);
     } catch {
       // Continue with original career data if enrichment fails
+    }
+
+    // Restore LLM-selected organizations and events if they were better than fallbacks
+    // Only use enrichWithTopUps as fallback when LLM didn't provide good selections
+    if (originalOrganizations.length > 0) {
+      normalized.organizations = originalOrganizations;
+    }
+    if (originalEvents.length > 0) {
+      normalized.events = originalEvents;
     }
 
     // Persist (best-effort)
@@ -218,20 +249,17 @@ function enrichWithTopUps(
   };
 
   const majors = Array.isArray(rec.majors) ? [...rec.majors] : [];
-  const majorScores = new Map<string, number>();
   if (majors.length < 5) {
     const existing = new Set(majors.map((m) => m.name));
     const candidates = uni.majors
       .filter((m) => !existing.has(m.name))
-      .map((m) => { const s = score(`${m.name} ${m.description} ${m.department}`); majorScores.set(m.name, s); return { m, s }; })
+      .map((m) => ({ m, s: score(`${m.name} ${m.description} ${m.department}`) }))
       .sort((a, b) => b.s - a.s);
     for (const c of candidates) { majors.push(c.m); if (majors.length >= 5) break; }
-  } else {
-    for (const m of majors) { majorScores.set(m.name, score(`${m.name} ${m.description} ${m.department}`)); }
   }
 
   const careers = Array.isArray(rec.careers) ? [...rec.careers] : [];
-  // Legacy career fallback logic removed - careers now generated from majors using O*NET data
+
 
   const organizations = Array.isArray(rec.organizations) ? [...rec.organizations] : [];
   if (organizations.length < 3) {
