@@ -220,11 +220,13 @@ export async function POST(request: Request) {
         });
         // Update daily rollup for today (idempotent upsert)
         await refreshDailyRollupFor(new Date());
-      } catch {
-        // ignore metric failures
+      } catch (error) {
+        console.error('Failed to save assessment metrics:', error);
+        // ignore metric failures - don't block the main response
       }
-    } catch {
-      // swallow
+    } catch (error) {
+      console.error('Failed to save assessment to database:', error);
+      // Continue execution - don't fail the request due to DB issues
     }
 
     return NextResponse.json(normalized);

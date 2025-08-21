@@ -9,4 +9,15 @@ export function getSql() {
   return neon(connectionString);
 }
 
+export async function testDatabaseConnection(): Promise<boolean> {
+  try {
+    const sql = getSql();
+    await sql`SELECT 1 as test`;
+    return true;
+  } catch (error) {
+    console.error('Database connection test failed:', error);
+    return false;
+  }
+}
+
 
