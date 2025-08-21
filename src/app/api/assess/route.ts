@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     // Low-signal detection
     const allText = answers.map((a: AssessmentResponse) => (a?.answer || '').trim()).join(' ').toLowerCase();
     const uniqueTokens = new Set(allText.split(/[^a-z0-9]+/).filter(Boolean));
-    const isLowSignal = allText.length < 40 || uniqueTokens.size < 8 || /(.)\1{3,}/.test(allText);
+    const isLowSignal = allText.length < 25 || uniqueTokens.size < 8 || /(.)\1{3,}/.test(allText);
 
     const defaultModel = process.env.OPENAI_ASSESS_MODEL || 'gpt-4o-mini';
     const fallbackModel = process.env.OPENAI_ASSESS_FALLBACK_MODEL || 'gpt-4o';
