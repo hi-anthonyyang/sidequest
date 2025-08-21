@@ -70,7 +70,18 @@ export function materializeSelection(selection: SelectorResult, uni: UniversityD
   const findEvent = (name: string) => uni.events.find(e => e.name === name);
 
   const majors = (selection.majors || [])
-    .map(s => findMajor(s.name))
+    .map(s => {
+      const uniMajor = findMajor(s.name);
+      if (!uniMajor) return null;
+      
+      // Properly map university data to Major interface
+      return {
+        name: uniMajor.name,
+        description: uniMajor.description || `${uniMajor.name} provides comprehensive education and training in this field.`,
+        department: uniMajor.department || '', // Ensure department is preserved
+        requirements: uniMajor.requirements || []
+      };
+    })
     .filter(Boolean) as AssessmentResults['majors'];
 
   const organizations = (selection.organizations || [])

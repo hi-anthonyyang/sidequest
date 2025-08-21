@@ -13,8 +13,6 @@ export default function ResultsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // In a real app, you would fetch the results from your API
-    // For now, we'll simulate loading the results from localStorage
     const storedResults = localStorage.getItem('assessmentResults');
     if (storedResults) {
       setResults(JSON.parse(storedResults));
