@@ -50,9 +50,16 @@ function QuestionsPageClient() {
   const [answers, setAnswers] = useState<AssessmentResponse[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState('');
   const [loading, setLoading] = useState(false);
-  const ETA_MS = 30000; // target perceived wait (ms)
+  const ETA_MS = 35000; // target perceived wait (ms)
   const [etaRemaining, setEtaRemaining] = useState(ETA_MS);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  
+  const loadingPhrases = [
+    "Matching your interests to careers",
+    "Matching your interests to majors", 
+    "Matching your interests with opportunities"
+  ];
 
   // On mount, redirect to home (which forwards to /quests) if universityId is missing
   useEffect(() => {
@@ -64,9 +71,16 @@ function QuestionsPageClient() {
   const handleSubmit = async (finalAnswers = answers) => {
     setLoading(true);
     setEtaRemaining(ETA_MS);
+    setCurrentPhraseIndex(0);
+    
     const ticker = window.setInterval(() => {
       setEtaRemaining((prev) => Math.max(0, prev - 100));
     }, 100);
+    
+    // Rotate phrases every 3 seconds
+    const phraseRotation = window.setInterval(() => {
+      setCurrentPhraseIndex(prev => (prev + 1) % loadingPhrases.length);
+    }, 3000);
     try {
       const response = await fetch('/api/assess', {
         method: 'POST',
@@ -107,6 +121,7 @@ function QuestionsPageClient() {
       setLoading(false);
       setEtaRemaining(0);
       window.clearInterval(ticker);
+      window.clearInterval(phraseRotation);
       console.error('Error submitting assessment:', error);
       // Handle error appropriately
     }
@@ -144,10 +159,12 @@ function QuestionsPageClient() {
       {loading && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90 px-4">
           <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-6" />
-          <p className="text-lg md:text-xl font-semibold text-blue-700 flex items-center justify-center mb-3">
-            Preparing your results
+          <div className="text-lg md:text-xl font-semibold text-blue-700 flex items-center justify-center mb-3 h-8">
+            <div className="transition-all duration-500 ease-in-out transform">
+              {loadingPhrases[currentPhraseIndex]}
+            </div>
             <span className="ml-1 animate-ellipsis">…</span>
-          </p>
+          </div>
           <div className="w-full max-w-sm">
             <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
               <div
