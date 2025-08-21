@@ -107,7 +107,7 @@ export default function ResultsPage() {
       ensurePageSpace();
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(black[0], black[1], black[2]);
-      doc.text(`• ${major.name} (${major.department})`, 18, y);
+      doc.text(`• ${major.name} (Department: ${major.department})`, 18, y);
       y += lineHeight;
       doc.setFont('helvetica', 'normal');
       const descLines = doc.splitTextToSize(major.description, maxWidth);
@@ -292,7 +292,7 @@ export default function ResultsPage() {
                           <h3 className="text-xl font-semibold text-gray-900 mb-2">
                             {major.name}
                             {major.department && major.department !== 'N/A' && (
-                              <span className="text-sm text-gray-500"> ({major.department})</span>
+                              <span className="text-sm text-gray-500"> (Department: {major.department})</span>
                             )}
                           </h3>
                           {major.description && major.description !== 'N/A' && (
