@@ -166,6 +166,8 @@ ${majorList}
 
 TASK: Select the 3-5 majors that would BEST prepare you for your career interests.
 
+CRITICAL: Use the EXACT major names from the list above. Do not abbreviate or modify the names.
+
 Consider:
 - Which majors provide the foundational knowledge and skills needed for these careers
 - Academic pathways that lead to these career opportunities
@@ -175,7 +177,7 @@ Return in this JSON format:
 {
   "majors": [
     {
-      "name": "Exact Major Name",
+      "name": "EXACT Major Name from the list above - copy it exactly including all punctuation and suffixes",
       "description": "Clear, informative 2-3 sentence description of what students will learn, skills they'll develop, and career opportunities this major provides. Connect it to their interests and be specific about outcomes.",
       "relevanceReason": "Brief explanation of how this major connects to their careers (max 420 chars)"
     }
@@ -205,12 +207,36 @@ Choose majors that genuinely connect to the careers, not just popular ones. Make
       throw new Error('Invalid response format');
     }
 
-    // Convert to Major format
+    // Convert to Major format with improved name matching
     const selectedMajors: Major[] = parsed.majors.slice(0, 5).map((major: { name: string; description: string; relevanceReason: string }) => {
-      const universityMajor = availableMajors.find((um) => 
-        um.name.toLowerCase().includes(major.name.toLowerCase()) ||
-        major.name.toLowerCase().includes(um.name.toLowerCase())
+      // Try exact match first, then partial matches with better logic
+      let universityMajor = availableMajors.find((um) => 
+        um.name.toLowerCase() === major.name.toLowerCase()
       );
+      
+      if (!universityMajor) {
+        // Try finding university major that starts with the LLM major name
+        universityMajor = availableMajors.find((um) => 
+          um.name.toLowerCase().startsWith(major.name.toLowerCase()) ||
+          major.name.toLowerCase().startsWith(um.name.toLowerCase())
+        );
+      }
+      
+      if (!universityMajor) {
+        // Fallback: try contains logic but prioritize university name containing LLM name
+        universityMajor = availableMajors.find((um) => 
+          um.name.toLowerCase().includes(major.name.toLowerCase())
+        ) || availableMajors.find((um) => 
+          major.name.toLowerCase().includes(um.name.toLowerCase())
+        );
+      }
+      
+      // Debug logging to see what's happening
+      if (!universityMajor) {
+        console.warn(`No match found for LLM major: "${major.name}"`);
+      } else {
+        console.log(`Matched "${major.name}" → "${universityMajor.name}" (${universityMajor.department})`);
+      }
 
       return {
         name: universityMajor?.name || major.name,
