@@ -74,24 +74,63 @@ export default async function AdminMetricsPage({ searchParams }: { searchParams:
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <div className="text-sm text-gray-500">Assess requests</div>
+            <div className="text-sm text-gray-500">Assessment Completions</div>
             <div className="text-2xl font-bold">{stats.assess.count.toLocaleString()}</div>
+            <div className="text-xs text-gray-400 mt-1">Interest-First workflow</div>
           </div>
           <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <div className="text-sm text-gray-500">p50 latency</div>
+            <div className="text-sm text-gray-500">Median Response Time</div>
             <div className="text-2xl font-bold">{stats.assess.p50Ms} ms</div>
+            <div className="text-xs text-gray-400 mt-1">50th percentile</div>
           </div>
           <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <div className="text-sm text-gray-500">p95 latency</div>
+            <div className="text-sm text-gray-500">95th Percentile</div>
             <div className="text-2xl font-bold">{stats.assess.p95Ms} ms</div>
+            <div className="text-xs text-gray-400 mt-1">Response time</div>
           </div>
-          <div className="rounded-lg border border-gray-200 bg-white p-4 md:col-span-3">
-            <div className="text-sm text-gray-500">Errors</div>
-            <div className="text-2xl font-bold">{stats.assess.errors}</div>
+          <div className="rounded-lg border border-gray-200 bg-white p-4">
+            <div className="text-sm text-gray-500">Failed Requests</div>
+            <div className="text-2xl font-bold text-red-600">{stats.assess.errors}</div>
+            <div className="text-xs text-gray-400 mt-1">
+              {stats.assess.count > 0 ? `${((stats.assess.errors / stats.assess.count) * 100).toFixed(1)}% error rate` : '0% error rate'}
+            </div>
           </div>
-          <div className="rounded-lg border border-gray-200 bg-white p-4 md:col-span-3">
-            <div className="text-sm text-gray-500">Tokens (prompt / completion)</div>
+          <div className="rounded-lg border border-gray-200 bg-white p-4 md:col-span-2">
+            <div className="text-sm text-gray-500">LLM Token Usage</div>
             <div className="text-2xl font-bold">{stats.assess.totalPromptTokens.toLocaleString()} / {stats.assess.totalCompletionTokens.toLocaleString()}</div>
+            <div className="text-xs text-gray-400 mt-1">
+              Prompt / Completion tokens • Total: {(stats.assess.totalPromptTokens + stats.assess.totalCompletionTokens).toLocaleString()}
+            </div>
+          </div>
+        </div>
+        
+        {/* Workflow & System Status */}
+        <div className="mt-8">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">System Status</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-lg border border-gray-200 bg-white p-4">
+              <div className="text-sm text-gray-500">Current Workflow</div>
+              <div className="text-lg font-semibold text-green-600">Interest-First</div>
+              <div className="text-xs text-gray-400 mt-1">
+                Student interests → O*NET careers → University majors → Personalized connections
+              </div>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-white p-4">
+              <div className="text-sm text-gray-500">Database Status</div>
+              <div className="text-lg font-semibold">
+                {stats.assess.count > 0 ? (
+                  <span className="text-green-600">Connected ✓</span>
+                ) : (
+                  <span className="text-yellow-600">No recent data</span>
+                )}
+              </div>
+              <div className="text-xs text-gray-400 mt-1">
+                {stats.assess.count > 0 
+                  ? `Last recorded: ${stats.assess.count} assessments` 
+                  : 'Check /api/test-db for connection status'
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>
