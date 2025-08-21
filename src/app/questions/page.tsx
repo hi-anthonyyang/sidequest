@@ -160,10 +160,10 @@ function QuestionsPageClient() {
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white bg-opacity-90 px-4">
           <Image src="/icons/campfire.gif" alt="Campfire" width={80} height={80} className="mb-6" />
           <div className="text-lg md:text-xl font-semibold text-blue-700 flex items-center justify-center mb-3 h-8">
-            <div className="transition-all duration-500 ease-in-out transform">
+            <div className="transition-all duration-500 ease-in-out transform animate-shimmer bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 bg-[length:200%_100%] bg-clip-text text-transparent">
               {loadingPhrases[currentPhraseIndex]}
             </div>
-            <span className="ml-1 animate-ellipsis">…</span>
+            <span className="ml-1 animate-ellipsis text-blue-700">…</span>
           </div>
           <div className="w-full max-w-sm">
             <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
@@ -177,6 +177,8 @@ function QuestionsPageClient() {
           <style jsx>{`
             @keyframes ellipsis { 0% { content: ''; opacity: 1; } 25% { content: '.'; opacity: 1; } 50% { content: '..'; opacity: 1; } 75% { content: '...'; opacity: 1; } 100% { content: ''; opacity: 1; } }
             .animate-ellipsis::after { display: inline-block; content: ''; animation: ellipsis 1.2s steps(4, end) infinite; width: 1.5em; text-align: left; }
+            @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+            .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
           `}</style>
         </div>
       )}
