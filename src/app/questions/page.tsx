@@ -61,7 +61,7 @@ function QuestionsPageClient() {
     }
   }, [router, universityId]);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (finalAnswers = answers) => {
     setLoading(true);
     setEtaRemaining(ETA_MS);
     const ticker = window.setInterval(() => {
@@ -74,7 +74,7 @@ function QuestionsPageClient() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-          answers,
+          answers: finalAnswers,
           universityId: universityId,
           email,
           studentId
@@ -124,7 +124,8 @@ function QuestionsPageClient() {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       } else {
-        handleSubmit();
+        // Pass the complete answers array directly to avoid race condition
+        handleSubmit(newAnswers);
       }
     }
   };
