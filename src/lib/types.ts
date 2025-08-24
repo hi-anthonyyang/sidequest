@@ -2,6 +2,14 @@ export interface Question {
   id: number;
   text: string;
   placeholder?: string;
+  /**
+   * Short, concise tags users can click to quickly add ideas
+   */
+  shortTags?: string[];
+  /**
+   * Longer, richer example tags to inspire more detailed answers
+   */
+  longTags?: string[];
 }
 
 export interface AssessmentResponse {

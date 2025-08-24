@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Question, AssessmentResponse, UniversityId } from '@/lib/types';
 import Image from 'next/image';
@@ -10,33 +10,76 @@ import confetti from 'canvas-confetti';
 const questions: Question[] = [
   {
     id: 1,
-    text: "What school subjects or topics do you naturally enjoy or do well in?",
-    placeholder: "For example: history, science, math, art, PE — or anything that feels easy or interesting."
+    text: "What school subjects or topics do you enjoy or do well in?",
+    placeholder: "For example: history, science, math, art, PE — or anything that feels easy or interesting.",
+    shortTags: ["Math", "Art", "Science", "Music", "PE"],
+    longTags: [
+      "AP biology labs and anatomy",
+      "Graphic design and illustration",
+      "Debate club and U.S. history",
+      "Calculus and problem solving",
+      "Choir, piano, and music theory"
+    ]
   },
   {
     id: 2,
-    text: "When you're working on something, do you like working alone, with a partner, in a small group, or leading a team?",
-    placeholder: "You can also say things like: 'I like clear steps,' 'I like to be in charge,' or 'I just do my own thing.'"
+    text: "Do you like working alone, with a partner, in a small group, or leading a team?",
+    placeholder: "You can also say things like: 'I like clear steps,' 'I like to be in charge,' or 'I just do my own thing.'",
+    shortTags: ["Solo", "Partner", "Small group", "Lead"],
+    longTags: [
+      "I like planning and dividing tasks",
+      "I focus best working independently",
+      "I like collaborating with a couple of friends",
+      "I enjoy leading and organizing the team"
+    ]
   },
   {
     id: 3,
-    text: "If you could help solve a problem, what would it be?",
-    placeholder: "For example: helping animals, improving mental health, fixing pollution, or making school better."
+    text: "What are 2-3 problems you'd like to solve?",
+    placeholder: "For example: helping animals, improving mental health, fixing pollution, or making school better.",
+    shortTags: ["Animals", "Mental health", "Pollution", "Homelessness"],
+    longTags: [
+      "Protecting wildlife and habitats",
+      "Helping my family",
+      "Improving school lunch and nutrition",
+      "Affordable housing and community support"
+    ]
   },
   {
     id: 4,
     text: "Which one sounds most like you: I like to build things, I like to fix things, I like to help people, or I like to lead?",
-    placeholder: "You can say more than one — or write your own, like 'design' or 'create.'"
+    placeholder: "You can say more than one — or write your own, like 'design' or 'create.'",
+    shortTags: ["Build", "Fix", "Help", "Design", "Create"],
+    longTags: [
+      "Build apps and websites",
+      "Fix bikes, computers, or engines",
+      "Help people learn and feel included",
+      "Provide great customer service",
+    ]
   },
   {
     id: 5,
-    text: "What kinds of things do you like to figure out or understand better?",
-    placeholder: "For example: how people think, how stuff works, how games are made, why things are unfair, or how to make money."
+    text: "What are 1-3 things you'd like to figure out or understand better?",
+    placeholder: "For example: how people think, how stuff works, how games are made, why things are unfair, or how to make money.",
+    shortTags: ["How things work", "Human behavior", "Coding", "Money", "Fairness"],
+    longTags: [
+      "How video games are designed and built",
+      "Why people act the way they do",
+      "How to make money and be well off",
+      "Why some systems feel unfair and how to improve them"
+    ]
   },
   {
     id: 6,
     text: "What do people usually ask you to help with?",
-    placeholder: "For example: tech stuff, advice, explaining things, fixing something, calming people down."
+    placeholder: "For example: tech stuff, advice, explaining things, fixing something, calming people down.",
+    shortTags: ["Tech help", "Explaining", "Tutoring", "Listening"],
+    longTags: [
+      "Helping friends with phones and laptops",
+      "Explaining homework in simple steps",
+      "Fixing things or setting things up",
+      "Being a calm listener when people are stressed"
+    ]
   }
 ];
 
@@ -54,6 +97,7 @@ function QuestionsPageClient() {
   const [etaRemaining, setEtaRemaining] = useState(ETA_MS);
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   
   const loadingPhrases = [
     "Matching your interests to careers",
@@ -145,6 +189,33 @@ function QuestionsPageClient() {
     }
   };
 
+  const insertTagAtCursor = (tagText: string) => {
+    const el = textareaRef.current;
+    if (!el) {
+      setCurrentAnswer(prev => (prev.trim().length > 0 ? `${prev.replace(/\s+$/, '')}, ${tagText}` : tagText));
+      return;
+    }
+
+    const start = el.selectionStart ?? currentAnswer.length;
+    const end = el.selectionEnd ?? currentAnswer.length;
+
+    const before = currentAnswer.slice(0, start);
+    const after = currentAnswer.slice(end);
+
+    const needsComma = currentAnswer.trim().length > 0 && !(/[\s,]$/.test(before));
+    const prefix = needsComma ? ', ' : '';
+
+    const next = `${before}${prefix}${tagText}${after}`;
+    const cursor = (before + prefix + tagText).length;
+    setCurrentAnswer(next);
+    requestAnimationFrame(() => {
+      el.focus();
+      try {
+        el.setSelectionRange(cursor, cursor);
+      } catch {}
+    });
+  };
+
   const currentQuestion = questions[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
@@ -200,13 +271,30 @@ function QuestionsPageClient() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">
               {currentQuestion.text}
             </h2>
-            
             <textarea
               value={currentAnswer}
               onChange={(e) => setCurrentAnswer(e.target.value)}
               placeholder={currentQuestion.placeholder}
+              ref={textareaRef}
               className="w-full h-32 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder:text-gray-400 text-[#333333]"
             />
+
+            {(currentQuestion.shortTags?.length || currentQuestion.longTags?.length) && (
+              <div className="mt-8 mb-6">
+                <div className="flex flex-wrap gap-3">
+                  {[...(currentQuestion.shortTags ?? []), ...(currentQuestion.longTags ?? [])].map((tag) => (
+                    <button
+                      key={tag}
+                      type="button"
+                      onClick={() => insertTagAtCursor(tag)}
+                      className="rounded-full bg-blue-50 text-blue-600 px-4 py-1.5 text-xs hover:bg-blue-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition ease-out duration-150 hover:scale-105 hover:-translate-y-0.5 hover:shadow-sm active:scale-100 cursor-pointer"
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <button
               onClick={handleNext}
