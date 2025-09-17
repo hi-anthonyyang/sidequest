@@ -11,7 +11,7 @@ const questions: Question[] = [
   {
     id: 1,
     text: "What school subjects or topics do you enjoy or do well in?",
-    placeholder: "For example: history, science, math, art, PE — or anything that feels easy or interesting.",
+    placeholder: "For example: film, language, technology, writing — or anything that feels easy or interesting.",
     shortTags: ["Math", "Art", "Science", "Music", "PE"],
     longTags: [
       "AP biology labs and anatomy",
@@ -36,7 +36,7 @@ const questions: Question[] = [
   {
     id: 3,
     text: "What are 2-3 problems you'd like to solve?",
-    placeholder: "For example: helping animals, improving mental health, fixing pollution, or making school better.",
+    placeholder: "For example: be healthier, help pay bills, fixing pollution, or making school better.",
     shortTags: ["Animals", "Mental health", "Pollution", "Homelessness"],
     longTags: [
       "Protecting wildlife and habitats",
@@ -47,7 +47,7 @@ const questions: Question[] = [
   },
   {
     id: 4,
-    text: "Which one sounds most like you: I like to build things, I like to fix things, I like to help people, or I like to lead?",
+    text: "Which one sounds most like you: I like to learn things, I like to fix things, I like to help people, or I like to lead?",
     placeholder: "You can say more than one — or write your own, like 'design' or 'create.'",
     shortTags: ["Build", "Fix", "Help", "Design", "Create"],
     longTags: [
@@ -72,7 +72,7 @@ const questions: Question[] = [
   {
     id: 6,
     text: "What do people usually ask you to help with?",
-    placeholder: "For example: tech stuff, advice, explaining things, fixing something, calming people down.",
+    placeholder: "For example: advice, explaining things, relationships, calming people down.",
     shortTags: ["Tech help", "Explaining", "Tutoring", "Listening"],
     longTags: [
       "Helping friends with phones and laptops",

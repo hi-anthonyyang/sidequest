@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Sidequest",
   description: "Career and Major Exploration Assessment",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.sideque.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'),
   alternates: {
     canonical: '/quests',
   },
